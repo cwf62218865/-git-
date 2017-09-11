@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/control.css" rel="stylesheet">
+    <title>秒猎控件</title>
+</head>
+<style>
+    html,body{
+        width: 100%;
+        font-size: 14px;
+    }
+    .controlbox{
+        width: 1000px;
+        margin: 0 auto;
+    }
+    .title{
+        text-align: center;
+        font-weight: 600;
+        font-size: 16px;
+    }
+    .listtitle{
+        font-weight: 600;
+        font-size: 16px;
+    }
+</style>
+<body>
+    <div class="controlbox">
+        <p class="title">秒猎控件列表</p>
+        <div>
+            <p class="listtitle">1、输入框</p>
+
+
+            <p>常见输入框</p>
+            <label class="general-input">
+                <input type="text" placeholder="请输入内容">
+            </label>
+
+
+            <p>文件上传</p>
+            <label class="general-input">
+                <input type="text">
+            </label>
+            <span class="filebtn">浏览</span>
+
+
+            <p>下拉框</p>
+            <div class=" relative general-select">
+                <label class="general-input relative general-select" >
+                    <input type="text" readonly value="选项一">
+                    <svg class="icon inputicon" aria-hidden="true">
+                        <use xlink:href="#icon-xiala"></use>
+                    </svg>
+                </label>
+                <div class="options">
+                    <div class="select-option"><span>选项一</span></div>
+                    <div class="select-option"><span>选项二</span> </div>
+                    <div class="select-option"><span>选项三</span> </div>
+                    <div class="select-option"><span>选项四</span> </div>
+                </div>
+            </div>
+
+
+
+
+            <p>搜索框</p>
+            <label class="general-input relative">
+                <input type="text" placeholder="请输入内容">
+                <svg class="z100 iconfont icon inputicon  " aria-hidden="true">
+                    <use xlink:href="#icon-sousuo" class="colorbbb"></use>
+                </svg>
+            </label>
+
+            <p class="listtitle">2、单选和复选框</p>
+
+
+            <p>单选</p>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="sex" value="单选一">
+                    <div class="radiobox radiochecked"></div>
+                    单选一
+                </label>
+                <label>
+                    <input type="radio"  name="sex" value="单选二">
+                    <div class="radiobox"></div>
+                    单选二
+                </label>
+            </div>
+
+            <p>复选框</p>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="like" value="多选一">
+                    <div class="checkboxbox">
+                        <svg class="icon iconfont color1aa" aria-hidden="true">
+                        <use xlink:href=""></use>
+                        </svg>
+                    </div>
+                    多选一
+                </label>
+                <label>
+                    <input type="checkbox" name="like" value="多选二">
+                    <div class="checkboxbox">
+                        <svg class="icon iconfont color1aa" aria-hidden="true">
+                            <use xlink:href=""></use>
+                        </svg>
+                    </div>
+                    多选二
+                </label>
+            </div>
+
+
+
+            <p class="listtitle">3、提示信息</p>
+
+            <div>
+                <span class="filebtn error">错误</span>
+                <span class="filebtn warning">警告</span>
+                <span class="filebtn success">成功</span>
+                <span class="filebtn ordinary">一般</span>
+            </div>
+
+
+            <p class="listtitle">4、按钮</p>
+
+            <span class="public_btn bg1aa">提交</span>
+            <span class="public_nobtn bgbbb">提交</span>
+            <span class="public_bigbtn bg1aa">立即投递</span>
+            <span class="public_nobigbtn bgbbb">立即投递</span>
+
+
+            <p class="listtitle">5、评分</p>
+            <div class="pinglun">
+                <input type="hidden" class="pinglunnum" value="0">
+                <svg class="icon pinglunfont" aria-hidden="true">
+                    <use xlink:href="#icon-huisepinglun" class="xing"></use>
+                </svg>
+                <svg class="icon pinglunfont" aria-hidden="true">
+                    <use xlink:href="#icon-huisepinglun" class="xing"></use>
+                </svg>
+                <svg class="icon pinglunfont" aria-hidden="true">
+                    <use xlink:href="#icon-huisepinglun" class="xing"></use>
+                </svg>
+                <svg class="icon pinglunfont" aria-hidden="true">
+                    <use xlink:href="#icon-huisepinglun" class="xing"></use>
+                </svg>
+                <svg class="icon pinglunfont" aria-hidden="true">
+                    <use xlink:href="#icon-huisepinglun" class="xing"></use>
+                </svg>
+            </div>
+
+            <p class="listtitle">6、模态输入框</p>
+
+
+            <span class="public_nobigbtn modalbtn bg1aa">模态输入框</span>
+
+
+
+
+        </div>
+    </div>
+</body>
+<script src="js/jquery.js" rel="script"></script>
+<script src="js/iconfont.js" rel="script"></script>
+<script src="js/control.js" rel="script"></script>
+</html>
