@@ -1,0 +1,12 @@
+.resume_content{
+    position: relative;
+}
+.register_msg{
+position: absolute;
+    width:460px;
+    height: 555px;
+    background: #ffffff;
+    box-shadow:-2px 0 2px #0f7e9e, /*左边阴影*/
+    2px 0 2px #0f7e9e, /*右边阴影*/
+    0 2px 2px #0f7e9e; /*底边阴影*/
+}
