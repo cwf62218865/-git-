@@ -2,7 +2,8 @@
     z-index: 100;
 }
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-　　color: #bbb;font-size:14px;
+　　color: #bbb;
+    font-size:14px;
 }
 input {
     border: none;
@@ -42,8 +43,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 .general-input {
     display: inline-block;
-    height: 36px;
-    line-height: 36px;
+    height: 46px;
+    line-height: 46px;
     width: 188px;
     margin-left: 20px;
     border: 1px solid #ddd;
@@ -96,8 +97,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     position: absolute;
     right: 10px;
     top: 0;
-    height: 36px;
-    z-index: -1;
+    height: 46px;
+    z-index: 1;
     cursor: pointer;
 }
 .options div span{
@@ -105,7 +106,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 .relative input{
     width: 168px;
-    height: 34px;
+    height: 44px;
     background:none ;
 }
 .colorbbb{
