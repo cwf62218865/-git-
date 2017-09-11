@@ -24,7 +24,11 @@ input {
     border-bottom: 1px solid #e5e5e5;
 }
 .align_center{
-    display: flex;
+    display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+    display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+    display: -webkit-box;   /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+    display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;   /* 混合版本语法: IE 10 */
     align-items: center;
 }
 .city{
@@ -38,8 +42,8 @@ input {
     cursor: pointer;
 }
 .menu{
-    margin-left: 60px;
     font-size: 18px;
+    margin-left: 50px;
 }
 .menu a{
     display: inline-block;
@@ -63,6 +67,8 @@ input {
 }
 .login{
     margin-left:95px;
+    height: 52px;
+    line-height: 52px;
 }
 .login a{
     display: inline-block;
