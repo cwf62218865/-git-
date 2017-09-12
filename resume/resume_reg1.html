@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/header.css" rel="stylesheet">
+    <link href="../css/control.css" rel="stylesheet">
+    <link href="../css/resume.css" rel="stylesheet">
+    <link href="../css/reguser1.css" rel="stylesheet">
+    <title>简历填写</title>
+</head>
+<body>
+<div class="header">
+    <div class="width1200 align_center" style="padding-top: 14px;justify-content: space-between">
+        <img src="../images/logo.png"/>
+        <div><span class="city">全国</span><span class="changecity">[切换]</span></div>
+        <div class="menu">
+            <a href="#" class="menuactive">首页</a>
+            <a  href="#">找工作</a>
+            <a  href="#">实习/兼职</a>
+            <a  href="#">求职保镖</a>
+            <a  href="#">职场信用</a>
+            <a  href="#">就业大数据</a>
+        </div>
+        <div class="login">
+            <a href="#">登陆</a>
+            <a href="#">注册</a>
+            <a href="#">企业入口</a>
+        </div>
+    </div>
+</div>
+<div class="resume_content">
+    <div class="relative" style="width: 620px;margin: 0 auto">
+        <div class="resume_step">
+            <div class="resume_stepbox">
+            <span class="resume_step_circular">
+                <div class="resume_step_circular1 resume_step_ready"><span>1</span></div>
+            </span>
+                <p>基本信息</p>
+            </div>
+            <div class="resume_stepbox">
+            <span class="resume_step_circular">
+                <div class="resume_step_circular1 resume_step_no"><span>2</span></div>
+            </span>
+                <p>教育经历</p>
+            </div>
+            <div class="resume_stepbox">
+            <span class="resume_step_circular">
+                <div class="resume_step_circular1 resume_step_no"><span>3</span></div>
+            </span>
+                <p>工作经历</p>
+            </div>
+            <div class="resume_stepbox">
+            <span class="resume_step_circular">
+                <div class="resume_step_circular1 resume_step_no"><span>4</span></div>
+            </span>
+                <p>一句话介绍</p>
+            </div>
+        </div>
+
+        <div class="resume_step_progress">
+            <i class="resume_step_ready"></i>
+        </div>
+
+        <div class="register_msg">
+            <div class="msg_zj">
+                    <img  class="img_tx" src="../images/boy.png"/>
+                    <div class="title_zj font_zj1">基本信息</div>
+                    <span class="radio_box radio_sec font_zj1">我是男生</span>
+                    <span class="radio_box font_zj1 right_align">我是女生</span>
+                    <label class="general-input name" style="border-color: rgb(221, 221, 221);">
+                        <input type="text" placeholder="姓名">
+                    </label>
+                    <label class="general-input right_align" style="border-color: rgb(221, 221, 221);">
+                        <input type="text" placeholder="13888888888">
+                    </label>
+                    <label class="general-input email_zj" style="border-color: rgb(221, 221, 221);">
+                        <input type="text" placeholder="邮箱">
+                    </label>
+                    <div class=" relative general-select left_align city1">
+                        <label class="general-input relative general-select" style="border-color: rgb(221, 221, 221);">
+                            <input type="text" readonly="" value="" placeholder="现居城市">
+                            <svg class="icon inputicon" aria-hidden="true">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                            </svg>
+                        </label>
+                        <div class="options" style="height: 0px;">
+                        </div>
+                    </div>
+                    <div class=" relative general-select district1">
+                        <label class="general-input relative general-select" style="border-color: rgb(221, 221, 221);">
+                            <input type="text" readonly="" value="" placeholder="区县">
+                            <svg class="icon inputicon" aria-hidden="true">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                            </svg>
+                        </label>
+                        <div class="options" style="height: 0px;">
+                            <div class="select-option"><span>请选择城市</span></div>
+                        </div>
+                    </div>
+                    <label class="general-input detail_zj" style="border-color: rgb(221, 221, 221);">
+                        <input type="text" placeholder="详细地址（选填）">
+                    </label>
+                    <span class="public_bigbtn bg1aa wrap">下一步：完善教育信息</span>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+</body>
+<script src="../js/jquery.js" rel="script"></script>
+<script src="../js/iconfont.js" rel="script"></script>
+<script src="../js/control.js" rel="script"></script>
+<script src="../js/area.js" rel="script"></script>
+<script>
+   $(function () {
+       //提取省市内容
+       var area=new Array();
+       area=dsy.Items[0];
+       var html="";
+       $(".general-select input").on("click",function(){
+           var _this=$(this);
+           _this.closest(".general-select").next().css("height","160px");
+       });
+       for(var i=0;i<area.length;i++){
+           html+="<div class='select-option city_con ' id='city"+i+"'><span>"+area[i]+"</span></div>";
+       }
+       $(".city1 .options").html(html);
+       $(".city_con").on("mousedown",function(){
+           var _this=$(this);
+           var optionhtml=_this.find("span").eq(0).html();
+           _this.closest(".options").prev().find("input").val(optionhtml);
+
+               var city=$(this).attr("id");
+               var len=city.length;
+               var index=city.substring(4,len)
+               var area1=dsy.Items['0_'+index];
+               var html1="";
+               for(var i=0;i<area1.length;i++){
+                   html1+="<div class='select-option district_con'><span>"+area1[i]+"</span></div>";
+               }
+               $(".district1 .options").html(html1);
+
+                $(".district_con").on("mousedown",function() {
+                    var _this = $(this);
+                    var optionhtml = _this.find("span").eq(0).html();
+                    _this.closest(".options").prev().find("input").val(optionhtml);
+                });
+
+
+
+
+           });
+
+
+
+
+
+
+   }) 
+</script>
+</html>
