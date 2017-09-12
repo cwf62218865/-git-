@@ -78,10 +78,12 @@
                             </svg>
                         </label>
                         <div class="options" style="height: 0px;">
+                            <div class="select-option"><span>博士以上</span></div>
                             <div class="select-option"><span>博士</span></div>
                             <div class="select-option"><span>硕士</span> </div>
                             <div class="select-option"><span>本科</span> </div>
                             <div class="select-option"><span>专科</span> </div>
+                            <div class="select-option"><span>专科以下</span> </div>
                         </div>
                     </div>
                 <label class="general-input industry" style="border-color: rgb(221, 221, 221);">
@@ -89,7 +91,7 @@
                 </label>
                     <div class=" relative general-select right_align year">
                         <label class="general-input relative general-select" style="border-color: rgb(221, 221, 221);">
-                            <input type="text" readonly="" value="2017">
+                            <input type="text" readonly="" value="" placeholder="毕业时间">
                             <svg class="icon inputicon" aria-hidden="true">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
                             </svg>
@@ -102,8 +104,9 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="wrap font_zj1 dashed">添加更多工作经历</div>
+                <div class="cwfreg3content"   id="addexp">
+                    <span class="cwfaddexp">添加更多经历</span>
+                </div>
             </div>
             <div class="next_step">
                 <div class="prev left_align font_2">上一步</div>
@@ -120,13 +123,53 @@
 <script src="../js/iconfont.js" rel="script"></script>
 <script src="../js/control.js" rel="script"></script>
 <script>
-    $(function () {
-        $(".dashed").on('click',function(){
-            alert(1)
+    $(document).ready(function(){
+
+        var date=new Date();
+        var year=date.getFullYear();
+        var end=year-15;
+        var html="";
+        for(var i=year;i>=end;i--){
+            html+="<div class='select-option'><span>"+i+"</span></div>";
+        }
+        $(".year .options").html(html);
+
+
+        //设置下拉选择框
+        $("body").on("click",".general-select input",function(){
+            var _this=$(this);
+            if(_this.closest(".general-select").next().height()=="0"){
+                $(".options").css("height","0px");
+                _this.closest(".general-select").next().css("height","185px");
+            }else {
+                _this.closest(".general-select").next().css("height","0px");
+            }
+        });
+        $("body").on("mousedown",".select-option",function(){
+
+                var _this=$(this);
+                var optionhtml=_this.find("span").eq(0).html();
+                _this.closest(".options").prev().find("input").val(optionhtml);
+                _this.closest(".options").css("height","0");
+            });
+
+        $(".cwfaddexp").on('click',function(){
             var addexp=$(".zjaddexp").html();
             var addexpcontent="<div class='zjaddexp'><span class='cwfdashed460'></span>"+addexp+"</div>";
-            $(".dashed").before(addexpcontent);
+            $("#addexp").before(addexpcontent);
+            $(".msgreg2_zj .cwfaddexp").css("width","218px");
+            if($("#addexp .cwfdelexp").length==0){
+                $("#addexp").append("<span class='cwfdelexp'>删除</span>")
+            };
         });
+
+        //删除操作
+        $('body').on("click",".cwfdelexp",function(){
+            var exps=$(".zjaddexp");
+            if(exps.length>1){
+                exps.eq(exps.length-1).remove();
+            }
+        })
     })
 </script>
 </html>

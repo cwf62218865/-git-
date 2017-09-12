@@ -65,7 +65,16 @@
 
         <div class="register_msg">
             <div class="msg_zj">
-                    <img  class="img_tx" src="../images/boy.png"/>
+                    <div  class="img_tx">
+                        <svg class="icon icon1" aria-hidden="true">
+                            <use xlink:href="#icon-xuesheng"></use>
+                        </svg>
+                        <div class="img_con">
+                            <svg class="icon icon2" aria-hidden="true">
+                                <use xlink:href="#icon-xiangji"></use>
+                            </svg>
+                        </div>
+                    </div>
                     <div class="title_zj font_zj1">基本信息</div>
                     <span class="radio_box radio_sec font_zj1">我是男生</span>
                     <span class="radio_box font_zj1 right_align">我是女生</span>
@@ -124,7 +133,7 @@
        $(".general-select input").on("click",function(){
            var _this=$(this);
            if(_this.closest(".general-select").next().height()=="0"){
-               _this.closest(".general-select").next().css("height","170px");
+               _this.closest(".general-select").next().css("height","185px");
            }else {
                _this.closest(".general-select").next().css("height","0px");
            }
