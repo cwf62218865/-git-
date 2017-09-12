@@ -14,28 +14,28 @@ $(document).ready(function(){
 
 
     //设置下拉选择框
-    $(".general-select input").on("click",function(){
-        var _this=$(this);
-        if(_this.closest(".general-select").next().height()=="0"){
-            _this.closest(".general-select").next().css("height","auto");
-        }else {
-            _this.closest(".general-select").next().css("height","0px");
-        }
-
-    }).blur(function(){
-        var _this=$(this);
-        _this.closest(".general-select").next().css("height","0");
-    });
-
-    $(".select-option").on("mousedown",function(){
-
-        var _this=$(this);
-        var optionhtml=_this.find("span").eq(0).html();
-        _this.closest(".options").prev().find("input").val(optionhtml);
-        //_this.closest(".options").css("height","0");
-        $("body").click();
-
-    });
+    //$(".general-select input").on("click",function(){
+    //    var _this=$(this);
+    //    if(_this.closest(".general-select").next().height()=="0"){
+    //        _this.closest(".general-select").next().css("height","auto");
+    //    }else {
+    //        _this.closest(".general-select").next().css("height","0px");
+    //    }
+    //
+    //}).blur(function(){
+    //    var _this=$(this);
+    //    _this.closest(".general-select").next().css("height","0");
+    //});
+    //
+    //$(".select-option").on("mousedown",function(){
+    //
+    //    var _this=$(this);
+    //    var optionhtml=_this.find("span").eq(0).html();
+    //    _this.closest(".options").prev().find("input").val(optionhtml);
+    //    //_this.closest(".options").css("height","0");
+    //    $("body").click();
+    //
+    //});
 
 
 
