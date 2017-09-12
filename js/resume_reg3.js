@@ -2,6 +2,18 @@
  * Created by Administrator on 2017/9/11 0011.
  */
 $(document).ready(function(){
+
+    $("body").on("focus",".general-input input",function(){
+        var _this=$(this);
+        $(this).closest(".general-input").css("border-color","#1aa9d2");
+    })
+
+    $("body").on("blur",".general-input input",function(){
+        var _this=$(this);
+        $(this).closest(".general-input").css("border-color","#f5f5f5");
+    });
+
+
     $(".cwfaddexp").on('click',function(){
         var addexp=$("#cwfaddexp").html();
         var addexpcontent="<div class='exp'><span class='cwfdashed460'></span>"+addexp+"</div>";
@@ -20,7 +32,7 @@ $(document).ready(function(){
     var year="";
     $('body').on("mousedown",".general-select input",function(){
         var _this=$(this);
-
+        year="";
         if(_this.closest(".general-select").next().height()=="0"){
             $(".options").css("height","0px");
             _this.closest(".general-select").next().css("height","auto");
@@ -66,8 +78,12 @@ $(document).ready(function(){
     //删除操作
     $('body').on("click",".cwfdelexp",function(){
         var exps=$(".exp");
-        if(exps.length>1){
+        if(exps.length>2){
             exps.eq(exps.length-1).remove();
+        }else if(exps.length==2){
+            exps.eq(exps.length-1).remove();
+            $("#addexp .cwfaddexp").css("width","458px");
+            $(".cwfdelexp").remove();
         }
     })
 

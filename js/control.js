@@ -333,4 +333,8 @@ $(".modalbtn").on("click",function(){
         event.stopPropagation();
     });
 
+    $(document).on("click",".general-select",function(event){
+        event.stopPropagation();
+    });
+
 })
