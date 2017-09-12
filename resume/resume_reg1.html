@@ -123,7 +123,15 @@
        var html="";
        $(".general-select input").on("click",function(){
            var _this=$(this);
-           _this.closest(".general-select").next().css("height","160px");
+           if(_this.closest(".general-select").next().height()=="0"){
+               _this.closest(".general-select").next().css("height","170px");
+           }else {
+               _this.closest(".general-select").next().css("height","0px");
+           }
+
+       }).blur(function(){
+           var _this=$(this);
+           _this.closest(".general-select").next().css("height","0");
        });
        for(var i=0;i<area.length;i++){
            html+="<div class='select-option city_con ' id='city"+i+"'><span>"+area[i]+"</span></div>";
@@ -133,7 +141,7 @@
            var _this=$(this);
            var optionhtml=_this.find("span").eq(0).html();
            _this.closest(".options").prev().find("input").val(optionhtml);
-
+            _this.closest(".options").css("height","0");
                var city=$(this).attr("id");
                var len=city.length;
                var index=city.substring(4,len)

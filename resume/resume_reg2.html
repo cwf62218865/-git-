@@ -66,10 +66,10 @@
         <div class="register2_msg">
             <div class="msgreg2_zj">
                     <div class="title_zj font_zj1">教育经历</div>
+                <div class="zjaddexp">
                     <label class="general-input left_align school" style="border-color: rgb(221, 221, 221);">
                         <input type="text" placeholder="学校名称">
                     </label>
-
                     <div class=" relative general-select right_align education">
                         <label class="general-input relative general-select" style="border-color: rgb(221, 221, 221);">
                             <input type="text" readonly="" value="本科">
@@ -78,10 +78,10 @@
                             </svg>
                         </label>
                         <div class="options" style="height: 0px;">
-                            <div class="select-option"><span>选项一</span></div>
-                            <div class="select-option"><span>选项二</span> </div>
-                            <div class="select-option"><span>选项三</span> </div>
-                            <div class="select-option"><span>选项四</span> </div>
+                            <div class="select-option"><span>博士</span></div>
+                            <div class="select-option"><span>硕士</span> </div>
+                            <div class="select-option"><span>本科</span> </div>
+                            <div class="select-option"><span>专科</span> </div>
                         </div>
                     </div>
                 <label class="general-input industry" style="border-color: rgb(221, 221, 221);">
@@ -95,12 +95,14 @@
                             </svg>
                         </label>
                         <div class="options" style="height: 0px;">
-                            <div class="select-option"><span>选项一</span></div>
-                            <div class="select-option"><span>选项二</span> </div>
-                            <div class="select-option"><span>选项三</span> </div>
-                            <div class="select-option"><span>选项四</span> </div>
+                            <div class="select-option"><span>计算机科学与技术</span></div>
+                            <div class="select-option"><span>软件工程</span> </div>
+                            <div class="select-option"><span>电子商务</span> </div>
+                            <div class="select-option"><span>土木工程</span> </div>
                         </div>
                     </div>
+                </div>
+                
                 <div class="wrap font_zj1 dashed">添加更多工作经历</div>
             </div>
             <div class="next_step">
@@ -117,4 +119,14 @@
 <script src="../js/jquery.js" rel="script"></script>
 <script src="../js/iconfont.js" rel="script"></script>
 <script src="../js/control.js" rel="script"></script>
+<script>
+    $(function () {
+        $(".dashed").on('click',function(){
+            alert(1)
+            var addexp=$(".zjaddexp").html();
+            var addexpcontent="<div class='zjaddexp'><span class='cwfdashed460'></span>"+addexp+"</div>";
+            $(".dashed").before(addexpcontent);
+        });
+    })
+</script>
 </html>
