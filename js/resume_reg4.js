@@ -15,7 +15,7 @@ $(document).ready(function(){
     };
     $('.cwfnationaloptions').append(date_options);
 
-    $('body').on("click",".general-select input",function(){
+    $('body').on("mousedown",".general-select input",function(){
         var _this=$(this);
         year=parseInt(_this.val().substring(0,4));
 
@@ -31,10 +31,59 @@ $(document).ready(function(){
 
 
 
-    $('body').on("click",".select-option",function(){
+    $('body').on("mousedown",".cwfnationaloptions .select-option,.cwfoptions_reg4 .select-option",function(){
         var _this=$(this);
         var optionhtml=_this.find("span").eq(0).html();
         _this.closest(".options").prev().find("input").val(optionhtml);
         _this.closest(".options").css("height","0px");
     });
+
+
+
+
+
+    //籍贯
+    var  area=dsy.Items[0];
+    var city="";
+    for(var i=0;i<area.length;i++){
+        city+="<div class='select-option' style='width:120px;' data-id='"+i+"'><span>"+area[i]+"</span></div>"
+    };
+    $('.cwfcityoptions').append(city);
+
+    $("body").on("mousedown",".cwfcityoptions .select-option",function(){
+        var _this=$(this);
+        $(".cwfcityoptions .select-option").each(function(){
+            var _that=$(this);
+            _that.css({'background-color':'#fff','color':'#333'})
+        });
+        _this.css({'background-color':'#1aa9d2','color':'#fff'});
+
+        var areas="";
+        var data_id=_this.attr("data-id");
+        var listnum="0_"+data_id+"_0";
+        var areamsg=dsy.Items[listnum];
+        for(var i=0;i<areamsg.length;i++){
+            areas+="<span>"+areamsg[i]+"</span>"
+        }
+        $(".cwfarea").html(areas);
+    });
+
+    $("body").on("mousedown",".cwfarea span",function(){
+        var _this=$(this);
+        _this.closest(".options").prev().find("input").val(_this.html());
+        _this.closest(".options").css("height","0px");
+    })
+
+    //生日
+    //默认年份
+    var date =new Date();
+    var year_date= date.getFullYear();//年
+    var datetime_options="";
+    for(var i=0;i<15;i++){
+        datetime_options+="<div class='select-option' style='width:80px;'><span>"+(year_date-i)+"</span></div>"
+    };
+    $('.cwftimeoptions').append(datetime_options);
+
+
+
 })

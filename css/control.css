@@ -80,6 +80,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     top:38px;
     overflow: hidden;
     z-index: 1000;
+
 }
 
 .options .select-option{
