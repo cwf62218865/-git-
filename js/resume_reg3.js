@@ -20,8 +20,9 @@ $(document).ready(function(){
     var year="";
     $('body').on("click",".general-select input",function(){
         var _this=$(this);
-        year=parseInt(_this.val().substring(0,4));
+
         if(_this.closest(".general-select").next().height()=="0"){
+            $(".options").css("height","0px");
             _this.closest(".general-select").next().css("height","auto");
         }else {
             _this.closest(".general-select").next().css("height","0px");
@@ -54,6 +55,12 @@ $(document).ready(function(){
         _this.closest(".options").prev().find("input").val(optionhtml);
         year=optionhtml;
     });
+
+    //
+    //$(".general-select input").blur(function(){
+    //    var _this=$(this);
+    //    _this.closest(".general-select").next().css("height","0");
+    //});
 
 
     //删除操作

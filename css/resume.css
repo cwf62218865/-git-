@@ -207,3 +207,24 @@ input::-webkit-input-placeholder{
     line-height: 46px;
     margin-top: 10px;
 }
+.cwfnationaloptions,.cwfoptions_reg4{
+    width: 110px;
+    height: 240px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.cwfresume_reg4{
+    width: 590px;
+    background-color:#fff ;
+    margin: 0 auto;
+    margin-top: 40px;
+    box-shadow:-1px -1px 10px rgba(15,126,158,0.1), /*左边阴影*/
+    1px -1px 10px rgba(15,126,158,0.1), /*右边阴影*/
+    0 12px 12px rgba(15,126,158,0.15); /*底边阴影*/
+}
+.cwfreg4content{
+    width:470px;
+    margin-left: 60px;
+    height: 46px;
+    padding-bottom: 20px;
+}
