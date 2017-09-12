@@ -89,6 +89,7 @@ input::-webkit-input-placeholder{
     background-color:#fff ;
     margin: 0 auto;
     margin-top: 40px;
+    margin-bottom: 50px;
     box-shadow:-1px -1px 10px rgba(15,126,158,0.1), /*左边阴影*/
     1px -1px 10px rgba(15,126,158,0.1), /*右边阴影*/
     0 12px 12px rgba(15,126,158,0.15); /*底边阴影*/
@@ -190,7 +191,8 @@ input::-webkit-input-placeholder{
     width: 80px;
     display: inline-block;
     float: left;
-    border-top:1px solid #ddd
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
 }
 .cwfdashed460{
     display: inline-block;
@@ -212,12 +214,15 @@ input::-webkit-input-placeholder{
     height: 240px;
     overflow-y: auto;
     overflow-x: hidden;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
 }
 .cwfresume_reg4{
     width: 590px;
     background-color:#fff ;
     margin: 0 auto;
     margin-top: 40px;
+    margin-bottom: 50px;
     box-shadow:-1px -1px 10px rgba(15,126,158,0.1), /*左边阴影*/
     1px -1px 10px rgba(15,126,158,0.1), /*右边阴影*/
     0 12px 12px rgba(15,126,158,0.15); /*底边阴影*/
@@ -227,4 +232,36 @@ input::-webkit-input-placeholder{
     margin-left: 60px;
     height: 46px;
     padding-bottom: 20px;
+}
+.cwfcityoptions{
+    height: 151px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 120px;
+    display: inline-block;
+    float: left;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+}
+.cwfarea{
+    width: 120px;
+    display: inline-block;
+    height: 151px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.cwfarea span{
+    display: inline-block;
+    height: 36px;
+    width: 100px;
+    padding-left: 20px;
+    line-height: 36px;
+    cursor: pointer;
+    white-space:nowrap
+}
+.cwfarea span:hover{
+    background-color: #1aa9d2;
+    color: #fff;
 }

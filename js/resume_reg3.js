@@ -18,7 +18,7 @@ $(document).ready(function(){
 
 
     var year="";
-    $('body').on("click",".general-select input",function(){
+    $('body').on("mousedown",".general-select input",function(){
         var _this=$(this);
 
         if(_this.closest(".general-select").next().height()=="0"){
@@ -31,7 +31,7 @@ $(document).ready(function(){
     });
 
 
-    $('body').on("click",".cwfmonths span",function(){
+    $('body').on("mousedown",".cwfmonths span",function(){
         var _this=$(this);
         var timebox=_this.closest(".general-select").find("input").eq(0);
         var month=parseInt(_this.html());
@@ -44,7 +44,7 @@ $(document).ready(function(){
 
     });
 
-    $('body').on("click",".select-option",function(){
+    $('body').on("mousedown",".select-option",function(){
         var _this=$(this);
         $(".select-option").each(function(){
             var _that=$(this);

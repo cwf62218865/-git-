@@ -320,6 +320,17 @@ $(".modalbtn").on("click",function(){
     modal(title,option,"立即申请","/test.php");
 })
 
-
+//点击任意位置隐藏下拉
+    $(document).on("click",function(){
+        $(".options").each(function(){
+            var _this=$(this);
+            if(_this.height()!="0"){
+                _this.css("height","0")
+            }
+        })
+    });
+    $(".cwfreg4content").click(function(event){
+        event.stopPropagation();
+    });
 
 })
