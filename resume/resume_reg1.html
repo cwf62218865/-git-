@@ -78,17 +78,17 @@
                     <div class="title_zj font_zj1">基本信息</div>
                     <span class="radio_box radio_sec font_zj1">我是男生</span>
                     <span class="radio_box font_zj1 right_align">我是女生</span>
-                    <label class="general-input name" style="border-color: rgb(221, 221, 221);">
+                    <label class="general-input name">
                         <input type="text" placeholder="姓名">
                     </label>
-                    <label class="general-input right_align" style="border-color: rgb(221, 221, 221);">
+                    <label class="general-input right_align" >
                         <input type="text" placeholder="13888888888">
                     </label>
-                    <label class="general-input email_zj" style="border-color: rgb(221, 221, 221);">
+                    <label class="general-input email_zj" >
                         <input type="text" placeholder="邮箱">
                     </label>
                     <div class=" relative general-select left_align city1">
-                        <label class="general-input relative general-select" style="border-color: rgb(221, 221, 221);">
+                        <label class="general-input relative general-select">
                             <input type="text" readonly="" value="" placeholder="现居城市">
                             <svg class="icon inputicon" aria-hidden="true">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
@@ -98,7 +98,7 @@
                         </div>
                     </div>
                     <div class=" relative general-select district1">
-                        <label class="general-input relative general-select" style="border-color: rgb(221, 221, 221);">
+                        <label class="general-input relative general-select" >
                             <input type="text" readonly="" value="" placeholder="区县">
                             <svg class="icon inputicon" aria-hidden="true">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
@@ -108,7 +108,7 @@
                             <div class="select-option"><span>请选择城市</span></div>
                         </div>
                     </div>
-                    <label class="general-input detail_zj" style="border-color: rgb(221, 221, 221);">
+                    <label class="general-input detail_zj" >
                         <input type="text" placeholder="详细地址（选填）">
                     </label>
                     <span class="public_bigbtn bg1aa wrap">下一步：完善教育信息</span>
@@ -130,7 +130,7 @@
        var area=new Array();
        area=dsy.Items[0];
        var html="";
-       $(".general-select input").on("click",function(){
+       $("body").on("mousedown",".general-select input",function(){
            var _this=$(this);
            if(_this.closest(".general-select").next().height()=="0"){
                _this.closest(".general-select").next().css("height","185px");
@@ -138,22 +138,19 @@
                _this.closest(".general-select").next().css("height","0px");
            }
 
-       }).blur(function(){
-           var _this=$(this);
-           _this.closest(".general-select").next().css("height","0");
-       });
+       })
        for(var i=0;i<area.length;i++){
            html+="<div class='select-option city_con ' id='city"+i+"'><span>"+area[i]+"</span></div>";
        }
        $(".city1 .options").html(html);
-       $(".city_con").on("mousedown",function(){
+       $("body").on("mousedown",".city_con",function(){
            var _this=$(this);
            var optionhtml=_this.find("span").eq(0).html();
            _this.closest(".options").prev().find("input").val(optionhtml);
             _this.closest(".options").css("height","0");
                var city=$(this).attr("id");
                var len=city.length;
-               var index=city.substring(4,len)
+               var index=city.substring(4,len);
                var area1=dsy.Items['0_'+index];
                var html1="";
                for(var i=0;i<area1.length;i++){
@@ -161,21 +158,14 @@
                }
                $(".district1 .options").html(html1);
 
-                $(".district_con").on("mousedown",function() {
+                $("body").on("mousedown",".district_con",function() {
                     var _this = $(this);
                     var optionhtml = _this.find("span").eq(0).html();
                     _this.closest(".options").prev().find("input").val(optionhtml);
+                    _this.closest(".options").css("height","0");
                 });
 
-
-
-
            });
-
-
-
-
-
 
    }) 
 </script>

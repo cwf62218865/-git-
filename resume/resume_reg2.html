@@ -136,7 +136,7 @@
 
 
         //设置下拉选择框
-        $("body").on("click",".general-select input",function(){
+        $("body").on("mousedown",".general-select input",function(){
             var _this=$(this);
             if(_this.closest(".general-select").next().height()=="0"){
                 $(".options").css("height","0px");

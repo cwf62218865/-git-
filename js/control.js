@@ -8,7 +8,7 @@ $(document).ready(function(){
         $(this).closest(".general-input").css("border-color","#1aa9d2");
     }).blur(function(){
         var _this=$(this);
-        $(this).closest(".general-input").css("border-color","#ddd");
+        $(this).closest(".general-input").css("border-color","#f5f5f5");
     });
 
 
@@ -329,7 +329,7 @@ $(".modalbtn").on("click",function(){
             }
         })
     });
-    $(".cwfreg4content").click(function(event){
+    $(".general-select").click(function(event){
         event.stopPropagation();
     });
 
