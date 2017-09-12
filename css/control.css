@@ -81,15 +81,16 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     z-index: 1000;
 }
 
-.options div{
+.options .select-option{
     border: 1px solid #ddd;
     background-color: #fff;
     border-top:none;
     height: 36px;
     line-height: 36px;
     width: 188px;
+    cursor: pointer;
 }
-.options div:hover{
+.options .select-option:hover{
     background-color: #1aa9d2;
     color: #fff;
 }
@@ -101,7 +102,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     z-index: 1;
     cursor: pointer;
 }
-.options div span{
+.select-option span{
     margin-left: 20px;
 }
 .relative input{

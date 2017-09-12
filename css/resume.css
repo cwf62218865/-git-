@@ -23,7 +23,7 @@ input::-webkit-input-placeholder{
 }
 .resume_step_circular{
     display: inline-block;
-    width: 45px;
+    width: 44px;
     height: 44px;
     background: url("../images/step_resume.png") no-repeat;
 }
@@ -101,6 +101,7 @@ input::-webkit-input-placeholder{
 .cwfreg3content{
     width:460px;
     margin-left: 60px;
+    height: 46px;
     padding-bottom: 20px;
 }
 .cwfre3inputleft{
@@ -147,6 +148,7 @@ input::-webkit-input-placeholder{
     margin-top: 20px;
     margin-bottom: 20px;
     cursor: pointer;
+    font-size: 16px;
 }
 .cwfgoingleft{
     margin-left: 30px;
@@ -159,5 +161,49 @@ input::-webkit-input-placeholder{
     color: #fff;
     width: 160px;
     text-align: center;
-
+}
+.cwfmonths{
+    width: 150px;
+    display: inline-block;
+    height: 151px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.cwfmonths span{
+    display: inline-block;
+    width: 30px;
+    height: 18px;
+    line-height: 18px;
+    padding: 10px;
+    float: left;
+    cursor: pointer;
+    white-space:nowrap
+}
+.cwfmonths span:hover{
+    background-color: #1aa9d2;
+    color: #fff;
+}
+.cwftimeoptions{
+    height: 151px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 80px;
+    display: inline-block;
+    float: left;
+    border-top:1px solid #ddd
+}
+.cwfdashed460{
+    display: inline-block;
+    width: 460px;
+    height: 20px;
+    border-top: 1px dashed #ccc;
+    margin-left: 60px;
+}
+.cwfdelexp{
+    color: #999;
+    cursor: pointer;
+    float: right;
+    height: 46px;
+    line-height: 46px;
+    margin-top: 10px;
 }
