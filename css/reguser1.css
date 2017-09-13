@@ -9,7 +9,7 @@
 .resume_content{
     position: relative;
 }
-.register_msg,.register2_msg{
+.register_msg,.register2_msg,.login_msg{
 position: absolute;
     background: #ffffff;
     box-shadow:-1px -1px 10px rgba(15,126,158,0.1), /*左边阴影*/
@@ -20,7 +20,7 @@ position: absolute;
 .register_msg{
     top: 218px;
 }
-.register2_msg{
+.register2_msg,.login_msg{
     top: 188px;
 }
 .register_msg{
@@ -35,7 +35,13 @@ position: absolute;
     margin-left: -290px;
     margin-bottom: 50px;
 }
-.msg_zj,.msgreg2_zj{
+.login_msg{
+    width: 480px;
+    height: 416px;
+    margin-left: -240px;
+    margin-bottom: 218px;
+}
+.msg_zj,.msgreg2_zj,.login_zj{
     margin: 0 auto;
     position: relative;
 }
@@ -43,9 +49,30 @@ position: absolute;
     width: 340px;
     height: 555px;
 }
+.loginn_zj .msg_zj{
+    width: 360px;
+    height: auto;
+}
 .msgreg2_zj{
     width: 460px;
     height: 315px;
+}
+.login_zj{
+    width: 360px;
+    height: 330px;
+}
+.loginn_zj .resume_step{
+    width: 426px;
+}
+.loginn_zj  .resume_step_progress{
+    width: 400px;
+}
+.loginn_zj .register_msg{
+    width: 480px;
+    height: 493px;
+    margin-left: -230px;
+    margin-bottom: 138px;
+
 }
 .msg_zj .img_tx{
     position: absolute;
@@ -77,6 +104,9 @@ position: absolute;
     overflow: hidden;
 
 }
+.loginn_zj .register_msg{
+    top: 188px;
+}
 .msg_zj  .icon2{
     width: 30px;
     height: 24px;
@@ -99,11 +129,93 @@ position: absolute;
     text-align: center;
     float: left;
 }
+.login_zj .title_zj{
+    width: 100%;
+    height: 96px;
+    line-height: 96px;
+    text-align: center;
+    float: left;
+}
+.login_zj .public_bigbtn{
+    padding: 0;
+    text-align: center;
+    letter-spacing:6px ;
+}
 .register_msg .title_zj{
     margin-top: 65px;
 }
+.loginn_zj .register_msg .title_zj{
+    margin-top: 40px;
+}
 .register2_msg .title_zj{
     margin-top: 30px;
+}
+
+.login_zj .general-input{
+    margin-left: 0px;
+}
+
+.login_zj  .forget{
+    height: 44px;
+    line-height: 44px;
+    text-align: right;
+    color: #0099cc;
+}
+.login_msg .foot_btns,.loginn_zj .register_msg .foot_btns{
+    width: 100%;
+    height: 86px;
+    background: #f5f5f5;
+}
+.foot_btns .con{
+    width:420px;
+    margin: 0 auto;
+    height: 86px;
+    line-height: 86px;
+}
+.foot_btns .con .icons{
+    width:30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    background: #bdc8d4;
+    display: inline-block;
+    margin-top: 28px;
+    border-radius: 50px;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+}
+.foot_btns .register{
+    width: 164px;
+    float: right;
+}
+.foot_btns .register .color, .color{
+    color: #0099cc;
+}
+.foot_btns .con .icons:nth-child(1):hover{
+    background: #22a4ff;
+}
+.foot_btns .con .icons:nth-child(2):hover{
+    background: #04b00f;
+}
+.foot_btns .con .icons:nth-child(3):hover{
+    background: #ff424f;
+}
+.foot_btns .con .icons:nth-child(4):hover{
+    background: #306fb7;
+}
+.foot_btns .con .icons .icon {
+    width: 16px; height: 16px;
+}
+.foot_btns .con .left{
+    margin-left: 26px;
+}
+.login_zj input{
+
+    background: #f5f5f5;
+}
+.login_zj .psw{
+    margin-top: 20px;
 }
 .radio_box{
     display: inline-block;
@@ -139,7 +251,11 @@ position: absolute;
     width: 160px;
     height: 43px;
     line-height: 43px;float: right;
-    margin-top: 25px;}
+    margin-top: 25px;
+}
+.loginn_zj .msg_zj .general-input{
+    margin-top: 20px;
+}
 .msg_zj .city1 .general-input input,.msg_zj .district1 .general-input input,.education input,.year input{
     position: absolute;
     z-index: 99;
@@ -162,7 +278,10 @@ position: absolute;
     width: 100%;
     float: left;
 }
-.msg_zj .wrap{
+.msg_zj .detail_zj{
+    margin-top: 40px;
+}
+.msg_zj .wrap,.login_zj .wrap{
     width: 100%;
 }
 .msg_zj .city1 .options{
@@ -171,9 +290,7 @@ position: absolute;
     top: 70px;
     overflow-y: auto;
 }
-.options{
-    /*background: #fff;*/
-}
+
 .msgreg2_zj  .options{
     width: 162px;
     left: 0px;
@@ -201,12 +318,77 @@ position: absolute;
     height: 48px;
     line-height: 48px;
 }
+.register_msg .title_step2{
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+    float: left;
+}
+.loginn_zj .msg_zj .public_bigbtn{
+    margin-top: 30px;
+}
 .msgreg2_zj .general-input{
     width: 160px;
     margin-left: 0;
 }
-.msg_zj .name{
+.msg_zj .name,.msg_zj .tel,.msg_zj .chema{
     float: left;
+}
+.msg_zj .tel,.msg_zj .chema{
+    width: 210px;
+}
+.msg_zj .name1,.loginn_zj .code{
+    width: 130px;
+}
+.step2_btns .icon{
+    position: absolute;
+    left: -18px;
+    width: 138px;
+    height: 138px;
+    fill: currentColor;
+    overflow: hidden;
+    cursor: pointer;
+    top: -18px;
+}
+.step2_btns{
+    width: 362px;
+    margin-top: 40px;
+    float: left;
+}
+.step2_btns .one_btn{
+    width: 100px;
+    height: 100px;
+    float: left;
+    position: relative;
+}
+.step2_btns  .pro1{
+    width: 120px;
+    height: 34px;
+    float: left;
+    margin-top: 20px;
+    text-align: center;
+}
+.step2_btns .one_btn:nth-child(2),.step2_btns .one_btn:nth-child(3){
+    margin-left: 30px;
+}
+
+.loginn_zj .code{
+    height: 43px;
+    line-height: 43px;
+    float: right;
+    margin-top: 20px;
+    text-align: center;
+    background: #bbbbbb;
+    color: #ffffff;
+    cursor: pointer;
+}
+.loginn_zj .click{
+    background: #e23d46;
+}
+.loginn_zj .zhucexieyi{
+    text-align: center;
+    margin-top:16px;
+    margin-bottom:30px ;
 }
 .msgreg2_zj .school,.msgreg2_zj .industry{
     width: 280px;
