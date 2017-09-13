@@ -131,6 +131,7 @@
        area=dsy.Items[0];
        var html="";
        $("body").on("mousedown",".general-select input",function(){
+           $(".options").css("height","0px");
            var _this=$(this);
            if(_this.closest(".general-select").next().height()=="0"){
                _this.closest(".general-select").next().css("height","185px");
