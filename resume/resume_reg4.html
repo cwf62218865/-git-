@@ -34,32 +34,50 @@
         <div class="resume_step">
             <div class="resume_stepbox">
             <span class="resume_step_circular">
-                <div class="resume_step_circular1 resume_step_ready"><span>1</span></div>
+                <div class="resume_step_circular1 resume_step_ready">
+                    <span>
+                    <svg class="icon icon_right" aria-hidden="true">
+                        <use xlink:href="#icon-zhengque1"></use>
+                    </svg>
+                </span>
+                </div>
             </span>
                 <p>基本信息</p>
             </div>
             <div class="resume_stepbox">
             <span class="resume_step_circular">
-                <div class="resume_step_circular1 resume_step_no"><span>2</span></div>
+                <div class="resume_step_circular1 resume_step_ready">
+                    <span>
+                    <svg class="icon icon_right" aria-hidden="true">
+                        <use xlink:href="#icon-zhengque1"></use>
+                    </svg>
+                </span>
+                </div>
             </span>
                 <p>教育经历</p>
             </div>
             <div class="resume_stepbox">
             <span class="resume_step_circular">
-                <div class="resume_step_circular1 resume_step_no"><span>3</span></div>
+                <div class="resume_step_circular1 resume_step_ready">
+                    <span>
+                    <svg class="icon icon_right" aria-hidden="true">
+                        <use xlink:href="#icon-zhengque1"></use>
+                    </svg>
+                </span>
+                </div>
             </span>
                 <p>工作经历</p>
             </div>
             <div class="resume_stepbox">
             <span class="resume_step_circular">
-                <div class="resume_step_circular1 resume_step_no"><span>4</span></div>
+                <div class="resume_step_circular1 resume_step_ready"><span>4</span></div>
             </span>
                 <p>一句话介绍</p>
             </div>
         </div>
 
         <div class="resume_step_progress">
-            <i class="resume_step_ready"></i>
+            <i class="resume_step_ready" style="width: 560px"></i>
         </div>
     </div>
 
@@ -73,7 +91,7 @@
         <div class="cwfreg4content">
 
             <!--名族-->
-            <div class=" relative general-select cwfre3inputleft" style="height: 46px;width: 110px;float: left">
+            <div class=" relative general-select cwfre3inputleft" style="height: 46px;width: 110px;float: left;border: none">
                 <label class="general-input relative general-select" style="margin-left: 0;width: 110px;border: none">
                     <input type="text" readonly value="汉族" style="width: 90px;padding-left: 20px;margin: 0;background-color: rgba(0,0,0,0);position: absolute;z-index: 10;top: 0px">
                     <svg class="icon inputicon colorbbb" aria-hidden="true">
@@ -88,7 +106,7 @@
             </div>
 
             <!--党籍-->
-            <div class=" relative general-select cwfre3inputleft" style="height: 46px;width: 110px;float: left;margin-left: 10px">
+            <div class=" relative general-select cwfre3inputleft" style="height: 46px;width: 110px;float: left;margin-left: 10px;border: none">
                 <label class="general-input relative general-select" style="margin-left: 0;width: 110px;border: none">
                     <input type="text" readonly value="团员" style="width: 90px;padding-left: 20px;margin: 0;background-color: rgba(0,0,0,0);position: absolute;z-index: 10;top: 0px">
                     <svg class="icon inputicon colorbbb" aria-hidden="true">
@@ -106,7 +124,7 @@
 
 
             <!--籍贯-->
-            <div class=" relative general-select cwfre3inputleft" style="height: 46px;width: 110px;float: left;margin-left: 10px">
+            <div class=" relative general-select cwfre3inputleft" style="height: 46px;width: 110px;float: left;margin-left: 10px;border: none">
                 <label class="general-input relative general-select" style="margin-left: 0;width: 110px;border: none">
                     <input type="text" readonly placeholder="籍贯" style="width: 90px;padding-left: 20px;margin: 0;background-color: rgba(0,0,0,0);position: absolute;z-index: 10;top: 0px">
                     <svg class="icon inputicon colorbbb" aria-hidden="true">
@@ -127,7 +145,7 @@
 
 
             <!--出生年月-->
-            <div class=" relative general-select cwfre3inputleft" style="height: 46px;width: 110px;float: right">
+            <div class=" relative general-select cwfre3inputleft" style="height: 46px;width: 110px;float: right;border: none">
                 <label class="general-input relative general-select" style="margin-left: 0;width: 110px;border: none">
                     <input type="text" readonly placeholder="出生年月" style="width: 90px;padding-left: 20px;margin: 0;background-color: rgba(0,0,0,0);position: absolute;z-index: 10;top: 0px">
                     <svg class="icon inputicon colorbbb" aria-hidden="true">
@@ -158,9 +176,29 @@
 
         </div>
 
+        <div class="cwfreg4content" style="height: 64px;border: 1px solid #f5f5f5;width: 468px;background-color: #f5f5f5">
+            <textarea class="cwftextarea" placeholder="一句话介绍自己，告诉我为什么选择您而不是别人"></textarea>
+        </div>
+
+        <div class="cwfreg4content " style="height: auto;margin-top: 20px;padding-bottom: 13px">
+            <span class="cwfseeexample">查看示例</span>
+            <span class="cwftextareamsg">还可输入<span id="textareanum" style="color: #1aa9d2">60</span>字</span>
+        </div>
+
+        <div class="cwfreg4content examplebox" style="height: 0;padding: 0;background-color: #fffdee;overflow: hidden">
+            <div class="cwfexamples">
+                <span class="cwfexamplenum">[示例一]</span>
+                <div>大学三年兼职设计公司，具有丰富的平面设计能力</div>
+            </div>
+            <div class="cwfexamples">
+                <span class="cwfexamplenum">[示例二]</span>
+                <div>大学三年兼职设计公司，具有丰富的平面设计能力</div>
+            </div>
+        </div>
+
         <div class="cwfgoing">
             <span class="cwfgoingleft">上一步</span>
-            <span class="cwfgoingright">创建完成！</span>
+            <span class="cwfgoingright ">创建完成！</span>
         </div>
 
     </div>

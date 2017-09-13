@@ -85,5 +85,66 @@ $(document).ready(function(){
     $('.cwftimeoptions').append(datetime_options);
 
 
+    var year="";
+
+    $('body').on("mousedown",".cwftimeoptions .select-option",function(){
+        var _this=$(this);
+        $(".select-option").each(function(){
+            var _that=$(this);
+            _that.css({'background-color':'#fff','color':'#333'})
+        });
+        _this.css({'background-color':'#1aa9d2','color':'#fff'})
+        var optionhtml=_this.find("span").eq(0).html();
+        _this.closest(".options").prev().find("input").val(optionhtml);
+        year=optionhtml;
+
+    });
+
+    $('body').on("mousedown",".cwfmonths span",function(){
+        var _this=$(this);
+        var timebox=_this.closest(".general-select").find("input").eq(0);
+        var month=parseInt(_this.html());
+        if(year.toString().length==4){
+            timebox.val(year+"."+month);
+            _this.closest(".options").css("height","0px");
+        }else{
+
+        };
+
+    });
+
+    $(".cwfreg4content textarea").focus(function(){
+        var _this=$(this);
+        $(this).closest(".cwfreg4content").css("border-color","#1aa9d2");
+    }).blur(function(){
+        var _this=$(this);
+        $(this).closest(".cwfreg4content").css("border-color","#f5f5f5");
+    });
+
+    //查看示例
+    $(".cwfseeexample").on("click",function(){
+        if($(".examplebox").eq(0).height()=="0"){
+            $(".examplebox").eq(0).css({"height":"auto","margin":"0 0 20px 60px","padding-bottom":"10px"});
+            $(".cwfseeexample").css("color","#1aa9d2").html("收起示例")
+        }else {
+            $(".examplebox").eq(0).css({"height":"0","margin":"0","padding-bottom":"0"});
+            $(".cwfseeexample").css("color","#999").html("查看示例")
+        }
+    })
+
+    //文本域输入数字显示
+    $(".cwftextarea").on("input",function(){
+        var content=$(this).val();
+        var contentlength=content.length;
+        var length=60;
+        var nowlength=length-contentlength;
+        if(nowlength>=0){
+            $("#textareanum").html(nowlength);
+        }else{
+            $(this).val(content.substring(0,length));
+        }
+
+    })
+
 
 })
