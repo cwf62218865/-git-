@@ -165,8 +165,11 @@
                     _this.closest(".options").prev().find("input").val(optionhtml);
                     _this.closest(".options").css("height","0");
                 });
-
            });
+       $(".msg_zj .radio_box").click(function () {
+           $(".msg_zj .radio_box").removeClass("radio_sec");
+           $(this).addClass("radio_sec");
+       })
 
    }) 
 </script>

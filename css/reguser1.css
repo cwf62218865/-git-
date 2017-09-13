@@ -67,6 +67,7 @@ position: absolute;
     top:0px;background: rgba(0,0,0,0.4);
     text-align: center;
     line-height: 110px;
+    cursor: pointer;
 }
 .msg_zj  .icon1 {
     width: 60px;
@@ -74,11 +75,19 @@ position: absolute;
     margin: 25px 25px;
     fill: currentColor;
     overflow: hidden;
+
 }
 .msg_zj  .icon2{
     width: 30px;
     height: 24px;
     color: #fff;
+}
+
+.icon_right{
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
 }
 .pic_photo{
     width: 100%;
@@ -162,6 +171,9 @@ position: absolute;
     top: 70px;
     overflow-y: auto;
 }
+.options{
+    /*background: #fff;*/
+}
 .msgreg2_zj  .options{
     width: 162px;
     left: 0px;
@@ -169,7 +181,7 @@ position: absolute;
     overflow-y: auto;
 }
 .msg_zj .options div,.msgreg2_zj  .options div{
-    width: 160px;
+    width: 162px;background: #fff;
 }
 .msg_zj .district1 .options{
     width: 162px;
