@@ -8,7 +8,7 @@
     <link href="../css/control.css" rel="stylesheet">
     <link href="../css/resume.css" rel="stylesheet">
     <link href="../css/reguser1.css" rel="stylesheet">
-    <title>简历填写</title>
+    <title>简历填写-完善基本信息</title>
 </head>
 <body>
 <div class="header">
@@ -148,6 +148,7 @@
            var optionhtml=_this.find("span").eq(0).html();
            _this.closest(".options").prev().find("input").val(optionhtml);
             _this.closest(".options").css("height","0");
+                $(".district1 input").val("");
                var city=$(this).attr("id");
                var len=city.length;
                var index=city.substring(4,len);

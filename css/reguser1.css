@@ -16,7 +16,12 @@ position: absolute;
     1px -1px 10px rgba(15,126,158,0.1), /*右边阴影*/
     0 12px 12px rgba(15,126,158,0.15); /*底边阴影*/
     left: 50%;
+}
+.register_msg{
     top: 218px;
+}
+.register2_msg{
+    top: 188px;
 }
 .register_msg{
     width:460px;
@@ -126,10 +131,14 @@ position: absolute;
     height: 43px;
     line-height: 43px;float: right;
     margin-top: 25px;}
-.msg_zj .general-input input{
-    width: 106px;
+.msg_zj .city1 .general-input input,.msg_zj .district1 .general-input input,.education input,.year input{
+    position: absolute;
+    z-index: 99;
+    width: 100px;
+    padding-right: 40px;
     overflow: hidden;
 }
+
 .msg_zj .general-input{
      margin-left: 0px;
 }
@@ -168,6 +177,9 @@ position: absolute;
     right: 0px;
     top: 210px;
     overflow-y: auto;
+}
+.radio_box{
+    cursor: pointer;
 }
 .msg_zj .public_bigbtn{
     margin-top: 25px;
@@ -240,7 +252,9 @@ position: absolute;
     float: left;
     height: 160px;
 }
-
+.next_step a,.next_step .next_btn,.inputicon{
+    cursor: pointer;
+}
 .register2_msg .cwfdashed460{
     margin-left: 0;
     height: 0;
