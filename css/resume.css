@@ -164,6 +164,9 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
     width: 160px;
     text-align: center;
 }
+.cwfgoingright:hover{
+    background-color: #289fd1
+}
 .cwfmonths{
     width: 150px;
     display: inline-block;
