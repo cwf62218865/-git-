@@ -66,8 +66,7 @@
         </div>
 
         <div class="resume_step_progress">
-            <i class="resume_step_ready"></i>
-            <i class="resume_step_ready" style="left: 92px"></i>
+            <i class="resume_step_ready" style="width: 285px"></i>
         </div>
 
 
@@ -146,6 +145,7 @@
         //设置下拉选择框
         $("body").on("mousedown",".general-select input",function(){
             var _this=$(this);
+            $(".options").css("height","0px");
             if(_this.closest(".general-select").next().height()=="0"){
                 $(".options").css("height","0px");
                 _this.closest(".general-select").next().css("height","185px");
