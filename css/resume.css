@@ -1,4 +1,4 @@
-input::-webkit-input-placeholder{
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
     color: #bbb;
 }
 .resume_content{
@@ -35,6 +35,7 @@ input::-webkit-input-placeholder{
     font-size: 16px;
     color: #fff;
     word-break: keep-all;
+    margin-top: 18px;
 }
 .resume_step_circular1{
     display: inline-block;
@@ -264,4 +265,33 @@ input::-webkit-input-placeholder{
 .cwfarea span:hover{
     background-color: #1aa9d2;
     color: #fff;
+}
+.cwftextarea{
+    margin-left: 20px;
+    margin-top: 14px;
+    height: 50px;
+    width: 428px;
+    border: none;
+    outline: none;
+    resize: none;
+    background-color: #f5f5f5;
+}
+.cwfseeexample{
+    color: #999;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.cwftextareamsg{
+    color: #999;
+    float: right;
+}
+.cwfexamples{
+    padding-top: 10px;
+    margin-left: 20px;
+    width: 430px;
+}
+.cwfexamplenum{
+    color: #999;
+    display: inline-block;
+    margin-bottom: 6px;
 }
