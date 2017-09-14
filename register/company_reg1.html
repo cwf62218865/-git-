@@ -63,6 +63,7 @@
                     <label class="general-input detail_zj" >
                         <input type="text" placeholder="企业登录用户名" id="conpany_username">
                     </label>
+                    <div class="chec_tip"></div>
                     <label class="general-input tel">
                         <input type="text" placeholder="联系人手机号码" id="mobie" onkeyup="value=value.replace(/[^\d]/g,'')">
                     </label>
@@ -70,16 +71,18 @@
                         <input type="text" placeholder="联系人姓名" id="res_name">
                     </label>
                     <div class="chec_tip">
-                        <div class="tips"><img class="tip_ico" src="../images/ico_error.png"> <span class="tip_msg">请输入姓名！</span></div>
+                        <div class="left_align"></div>
+                        <div class="right_align" style="width: 132px;"></div>
                     </div>
                     <label class="general-input chema left_align">
                         <input type="text" placeholder="请输入验证码" id="identify_code" onkeyup="value=value.replace(/[^\d]/g,'')">
                     </label>
                     <span class="code right_align">获取验证码</span>
+                    <div class="chec_tip"></div>
                     <label class="general-input password">
                         <input type="password" placeholder="请输入6-15位密码" id="password">
                     </label>
-
+                    <div class="chec_tip"></div>
                     <span class="public_bigbtn bg1aa wrap" id="reg_one">下一步：认证信息</span>
 
                 <div class="zhucexieyi">注册即代表你已同意<a href="" class="color">「秒猎用户协议」</a></div>
@@ -132,37 +135,49 @@
         var telphone_reg=/^1[3|4|7|8][0-9]\d{4,8}$/;
 
         $(".msg_zj .code").click(function () {
-            var conpany_username=$('#conpany_username').val();//公司用户名
-            var mobie=$("#mobie").val();//负责人电话
-            var res_name=$('#res_name').val();//联系人姓名
+            var conpany_username=$('#conpany_username').val();
+            var mobie=$("#mobie").val();
+            var res_name=$('#res_name').val();
+            var company_input=$("#conpany_username").closest(".general-input");
+            var mobie_input=$("#mobie").closest(".general-input");
+            var this_input=$("#mobie").closest(".general-input");
+            var resname_input=$("#res_name").closest(".general-input");
             if($.trim(conpany_username)==""){
-                $("#conpany_username").closest(".general-input").css("border-color","#e23d46");
+                company_input.css("border-color","#e23d46");
+                company_input.next().html(tipmsg("error","请输入企业登录用户名"));
                 return false;
-            };
+            }else{
+                company_input.next().html("");
+            }
             if($.trim(mobie)==""){
-                $("#mobie").closest(".general-input").css("border-color","#e23d46");
+                mobie_input.css("border-color","#e23d46");
+                $(".chec_tip .left_align").html(tipmsg("error","请输入手机号码"));
                 return false;
-            };
+            }else{
+                $(".chec_tip .left_align").html("");
+            }
             if(!(telphone_reg.test(mobie))){
-                var this_input=$("#mobie").closest(".general-input");
-                var wrap=this_input.attr("width");
-                this_input.next().after(tipmsg("error","请输入正确的手机号码"));
+                $(".chec_tip .left_align").html(tipmsg("error","请输入正确的手机号码"));
                 this_input.css("border-color","#e23d46");
                 return false;
+            }else{
+                $(".chec_tip .left_align").html("");
             }
             if($.trim(res_name)==""){
-                $("#res_name").closest(".general-input").css("border-color","#e23d46");
+                resname_input.css("border-color","#e23d46");
+                $(".chec_tip .right_align").html(tipmsg("error","请输入姓名"));
                 return false;
-            };
-            $(this).addClass("click");
+            }else{
+                $(".chec_tip .right_align").html("");
+            }
         });
 
         $("#reg_one").on("click",function(){
-            var conpany_username=$('#conpany_username').val();//公司用户名
-            var mobie=$("#mobie").val();//负责人电话
-            var res_name=$('#res_name').val();//联系人姓名
-            var identify_code=$("#identify_code").val();//验证码
-            var password=$("#password").val();//登录密码
+            var conpany_username=$('#conpany_username').val();
+            var mobie=$("#mobie").val();
+            var res_name=$('#res_name').val();
+            var identify_code=$("#identify_code").val();
+            var password=$("#password").val();
             if($.trim(conpany_username)==""){
                 $("#conpany_username").closest(".general-input").css("border-color","#e23d46");
                 return false;
