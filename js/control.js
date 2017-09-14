@@ -233,7 +233,7 @@ $(document).ready(function(){
         //});
 
         //提交动作
-        $(".modalbtn").on("click",function(){
+        $(".modalbtn1").on("click",function(){
             var inputs=$(".modalinput input");
             var data=new Array();
             for(var i=0;i<inputs.length;i++){
@@ -310,7 +310,7 @@ $(document).ready(function(){
     //正整数       ^[1-9]\\d*$
     //邮箱         ^([0-9A-Za-z\\-_\\.]+)@([0-9a-z]+\\.[a-z]{2,3}(\\.[a-z]{2})?)$
 
-$(".modalbtn").on("click",function(){
+$(".modalbtn1").on("click",function(){
     var title="标题内容"
     var option=[
         {title:"你的姓名：",name:"name",Verification:"",placeholder:"输入你的姓名"},

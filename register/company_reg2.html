@@ -43,7 +43,7 @@
                     </span>
                 </div>
             </span>
-                <p>填写手机号</p>
+                <p>企业注册</p>
             </div>
             <div class="resume_stepbox">
             <span class="resume_step_circular">
@@ -71,9 +71,11 @@
                 </label>
                 <div class="step2_btns">
                     <div class="one_btn btn1">
-                        <svg class="icon" aria-hidden="true">
+                        <svg class="icon" aria-hidden="true" style="display: none">
                             <use xlink:href="#icon-shangchuan"></use>
                         </svg>
+                        <img src="../images/timg22.png" class="rzpic"/>
+                        <div class="meng"><span>重新上传</span></div>
                     </div>
                     <div class="one_btn btn2">
                         <svg class="icon" aria-hidden="true">
@@ -116,7 +118,7 @@
                 <span>电脑上传</span>
                 <span>手机扫码上传</span>
             </div>
-            <span class="public_bigbtn bg1aa modalbtn">立即申请</span>
+            <span class="public_bigbtn bg1aa modalbtn">立即上传</span>
         </div>
     </div>
     <!--弹框end-->
@@ -130,12 +132,26 @@
 <script>
    $(function () {
         $(".btn1").click(function () {
+            $(".title_content").html("上传营业执照");
             $("#modalbox").animate({"opacity":1},300);
             setTimeout(function(){
                 $("#modalbox").css("display","block");
             },300)
-        })
-
+        });
+       $(".btn2").click(function () {
+           $(".title_content").html("上传身份证正面照");
+           $("#modalbox").animate({"opacity":1},300);
+           setTimeout(function(){
+               $("#modalbox").css("display","block");
+           },300)
+       });
+       $(".btn3").click(function () {
+           $(".title_content").html("上传身份证反面照");
+           $("#modalbox").animate({"opacity":1},300);
+           setTimeout(function(){
+               $("#modalbox").css("display","block");
+           },300)
+       });
 
        $(".modalclose").on("click",function(){
            $("#modalbox").animate({"opacity":0},300);

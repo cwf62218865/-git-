@@ -383,6 +383,23 @@ position: absolute;
     margin-top: 20px;
     height: 46px;
 }
+.register_msg .one_btn .rzpic{
+    height: 100px;
+    z-index: 999;
+    margin-left: -15px;
+}
+.register_msg .one_btn .meng{
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    color: #ffffff;
+    z-index: 1000;
+    background: rgba(0,0,0,0.4);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
 .loginn_zj .modalbox .title span{
     width: 100px;
     text-align: center;
@@ -404,6 +421,7 @@ position: absolute;
     height: 100px;
     float: left;
     position: relative;
+    overflow: hidden;
 }
 .step2_btns  .pro1{
     width: 120px;
