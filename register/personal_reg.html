@@ -32,48 +32,13 @@
 </div>
 <div class="resume_content loginn_zj">
     <div class="relative" style="width: 426px;margin: 0 auto">
-        <div class="resume_step">
-            <div class="resume_stepbox">
-            <span class="resume_step_circular">
-                <div class="resume_step_circular1 resume_step_ready"><span>1</span></div>
-            </span>
-                <p>企业注册</p>
-            </div>
-            <div class="resume_stepbox">
-            <span class="resume_step_circular">
-                <div class="resume_step_circular1 resume_step_no"><span>2</span></div>
-            </span>
-                <p>认证信息</p>
-            </div>
-            <div class="resume_stepbox">
-            <span class="resume_step_circular">
-                <div class="resume_step_circular1 resume_step_no"><span>3</span></div>
-            </span>
-                <p>完善信息</p>
-            </div>
-        </div>
-
-        <div class="resume_step_progress">
-            <i class="resume_step_ready"></i>
-        </div>
-
         <div class="register_msg">
             <div class="msg_zj">
-                    <div class="title_zj font_zj1" style="font-size: 16px">企业注册</div>
+                    <div class="title_zj font_zj1" style="font-size: 16px">用户注册</div>
                     <label class="general-input detail_zj" >
-                        <input type="text" placeholder="企业登录用户名" id="conpany_username">
+                        <input type="text" placeholder="请输入手机号码" id="mobie" maxlength="16">
                     </label>
                     <div class="chec_tip"></div>
-                    <label class="general-input tel">
-                        <input type="text" placeholder="联系人手机号码" id="mobie" onkeyup="value=value.replace(/[^\d]/g,'')" maxlength="15">
-                    </label>
-                    <label class="general-input name1 right_align" >
-                        <input type="text" placeholder="联系人姓名" id="res_name">
-                    </label>
-                    <div class="chec_tip1">
-                        <div class="left_align"></div>
-                        <div class="right_align" style="width: 132px;"></div>
-                    </div>
                     <label class="general-input chema left_align">
                         <input type="text" placeholder="请输入验证码" id="identify_code" onkeyup="value=value.replace(/[^\d]/g,'')">
                     </label>
@@ -83,7 +48,7 @@
                         <input type="password" placeholder="请输入6-15位密码" id="password" maxlength="15">
                     </label>
                     <div class="chec_tip"></div>
-                    <span class="public_bigbtn bg1aa wrap" id="reg_one">下一步：认证信息</span>
+                    <span class="public_bigbtn bg1aa wrap" id="reg_one">提交</span>
 
                 <div class="zhucexieyi">注册即代表你已同意<a href="" class="color">「秒猎用户协议」</a></div>
             </div>
@@ -128,19 +93,13 @@
 <script src="../js/iconfont.js" rel="script"></script>
 <script src="../js/control.js" rel="script"></script>
 <script>
-
-
     $(document).ready(function(){
-
         var telphone_reg=/^1[3|5|7|8][0-9]\d{8}$/;
         $(".general-input input").focus(function(){
             var _this=$(this);
             if(_this.closest(".general-input").css("borderColor")=="rgb(226, 61, 70)"){
-                _this.closest(".general-input").nextAll(".chec_tip").eq(0).html("");
-                _this.closest(".general-input").nextAll(".chec_tip1").eq(0).find(".left_align").html("");
-                _this.closest(".general-input").nextAll(".chec_tip1").eq(0).find(".right_align").html("");
+                _this.closest(".general-input").nextAll(".chec_tip").html("");
             }
-
         });
         $(".general-input #mobie").on("input",function(){
             var _this=$(this);
@@ -151,10 +110,7 @@
                 $(".msg_zj .code").removeClass("click");
             }
             _this.closest(".general-input").nextAll(".chec_tip").html("");
-            _this.closest(".general-input").nextAll(".chec_tip1").find(".left_align").html("");
-            _this.closest(".general-input").nextAll(".chec_tip1").find(".right_align").html("");
         });
-
 
         $("body").on("click",".msg_zj .click",function(){
             var time=60;
@@ -183,42 +139,45 @@
             })
         })
 
-        $("#reg_one").on("click",function(){
-            var conpany_username=$('#conpany_username').val();
+        var mobie_input=$("#mobie").closest(".general-input");
+        var code_input=$("#identify_code").closest(".general-input");
+        var password_input=$("#password").closest(".general-input");
+
+        $(".msg_zj .code").click(function () {
             var mobie=$("#mobie").val();
-            var res_name=$('#res_name').val();
+
+            if($.trim(mobie)==""){
+                mobie_input.css("border-color","#e23d46");
+                mobie_input.next().html(tipmsg("error","请输入手机号码"));
+                return false;
+            }
+            else if(!(telphone_reg.test(mobie))){
+                mobie_input.next().html(tipmsg("error","请输入正确的手机号码"));
+                mobie_input.css("border-color","#e23d46");
+                return false;
+            }else{
+                $(".chec_tip .left_align").html("");
+            }
+        });
+
+        $("#reg_one").on("click",function(){
+
+            var mobie=$("#mobie").val();
             var identify_code=$("#identify_code").val();
             var password=$("#password").val();
 
-            var company_input=$("#conpany_username").closest(".general-input");
-            var mobie_input=$("#mobie").closest(".general-input");
-            var resname_input=$("#res_name").closest(".general-input");
-            var code_input=$("#identify_code").closest(".general-input");
-            var password_input=$("#password").closest(".general-input");
-            if($.trim(conpany_username)==""){
-                company_input.css("border-color","#e23d46");
-                company_input.next().html(tipmsg("error","请输入企业登录用户名"));
-                return false;
-            }else{
-                company_input.next().html("");
-            }
+
             if($.trim(mobie)==""){
                 mobie_input.css("border-color","#e23d46");
-                $(".chec_tip1 .left_align").html(tipmsg("error","请输入手机号码"));
+                mobie_input.next().html(tipmsg("error","请输入手机号码"));
                 return false;
-            }else if(!(telphone_reg.test(mobie))){
-                $(".chec_tip1 .left_align").html(tipmsg("error","请输入正确的手机号码"));
+            }
+            else if(!(telphone_reg.test(mobie))){
+                mobie_input.next().html(tipmsg("error","请输入正确的手机号码"));
                 mobie_input.css("border-color","#e23d46");
                 return false;
             }else{
-                $(".chec_tip1 .left_align").html("");
-            }
-            if($.trim(res_name)==""){
-                resname_input.css("border-color","#e23d46");
-                $(".chec_tip1 .right_align").html(tipmsg("error","请输入姓名"));
-                return false;
-            }else{
-                $(".chec_tip1 .right_align").html("");
+                $(".chec_tip .left_align").html("");
             }
             if($.trim(identify_code)==""){
                 code_input.css("border-color","#e23d46");
@@ -230,7 +189,7 @@
                 code_input.css("border-color","#e23d46");
                 return false;
             }else{
-                code_input.nextAll(".chec_tip").eq(0).html("");
+                $(".chec_tip .left_align").html("");
             }
 
             if($.trim(password)==""){
@@ -245,14 +204,11 @@
             }else{
                 $(".chec_tip .left_align").html("");
             }
-
             $.ajax({
                 url:"",
                 type:"post",
                 data:{
-                    conpany_username:conpany_username,
                     mobie:mobie,
-                    res_name:res_name,
                     identify_code:identify_code,
                     password:password
                 },
@@ -265,9 +221,7 @@
                     }
                 }
             })
-
-        });
-
+        })
     })
 </script>
 </html>
