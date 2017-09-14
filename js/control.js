@@ -1,12 +1,23 @@
 /**
  * Created by zheng on 2017-09-01.
  */
+function tipmsg(pic,tip){
+    var html="";
+    html+="<div class='tips'><img class='tip_ico' src='../images/ico_"+pic+".png'> <span class='tip_msg'>"+tip+"</span></div> ";
+    return html;
+}
+
+//手机正则
+var telphone=/^1[3|4|7|8][0-9]\d{4,8}$/;
+var int=/^[1-9]\d*$/;
+var eamil=/^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$/;
+
+
 $(document).ready(function(){
 
-    //手机正则
-    var telphone=/^1[3|4|7|8][0-9]\d{4,8}$/;
-    var int=/^[1-9]\d*$/;
-    var eamil=/^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$/;
+
+
+
 
     //设置普通输入框的聚焦样式
     $(".general-input input").focus(function(){
