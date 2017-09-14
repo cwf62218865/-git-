@@ -130,10 +130,11 @@
        var area=new Array();
        area=dsy.Items[0];
        var html="";
-       $("body").on("mousedown",".general-select input",function(){
-           $(".options").css("height","0px");
+       $(".general-select input").on("mousedown",function(){
+
            var _this=$(this);
            if(_this.closest(".general-select").next().height()=="0"){
+               $(".options").css("height","0px");
                _this.closest(".general-select").next().css("height","185px");
            }else {
                _this.closest(".general-select").next().css("height","0px");
