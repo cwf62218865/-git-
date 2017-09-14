@@ -225,12 +225,12 @@ $(document).ready(function(){
 
 
         //关闭动作
-        $("body").on("click",".modalclose",function(){
-            $("#modalbox").animate({"opacity":0},300);
-            setTimeout(function(){
-                $("#modalbox").remove();
-            },300)
-        });
+        //$("body").on("click",".modalclose",function(){
+        //    $("#modalbox").animate({"opacity":0},300);
+        //    setTimeout(function(){
+        //        $("#modalbox").remove();
+        //    },300)
+        //});
 
         //提交动作
         $(".modalbtn").on("click",function(){

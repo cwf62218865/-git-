@@ -70,19 +70,19 @@
                     <input type="text" placeholder="请输入公司名称">
                 </label>
                 <div class="step2_btns">
-                    <div class="one_btn">
+                    <div class="one_btn btn1">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-shangchuan"></use>
                         </svg>
 
                     </div>
-                    <div class="one_btn">
+                    <div class="one_btn btn2">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-shangchuan"></use>
                         </svg>
 
                     </div>
-                    <div class="one_btn">
+                    <div class="one_btn btn3">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-shangchuan"></use>
                         </svg>
@@ -97,7 +97,20 @@
 
         </div>
     </div>
-    
+
+    <!--弹框-->
+    <div class="modalbox" id="modalbox" style="display: none;">
+        <div class="modal">
+            <h3>标题内容</h3>
+            <span class="modalclose">X</span>
+            <div class="modalcontent">
+
+
+            </div>
+            <span class="public_bigbtn bg1aa modalbtn">立即申请</span>
+        </div>
+    </div>
+    <!--弹框end-->
 </div>
 
 
@@ -107,7 +120,20 @@
 <script src="../js/control.js" rel="script"></script>
 <script>
    $(function () {
+        $(".btn1").click(function () {
+            $("#modalbox").animate({"opacity":1},300);
+            setTimeout(function(){
+                $("#modalbox").css("display","block");
+            },300)
+        })
 
+
+       $(".modalclose").on("click",function(){
+           $("#modalbox").animate({"opacity":0},300);
+           setTimeout(function(){
+               $("#modalbox").css("display","none");
+           },300)
+       });
 
    }) 
 </script>

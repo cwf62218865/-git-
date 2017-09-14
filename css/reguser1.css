@@ -70,7 +70,7 @@ position: absolute;
 .loginn_zj .register_msg{
     width: 480px;
     height: 493px;
-    margin-left: -230px;
+    margin-left: -240px;
     margin-bottom: 138px;
 
 }
@@ -159,6 +159,8 @@ position: absolute;
     height: 44px;
     line-height: 44px;
     text-align: right;
+}
+.login_zj  .forget a{
     color: #0099cc;
 }
 .login_msg .foot_btns,.loginn_zj .register_msg .foot_btns{
@@ -489,4 +491,12 @@ position: absolute;
     display: block;
     margin: 0 auto;
     margin-top: 50px;
+}
+.resume_content .login_msg input{
+    width: 322px;
+}
+.loginn_zj .modal{
+    top: 280px;
+    width: 430px;
+    height: 340px;
 }
