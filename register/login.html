@@ -13,7 +13,7 @@
 <body>
 <div class="header">
     <div class="width1200 align_center" style="padding-top: 14px;justify-content: space-between">
-        <img src="images/logo.png"/>
+        <img src="../images/logo.png"/>
         <div style="height: 52px;line-height: 52px"><span class="city">全国</span><span class="changecity">[切换]</span></div>
         <div class="menu">
             <a href="#" class="menuactive">首页</a>
@@ -35,16 +35,16 @@
     <div class="login_msg">
         <div class="login_zj">
 
-            <div class="title_zj font_zj1">基本信息</div>
+            <div class="title_zj " style="font-size: 16px">账户登录</div>
 
             <label class="general-input wrap" >
-                <input type="text" placeholder="请输入您的手机号码/用户名">
+                <input type="text" id="user_name" placeholder="请输入您的手机号码/用户名">
             </label>
             <label class="general-input wrap psw" >
-                <input type="password" placeholder="请输入密码">
+                <input type="password" id="password" placeholder="请输入密码">
             </label>
             <div class="wrap forget"><a href="">忘记密码？</a></div>
-            <span class="public_bigbtn bg1aa wrap">登录</span>
+            <span class="public_bigbtn bg1aa wrap" id="login">登录</span>
         </div>
         <div class="foot_btns">
             <div class="con">
@@ -85,4 +85,35 @@
 <script src="../js/jquery.js" rel="script"></script>
 <script src="../js/iconfont.js" rel="script"></script>
 <script src="../js/control.js" rel="script"></script>
+<script>
+    $(document).ready(function(){
+        $("#login").on("click",function(){
+            var username=$('#user_name').val();//用户名
+            var password=$("#password").val();//密码
+            if($.trim(username)==""){
+                $("#user_name").closest(".general-input").css("border-color","#e23d46");
+                return false;
+            };
+            if(password.length==0){
+                $("#password").closest(".general-input").css("border-color","#e23d46");
+                return false;
+            };
+            $.ajax({
+                url:"",
+                type:"post",
+                data:{
+                    user_name:username,
+                    password:password
+                },
+                success:function(data){
+                    if(data.status==1){
+                        window.location.href="";
+                    }else{
+                        console.log(data.content);
+                    }
+                }
+            })
+        })
+    })
+</script>
 </html>
