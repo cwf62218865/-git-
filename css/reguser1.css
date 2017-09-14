@@ -342,7 +342,7 @@ position: absolute;
 .msg_zj .name1,.loginn_zj .code{
     width: 130px;
 }
-.step2_btns .icon{
+.step2_btns .icon,.modalbox .one_btn .icon{
     position: absolute;
     left: -18px;
     width: 138px;
@@ -352,12 +352,54 @@ position: absolute;
     cursor: pointer;
     top: -18px;
 }
+.loginn_zj .modal_con{
+    width: 276px;
+    height: 100px;
+    margin-top: 60px;
+    margin-left: 77px;
+}
+.erweima .pic{
+    width: 100px;
+    height: 100px;
+}
+.modal_con .erweima{
+    width: 100px;
+    height: 100px;
+    float: right;
+}
+.loginn_zj .modalbox .title{
+    width: 276px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 77px;
+}
+.loginn_zj .title_content{
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+.loginn_zj .modalbox .modalbtn{
+    margin-top: 20px;
+    height: 46px;
+}
+.loginn_zj .modalbox .title span{
+    width: 100px;
+    text-align: center;
+    display: inline-block;
+}
+.loginn_zj .modalbox .title span:nth-child(1){
+    float: left;
+}
+.loginn_zj .modalbox .title span:nth-child(2){
+    float: right;
+}
 .step2_btns{
     width: 362px;
     margin-top: 40px;
     float: left;
 }
-.step2_btns .one_btn{
+.step2_btns .one_btn,.modalbox .one_btn{
     width: 100px;
     height: 100px;
     float: left;
