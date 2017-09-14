@@ -268,7 +268,7 @@ position: absolute;
     width: 92px;
 }
 .chec_tip{
-    width: 132px;
+    width: 100%;
     float: right;
     border: 1px solid red;
 }
