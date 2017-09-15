@@ -75,11 +75,11 @@
                     <div class="title_zj font_zj1">教育经历</div>
                 <div class="zjaddexp">
                     <label class="general-input left_align school">
-                        <input type="text" placeholder="学校名称" id="school_name">
+                        <input type="text" placeholder="学校名称" class="school_name">
                     </label>
                     <div class=" relative general-select right_align education">
                         <label class="general-input relative general-select">
-                            <input type="text" readonly="" value="本科" id="edu_district">
+                            <input type="text" readonly="" value="本科" class="edu_district">
                             <svg class="icon inputicon" aria-hidden="true">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
                             </svg>
@@ -98,11 +98,11 @@
                         <div class="right_align" style="width: 160px;"></div>
                     </div>
                 <label class="general-input industry">
-                    <input type="text" placeholder="所学专业" id="edu_major">
+                    <input type="text" placeholder="所学专业" class="edu_major">
                 </label>
                     <div class=" relative general-select right_align year">
                         <label class="general-input relative general-select" >
-                            <input type="text" readonly="" value="" placeholder="毕业时间" id="edu_finish_time">
+                            <input type="text" readonly="" value="" placeholder="毕业时间" class="edu_finish_time">
                             <svg class="icon inputicon" aria-hidden="true">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
                             </svg>
@@ -189,39 +189,61 @@
             }
         })
 
+
+        $(".edu_finish_time").on("click",function(){
+            $(this).closest(".year").next().find(".right_align").html("");
+        })
+
+        $("body").on("click",".edu_finish_time",function(){
+            $(this).closest(".year").next().find(".right_align").html("");
+        })
+
         $("#edu_submit_next_step").click(function(){
-            var school_name=$("#school_name").val();
-            var edu_district=$("#edu_district").val();
-            var edu_major=$("#edu_major").val();
-            var edu_finish_time=$("#edu_finish_time").val();
+            var explength=$(".zjaddexp").length;
+            var eud_data=new Array();
+            for(var i=0;i<explength;i++){
+                var school_name=$(".school_name").eq(i).val();
+                var edu_district=$(".edu_district").eq(i).val();
+                var edu_major=$(".edu_major").eq(i).val();
+                var edu_finish_time=$(".edu_finish_time").eq(i).val();
 
-            var school_input=$("#school_name").closest(".general-input");
-            var major_input=$("#edu_major").closest(".general-input");
+                var school_input=$(".school_name").eq(i).closest(".general-input");
+                var major_input=$(".edu_major").eq(i).closest(".general-input");
+                var finish_input=$(".edu_finish_time").eq(i).closest(".general-input");
+                var finish_border=$(".edu_finish_time").eq(i).closest(".year");
 
-            if(school_name==""){
-                school_input.css("border-color","#e23d46");
-                school_input.next().next().find(".left_align").html(tipmsg("error","请输入学校名称"));
-                return false;
-            }else{
-                school_input.next().next().find(".left_align").html("");
-            }
-            if(edu_major==""){
-                major_input.css("border-color","#e23d46");
-                major_input.next().next().find(".left_align").html(tipmsg("error","请输入所学专业"));
-                return false;
-            }else{
-                major_input.next().next().find(".left_align").html("");
+                if(school_name==""){
+                    school_input.css("border-color","#e23d46");
+                    school_input.next().next().find(".left_align").html(tipmsg("error","请输入学校名称"));
+                    return false;
+                }else{
+                    school_input.next().next().find(".left_align").html("");
+                }
+                if(edu_major==""){
+                    major_input.css("border-color","#e23d46");
+                    major_input.next().next().find(".left_align").html(tipmsg("error","请输入所学专业"));
+                    return false;
+                }else{
+                    major_input.next().next().find(".left_align").html("");
+                }
+
+                if(edu_finish_time==""){
+                    finish_input.css("border-color","#e23d46");
+                    finish_border.next().find(".right_align").html(tipmsg("error","请选择毕业时间"));
+                    return false;
+                }
+                eud_data[i]=new Array();
+                eud_data[i].school_name=school_name;
+                eud_data[i].edu_district=edu_district;
+                eud_data[i].edu_major=edu_major;
+                eud_data[i].edu_finish_time=edu_finish_time;
+
             }
 
             $.ajax({
                 url:"",
                 type:"post",
-                data:{
-                    school_name:school_name,
-                    edu_district:edu_district,
-                    edu_major:edu_major,
-                    edu_finish_time:edu_finish_time,
-                },
+                data:eud_data,
                 success:function(data){
                     if(data.status==1){
                         window.location.href="";

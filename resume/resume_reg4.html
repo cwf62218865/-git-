@@ -9,6 +9,7 @@
     <link href="../css/resume.css" rel="stylesheet">
     <title>简历填写</title>
 </head>
+
 <body>
 <div class="header">
     <div class="width1200 align_center" style="padding-top: 14px;justify-content: space-between">
@@ -92,13 +93,13 @@
 
             <!--名族-->
             <div class=" relative general-select cwfre3inputleft" style="height: 46px;width: 110px;float: left;border: none">
-                <label class="general-input relative general-select" style="margin-left: 0;width: 110px;border: none">
-                    <input type="text" readonly value="汉族" style="width: 90px;padding-left: 20px;margin: 0;background-color: rgba(0,0,0,0);position: absolute;z-index: 10;top: 0px">
+                <label class="general-input relative general-select" style="margin-left: 0;width: 108px">
+                    <input type="text" readonly id="family_name" value="汉族" style="width: 90px;padding-left: 20px;margin: 0;background-color: rgba(0,0,0,0);position: absolute;z-index: 10;top: 0px">
                     <svg class="icon inputicon colorbbb" aria-hidden="true">
                         <use xlink:href="#icon-xiala"></use>
                     </svg>
                 </label>
-                <div class="options" style="left: 0;width: 110px;top: 44px">
+                <div class="options" style="left: 0;width: 110px;top: 48px">
                     <div class="cwfnationaloptions">
 
                     </div>
@@ -107,13 +108,13 @@
 
             <!--党籍-->
             <div class=" relative general-select cwfre3inputleft" style="height: 46px;width: 110px;float: left;margin-left: 10px;border: none">
-                <label class="general-input relative general-select" style="margin-left: 0;width: 110px;border: none">
-                    <input type="text" readonly value="团员" style="width: 90px;padding-left: 20px;margin: 0;background-color: rgba(0,0,0,0);position: absolute;z-index: 10;top: 0px">
+                <label class="general-input relative general-select" style="margin-left: 0;width: 108px">
+                    <input type="text" readonly id="identity" value="团员" style="width: 90px;padding-left: 20px;margin: 0;background-color: rgba(0,0,0,0);position: absolute;z-index: 10;top: 0px">
                     <svg class="icon inputicon colorbbb" aria-hidden="true">
                         <use xlink:href="#icon-xiala"></use>
                     </svg>
                 </label>
-                <div class="options" style="left: 0;width: 110px;top: 44px">
+                <div class="options" style="left: 0;width: 110px;top: 48px">
                     <div class="cwfoptions_reg4" >
                         <div class='select-option' style='width: 108px'><span>团员</span></div>
                         <div class='select-option' style='width: 108px'><span>党员</span></div>
@@ -125,14 +126,14 @@
 
             <!--籍贯-->
             <div class=" relative general-select cwfre3inputleft" style="height: 46px;width: 110px;float: left;margin-left: 10px;border: none">
-                <label class="general-input relative general-select" style="margin-left: 0;width: 110px;border: none">
-                    <input type="text" readonly placeholder="籍贯" style="width: 90px;padding-left: 20px;margin: 0;background-color: rgba(0,0,0,0);position: absolute;z-index: 10;top: 0px">
+                <label class="general-input relative general-select" style="margin-left: 0;width: 108px">
+                    <input type="text" readonly id="place" placeholder="籍贯" style="width: 90px;padding-left: 20px;margin: 0;background-color: rgba(0,0,0,0);position: absolute;z-index: 10;top: 0px">
                     <svg class="icon inputicon colorbbb" aria-hidden="true">
                         <use xlink:href="#icon-xiala"></use>
                     </svg>
                 </label>
 
-                <div class="options" style="left: 0;width: 242px;top: 44px">
+                <div class="options" style="left: 0;width: 242px;top: 48px">
                     <div class="cwfcityoptions">
 
                     </div>
@@ -145,14 +146,14 @@
 
 
             <!--出生年月-->
-            <div class=" relative general-select cwfre3inputleft" style="height: 46px;width: 110px;float: right;border: none">
-                <label class="general-input relative general-select" style="margin-left: 0;width: 110px;border: none">
-                    <input type="text" readonly placeholder="出生年月" style="width: 90px;padding-left: 20px;margin: 0;background-color: rgba(0,0,0,0);position: absolute;z-index: 10;top: 0px">
+            <div class=" relative general-select cwfre3inputleft" style="height: 46px;width: 110px;display: inline-block;margin-left: 10px;border: none">
+                <label class="general-input relative general-select" style="margin-left: 0;width: 108px;">
+                    <input type="text" readonly id="birthday" placeholder="出生年月" style="width: 90px;padding-left: 20px;margin: 0;background-color: rgba(0,0,0,0);position: absolute;z-index: 10;top: 0px">
                     <svg class="icon inputicon colorbbb" aria-hidden="true">
                         <use xlink:href="#icon-xiala"></use>
                     </svg>
                 </label>
-                <div class="options" style="left: 0;width: 242px;top: 44px">
+                <div class="options" style="left: 0;width: 242px;top: 48px">
                     <div class="cwftimeoptions">
 
                     </div>
@@ -174,10 +175,15 @@
                 </div>
             </div>
 
+            <div class="cwf_tip">
+            </div>
         </div>
 
+
         <div class="cwfreg4content" style="height: 64px;border: 1px solid #f5f5f5;width: 468px;background-color: #f5f5f5">
-            <textarea class="cwftextarea" placeholder="一句话介绍自己，告诉我为什么选择您而不是别人"></textarea>
+            <textarea class="cwftextarea" id="introduce" placeholder="一句话介绍自己，告诉我为什么选择您而不是别人"></textarea>
+        </div>
+        <div class="cwf_tip1">
         </div>
 
         <div class="cwfreg4content " style="height: auto;margin-top: 20px;padding-bottom: 13px">
@@ -198,7 +204,7 @@
 
         <div class="cwfgoing">
             <span class="cwfgoingleft">上一步</span>
-            <span class="cwfgoingright ">创建完成！</span>
+            <span class="cwfgoingright" id="finished">创建完成！</span>
         </div>
 
     </div>
@@ -211,4 +217,57 @@
 <script src="../js/control.js" rel="script"></script>
 <script src="../js/area.js" rel="script"></script>
 <script src="../js/resume_reg4.js" rel="script"></script>
+<script>
+    $(document).ready(function(){
+        $("#finished").on("click",function(){
+            var family_name=$("#family_name").val();//名族
+            var identity=$("#identity").val();//身份
+            var place=$("#place").val();//籍贯
+            var birthday=$("#birthday").val();//出生日期
+            var introduce=$("#introduce").val();//介绍
+
+
+            if($.trim(place)==""){
+                var input_box=$("#place").closest(".general-input");
+                input_box.css("border-color","#e23d46");
+                $(".cwf_tip").eq(0).html(tipmsg("error","请选择籍贯"));
+                return false;
+            }
+            if($.trim(birthday)==""){
+                var input_box=$("#birthday").closest(".general-input");
+                input_box.css("border-color","#e23d46");
+                $(".cwf_tip").eq(0).html(tipmsg("error","请选择生日"));
+                return false;
+            }
+
+            if($.trim(introduce)==""){
+                var input_box=$("#introduce").closest(".cwfreg4content");
+                input_box.css("border-color","#e23d46");
+                $(".cwf_tip1").eq(0).html(tipmsg("error","请介绍下自己"));
+                return false;
+            }
+
+
+            $.ajax({
+                url:"",
+                type:"post",
+                data:{
+                    family_name:family_name,
+                    identity:identity,
+                    place:place,
+                    birthday:birthday,
+                    introduce:introduce
+                },
+                success:function(data){
+                    if(data.status==1){
+                        window.location.href="";
+                    }else{
+                        console.log(data.content);
+                    }
+                }
+            })
+
+        })
+    })
+</script>
 </html>

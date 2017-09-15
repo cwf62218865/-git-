@@ -13,7 +13,7 @@ var inttest=/^[1-9]\d*$/;
 var eamiltest=/^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$/;
 
 //聚焦时红色提示消失，呈输入状态。
-$(".general-input input").focus(function(){
+$(".general-input input").on("focus",function(){
     var _this=$(this);
     if(_this.closest(".general-input").css("borderColor")=="rgb(226, 61, 70)"){
         _this.closest(".general-input").nextAll(".chec_tip").eq(0).html("");
@@ -22,18 +22,44 @@ $(".general-input input").focus(function(){
     }
 });
 
+$("body").on("focus",".general-input input",function(){
+    var _this=$(this);
+    if(_this.closest(".general-input").css("borderColor")=="rgb(226, 61, 70)"){
+        _this.closest(".general-input").nextAll(".chec_tip").eq(0).html("");
+        _this.closest(".general-input").nextAll(".chec_tip1").eq(0).find(".left_align").html("");
+        _this.closest(".general-input").nextAll(".chec_tip1").eq(0).find(".right_align").html("");
+    }
+});
+
+//设置普通输入框的聚焦样式
+$(".general-input input").on("focus",function(){
+    var _this=$(this);
+    $(this).closest(".general-input").css("border-color","#1aa9d2");
+});
+
+$(".general-input input").on("blur",function(){
+    var _this=$(this);
+    $(this).closest(".general-input").css("border-color","#f5f5f5");
+});
+
+$("body").on("focus",".general-input input",function(){
+    var _this=$(this);
+    $(this).closest(".general-input").css("border-color","#1aa9d2");
+});
+
+$("body").on("blur",".general-input input",function(){
+    var _this=$(this);
+    $(this).closest(".general-input").css("border-color","#f5f5f5");
+});
+
 
 $(document).ready(function(){
 
 
-    //设置普通输入框的聚焦样式
-    $(".general-input input").focus(function(){
-        var _this=$(this);
-        $(this).closest(".general-input").css("border-color","#1aa9d2");
-    }).blur(function(){
-        var _this=$(this);
-        $(this).closest(".general-input").css("border-color","#f5f5f5");
-    });
+
+
+
+
 
 
 
