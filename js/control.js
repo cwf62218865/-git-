@@ -12,6 +12,16 @@ var telphone=/^1[3|4|7|8][0-9]\d{4,8}$/;
 var int=/^[1-9]\d*$/;
 var eamil=/^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$/;
 
+//聚焦时红色提示消失，呈输入状态。
+$(".general-input input").focus(function(){
+    var _this=$(this);
+    if(_this.closest(".general-input").css("borderColor")=="rgb(226, 61, 70)"){
+        _this.closest(".general-input").nextAll(".chec_tip").eq(0).html("");
+        _this.closest(".general-input").nextAll(".chec_tip1").eq(0).find(".left_align").html("");
+        _this.closest(".general-input").nextAll(".chec_tip1").eq(0).find(".right_align").html("");
+    }
+});
+
 
 $(document).ready(function(){
 
@@ -27,6 +37,7 @@ $(document).ready(function(){
         var _this=$(this);
         $(this).closest(".general-input").css("border-color","#f5f5f5");
     });
+
 
 
 

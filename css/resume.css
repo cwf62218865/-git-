@@ -172,7 +172,7 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
 .cwfmonths{
     width: 150px;
     display: inline-block;
-    height: 151px;
+    height: 147px;
     background-color: #fff;
     border: 1px solid #ddd;
 }
@@ -191,7 +191,7 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
     color: #fff;
 }
 .cwftimeoptions{
-    height: 151px;
+    height: 147px;
     overflow-y: auto;
     overflow-x: hidden;
     width: 80px;
@@ -217,11 +217,15 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
 }
 .cwfnationaloptions,.cwfoptions_reg4{
     width: 110px;
-    height: 240px;
+}
+.cwfnationaloptions{
     overflow-y: auto;
     overflow-x: hidden;
-    border-top:1px solid #ddd;
+    height: 147px;
     border-bottom:1px solid #ddd;
+}
+.cwfoptions_reg4{
+    height: 112px;
 }
 .cwfresume_reg4{
     width: 590px;
@@ -240,7 +244,7 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
     padding-bottom: 20px;
 }
 .cwfcityoptions{
-    height: 151px;
+    height: 147px;
     overflow-y: auto;
     overflow-x: hidden;
     width: 120px;
@@ -252,7 +256,7 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
 .cwfarea{
     width: 120px;
     display: inline-block;
-    height: 151px;
+    height: 147px;
     background-color: #fff;
     border: 1px solid #ddd;
     overflow-y: auto;

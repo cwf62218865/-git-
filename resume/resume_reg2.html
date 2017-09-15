@@ -75,11 +75,11 @@
                     <div class="title_zj font_zj1">教育经历</div>
                 <div class="zjaddexp">
                     <label class="general-input left_align school">
-                        <input type="text" placeholder="学校名称">
+                        <input type="text" placeholder="学校名称" id="school_name">
                     </label>
                     <div class=" relative general-select right_align education">
                         <label class="general-input relative general-select">
-                            <input type="text" readonly="" value="本科">
+                            <input type="text" readonly="" value="本科" id="edu_district">
                             <svg class="icon inputicon" aria-hidden="true">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
                             </svg>
@@ -93,12 +93,16 @@
                             <div class="select-option"><span>专科以下</span> </div>
                         </div>
                     </div>
+                    <div class="chec_tip1">
+                        <div class="left_align"></div>
+                        <div class="right_align" style="width: 160px;"></div>
+                    </div>
                 <label class="general-input industry">
-                    <input type="text" placeholder="所学专业">
+                    <input type="text" placeholder="所学专业" id="edu_major">
                 </label>
                     <div class=" relative general-select right_align year">
                         <label class="general-input relative general-select" >
-                            <input type="text" readonly="" value="" placeholder="毕业时间">
+                            <input type="text" readonly="" value="" placeholder="毕业时间" id="edu_finish_time">
                             <svg class="icon inputicon" aria-hidden="true">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
                             </svg>
@@ -110,6 +114,10 @@
                             <div class="select-option"><span>土木工程</span> </div>
                         </div>
                     </div>
+                    <div class="chec_tip1">
+                        <div class="left_align"></div>
+                        <div class="right_align" style="width: 160px;"></div>
+                    </div>
                 </div>
                 <div class="cwfreg3content"   id="addexp">
                     <span class="cwfaddexp">添加更多经历</span>
@@ -117,7 +125,7 @@
             </div>
             <div class="next_step">
                 <div class="prev left_align font_2"><a>上一步</a></div>
-                <div class="next_btn left_align font_2">下一步，工作经历</div>
+                <div class="next_btn left_align font_2" id="edu_submit_next_step">下一步，工作经历</div>
             </div>
         </div>
     </div>
@@ -146,7 +154,6 @@
         $("body").on("mousedown",".general-select input",function(){
             var _this=$(this);
             if(_this.closest(".general-select").next().height()=="0"){
-
                 $(".options").css("height","0px");
                 _this.closest(".general-select").next().css("height","185px");
             }else {
@@ -154,7 +161,6 @@
             }
         });
         $("body").on("mousedown",".select-option",function(){
-
                 var _this=$(this);
                 var optionhtml=_this.find("span").eq(0).html();
                 _this.closest(".options").prev().find("input").val(optionhtml);
@@ -181,6 +187,32 @@
                 $(".msgreg2_zj .cwfaddexp").css("width","100%");
                 $(".cwfdelexp").remove();
             }
+        })
+
+        $("#edu_submit_next_step").click(function(){
+            var school_name=$("#school_name").val();
+            var edu_district=$("#edu_district").val();
+            var edu_major=$("#edu_major").val();
+            var edu_finish_time=$("#edu_finish_time").val();
+
+            var school_input=$("#school_name").closest(".general-input");
+            var major_input=$("#edu_major").closest(".general-input");
+
+            if(school_name==""){
+                school_input.css("border-color","#e23d46");
+                school_input.next().next().find(".left_align").html(tipmsg("error","请输入学校名称"));
+                return false;
+            }else{
+                school_input.next().next().find(".left_align").html("");
+            }
+            if(edu_major==""){
+                major_input.css("border-color","#e23d46");
+                major_input.next().next().find(".left_align").html(tipmsg("error","请输入所学专业"));
+                return false;
+            }else{
+                major_input.next().next().find(".left_align").html("");
+            }
+
         })
     })
 </script>
