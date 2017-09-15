@@ -8,9 +8,9 @@ function tipmsg(pic,tip){
 }
 
 //手机正则
-var telphone=/^1[3|4|7|8][0-9]\d{4,8}$/;
-var int=/^[1-9]\d*$/;
-var eamil=/^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$/;
+var telphonetest=/^1[3|5|7|8][0-9]\d{8}$/;
+var inttest=/^[1-9]\d*$/;
+var eamiltest=/^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$/;
 
 //聚焦时红色提示消失，呈输入状态。
 $(".general-input input").focus(function(){
