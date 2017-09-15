@@ -377,7 +377,7 @@ position: absolute;
 .msg_zj .tel,.msg_zj .chema{
     width: 210px;
 }
-.msg_zj .name1,.loginn_zj .code{
+.msg_zj .name1,.loginn_zj .code,.find_psw .code{
     width: 130px;
 }
 .step2_btns .icon,.modalbox .one_btn .icon{
@@ -475,7 +475,7 @@ position: absolute;
     margin-left: 30px;
 }
 
-.loginn_zj .code{
+.loginn_zj .code,.find_psw .code{
     height: 43px;
     line-height: 43px;
     float: right;
@@ -485,7 +485,7 @@ position: absolute;
     color: #ffffff;
     cursor: pointer;
 }
-.loginn_zj .click{
+.loginn_zj .click,.find_psw .click{
     background: #e23d46;
 }
 .loginn_zj .zhucexieyi{
@@ -745,8 +745,57 @@ position: absolute;
 .reg3_zj  .hangye .zjwidth_d1{
     width: 90px;
 }
-#set_password{
+#find_password_tel,#find_password_email{
     margin-top: 30px;
+    margin-bottom: 20px;
+    letter-spacing: 0;
+}
+.find_psw .yanzhengma{
+    width: 210px;
+    margin-top: 20px;
+}
+.find_psw .yanzhengma input{
+    width: 170px;
+}
+.forgetpsw_title{
+    display: inline-block;
+    width: 180px;
+    float: left;
+    text-align: center;
+    border-bottom: 1px solid #eeeeee;
+    height: 30px;
+    line-height: 16px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+.xuanzhong{
+    background: url(../images/selcet_psw.png)no-repeat bottom;
+    border-bottom: none;
+    color: #0099cc;
+}
+#return_login_tel,#return_login_email{
+    display: inline-block;
+    width: 100px;
+    margin-left: 130px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #0099cc;
+    cursor: pointer;
+}
+.bind_tip{
+    color: #bbbbbb;width: 100%;text-align: center;margin-bottom: 40px;display: block;
+}
+.bind_line1{
+    font-size: 16px;
+    color: #666666;
+    text-align: center;
+    margin-bottom: 16px;
+}
+.bind_line2{
+    font-size: 14px;
+    color: #bbbbbb;
+    text-align: center;
     margin-bottom: 40px;
 }
 
