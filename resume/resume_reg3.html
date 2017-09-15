@@ -7,6 +7,7 @@
     <link href="../css/header.css" rel="stylesheet">
     <link href="../css/control.css" rel="stylesheet">
     <link href="../css/resume.css" rel="stylesheet">
+    <link href="../css/reguser1.css" rel="stylesheet">
     <title>简历填写</title>
 </head>
 <body>
@@ -87,12 +88,19 @@
                 <label class="general-input cwfre3inputright" >
                     <input type="text" placeholder="职位">
                 </label>
+                <div class="chec_tip1">
+                    <div class="left_align"></div>
+                    <div class="right_align" style="width: 160px;"></div>
+                </div>
             </div>
 
             <div class="cwfreg3content">
                 <label class="general-input cwfre3inputleft" style="width:460px">
                     <input type="text" placeholder="离职原因" style="width: 420px">
                 </label>
+                <div class="chec_tip1">
+                    <div class="left_align"></div>
+                </div>
             </div>
 
             <div class="cwfreg3content">
@@ -153,6 +161,10 @@
 
                     </div>
                 </div>
+                <div class="chec_tip1">
+                    <div class="left_align"></div>
+                    <div class="right_align" style="width: 160px;"></div>
+                </div>
             </div>
 
 
@@ -166,7 +178,7 @@
 
         <div class="cwfgoing">
             <span class="cwfgoingleft">上一步</span>
-            <span class="cwfgoingright">最后一步：介绍自己</span>
+            <span class="cwfgoingright" id="work_submit_next_step">最后一步：介绍自己</span>
         </div>
 
     </div>
@@ -178,4 +190,12 @@
 <script src="../js/iconfont.js" rel="script"></script>
 <script src="../js/control.js" rel="script"></script>
 <script src="../js/resume_reg3.js" rel="script"></script>
+<script>
+    $(document).ready(function(){
+        $("#work_submit_next_step").click(function(){
+
+        });
+
+    });
+</script>
 </html>

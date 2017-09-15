@@ -533,6 +533,7 @@ position: absolute;
 }
 .register2_msg .zjaddexp{
     float: left;
+    margin-bottom: 20px;
 }
 .next_step a,.next_step .next_btn,.inputicon{
     cursor: pointer;
@@ -546,7 +547,6 @@ position: absolute;
 .register2_msg .cwfreg3content{
     margin-left: 0;
     float: left;
-    margin-top: 20px;
 }
 .rout .routzj{
     height: 820px;

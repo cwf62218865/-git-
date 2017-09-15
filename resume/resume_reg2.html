@@ -213,6 +213,24 @@
                 major_input.next().next().find(".left_align").html("");
             }
 
+            $.ajax({
+                url:"",
+                type:"post",
+                data:{
+                    school_name:school_name,
+                    edu_district:edu_district,
+                    edu_major:edu_major,
+                    edu_finish_time:edu_finish_time,
+                },
+                success:function(data){
+                    if(data.status==1){
+                        window.location.href="";
+                    }else{
+                        console.log(data.content);
+                    }
+                }
+            })
+
         })
     })
 </script>
