@@ -146,5 +146,21 @@ $(document).ready(function(){
 
     })
 
+    $(".general-select input").on("click",function(){
+        var isremove=0;
+        $("input").each(function(){
+            var _this=$(this);
+            if(_this.closest(".general-select").css("border-color")=="rgb(226, 61, 70)"){
+                isremove=1;
+            }
+        })
+        if(isremove==0){
+            $(".cwf_tip").html("");
+        }
+    })
+    $("#introduce").on("click",function(){
+        $(".cwf_tip1").html("");
+    })
+
 
 })
