@@ -14,7 +14,7 @@
 <div class="header">
     <div class="width1200 align_center" style="padding-top: 14px;justify-content: space-between">
         <img src="../images/logo.png"/>
-        <div><span class="city">全国</span><span class="changecity">[切换]</span></div>
+        <div style="height: 52px;line-height: 52px"><span class="city">全国</span><span class="changecity">[切换]</span></div>
         <div class="menu">
             <a href="#" class="menuactive">首页</a>
             <a  href="#">找工作</a>
@@ -79,17 +79,23 @@
                     <span class="radio_box radio_sec font_zj1">我是男生</span>
                     <span class="radio_box font_zj1 right_align">我是女生</span>
                     <label class="general-input name">
-                        <input type="text" placeholder="姓名">
+                        <input type="text" id="user_name" style="width: 120px" placeholder="姓名">
                     </label>
+
                     <label class="general-input right_align" >
-                        <input type="text" placeholder="13888888888">
+                        <input type="text" id="telphone" style="width: 120px" placeholder="13888888888">
                     </label>
+                    <div class="chec_tip1">
+                        <div class="left_align"></div>
+                        <div class="right_align" style="width: 162px;"></div>
+                    </div>
                     <label class="general-input email_zj" >
-                        <input type="text" placeholder="邮箱">
+                        <input type="text" id="email" style="width: 300px" placeholder="邮箱">
                     </label>
+                    <div class="chec_tip"></div>
                     <div class=" relative general-select left_align city1">
                         <label class="general-input relative general-select">
-                            <input type="text" readonly="" value="" placeholder="现居城市">
+                            <input type="text" readonly="" id="city" value="重庆市">
                             <svg class="icon inputicon" aria-hidden="true">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
                             </svg>
@@ -99,19 +105,19 @@
                     </div>
                     <div class=" relative general-select district1">
                         <label class="general-input relative general-select" >
-                            <input type="text" readonly="" value="" placeholder="区县">
+                            <input type="text" readonly="" id="city_area" value="渝中区">
                             <svg class="icon inputicon" aria-hidden="true">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
                             </svg>
                         </label>
                         <div class="options" style="height: 0px;">
-                            <div class="select-option"><span>请选择城市</span></div>
+
                         </div>
                     </div>
                     <label class="general-input detail_zj" >
-                        <input type="text" placeholder="详细地址（选填）">
+                        <input type="text" id="address" placeholder="详细地址（选填）">
                     </label>
-                    <span class="public_bigbtn bg1aa wrap">下一步：完善教育信息</span>
+                    <span class="public_bigbtn bg1aa wrap" id="post_next">下一步：完善教育信息</span>
             </div>
         </div>
     </div>
@@ -139,6 +145,7 @@
                 <span>电脑上传</span>
                 <span>手机扫码上传</span>
             </div>
+            <input type='file' name='file' id='file' accept='image/*' style="display: none">
             <span class="public_bigbtn bg1aa modalbtn">立即上传</span>
         </div>
     </div>
@@ -151,73 +158,78 @@
 
 </body>
 <script src="../js/jquery.js" rel="script"></script>
+<script src="../js/ajaxfileupload.js" rel="script"></script>
 <script src="../js/iconfont.js" rel="script"></script>
 <script src="../js/control.js" rel="script"></script>
 <script src="../js/area.js" rel="script"></script>
+<script src="../js/resume_reg1.js" rel="script"></script>
 <script>
    $(function () {
-       //提取省市内容
-       var area=new Array();
-       area=dsy.Items[0];
-       var html="";
-       $(".general-select input").on("mousedown",function(){
 
-           var _this=$(this);
-           if(_this.closest(".general-select").next().height()=="0"){
-               $(".options").css("height","0px");
-               _this.closest(".general-select").next().css("height","185px");
-           }else {
-               _this.closest(".general-select").next().css("height","0px");
-           }
+       //上传文件
+       $('.one_btn .icon').on('click',function(){
+           var file=$("#file");
+           file.click();
+           file.on('change',function(e){
 
-       })
-       for(var i=0;i<area.length;i++){
-           html+="<div class='select-option city_con ' id='city"+i+"'><span>"+area[i]+"</span></div>";
-       }
-       $(".city1 .options").html(html);
-       $("body").on("mousedown",".city_con",function(){
-           var _this=$(this);
-           var optionhtml=_this.find("span").eq(0).html();
-           _this.closest(".options").prev().find("input").val(optionhtml);
-            _this.closest(".options").css("height","0");
-                $(".district1 input").val("");
-               var city=$(this).attr("id");
-               var len=city.length;
-               var index=city.substring(4,len);
-               var area1=dsy.Items['0_'+index];
-               var html1="";
-               for(var i=0;i<area1.length;i++){
-                   html1+="<div class='select-option district_con'><span>"+area1[i]+"</span></div>";
-               }
-               $(".district1 .options").html(html1);
-
-                $("body").on("mousedown",".district_con",function() {
-                    var _this = $(this);
-                    var optionhtml = _this.find("span").eq(0).html();
-                    _this.closest(".options").prev().find("input").val(optionhtml);
-                    _this.closest(".options").css("height","0");
-                });
+               var imgfile=this.files[0];
+               var src=URL.createObjectURL(imgfile);
+               var uploadsuccesspic="<img style='height:100px' src='"+src+"'>"
+               $('.one_btn').html(uploadsuccesspic);
+               //uploadFile(this,'file');
            });
-       $(".msg_zj .radio_box").click(function () {
-           $(".msg_zj .radio_box").removeClass("radio_sec");
-           $(this).addClass("radio_sec");
+           function uploadFile(obj, type) {
+
+               $.ajaxFileUpload({
+                   url : "http://localhost:8081/ws2/servlet/fileUpload",
+                   secureuri : false,// 一般设置为false
+                   fileElementId :type,// 文件上传表单的id <input type="file" id="fileUpload" name="file" />
+                   dataType : 'json',// 返回值类型 一般设置为json
+                   data: {'type': type, "type2":2},
+                   success : function(data) // 服务器成功响应处理函数
+                   {
+
+                   },
+                   error : function(data)// 服务器响应失败处理函数
+                   {
+                       console.log("服务器异常");
+                   }
+               });
+               return false;
+           };
        })
 
 
-       $(".img_con").click(function () {
-           $(".title_content").html("上传头像");
-           $("#modalbox").animate({"opacity":1},300);
-           setTimeout(function(){
-               $("#modalbox").css("display","block");
-           },0)
-       });
 
-       $(".modalclose").on("click",function(){
-           $("#modalbox").animate({"opacity":0},300);
-           setTimeout(function(){
-               $("#modalbox").css("display","none");
-           },300)
-       });
+$("#post_next").on("click",function(){
+    var headimgurl=$(".img_tx img").eq(0).attr("src");//头像
+    var sex="1";//1男，0女
+    if($(".radio_sec").html()=="我是女生"){
+        var sex="0"
+    }else{
+        var sex="1"
+    }
+    var user_name=$("#user_name").val();//用户名
+    var telphone=$("#telphone").val();//电话
+    var city=$("#city").val();//省市
+    var city_area=$("#city_area").val();//二级城市
+    var address=$("#address").val();//地址
+
+    if($.trim(user_name)==""){
+        var input_box=$("#user_name").closest(".general-input");
+        input_box.css("border-color","#e23d46");
+        $(".chec_tip1 .left_align").eq(0).html(tipmsg("error","请输入用户名"));
+        return false;
+    }
+
+    if($.trim(telphone)==""){
+        var input_box=$("#telphone").closest(".general-input");
+        input_box.css("border-color","#e23d46");
+        $(".chec_tip1 .right_align").html(tipmsg("error","请输入电话号码"));
+        return false;
+    }
+})
+
 
    }) 
 </script>

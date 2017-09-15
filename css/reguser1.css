@@ -437,8 +437,8 @@ position: absolute;
     float: left;
 }
 .step2_btns .one_btn,.modalbox .one_btn{
-    width: 100px;
-    height: 100px;
+    width: 103.5px;
+    height: 103.5px;
     float: left;
     position: relative;
     overflow: hidden;
@@ -578,5 +578,4 @@ position: absolute;
 .loginn_zj .modal{
     top: 280px;
     width: 430px;
-    height: 340px;
 }
