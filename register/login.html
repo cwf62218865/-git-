@@ -40,9 +40,11 @@
             <label class="general-input wrap" >
                 <input type="text" id="user_name" placeholder="请输入您的手机号码/用户名">
             </label>
+            <div class="chec_tip"></div>
             <label class="general-input wrap psw" >
                 <input type="password" id="password" placeholder="请输入密码">
             </label>
+            <div class="chec_tip"></div>
             <div class="wrap forget"><a href="">忘记密码？</a></div>
             <span class="public_bigbtn bg1aa wrap" id="login">登录</span>
         </div>
@@ -87,15 +89,27 @@
 <script src="../js/control.js" rel="script"></script>
 <script>
     $(document).ready(function(){
+
+        $(".general-input input").focus(function(){
+            var _this=$(this);
+            if(_this.closest(".general-input").css("borderColor")=="rgb(226, 61, 70)"){
+                _this.closest(".general-input").nextAll(".chec_tip").html("");
+            }
+        });
+
+
+
         $("#login").on("click",function(){
             var username=$('#user_name').val();//用户名
             var password=$("#password").val();//密码
             if($.trim(username)==""){
                 $("#user_name").closest(".general-input").css("border-color","#e23d46");
+                $("#user_name").closest(".general-input").next().html(tipmsg("error","请输入用户名"));
                 return false;
             };
-            if(password.length==0){
+            if(password.length<6){
                 $("#password").closest(".general-input").css("border-color","#e23d46");
+                $("#password").closest(".general-input").next().html(tipmsg("error","请输入6-15位密码"));
                 return false;
             };
             $.ajax({

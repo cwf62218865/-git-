@@ -36,7 +36,6 @@ position: absolute;
 }
 .login_msg{
     width: 480px;
-    height: 416px;
     margin-left: -240px;
     margin-bottom: 218px;
 }
@@ -154,7 +153,6 @@ position: absolute;
 }
 
 .login_zj  .forget{
-    height: 44px;
     line-height: 44px;
     text-align: right;
 }

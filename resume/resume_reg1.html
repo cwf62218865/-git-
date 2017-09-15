@@ -30,7 +30,7 @@
         </div>
     </div>
 </div>
-<div class="resume_content">
+<div class="resume_content ">
     <div class="relative" style="width: 620px;margin: 0 auto">
         <div class="resume_step">
             <div class="resume_stepbox">
@@ -115,7 +115,37 @@
             </div>
         </div>
     </div>
-    
+
+
+
+    <!--弹框-->
+    <div class="modalbox loginn_zj" id="modalbox" style="display: none;">
+        <div class="modal">
+            <p class="title_content">标题内容</p>
+            <span class="modalclose">
+                <img src="../images/close.png"/>
+            </span>
+            <div class="modal_con">
+                <div class="one_btn">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-shangchuan"></use>
+                    </svg>
+                </div>
+                <div class="erweima">
+                    <img src="../images/erweima.png" class="pic"/>
+                </div>
+            </div>
+            <div class="title">
+                <span>电脑上传</span>
+                <span>手机扫码上传</span>
+            </div>
+            <span class="public_bigbtn bg1aa modalbtn">立即上传</span>
+        </div>
+    </div>
+    <!--弹框end-->
+
+
+
 </div>
 
 
@@ -172,6 +202,22 @@
            $(".msg_zj .radio_box").removeClass("radio_sec");
            $(this).addClass("radio_sec");
        })
+
+
+       $(".img_con").click(function () {
+           $(".title_content").html("上传头像");
+           $("#modalbox").animate({"opacity":1},300);
+           setTimeout(function(){
+               $("#modalbox").css("display","block");
+           },0)
+       });
+
+       $(".modalclose").on("click",function(){
+           $("#modalbox").animate({"opacity":0},300);
+           setTimeout(function(){
+               $("#modalbox").css("display","none");
+           },300)
+       });
 
    }) 
 </script>
