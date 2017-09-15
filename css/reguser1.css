@@ -366,13 +366,13 @@ position: absolute;
 }
 .step2_btns .icon,.modalbox .one_btn .icon{
     position: absolute;
-    left: -18px;
+    left: -19px;
     width: 138px;
     height: 138px;
     fill: currentColor;
     overflow: hidden;
     cursor: pointer;
-    top: -18px;
+    top: -19px;
 }
 .loginn_zj .modal_con{
     width: 276px;
@@ -410,7 +410,7 @@ position: absolute;
     z-index: 999;
     margin-left: -15px;
 }
-.register_msg .one_btn .meng{
+.one_btn .meng{
     width: 100px;
     height: 100px;
     line-height: 100px;
@@ -421,6 +421,9 @@ position: absolute;
     position: absolute;
     left: 0;
     top: 0;
+}
+.one_btn .one_btn,.one_btn .meng{
+    cursor: pointer;
 }
 .loginn_zj .modalbox .title span{
     width: 100px;
