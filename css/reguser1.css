@@ -53,11 +53,15 @@ position: absolute;
 }
 .msgreg2_zj{
     width: 460px;
-    height: 315px;
+    height: auto;
 }
 .login_zj{
     width: 360px;
-    height: 330px;
+    height: auto;
+}
+.login_zj #login{
+    display: block;
+    margin-bottom: 20px;
 }
 .loginn_zj .resume_step{
     width: 426px;
@@ -529,7 +533,6 @@ position: absolute;
 }
 .register2_msg .zjaddexp{
     float: left;
-    height: 160px;
 }
 .next_step a,.next_step .next_btn,.inputicon{
     cursor: pointer;
@@ -542,6 +545,8 @@ position: absolute;
 
 .register2_msg .cwfreg3content{
     margin-left: 0;
+    float: left;
+    margin-top: 20px;
 }
 .rout .routzj{
     height: 820px;
@@ -582,4 +587,14 @@ position: absolute;
     top: 280px;
     width: 430px;
     height: 340px;
+}
+#choosefile{
+    position: absolute;
+    display: block;
+    height: 100px;
+    width: 100px;
+    opacity: 0; filter:Alpha(opacity=0)
+}
+.school input,.industry input{
+    width: 242px;
 }

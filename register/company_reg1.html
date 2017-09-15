@@ -89,27 +89,7 @@
             </div>
             <div class="foot_btns">
                 <div class="con">
-                <a class="icons">
-                    <svg class="icon" aria-hidden="true" style="color: #ffffff">
-                        <use xlink:href="#icon-qq"></use>
-                    </svg>
-                </a>
-                <a class="icons left">
-                    <svg class="icon" aria-hidden="true" style="color: #ffffff">
-                        <use xlink:href="#icon-weixin"></use>
-                    </svg>
-                </a>
-                <a class="icons left">
-                    <svg class="icon" aria-hidden="true" style="color: #ffffff">
-                        <use xlink:href="#icon-weibo"></use>
-                    </svg>
-                </a>
-                <a class="icons left">
-                    <svg class="icon" aria-hidden="true" style="color: #ffffff">
-                        <use xlink:href="#icon-baidu"></use>
-                    </svg>
-                </a>
-                    <div class="register font_zj1">
+                    <div class="register font_zj1" style="width: 100%;text-align: center;">
                         已有账号：<a href=""><span class="color">立即登录</span>
                         <svg class="icon" aria-hidden="true" style="color: #ffffff;">
                             <use xlink:href="#icon-youjiantou"></use>
@@ -128,20 +108,11 @@
 <script src="../js/iconfont.js" rel="script"></script>
 <script src="../js/control.js" rel="script"></script>
 <script>
-
-
     $(document).ready(function(){
 
         var telphone_reg=/^1[3|5|7|8][0-9]\d{8}$/;
-        $(".general-input input").focus(function(){
-            var _this=$(this);
-            if(_this.closest(".general-input").css("borderColor")=="rgb(226, 61, 70)"){
-                _this.closest(".general-input").nextAll(".chec_tip").eq(0).html("");
-                _this.closest(".general-input").nextAll(".chec_tip1").eq(0).find(".left_align").html("");
-                _this.closest(".general-input").nextAll(".chec_tip1").eq(0).find(".right_align").html("");
-            }
 
-        });
+        //验证码按钮效果
         $(".general-input #mobie").on("input",function(){
             var _this=$(this);
             var mobie=$("#mobie").val();
