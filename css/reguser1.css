@@ -47,9 +47,17 @@ position: absolute;
     width: 340px;
     height: 555px;
 }
-.loginn_zj .msg_zj{
+.loginn_zj .msg_zj,.reg3_zj{
     width: 360px;
     height: auto;
+}
+
+.reg3_zj .general-input{
+    width: 170px;
+    margin-left: 0px;
+}
+.reg3_zj{
+    margin: 0 auto;
 }
 .msgreg2_zj{
     width: 460px;
@@ -307,8 +315,14 @@ position: absolute;
     width: 322px;
 }
 
-.msg_zj .wrap,.login_zj .wrap{
+.msg_zj .wrap,.login_zj .wrap,.wrap{
     width: 100%;
+}
+#upload_laststep{
+    text-align: center;
+    padding: 0;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 .msg_zj .city1 .options{
     width: 162px;
@@ -538,6 +552,9 @@ position: absolute;
 .next_step a,.next_step .next_btn,.inputicon{
     cursor: pointer;
 }
+.title_step2{
+    font-size: 16px;
+}
 .register2_msg .cwfdashed460{
     margin-left: 0;
     height: 0;
@@ -599,3 +616,137 @@ position: absolute;
 .school input,.industry input{
     width: 242px;
 }
+.reg3_zj .options{
+    width: 172px;
+    left: 0;
+    top:68px;
+}
+.reg3_zj .options .select-option {
+    width: 170px;
+}
+.reg3_zj .general-input input{
+    width: 150px;
+    position: absolute;
+    z-index: 99;
+}
+.zjbq{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+}
+.zjbiaoqian{
+    width: 174px;
+    float: right;
+}
+.zjbiaoqian input{
+    width: 96px;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #dddddd;
+    font-size: 12px;
+    outline: none;
+}
+.zjtianjia{
+    float: right;
+    width: 54px;
+    height: 30px;
+    background: #0099cc;
+    border: 1px solid #0099cc;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+.zjflbq{
+    text-align: center;
+    display: inline-block;
+    float: left;
+    border: 1px solid #0099cc;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 13px;
+    font-size: 12px;
+    color: #0099cc;
+    margin-left: 12px;
+    cursor: pointer;
+}
+.bqselect{
+    color: #fff;
+    background:#0099cc;
+}
+.zjbiaoqian_wrap{
+    width: 388px;
+    margin-left: -14px;
+}
+.zjflbq:nth-child(1),.zjflbq:nth-child(6){
+    margin-left: 0;
+}
+.zjflbq:nth-child(6),.zjflbq:nth-child(7),.zjflbq:nth-child(8),.zjflbq:nth-child(9),.zjflbq:nth-child(10){
+    margin-top: 15px;
+}
+.zjwidth2{
+    width: 48px;
+}
+.zjwidth3{
+    width: 58px;
+}
+.zjwidth4{
+    width: 68px;
+}
+.zjwidth5{
+    width: 78px;
+}
+.reg3_zj .general-input{
+    margin-top: 20px;
+}
+.zjfulibq,.zjbiaoqian_wrap{
+    margin-top: 30px;
+}
+.reg3_zj  .hangye{
+    width: 360px;
+    height: auto;
+    background: #fff;
+    box-shadow:-1px -1px 6px rgba(0,0,0,0.1), /*左边阴影*/
+    1px -1px 6px rgba(0,0,0,0.1), /*右边阴影*/
+    0 1px 6px rgba(0,0,0,0.1); /*底边阴影*/
+}
+.reg3_zj .hangye_con span{
+    margin-left: 0;
+}
+.reg3_zj  .hangye .select-option{
+    display: inline-block;
+    width: 70px;
+    font-size: 12px;
+    border-radius: 13px;
+    height: 24px;
+    line-height: 24px;
+    margin-top: 20px;
+    margin-left: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+.reg3_zj  .hangye .select-option:nth-child(1),
+.reg3_zj  .hangye .select-option:nth-child(2),
+.reg3_zj  .hangye .select-option:nth-child(3),
+.reg3_zj  .hangye .select-option:nth-child(4){
+    margin-top: 0;
+}
+.reg3_zj  .hangye .select-option:nth-child(1),
+.reg3_zj  .hangye .select-option:nth-child(5),
+.reg3_zj  .hangye .select-option:nth-child(9),
+.reg3_zj  .hangye .select-option:nth-child(13){
+    margin-left: 0;
+}
+.hangye_con{
+    width: 340px;
+    margin:30px auto;
+}
+.reg3_zj  .hangye .zjwidth_d1{
+    width: 90px;
+}
+#set_password{
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+

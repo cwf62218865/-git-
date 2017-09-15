@@ -26,9 +26,6 @@ $(".general-input input").focus(function(){
 $(document).ready(function(){
 
 
-
-
-
     //设置普通输入框的聚焦样式
     $(".general-input input").focus(function(){
         var _this=$(this);
