@@ -75,3 +75,37 @@ input {
     margin-left: 14px;
     color: #999;
 }
+.chec_tip,.chec_tip1{
+    width: 100%;
+    float: right;
+}
+.tips{
+    float: left;
+    width: 100%;
+    height: 16px;
+    line-height: 16px;
+    margin-top: 10px;
+    display: block;
+}
+.tip_msg{
+    margin-left: 12px;
+    font-size: 12px;
+    vertical-align: top;
+}
+.modalbox .title {
+    width: 276px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 77px;
+}
+.modalbox .title span:nth-child(1) {
+    float: left;
+}
+.modalbox .title span:nth-child(2) {
+    float: right;
+}
+.modalbox .title span {
+    width: 100px;
+    text-align: center;
+    display: inline-block;
+}
