@@ -444,8 +444,8 @@ position: absolute;
     float: left;
 }
 .step2_btns .one_btn,.modalbox .one_btn{
-    width: 100px;
-    height: 100px;
+    width: 103.5px;
+    height: 103.5px;
     float: left;
     position: relative;
     overflow: hidden;
@@ -547,6 +547,7 @@ position: absolute;
 .register2_msg .cwfreg3content{
     margin-left: 0;
     float: left;
+    margin-top: 20px;
 }
 .rout .routzj{
     height: 820px;
