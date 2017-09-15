@@ -63,37 +63,44 @@
             <i class="resume_step_ready" style="width: 290px;"></i>
         </div>
 
-        <div class="register_msg" style="height: 438px;margin-bottom: 196px">
+        <div class="register_msg" style="margin-bottom: 196px">
             <div class="msg_zj">
                 <div class="title_step2">认证信息</div>
                 <label class="general-input detail_zj" >
-                    <input type="text" placeholder="请输入公司名称">
+                    <input type="text" id="company_name" placeholder="请输入公司名称">
                 </label>
+                <div class="chec_tip1">
+
+                </div>
                 <div class="step2_btns">
                     <div class="one_btn btn1">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-shangchuan"></use>
-                        </svg>
-                        <div class="upload" style="display: block">
+                        <div class="upload" >
                         <img src="../images/timg22.png" class="rzpic"/>
                         <div class="meng btn1"><span>重新上传</span></div>
                         </div>
                     </div>
                     <div class="one_btn btn2">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-shangchuan"></use>
-                        </svg>
+                        <div class="upload" >
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shangchuan"></use>
+                            </svg>
+                        </div>
                     </div>
                     <div class="one_btn btn3">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-shangchuan"></use>
-                        </svg>
+                        <div class="upload" >
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shangchuan"></use>
+                            </svg>
+                        </div>
                     </div>
                     <p class="pro1" style="width: 100px;">营业执照</p>
                     <p class="pro1" style="margin-left: 20px;">法人身份证(正面)</p>
                     <p class="pro1" style="text-align: right;">法人身份证(反面)</p>
                 </div>
-                    <span class="public_bigbtn bg1aa wrap">最后一步：补全资料</span>
+                <div class="chec_tip1">
+
+                </div>
+                    <span class="public_bigbtn bg1aa wrap" id="uploadcompany_pic">最后一步：补全资料</span>
             </div>
 
         </div>
@@ -117,7 +124,7 @@
                     <div class="meng" id="reupload_rz"><span>重新上传</span></div>
                     </div>
                 </div>
-                <input type="file" id="choosefile"/>
+                <input type="file" id="choosefile"  accept='image/*'/>
                 <div class="erweima">
                     <img src="../images/erweima.png" class="pic"/>
                 </div>
@@ -135,11 +142,17 @@
 
 </body>
 <script src="../js/jquery.js" rel="script"></script>
+<script src="../js/ajaxfileupload.js" rel="script"></script>
 <script src="../js/iconfont.js" rel="script"></script>
 <script src="../js/control.js" rel="script"></script>
 <script>
    $(function () {
+
+
+
+       var boxbum="";
         $(".btn1").click(function () {
+            boxbum=1;
             $(".title_content").html("上传营业执照");
             $("#modalbox").animate({"opacity":1},300);
             setTimeout(function(){
@@ -147,6 +160,7 @@
             },300)
         });
        $(".btn2").click(function () {
+           boxbum=2;
            $(".title_content").html("上传身份证正面照");
            $("#modalbox").animate({"opacity":1},300);
            setTimeout(function(){
@@ -154,6 +168,7 @@
            },300)
        });
        $(".btn3").click(function () {
+           boxbum=3;
            $(".title_content").html("上传身份证反面照");
            $("#modalbox").animate({"opacity":1},300);
            setTimeout(function(){
@@ -167,6 +182,89 @@
                $("#modalbox").css("display","none");
            },300)
        });
+
+
+       $('#choosefile').on('change',function(e){
+           var imgfile=this.files[0];
+           var src=URL.createObjectURL(imgfile);
+           var uploadimg="<img style='width:100%' src='"+src+"'>";
+            $(this).prev().html(uploadimg);
+
+           //uploadFile(this,'file');
+       });
+       var  uploadFile=function(obj, type,boxbum) {
+
+           $.ajaxFileUpload({
+               url : "http://localhost:8081/ws2/servlet/fileUpload",
+               secureuri : false,// 一般设置为false
+               fileElementId :type,// 文件上传表单的id <input type="file" id="fileUpload" name="file" />
+               dataType : 'json',// 返回值类型 一般设置为json
+               data: {'type': type, "type2":2},
+               success : function(data) // 服务器成功响应处理函数
+               {
+                   var data=JSON.parse(data);
+                   if(data.status==1){
+                       $(".btn"+boxbum).find("img").eq(0).attr("src",data.content)
+                       $(".chec_tip1").eq(1).html("");
+                   }
+               },
+               error : function(data)// 服务器响应失败处理函数
+               {
+                   console.log("服务器异常");
+               }
+           });
+           return false;
+       };
+
+       $(".modalbtn").on("click",function(){
+           uploadFile( $('#choosefile'),"choosefile",boxbum);
+       })
+
+
+       $("#company_name").on("click",function(){
+           $(this).closest(".general-input").next().html("");
+       })
+
+
+       //提交申请
+       $("#uploadcompany_pic").on("click",function(){
+           var company_name=$("#company_name").val();//公司名称
+           var license=$(".btn1").find("img").eq(0).attr("src");//营业执照
+           var identity_card1=$(".btn2").find("img").eq(0).attr("src");//身份证正面
+           var identity_card2=$(".btn3").find("img").eq(0).attr("src");//身份证反面
+
+           var company_name_input=$("#company_name").closest(".general-input");
+
+           if($.trim(company_name)==""){
+               company_name_input.css("border-color","#e23d46");
+               company_name_input.next().html(tipmsg("error","请输入公司名称"));
+               return false;
+           }
+           if(!license||!identity_card1||!identity_card2){
+               $(".chec_tip1").eq(1).html(tipmsg("error","请上传营业执照和身份证正反面照片"));
+               return false;
+           }
+
+           $.ajax({
+               url:"",
+               type:"post",
+               data:{
+                   company_name:company_name,
+                   license:license,
+                   identity_card1:identity_card1,
+                   identity_card2:identity_card2
+               },
+               success:function(data){
+                   var data=JSON.parse(data);
+                   if(data.status==1){
+                       $("#modalbox").css("display","none");
+                   }
+               }
+           })
+
+       })
+
+
 
    }) 
 </script>
