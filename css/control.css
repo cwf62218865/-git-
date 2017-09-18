@@ -299,3 +299,11 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     right: 20px;
 
 }
+
+.formtip{
+    width: 100%;
+    height: 16px;
+    line-height: 16px;
+    margin-top: 56px;
+    display: block;
+}
