@@ -119,12 +119,12 @@
                         <use xlink:href="#icon-shangchuan"></use>
                     </svg>
 
-                    <div class="upload" style="display: none">
-                    <img src="../images/timg22.png" class="rzpic"/>
+                    <div class="upload" style="display: block">
+                    <img src="../images/timg22.png" class="rzpic" style="height: 100px;"/>
                     <div class="meng" id="reupload_rz"><span>重新上传</span></div>
                     </div>
                 </div>
-                <input type="file" id="choosefile"  accept='image/*'/>
+                <input type="file" id="choosefile"  accept='image/*' style="z-index: 9999;"/>
                 <div class="erweima">
                     <img src="../images/erweima.png" class="pic"/>
                 </div>
@@ -183,17 +183,13 @@
            },300)
        });
 
-
        $('#choosefile').on('change',function(e){
+           //$(".rzpic").attr("src","");
            var imgfile=this.files[0];
            var src=URL.createObjectURL(imgfile);
-           var uploadimg="<img style='width:100%' src='"+src+"'>";
-            $(this).prev().html(uploadimg);
-
-           //uploadFile(this,'file');
+           $(".rzpic").attr("src",src);
        });
        var  uploadFile=function(obj, type,boxbum) {
-
            $.ajaxFileUpload({
                url : "http://localhost:8081/ws2/servlet/fileUpload",
                secureuri : false,// 一般设置为false

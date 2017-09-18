@@ -44,11 +44,12 @@ $(document).ready(function(){
         var Label=$("#zjtianjiainput").val();
         if($.trim(Label)!=""){
             if($(".bqselect").length>=5){
-                var labelspan="<span class='zjflbq zjwidth"+$.trim(Label).length+"' style='margin: 15px 12px 0 0'>"+Label+"</span>"
-                $(".zjbiaoqian_wrap").append(labelspan);
+                $("#zjtianjiainput").val("");
+                return;
             }else{
                 var labelspan="<span class='zjflbq bqselect zjwidth"+$.trim(Label).length+"' style='margin: 15px 12px 0 0'>"+Label+"</span>"
                 $(".zjbiaoqian_wrap").append(labelspan);
+                $("#zjtianjiainput").val("");
             }
 
         }

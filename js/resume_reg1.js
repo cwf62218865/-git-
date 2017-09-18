@@ -38,7 +38,11 @@ $("body").on("mousedown",".city_con",function(){
     var city=$(this).attr("id");
     var len=city.length;
     var index=city.substring(4,len);
-    var area1=dsy.Items['0_'+index+"_0"];
+    if(index<4){
+        var area1=dsy.Items['0_'+index+"_0"];
+    }else if(index>=4){
+        var area1=dsy.Items['0_'+index];
+    }
     var html1="";
     for(var i=0;i<area1.length;i++){
         html1+="<div class='select-option district_con'><span>"+area1[i]+"</span></div>";
