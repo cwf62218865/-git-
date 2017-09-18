@@ -90,15 +90,6 @@
 <script>
     $(document).ready(function(){
 
-        $(".general-input input").focus(function(){
-            var _this=$(this);
-            if(_this.closest(".general-input").css("borderColor")=="rgb(226, 61, 70)"){
-                _this.closest(".general-input").nextAll(".chec_tip").html("");
-            }
-        });
-
-
-
         $("#login").on("click",function(){
             var username=$('#user_name').val();//用户名
             var password=$("#password").val();//密码
