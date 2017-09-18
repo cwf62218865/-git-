@@ -75,7 +75,7 @@
 
                 <div class=" relative general-select left_align">
                     <label class="general-input relative general-select">
-                        <input type="text" readonly=""  id="" placeholder="公司性质">
+                        <input type="text" readonly  id="company_property" placeholder="公司性质">
                         <svg class="icon inputicon" aria-hidden="true">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
                         </svg>
@@ -89,7 +89,7 @@
                 </div>
                 <div class=" relative general-select right_align">
                     <label class="general-input relative general-select">
-                        <input type="text" readonly="" id="edu_district"  placeholder="公司规模">
+                        <input type="text" readonly id="company_scale"  placeholder="公司规模">
                         <svg class="icon inputicon" aria-hidden="true">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
                         </svg>
@@ -110,7 +110,7 @@
 
                 <div class=" relative general-select left_align">
                     <label class="general-input relative general-select">
-                        <input type="text" readonly=""  id="edu_district" placeholder="所处行业">
+                        <input type="text" readonly id="company_industry" placeholder="所处行业">
                         <svg class="icon inputicon" aria-hidden="true">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
                         </svg>
@@ -137,7 +137,7 @@
                 </div>
                 <div class=" relative general-select right_align">
                     <label class="general-input relative general-select">
-                        <input type="text" readonly="" id="edu_district"  placeholder="所处地区">
+                        <input type="text" readonly id="company_city"  placeholder="所处地区">
                         <svg class="icon inputicon" aria-hidden="true">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
                         </svg>
@@ -154,19 +154,19 @@
                     <div class="right_align" style="width: 160px;"></div>
                 </div>
                 <label class="general-input" style="width: 360px;">
-                    <input type="text" style="width: 320px" placeholder="请输入公司slogan(25字以内)" maxlength="25">
+                    <input type="text" style="width: 320px" id="slogan" placeholder="请输入公司slogan(25字以内)" maxlength="25">
                 </label>
                 <div class="chec_tip1">
                     <div class="left_align"></div>
-                    <div class="right_align" style="width: 160px;"></div>
                 </div>
                 <div class="wrap zjfulibq">
                     <span class="zjbq">请选择5个以内福利标签</span>
                     <div class="zjbiaoqian">
-                        <input type="text" placeholder="输入5字以内标签">
-                        <div class="zjtianjia">添加</div>
+                        <input type="text" id="zjtianjiainput" maxlength="5" placeholder="输入5字以内标签">
+                        <div class="zjtianjia" id="zjtianjia">添加</div>
                     </div>
                 </div>
+
                 <div class="zjbiaoqian_wrap">
                     <span class="zjflbq zjwidth2 bqselect">五险</span>
                     <span class="zjflbq zjwidth5">住房公积金</span>
@@ -178,6 +178,9 @@
                     <span class="zjflbq zjwidth4">有偿加班</span>
                     <span class="zjflbq zjwidth4">股权激励</span>
                     <span class="zjflbq zjwidth4">补贴丰厚</span>
+                    <div class="chec_tip1">
+                        <div class="left_align"></div>
+                    </div>
                 </div>
 
 
@@ -195,32 +198,95 @@
 <script src="../js/jquery.js" rel="script"></script>
 <script src="../js/iconfont.js" rel="script"></script>
 <script src="../js/control.js" rel="script"></script>
+<script src="../js/company_reg3.js" rel="script"></script>
 <script>
-    $(document).ready(function(){
+$(document).ready(function(){
 
-        //设置下拉选择框
-        $("body").on("mousedown",".general-select input",function(){
-            var _this=$(this);
-            if(_this.closest(".general-select").next().height()=="0"){
-                $(".options").css("height","0px");
-                _this.closest(".general-select").next().css("height","auto");
-            }else {
-                _this.closest(".general-select").next().css("height","0px");
+
+    $("#upload_laststep").on("click",function(){
+        var company_property=$("#company_property").val();//公司性质
+        var company_scale=$("#company_scale").val();//公司规模
+        var company_industry=$("#company_industry").val();//所处行业
+        var company_city=$("#company_city").val();//所处地区
+        var slogan=$("#slogan").val();//slogan
+        //福利标签
+        var welfare="";
+        var welfarespan=$(".bqselect");
+        welfarespan.each(function(){
+            welfare+=$(this).html()+",";
+        });
+
+
+        var property_input=$("#company_property").closest(".left_align");
+        var scale_input=$("#company_scale").closest(".right_align");
+        var industry_input=$("#company_industry").closest(".left_align");
+        var city_input=$("#company_city").closest(".right_align");
+        var slogan_input=$("#slogan").closest(".general-input");
+
+
+        if($.trim(company_property)==""){
+            $("#company_property").closest(".general-input").css("border-color","#e23d46");
+            property_input.nextAll(".chec_tip1").eq(0).find(".left_align").html(tipmsg("error","请选择公司性质"))
+            return;
+        }
+
+        if($.trim(company_scale)==""){
+            $("#company_scale").closest(".general-input").css("border-color","#e23d46");
+            scale_input.nextAll(".chec_tip1").eq(0).find(".right_align").html(tipmsg("error","请选择公司规模"))
+            return;
+        }
+
+        if($.trim(company_industry)==""){
+            $("#company_industry").closest(".general-input").css("border-color","#e23d46");
+            industry_input.nextAll(".chec_tip1").eq(0).find(".left_align").html(tipmsg("error","请选择所处行业"))
+            return;
+        }
+
+        if($.trim(company_city)==""){
+            $("#company_city").closest(".general-input").css("border-color","#e23d46");
+            city_input.nextAll(".chec_tip1").eq(0).find(".right_align").html(tipmsg("error","请选择所处地区"))
+            return;
+        }
+
+
+        if($.trim(slogan)==""){
+            $("#slogan").closest(".general-input").css("border-color","#e23d46");
+            slogan_input.nextAll(".chec_tip1").eq(0).find(".left_align").html(tipmsg("error","slogan不能为空"))
+            return;
+        }
+
+
+        if(welfare==""){
+            $(".zjbiaoqian_wrap").find(".chec_tip1  .left_align").html(tipmsg("error","请至少选择一个福利标签"))
+            return;
+        }
+
+        $.ajax({
+            url:"",
+            type:"post",
+            data:{
+                property_input:property_input,
+                scale_input:scale_input,
+                industry_input:industry_input,
+                city_input:city_input,
+                slogan_input:slogan_input,
+                welfare:welfare
+            },
+            success:function(data){
+                var data=JSON.parse(data);
+                if(data.status==1){
+                    window.location.href=""
+                }
             }
-        });
-        $("body").on("mousedown",".select-option",function(){
-            var _this=$(this);
-            var optionhtml=_this.find("span").eq(0).html();
-            _this.closest(".options").prev().find("input").val(optionhtml);
-            _this.closest(".options").css("height","0");
-        });
-        //点击选择标签
-        $(".zjbiaoqian_wrap .zjflbq").click(function(){
-            //$(".zjbiaoqian_wrap .zjflbq").removeClass("bqselect");
-            $(this).addClass("bqselect");
-        });
+        })
+
+
+
+
+
+
 
     })
-
+})
 </script>
 </html>
