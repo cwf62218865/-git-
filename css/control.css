@@ -72,6 +72,9 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .relative{
     position: relative;
 }
+.absolute{
+    position: absolute;
+}
 .options{
 
     width: 190px;
