@@ -104,3 +104,48 @@ function forget_password(){
     });
 }
 
+function send_resume(){
+    $(".btn_ditu").click(function () {
+        $("#modalbox").animate({"opacity":1},300);
+        setTimeout(function(){
+            $("#modalbox").css("display","block");
+        },300)
+    });
+
+    $(".modalclose").on("click",function(){
+        $("#modalbox").animate({"opacity":0},300);
+        setTimeout(function(){
+            $("#modalbox").css("display","none");
+        },300)
+    });
+    $(".modalclose").on("click",function(){
+        $("#refusebox").animate({"opacity":0},300);
+        setTimeout(function(){
+            $("#refusebox").css("display","none");
+        },300)
+    });
+    $(".quxiao").on("click",function(){
+        dataid="";
+        $("#refusebox").animate({"opacity":0},300);
+        setTimeout(function(){
+            $("#refusebox").css("display","none");
+        },300)
+    });
+    $(".list_top .list_item_btn").click(function(){
+        $(".list_top .list_item_btn").removeClass("select");
+        $(this).addClass("select");
+    });
+    $("#send_list").click(function(){
+        $(".list_content").show();
+        $(".resume_content").hide();
+        $(".ico_rightstatas").show();
+        $(".biezhu").show();
+    });
+    $("#review").click(function(){
+        $(".resume_content").show();
+        $(".list_content").hide();
+        $(".ico_rightstatas").hide();
+        $(".biezhu").hide();
+    })
+}
+

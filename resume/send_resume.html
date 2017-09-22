@@ -62,8 +62,7 @@
             <div class="list_top">
                 <div class="list_item_btn select" id="send_list">投递记录</div>
                 <div class="list_item_btn" style="margin-left: 2px" id="review">面试邀请</div>
-
-                <div class="checkbox" style="display: inline-block;margin-left: 120px;">
+                <div class="checkbox ico_rightstatas" style="display: inline-block;margin-left: 120px;">
                     <label>
                         <input type="checkbox" name="like" value="">
                         <div class="checkboxbox">
@@ -284,8 +283,8 @@
                         </div>
                     </div>
                     <div class="review_statas">
-                        <div class="tongyi">同意面试</div>
-                        <div class="jujue">拒绝面试</div>
+                        <div class="tongyi" data-id="1">同意面试</div>
+                        <div class="jujue" data-id="1">拒绝面试</div>
                     </div>
                 </div>
                 <div class="list_item">
@@ -330,8 +329,8 @@
                         </div>
                     </div>
                     <div class="review_statas">
-                        <div class="tongyi">同意面试</div>
-                        <div class="jujue">拒绝面试</div>
+                        <div class="tongyi" data-id="2">同意面试</div>
+                        <div class="jujue"  data-id="2">拒绝面试</div>
                     </div>
                 </div>
                 <div class="list_item">
@@ -590,13 +589,80 @@
     </div>
     <!--地图弹框end-->
     <!--拒绝理由弹框-->
-    <div class="modalbox" id="refusebox">
+    <div class="modalbox" id="refusebox" style="display: none">
         <div class="modal refusebox">
             <p class="title_content">拒绝理由</p>
             <span class="modalclose">
                 <img src="../images/close.png"/>
             </span>
-
+            <div class="jujue_lists">
+                <div class="checkbox reasonlist" style="display: inline-block;">
+                    <label class="float">
+                        <input type="checkbox" name="like" value="职位不合适" checked="checked">
+                        <div class="checkboxbox">
+                            <svg class="icon iconfont color1aa ico_right">
+                                <use xlink:href="#icon-zhengque1"></use>
+                            </svg>
+                        </div>
+                    </label>
+                    <span class="float lable">职位不合适</span>
+                </div>
+                <div class="checkbox reasonlist" style="display: inline-block;">
+                    <label class="float">
+                        <input type="checkbox" name="like" value="已找到工作">
+                        <div class="checkboxbox">
+                            <svg class="icon iconfont color1aa ico_right">
+                                <use xlink:href=""></use>
+                            </svg>
+                        </div>
+                    </label>
+                    <span class="float lable">已找到工作</span>
+                </div>
+                <div class="checkbox reasonlist" style="display: inline-block;">
+                    <label class="float">
+                        <input type="checkbox" name="like" value="距离太远">
+                        <div class="checkboxbox">
+                            <svg class="icon iconfont color1aa ico_right">
+                                <use xlink:href=""></use>
+                            </svg>
+                        </div>
+                    </label>
+                    <span class="float lable">距离太远</span>
+                </div>
+                <div class="checkbox reasonlist" style="display: inline-block;">
+                    <label class="float">
+                        <input type="checkbox" name="like" value="薪酬原因">
+                        <div class="checkboxbox">
+                            <svg class="icon iconfont color1aa ico_right">
+                                <use xlink:href=""></use>
+                            </svg>
+                        </div>
+                    </label>
+                    <span class="float lable">薪酬原因</span>
+                </div>
+                <div class="checkbox reasonlist" style="display: inline-block;">
+                    <label class="float">
+                        <input type="checkbox" name="like" value="不符职业规划">
+                        <div class="checkboxbox">
+                            <svg class="icon iconfont color1aa ico_right">
+                                <use xlink:href=""></use>
+                            </svg>
+                        </div>
+                    </label>
+                    <span class="float lable">不符职业规划</span>
+                </div>
+                <div class="checkbox reasonlist" style="display: inline-block;">
+                    <label class="float">
+                        <div class="checkboxbox reason_zidingyi">
+                            <input type="text" class="reson_zidingyi" name="reason" id="reason" placeholder="自定义拒绝理由">
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="btns">
+                <button class="tijiao">确定</button>
+                <span class="quxiao">取消</span>
+            </div>
         </div>
     </div>
     <!--拒绝理由弹框end-->
@@ -608,24 +674,11 @@
 <script src="../js/jquery.js" rel="script"></script>
 <script src="../js/iconfont.js" rel="script"></script>
 <script src="../js/control.js" rel="script"></script>
+<script src="../js/login_reg_account.js"></script>
 
 <script>
     $(function () {
-        $(".btn_ditu").click(function () {
-            boxbum=1;
-            $("#modalbox").animate({"opacity":1},300);
-            setTimeout(function(){
-                $("#modalbox").css("display","block");
-            },300)
-        });
-
-        $(".modalclose").on("click",function(){
-            $("#modalbox").animate({"opacity":0},300);
-            setTimeout(function(){
-                $("#modalbox").css("display","none");
-            },300)
-        });
-
+        send_resume();
         // 百度地图API功能
         var map = new BMap.Map("allmap");    // 创建Map实例
         map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
@@ -633,21 +686,63 @@
         map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
         map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
 
-        $(".list_top .list_item_btn").click(function(){
-            $(".list_top .list_item_btn").removeClass("select");
-            $(this).addClass("select");
-        });
-        $("#send_list").click(function(){
-            $(".list_content").show();
-            $(".resume_content").hide();
-            $(".checkbox").show();
-            $(".biezhu").show();
-        });
-        $("#review").click(function(){
-            $(".resume_content").show();
-            $(".list_content").hide();
-            $(".checkbox").hide();
-            $(".biezhu").hide();
+        var dataid="";
+        $(".jujue").click(function () {
+            dataid=$(this).attr("data-id");
+            $("#refusebox").animate({"opacity":1},300);
+            setTimeout(function(){
+                $("#refusebox").css("display","block");
+            },300)
+        })
+
+        $(".tijiao").click(function(){
+           var div=$("input[name='like']:checkbox");
+            var reason="";
+            div.each(function() {
+                if ($(this).attr('checked')) {
+                    reason += $(this).val() + ',';
+                }
+            })
+            reason+=$("#reason").val();
+            console.log(reason);
+            $("#refusebox").css("display","none");
+            $.ajax({
+                url:"",
+                post:"post",
+                data:{
+                    reason:reason,
+                    dataid:dataid
+                },
+                success:function(data){
+                    var data=JSON.parse(data);
+                    if(data.status==1){
+                        $(".jujue").each(function(){
+                            if($(this).attr("data-id")==dataid){
+                                $(this).parent().addClass("jujue_statas");
+                                $(this).parent().html("已拒绝面试");
+                            }
+                        })
+                    }
+                }
+            })
+        })
+
+        $(".tongyi").click(function(){
+            var dataid=$(this).attr("data-id");
+            $(this).parent().addClass("tongyi_statas");
+            $(this).parent().html("已同意面试");
+            $.ajax({
+                url:"",
+                post:post,
+                data:{
+                    dataid:dataid
+                },
+                success:function(data){
+                    if(data.status==1){
+
+                    }
+                }
+            })
         })
 
     })
