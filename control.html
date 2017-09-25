@@ -25,6 +25,21 @@
         font-weight: 600;
         font-size: 16px;
     }
+    .demoselect{
+        font-size:14px;
+        color: rgb(153,153,153);
+        padding: 0 20px 0 20px;
+        height: 46px;
+        width: 200px;
+        margin: 0; /*这里是选择框里面的样式*/
+        background: url("images/select_bg.png") no-repeat 90%; /*97%是设置图片，也就是三角形的位置*/
+        background-size:10px 6px; /*背景图片的尺寸*/
+        appearance:none;
+        -moz-appearance:none;
+        -webkit-appearance:none; /*这三个是隐藏默认样式*/
+    }
+
+
 </style>
 <body>
     <div class="controlbox">
@@ -62,7 +77,14 @@
                 </div>
             </div>
 
-
+            <p class="listtitle">自定义select</p>
+            <select class="demoselect">
+                <option>1231</option>
+                <option>asdas</option>
+                <option>fds</option>
+                <option>asd</option>
+                <option>fdsfdf</option>
+            </select>
 
 
             <p>搜索框</p>
@@ -154,6 +176,7 @@
 
             <p class="listtitle">6、模态输入框</p>
             <span class="public_nobigbtn modalbtn bg1aa">模态输入框</span>
+
 
         </div>
     </div>
