@@ -148,3 +148,125 @@
     margin-top: 95px;
     position: relative;
 }
+.addandeditbtn{
+    position: absolute;
+    right: 0;
+    top:5px;
+    color: #09c;
+    font-size: 16px;
+    cursor: pointer;
+}
+.basic_msg_content{
+    width: 100%;
+}
+.user_name{
+    font-size: 30px;
+    color: #333;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+
+}
+.font666{
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+}
+.font666 .icon{
+    margin-right: 3px;
+    color: #a0a0a0;
+}
+.basic_msg_contents{
+    margin-right: 15px;
+}
+.basic_msg_contents1{
+    display: inline-block;
+    padding: 0 12px 0 8px;
+    border-right: 1px solid #eee;
+}
+.basic_msg_contents2{
+    display: inline-block;
+    padding: 0 35px 0 0;
+}
+.personmsg{
+    width: 520px;
+    color: #999;
+    font-size: 14px;
+    margin: 0 auto;
+    margin-top:24px;
+    line-height: 1.4;
+}
+.resume_title{
+    width: 570px;
+    position: relative;
+    height: 17px;
+    border-bottom: 1px solid #eee;
+}
+.resume_title span{
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    background-color: #eee;
+    color: #333;
+    font-size: 20px;
+    width: 120px;
+    text-align: center;
+    border-radius: 18px;
+    margin-left: 275px;
+}
+.font999{
+    font-size: 14px;
+    color: #999;
+}
+.resume_exp{
+    margin-top: 18px;
+    width: 100%;
+    height: auto;
+}
+.left_line{
+    display: inline-block;
+    width: 12px;
+    margin-top: 48px;
+    border-right: 1px solid #eee;
+    float: left;
+}
+.resume_exp_content{
+    display: inline-block;
+    width: 637px;
+    margin-left: 20px;
+}
+.exp_title{
+    font-size: 18px;
+    color: #666;
+}
+.relative{
+    position: relative;
+}
+.exp_job{
+    margin-top: 12px;
+    font-size: 12px;
+    color: #999;
+}
+.exp_jobright{
+    float: right;
+}
+.exp_content{
+    width: 100%;
+    font-size: 14px;
+    line-height: 24px;
+    color: #666;
+    margin-top: 20px;
+}
+.resume_exp_content .relative{
+    margin-top: 40px;
+}
+.resume_exp_content .relative:after{
+    content: "";
+    position: absolute;
+    left: -26px;
+    top:8px;
+    width: 11px;
+    height: 11px;
+    border-radius: 10px;
+    background-color:#09c ;
+}
