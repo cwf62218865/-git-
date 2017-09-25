@@ -1,0 +1,98 @@
+.collection_logo{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    position: relative;
+}
+.collection_logo img{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.collection_companymsg{
+    display: inline-block;
+    width: 260px;
+    float: right;
+    line-height: normal;
+}
+.collection_companymsg .company_name{
+    width: 100%;
+    color: #666;
+    line-height: 14px;
+    margin-top: 9px;
+}
+.collection_companymsg .company_address{
+    width: 100%;
+    color: #bbb;
+    font-size: 12px;
+    line-height: 12px;
+    margin-top: 20px;
+}
+.collection_action{
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    float: left;
+}
+.list_content .list_item{
+    height: auto;
+}
+.left_actionbtn{
+    display: inline-block;
+    width: 199px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-right: 1px solid #eee;
+}
+.right_actionbtn{
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: right;
+
+}
+.post_action{
+    color: #09c;
+    cursor: pointer;
+}
+.revoke_action{
+    color: #666;
+    cursor: pointer;
+}
+.no_action{
+    color: #bbb;
+    cursor: not-allowed;
+}
+.find_morejob{
+    display: inline-block;
+    float: left;
+    width: 370px;
+    height: 46px;
+    color: #09c;
+    line-height: 46px;
+    margin-top: 30px;
+    text-align: center;
+    border: 1px solid #09c;
+    margin-left: 250px;
+    margin-bottom: 90px;
+    cursor: pointer;
+}
+.find_morejob:hover{
+    background-color: #09c;
+    color: #fff;
+}
+.exptime{
+    margin-right: 24px;
+    color: #666;
+}
+.date{
+    float: right;
+}
+.hang2{
+    width: 340px;
+}
