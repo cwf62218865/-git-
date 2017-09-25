@@ -209,7 +209,7 @@
                     </label>
                     <div class="relative general-select">
                         <label class="general-input relative general-select current1">
-                            <input type="text" readonly="" id="" value="工作地点"  style="width: 80px;">
+                            <input type="text" readonly="" id="gz_address" placeholder="工作地点"  style="width: 80px;">
                             <svg class="icon inputicon" aria-hidden="true">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
                             </svg>
@@ -225,7 +225,7 @@
                     </div>
                     <div class=" relative general-select">
                         <label class="current1 general-input relative general-select">
-                            <input type="text" readonly="" placeholder="月薪" class="" style="width: 80px;">
+                            <input type="text" readonly="" placeholder="月薪" id="salery" style="width: 80px;">
                             <svg class="icon inputicon" aria-hidden="true">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
                             </svg>
@@ -240,31 +240,32 @@
                     </div>
                     <div class=" relative general-select p1content">
                         <label class="current1 general-input relative general-select current2" style="margin-left: 0">
-                            <input type="text" readonly="" placeholder="选择行业（最多三项）" class="" style="width: 420px;">
+                            <input type="text" id="hy_district" readonly="" placeholder="选择行业（最多三项）" class="" style="width: 420px;">
                             <svg class="icon inputicon" aria-hidden="true">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
                             </svg>
                         </label>
                         <div class="options options1" style="height: 0px;">
-                            <div class="select-option"><span>IT互联网</span></div>
-                            <div class="select-option"><span>物流运输</span></div>
-                            <div class="select-option"><span>制造加工</span> </div>
-                            <div class="select-option"><span>房地产</span> </div>
-                            <div class="select-option"><span>教育培训</span> </div>
-                            <div class="select-option"><span>医疗医药</span> </div>
-                            <div class="select-option"><span>能源化工</span> </div>
-                            <div class="select-option"><span>餐饮百货</span> </div>
-                            <div class="select-option"><span>人力资源</span> </div>
-                            <div class="select-option"><span>金融投资证券</span> </div>
-                            <div class="select-option"><span>其他</span> </div>
+                            <div class="select-option1" flag="0"><span>IT互联网</span></div>
+                            <div class="select-option1" flag="0"><span>物流运输</span></div>
+                            <div class="select-option1" flag="0"><span>制造加工</span> </div>
+                            <div class="select-option1" flag="0"><span>房地产</span> </div>
+                            <div class="select-option1" flag="0"><span>教育培训</span> </div>
+                            <div class="select-option1" flag="0"><span>医疗医药</span> </div>
+                            <div class="select-option1" flag="0"><span>能源化工</span> </div>
+                            <div class="select-option1" flag="0"><span>餐饮百货</span> </div>
+                            <div class="select-option1" flag="0"><span>人力资源</span> </div>
+                            <div class="select-option1" flag="0"><span>金融投资证券</span> </div>
+                            <div class="select-option1" flag="0"><span>其他</span> </div>
                             <div class="btns_d">
-                                <div class="public_bigbtn bg1aa currntbtn">保存</div><span class="color_main cur margin_l">取消</span>
+                                <div class="public_bigbtn bg1aa currntbtn" id="hy_preserve">保存</div><span class="color_main cur margin_l">取消</span>
                             </div>
+
                         </div>
                     </div>
                     <div class="relative general-select p1content">
                         <label class="current1 general-input relative general-select current1">
-                            <input type="text" readonly="" placeholder="订阅频率" class="" style="width: 80px;">
+                            <input type="text" readonly="" id="dy_pinlv" placeholder="订阅频率" class="" style="width: 80px;">
                             <svg class="icon inputicon" aria-hidden="true">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
                             </svg>
@@ -528,13 +529,17 @@
 
 
     <!--弹框-->
-    <div class="modalbox" id="modalbox" style="display: block;">
-        <div class="modal" style="width: 650px;margin-left: -325px;height: auto">
+    <div class="modalbox" id="deletebox" style="display: none;">
+        <div class="modal" style="width: 430px;margin-left: -215px;height: auto">
             <p class="title_content">删除订阅器</p>
             <span class="modalclose">
                 <img src="../images/close.png"/>
             </span>
-            <div>删除订阅器后将无法继续收到职位推送，确定要删除吗？</div>
+            <div class="delete_tips">删除订阅器后将无法继续收到职位推送，确定要删除吗？</div>
+            <div class="btns_tk">
+                <div class="public_bigbtn bg1aa currntbtn" id="nodelete">再考虑下</div>
+                <span class="color_main cur margin_l" id="sure_delete">确定删除</span>
+            </div>
         </div>
     </div>
     <!--弹框end-->
@@ -564,6 +569,36 @@
             _this.closest(".options").prev().find("input").val(optionhtml);
             _this.closest(".options").css("height","0");
         });
+        var total=0;
+        $("body").on("mousedown",".select-option1",function(){
+            var _this=$(this);
+            var flag=_this.attr("flag");
+            if(flag==0 && total<3){
+            _this.addClass("click_item");
+            var del_ico="<svg class='icon deleteicon'  aria-hidden='true'> <use xlink:href='#icon-shan' class='colorbbb'></use> </svg>";
+            _this.html(_this.html()+del_ico);
+                _this.attr("flag",1);
+                total++;
+            }
+            if(flag==1){
+                $(".deleteicon").click(function () {
+                    _this.closest(".select-option1").attr("flag",0);
+                    total--;
+                    _this.closest(".select-option1").removeClass("click_item");
+                    _this.closest(".select-option1").find("svg").remove();
+                })
+            }
+        });
+        $("#hy_preserve").click(function () {
+            var html="";
+            for(var i=0;i<$(".select-option1").length;i++){
+                if($(".select-option1").eq(i).attr("flag")==1){
+                    html+=$(".select-option1").eq(i).find("span").html()+"  ";
+                }
+                $("#hy_district").val(html);
+                $(this).closest(".options").css("height","0");
+            }
+        })
         $(".list_top .list_item_btn").click(function(){
             $(".list_top .list_item_btn").removeClass("select");
             $(this).addClass("select");
@@ -584,6 +619,11 @@
         });
         //订阅保存
         $("#dy_preserve").click(function () {
+            var job_name=$("#job_name").val();
+            var gz_address=$("#gz_address").val();
+            var salery=$("#salery").val();
+            var hy_district=$("#hy_district").val();
+            var dy_pinlv=$("#dy_pinlv").val();
             $(".edit_dingyue").hide();
             $(".success_dingyue").show();
         })
@@ -595,9 +635,22 @@
         
         //删除订阅
         $("#delete_dy").click(function () {
-            
+            $("#deletebox").animate({"opacity":1},300);
+            setTimeout(function(){
+                $("#deletebox").css("display","block");
+            },300)
         })
-        
+        $(".modalclose,#nodelete,#sure_delete").on("click",function(){
+            $("#deletebox").animate({"opacity":0},300);
+            setTimeout(function(){
+                $("#deletebox").css("display","none");
+            },300)
+        });
+        $("#sure_delete").click(function(){
+            $(".no_dingyue_list").show();
+            $(".edit_dingyue").hide();
+        });
+
     })
 </script>
 </html>

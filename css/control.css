@@ -88,7 +88,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 }
 
-.options .select-option{
+.options .select-option,.options1 .select-option1{
     border: 1px solid #ddd;
     background-color: #fff;
     border-top:none;
