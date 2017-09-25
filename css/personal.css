@@ -456,3 +456,15 @@
     color: #f3969b;
     margin-left: 120px;
 }
+.options{
+    width: 120px;
+}
+.options1{
+    width: 460px;left: 0px;
+}
+.options .select-option{
+    width: 118px;
+}
+.options1 .select-option{
+    width: 458px;
+}
