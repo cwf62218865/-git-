@@ -38,6 +38,9 @@ input {
     display: -ms-flexbox;   /* 混合版本语法: IE 10 */
     align-items: center;
 }
+.left_align,.center_align,.right_align{
+    float: left;
+}
 .city{
     font-size: 18px;
     margin-left: 30px;
