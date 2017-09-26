@@ -706,6 +706,14 @@
             reason+=$("#reason").val();
             console.log(reason);
             $("#refusebox").css("display","none");
+
+            //拒绝后的效果代码应该写在ajax回调success内部，此处可以删掉
+            $(".jujue").each(function(){
+                if($(this).attr("data-id")==dataid){
+                    $(this).parent().addClass("jujue_statas");
+                    $(this).parent().html("已拒绝面试");
+                }
+            })
             $.ajax({
                 url:"",
                 post:"post",

@@ -149,3 +149,82 @@ function send_resume(){
     })
 }
 
+function person_collection(){
+    $(".general-select input").on("mousedown",function(){
+        var _this=$(this);
+        if(_this.closest(".general-select").next().height()=="0"){
+            $(".options").css("height","0px");
+            _this.closest(".general-select").next().css("height","auto");
+        }else {
+            _this.closest(".general-select").next().css("height","0px");
+        }
+    })
+    $("body").on("mousedown",".select-option",function(){
+        var _this=$(this);
+        var optionhtml=_this.find("span").eq(0).html();
+        _this.closest(".options").prev().find("input").val(optionhtml);
+        _this.closest(".options").css("height","0");
+    });
+    var total=0;
+    $("body").on("mousedown",".select-option1",function(){
+        var _this=$(this);
+        var flag=_this.attr("flag");
+        if(flag==0 && total<3){
+            _this.addClass("click_item");
+            var del_ico="<svg class='icon deleteicon'  aria-hidden='true'> <use xlink:href='#icon-shan' class='colorbbb'></use> </svg>";
+            _this.html(_this.html()+del_ico);
+            _this.attr("flag",1);
+            total++;
+        }
+            $(".deleteicon").click(function () {
+                var flag=$(this).closest(".select-option1").attr("flag");
+                if(flag==1){
+                    $(this).closest(".select-option1").attr("flag",0);
+                    --total;
+                    $(this).closest(".select-option1").removeClass("click_item");
+                    $(this).closest(".select-option1").find("svg").remove();
+                }
+            })
+    });
+    $("#hy_preserve").click(function () {
+        var html="";
+        for(var i=0;i<$(".select-option1").length;i++){
+            if($(".select-option1").eq(i).attr("flag")==1){
+                html+=$(".select-option1").eq(i).find("span").html()+",";
+            }
+        }
+        html = html.substring(0,html.length-1);
+        $("#hy_district").val(html);
+        $(this).closest(".options").css("height","0");
+    })
+    $("#hy_quxiao").click(function () {
+        $(this).closest(".options1").css("height","0");
+    })
+    $(".list_top .list_item_btn").click(function(){
+        $(".list_top .list_item_btn").removeClass("select");
+        $(this).addClass("select");
+    });
+    $("#favourite").click(function(){
+        $(".list_content").show();
+        $(".resume_content").hide();
+    });
+    $("#subscribe").click(function(){
+        $(".resume_content").show();
+        $(".list_content").hide();
+    });
+    //订阅的显示
+    $("#edit_dytj").click(function(){
+        $(".no_dingyue_list").hide();
+        $(".edit_dingyue").show();
+    });
+
+    $(".general-input input").on("focus",function(){
+        var _this=$(this);
+        if(_this.closest(".general-input").css("borderColor")=="rgb(226, 61, 70)"){
+            _this.closest("div").nextAll(".chec_tip1").eq(0).find(".left_align").html("");
+            _this.closest("div").nextAll(".chec_tip1").eq(0).find(".center_align").html("");
+            _this.closest("div").nextAll(".chec_tip1").eq(0).find(".right_align").html("");
+        }
+    });
+}
+

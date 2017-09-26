@@ -203,11 +203,11 @@
             <!--订阅职位-------------------------------->
             <div class="resume_content">
                 <!--编辑订阅器-->
-                <div class="edit_dingyue">
+                <div class="edit_dingyue" flag="0">
                     <label class="general-input current">
                         <input type="text" id="job_name" style="" placeholder="请输入职位名称">
                     </label>
-                    <div class="relative general-select">
+                    <div class="relative general-select input_wai">
                         <label class="general-input relative general-select current1">
                             <input type="text" readonly="" id="gz_address" placeholder="工作地点"  style="width: 80px;">
                             <svg class="icon inputicon" aria-hidden="true">
@@ -223,7 +223,7 @@
                             <div class="select-option"><span>其他</span> </div>
                         </div>
                     </div>
-                    <div class=" relative general-select">
+                    <div class=" relative general-select input_wai">
                         <label class="current1 general-input relative general-select">
                             <input type="text" readonly="" placeholder="月薪" id="salery" style="width: 80px;">
                             <svg class="icon inputicon" aria-hidden="true">
@@ -231,12 +231,17 @@
                             </svg>
                         </label>
                         <div class="options" style="height: 0px;">
-                            <div class="select-option"><span>1k元以下</span></div>
-                            <div class="select-option"><span>1k~3k</span></div>
-                            <div class="select-option"><span>3k~5k</span></div>
-                            <div class="select-option"><span>5k~10k</span> </div>
+                            <div class="select-option"><span>2k以下</span></div>
+                            <div class="select-option"><span>2k-4k</span></div>
+                            <div class="select-option"><span>4k-6k</span></div>
+                            <div class="select-option"><span>6k-10k</span> </div>
                             <div class="select-option"><span>10k以上</span> </div>
                         </div>
+                    </div>
+                    <div class="chec_tip1">
+                        <div class="left_align" style="width: 320px;"></div>
+                        <div class="center_align" style="width: 120px;margin-left: 340px;"></div>
+                        <div class="right_align" style="width: 120px;float: right"></div>
                     </div>
                     <div class=" relative general-select p1content">
                         <label class="current1 general-input relative general-select current2" style="margin-left: 0">
@@ -258,9 +263,8 @@
                             <div class="select-option1" flag="0"><span>金融投资证券</span> </div>
                             <div class="select-option1" flag="0"><span>其他</span> </div>
                             <div class="btns_d">
-                                <div class="public_bigbtn bg1aa currntbtn" id="hy_preserve">保存</div><span class="color_main cur margin_l">取消</span>
+                                <div class="public_bigbtn bg1aa currntbtn" id="hy_preserve">保存</div><span class="color_main cur margin_l" id="hy_quxiao">取消</span>
                             </div>
-
                         </div>
                     </div>
                     <div class="relative general-select p1content">
@@ -271,16 +275,19 @@
                             </svg>
                         </label>
                         <div class="options" style="height: 0px;">
-                            <div class="select-option"><span>一周</span></div>
-                            <div class="select-option"><span>两周</span></div>
-                            <div class="select-option"><span>一个月</span> </div>
-                            <div class="select-option"><span>半年</span> </div>
-                            <div class="select-option"><span>一年</span> </div>
-                            <div class="select-option"><span>一年以上</span> </div>
+                            <div class="select-option"><span>三天一次</span></div>
+                            <div class="select-option"><span>一周一次</span></div>
+                            <div class="select-option"><span>一个月一次</span> </div>
+                            <div class="select-option"><span>半年一次</span> </div>
+                            <div class="select-option"><span>一年一次</span> </div>
                         </div>
                     </div>
+                    <div class="chec_tip1">
+                        <div class="left_align" style="width: 460px;"></div>
+                        <div class="right_align" style="width: 120px;float: right"></div>
+                    </div>
                     <span class="public_bigbtn bg1aa wrap" id="dy_preserve">保存</span>
-                    <span class="color_main cur margin_l">取消</span>
+                    <span class="color_main cur margin_l" id="dy_quxiao">取消</span>
                     <div class="checkbox ico_rightstatas" style="display: inline-block;margin-left: 60px;">
                         <label>
                             <input type="checkbox" name="like" value="">
@@ -306,14 +313,14 @@
                 <!--订阅编辑成功显示-->
                 <div class="success_dingyue">
                     订阅成功，次日生效。<span class="color_main cur" id="alter_dy">修改订阅条件>></span>
-                    <p class="why_zi">UI设计师</p>
+                    <p class="why_zi" id="dy_job_name">UI设计师</p>
                     <p class="font_grey margin_t">
-                        <span class="dy_tiaojian">上海</span>|
-                        <span class="dy_tiaojian">Java工程师</span>|
-                        <span class="dy_tiaojian">技术经理</span>|
-                        <span class="dy_tiaojian">Java程序员</span>|
-                        <span  class="dy_tiaojian">三天一次</span>|
-                        <span  class="dy_tiaojian">4K-6K</span>
+                        <span class="dy_tiaojian" id="dy_dz">上海</span>|
+                        <span class="dy_tiaojian" id="dy_hy1">Java工程师</span>|
+                        <span class="dy_tiaojian" id="dy_hy2">技术经理</span>|
+                        <span class="dy_tiaojian" id="dy_hy3">Java程序员</span>|
+                        <span  class="dy_tiaojian" id="dy_pl">三天一次</span>|
+                        <span  class="dy_tiaojian" id="dy_gz">4K-6K</span>
                     </p>
                 </div>
                 <!--订阅编辑成功显示end-->
@@ -321,7 +328,7 @@
                 <div class="dingyue_list">
                 <div class="dingyue_tishi">
                     <span class="grey">以下是您订阅的职位</span>
-                    <span class="color_main cur">修改订阅条件>></span>
+                    <span class="color_main cur" id="edit_dyq">修改订阅条件>></span>
                 </div>
                 <div class="list_item">
                     <div class="item_con">
@@ -551,72 +558,10 @@
 <script src="../js/jquery.js" rel="script"></script>
 <script src="../js/iconfont.js" rel="script"></script>
 <script src="../js/control.js" rel="script"></script>
-
+<script src="../js/login_reg_account.js" rel="script"></script>
 <script>
     $(function (){
-        $(".general-select input").on("mousedown",function(){
-            var _this=$(this);
-            if(_this.closest(".general-select").next().height()=="0"){
-                $(".options").css("height","0px");
-                _this.closest(".general-select").next().css("height","auto");
-            }else {
-                _this.closest(".general-select").next().css("height","0px");
-            }
-        })
-        $("body").on("mousedown",".select-option",function(){
-            var _this=$(this);
-            var optionhtml=_this.find("span").eq(0).html();
-            _this.closest(".options").prev().find("input").val(optionhtml);
-            _this.closest(".options").css("height","0");
-        });
-        var total=0;
-        $("body").on("mousedown",".select-option1",function(){
-            var _this=$(this);
-            var flag=_this.attr("flag");
-            if(flag==0 && total<3){
-            _this.addClass("click_item");
-            var del_ico="<svg class='icon deleteicon'  aria-hidden='true'> <use xlink:href='#icon-shan' class='colorbbb'></use> </svg>";
-            _this.html(_this.html()+del_ico);
-                _this.attr("flag",1);
-                total++;
-            }
-            if(flag==1){
-                $(".deleteicon").click(function () {
-                    _this.closest(".select-option1").attr("flag",0);
-                    total--;
-                    _this.closest(".select-option1").removeClass("click_item");
-                    _this.closest(".select-option1").find("svg").remove();
-                })
-            }
-        });
-        $("#hy_preserve").click(function () {
-            var html="";
-            for(var i=0;i<$(".select-option1").length;i++){
-                if($(".select-option1").eq(i).attr("flag")==1){
-                    html+=$(".select-option1").eq(i).find("span").html()+"  ";
-                }
-                $("#hy_district").val(html);
-                $(this).closest(".options").css("height","0");
-            }
-        })
-        $(".list_top .list_item_btn").click(function(){
-            $(".list_top .list_item_btn").removeClass("select");
-            $(this).addClass("select");
-        });
-        $("#favourite").click(function(){
-            $(".list_content").show();
-            $(".resume_content").hide();
-        });
-        $("#subscribe").click(function(){
-            $(".resume_content").show();
-            $(".list_content").hide();
-        });
-
-        //订阅的显示
-        $("#edit_dytj").click(function(){
-            $(".no_dingyue_list").hide();
-            $(".edit_dingyue").show();
-        });
+        person_collection();
         //订阅保存
         $("#dy_preserve").click(function () {
             var job_name=$("#job_name").val();
@@ -624,11 +569,84 @@
             var salery=$("#salery").val();
             var hy_district=$("#hy_district").val();
             var dy_pinlv=$("#dy_pinlv").val();
+
+            var job_input=$("#job_name").closest(".general-input");
+            var address_input=$("#gz_address").closest(".input_wai");
+            var salery_input=$("#salery").closest(".input_wai");
+            var district_input=$("#hy_district").closest(".p1content");
+            var pinlv_input=$("#dy_pinlv").closest(".p1content");
+
+            if($.trim(job_name)==""){
+                $("#job_name").closest(".general-input").css("border-color","#e23d46");
+                job_input.nextAll(".chec_tip1").eq(0).find(".left_align").html(tipmsg("error","请输入职位名称"))
+                return;
+            }
+            if($.trim(gz_address)==""){
+                $("#gz_address").closest(".general-input").css("border-color","#e23d46");
+                address_input.nextAll(".chec_tip1").eq(0).find(".center_align").html(tipmsg("error","请输入工作地点"))
+                return;
+            }
+            if($.trim(salery)==""){
+                $("#salery").closest(".general-input").css("border-color","#e23d46");
+                salery_input.nextAll(".chec_tip1").eq(0).find(".right_align").html(tipmsg("error","请输入月薪"))
+                return;
+            }
+            if($.trim(hy_district)==""){
+                $("#hy_district").closest(".general-input").css("border-color","#e23d46");
+                district_input.nextAll(".chec_tip1").eq(0).find(".left_align").html(tipmsg("error","请输入行业"))
+                return;
+            }
+            if($.trim(dy_pinlv)==""){
+                $("#dy_pinlv").closest(".general-input").css("border-color","#e23d46");
+                pinlv_input.nextAll(".chec_tip1").eq(0).find(".right_align").html(tipmsg("error","请输入订阅频率"))
+                return;
+            }
+            //订阅设置之后，保存的效果，写入ajax中
+            $("#dy_hy1").html("");
+            $("#dy_hy2").html("");
+            $("#dy_hy3").html("");
             $(".edit_dingyue").hide();
             $(".success_dingyue").show();
+            var flag=$(".edit_dingyue").attr("flag","1");
+            var arr=hy_district.split(",");
+            $("#dy_job_name").html(job_name);
+            $("#dy_dz").html(gz_address);
+            $("#dy_hy1").html(arr[0]);
+            $("#dy_hy2").html(arr[1]);
+            $("#dy_hy3").html(arr[2]);
+            $("#dy_pl").html(dy_pinlv);
+            $("#dy_gz").html(salery);
+            $.ajax({
+                url:"",
+                post:"post",
+                data:{
+                    job_name:job_name,
+                    gz_address:gz_address,
+                    salery:salery,
+                    hy_district:hy_district,
+                    dy_pinlv:dy_pinlv
+                },
+                success:function(data){
+                    var data=JSON.parse(data);
+                    if(data.status==1){
+                        $(".edit_dingyue").hide();
+                        $(".success_dingyue").show();
+                    }
+                }
+            })
+        })
+        $("#dy_quxiao").click(function () {
+            var flag=$(".edit_dingyue").attr("flag");
+            $(".edit_dingyue").hide();
+            if(flag==0){
+                $(".no_dingyue_list").show();
+            }else if(flag==1){
+                $(".success_dingyue").show();
+            }
+
         })
         //订阅修改
-        $("#alter_dy").click(function () {
+        $("#alter_dy,#edit_dyq").click(function () {
             $(".edit_dingyue").show();
             $(".success_dingyue").hide();
         })
@@ -649,6 +667,25 @@
         $("#sure_delete").click(function(){
             $(".no_dingyue_list").show();
             $(".edit_dingyue").hide();
+            var job_name=$("#job_name").val("");
+            var gz_address=$("#gz_address").val("");
+            var salery=$("#salery").val("");
+            var hy_district=$("#hy_district").val("");
+            var dy_pinlv=$("#dy_pinlv").val("");
+            $(".edit_dingyue").attr("flag","0");
+            $.ajax({
+                url:"",
+                post:"post",
+                data:{
+
+                },
+                success:function(data){
+                    var data=JSON.parse(data);
+                    if(data.status==1){
+                        //删除的效果--隐藏弹框
+                    }
+                }
+            });
         });
 
     })
