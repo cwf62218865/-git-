@@ -176,14 +176,15 @@ function person_collection(){
             _this.attr("flag",1);
             total++;
         }
-        if(flag==1){
             $(".deleteicon").click(function () {
-                _this.closest(".select-option1").attr("flag",0);
-                total--;
-                _this.closest(".select-option1").removeClass("click_item");
-                _this.closest(".select-option1").find("svg").remove();
+                var flag=$(this).closest(".select-option1").attr("flag");
+                if(flag==1){
+                    $(this).closest(".select-option1").attr("flag",0);
+                    --total;
+                    $(this).closest(".select-option1").removeClass("click_item");
+                    $(this).closest(".select-option1").find("svg").remove();
+                }
             })
-        }
     });
     $("#hy_preserve").click(function () {
         var html="";
@@ -195,6 +196,9 @@ function person_collection(){
         html = html.substring(0,html.length-1);
         $("#hy_district").val(html);
         $(this).closest(".options").css("height","0");
+    })
+    $("#hy_quxiao").click(function () {
+        $(this).closest(".options1").css("height","0");
     })
     $(".list_top .list_item_btn").click(function(){
         $(".list_top .list_item_btn").removeClass("select");
@@ -208,7 +212,6 @@ function person_collection(){
         $(".resume_content").show();
         $(".list_content").hide();
     });
-
     //订阅的显示
     $("#edit_dytj").click(function(){
         $(".no_dingyue_list").hide();

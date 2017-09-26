@@ -231,10 +231,10 @@
                             </svg>
                         </label>
                         <div class="options" style="height: 0px;">
-                            <div class="select-option"><span>1k元以下</span></div>
-                            <div class="select-option"><span>1k~3k</span></div>
-                            <div class="select-option"><span>3k~5k</span></div>
-                            <div class="select-option"><span>5k~10k</span> </div>
+                            <div class="select-option"><span>2k以下</span></div>
+                            <div class="select-option"><span>2k-4k</span></div>
+                            <div class="select-option"><span>4k-6k</span></div>
+                            <div class="select-option"><span>6k-10k</span> </div>
                             <div class="select-option"><span>10k以上</span> </div>
                         </div>
                     </div>
@@ -263,7 +263,7 @@
                             <div class="select-option1" flag="0"><span>金融投资证券</span> </div>
                             <div class="select-option1" flag="0"><span>其他</span> </div>
                             <div class="btns_d">
-                                <div class="public_bigbtn bg1aa currntbtn" id="hy_preserve">保存</div><span class="color_main cur margin_l">取消</span>
+                                <div class="public_bigbtn bg1aa currntbtn" id="hy_preserve">保存</div><span class="color_main cur margin_l" id="hy_quxiao">取消</span>
                             </div>
                         </div>
                     </div>
@@ -275,12 +275,11 @@
                             </svg>
                         </label>
                         <div class="options" style="height: 0px;">
-                            <div class="select-option"><span>一周</span></div>
-                            <div class="select-option"><span>两周</span></div>
-                            <div class="select-option"><span>一个月</span> </div>
-                            <div class="select-option"><span>半年</span> </div>
-                            <div class="select-option"><span>一年</span> </div>
-                            <div class="select-option"><span>一年以上</span> </div>
+                            <div class="select-option"><span>三天一次</span></div>
+                            <div class="select-option"><span>一周一次</span></div>
+                            <div class="select-option"><span>一个月一次</span> </div>
+                            <div class="select-option"><span>半年一次</span> </div>
+                            <div class="select-option"><span>一年一次</span> </div>
                         </div>
                     </div>
                     <div class="chec_tip1">
@@ -329,7 +328,7 @@
                 <div class="dingyue_list">
                 <div class="dingyue_tishi">
                     <span class="grey">以下是您订阅的职位</span>
-                    <span class="color_main cur">修改订阅条件>></span>
+                    <span class="color_main cur" id="edit_dyq">修改订阅条件>></span>
                 </div>
                 <div class="list_item">
                     <div class="item_con">
@@ -647,7 +646,7 @@
 
         })
         //订阅修改
-        $("#alter_dy").click(function () {
+        $("#alter_dy,#edit_dyq").click(function () {
             $(".edit_dingyue").show();
             $(".success_dingyue").hide();
         })
