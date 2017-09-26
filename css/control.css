@@ -311,3 +311,14 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     margin-top: 56px;
     display: block;
 }
+
+.city1 .citys{
+    position: absolute;
+    width: 145px;
+    height: 185px;
+    left: 136px;
+    overflow-y: auto;
+}
+.city1 .citys .city_con{
+    width: 145px;
+}

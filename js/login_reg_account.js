@@ -150,6 +150,27 @@ function send_resume(){
 }
 
 function person_collection(){
+
+    //提取省市内容
+    var area=new Array();
+    area=dsy.Items[0];
+    var html="";
+    for(var i=0;i<area.length;i++){
+        html+="<div class='select-option city_con ' id='city"+i+"'><span>"+area[i]+"</span></div>";
+    }
+    $(".city1 .options").html(html);
+    var city_1=dsy.Items['0_0_0'];
+    var city_html="";
+    for(var j=0;j<city_1.length;j++){
+        city_html+="<div class='select-option city_con'><span>"+city_1[j]+"</span></div>";
+    }
+    $(".citys").html(city_html);
+
+    $("#gz_address").on("click",function(){
+        var _this=$(this);
+        _this.closest(".general-select").next().css("height","185px");
+        _this.closest(".general-select").next().next().css("height","185px");
+    })
     $(".general-select input").on("mousedown",function(){
         var _this=$(this);
         if(_this.closest(".general-select").next().height()=="0"){
