@@ -79,7 +79,7 @@ $(document).ready(function(){
     var date =new Date();
     var year_date= date.getFullYear();//年
     var datetime_options="";
-    for(var i=0;i<15;i++){
+    for(var i=0;i<50;i++){
         datetime_options+="<div class='select-option' style='width:80px;'><span>"+(year_date-i)+"</span></div>"
     };
     $('.cwftimeoptions').append(datetime_options);

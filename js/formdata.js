@@ -20,13 +20,7 @@ jQuery.extend({
 
                 if(error){//需要验证通道
                     if(inputval==""){
-                        if(warn){
-                            var no_data="<div class='formtip'><img class='tip_ico' src='../images/ico_error.png'> <span class='tip_msg'>"+warn+"</span></div>"
-                        }else if(error){
-                            var no_data="<div class='formtip'><img class='tip_ico' src='../images/ico_error.png'> <span class='tip_msg'>"+error+"</span></div>"
-                        }else{
-                            var no_data=""
-                        }
+                        var no_data="<div class='formtip'><img class='tip_ico' src='../images/ico_error.png'> <span class='tip_msg'>"+error+"</span></div>"
                         inputi.closest(".general-input").css("border-color","#e23d46").append(no_data);
                         return false;
                     }else if(rg){
@@ -44,6 +38,8 @@ jQuery.extend({
                             inputi.closest(".general-input").css("border-color","#e23d46").append(no_data);
                             return false;
                         }
+                    }else{
+                        data[name]=inputval;
                     }
                 }else{//不需要验证通道
                     data[name]=inputval;

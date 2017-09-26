@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../css/header.css" rel="stylesheet">
     <link href="../css/control.css" rel="stylesheet">
+    <link href="../css/reguser1.css" rel="stylesheet">
+    <link href="../css/resume.css" rel="stylesheet">
     <link href="../css/personal.css" rel="stylesheet">
     <link href="../css/personal1.css" rel="stylesheet">
+    <!--<script src="http://html5media.googlecode.com/svn/trunk/src/html5media.min.js"></script>-->
     <title>投递简历</title>
 </head>
 <body bgcolor="#f4f4f4">
@@ -60,6 +63,54 @@
         </div>
         <div class="con_list">
 
+            <!--左侧菜单-->
+
+            <div class="resume_left_menu">
+                <div class="menus">
+                    <svg class="icon icon_item" aria-hidden="true">
+                        <use xlink:href="#icon-genghuanmoban"></use>
+                    </svg>
+                    <div>
+                        更换模板
+                    </div>
+                </div>
+                <div class="menus">
+                    <svg class="icon icon_item" aria-hidden="true">
+                        <use xlink:href="#icon-xiazaijianli"></use>
+                    </svg>
+                    <div>
+                        下载简历
+                    </div>
+                </div>
+                <div class="menus">
+                    <svg class="icon icon_item" aria-hidden="true">
+                        <use xlink:href="#icon-dayinjianli"></use>
+                    </svg>
+                    <div>
+                        打印简历
+                    </div>
+                </div>
+
+                <div class="menus">
+                    <svg class="icon icon_item" aria-hidden="true">
+                        <use xlink:href="#icon-fasongyouxiang"></use>
+                    </svg>
+                    <div>
+                        发送邮箱
+                    </div>
+                </div>
+
+                <div class="menus">
+                    <svg class="icon icon_item" aria-hidden="true">
+                        <use xlink:href="#icon-fanhuidingbu"></use>
+                    </svg>
+                    <div>
+                        返回顶部
+                    </div>
+                </div>
+            </div>
+
+            <!--头像-->
             <div class="resume_header">
                 <div class="resume_manage_header">
                     <img  src="../images/resume_head.png">
@@ -71,7 +122,9 @@
                 </div>
             </div>
 
-            <div class="basic_msg width670">
+
+            <!--基本信息-->
+            <div class="basic_msg width670" id="person_msg">
                 <div class="basic_msg_content">
                     <span class="user_name">张三</span>
                     <div class="font666" style="margin-top: 20px">
@@ -114,7 +167,7 @@
 
 
                 </div>
-                <span class="addandeditbtn">
+                <span class="addandeditbtn" id="edit_person_msg">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-xiugai"></use>
                     </svg>
@@ -123,14 +176,222 @@
             </div>
 
 
+            <div  id="person_msgbox" class="width670 basic_msg" style="display: block">
+                <div class="sexbox">
+                    <span class="sexbox_span radio_sec">男生</span>
+                    <span class="sexbox_span">女生</span>
+                    <input type="hidden" id="sex" name="sex" value="男生">
+                </div>
 
-            <div class="basic_msg width670" style="margin-top: 50px">
+
+                <div class="person_changes" style="margin-top: 30px">
+                    <div class="width300 person_changes_left">
+                        <span class="font999 resume_msg_name">姓名</span>
+                        <label class="general-input relative">
+                            <input type="text" name="user_name"  data-error="请输入姓名"  placeholder="姓名">
+                        </label>
+                    </div>
+                    <div class="width300 person_changes_right">
+                        <span class="font999 resume_msg_name">目前状态</span>
+                        <div class=" relative general-select " style="float: none">
+                            <label class="general-input relative general-select" style="float: none">
+                                <input type="text" readonly=""  name="job_status" value="找工作中">
+                                <svg class="icon inputicon" aria-hidden="true">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                                </svg>
+                            </label>
+                            <div class="options noscend" style="width: 220px;top:48px">
+                                <div class="select-option"><span>找工作中</span></div>
+                                <div class="select-option"><span>在职</span> </div>
+                                <div class="select-option"><span>离职中</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="person_changes">
+                    <div class="width300 person_changes_left">
+                        <span class="font999 resume_msg_name">出生年月</span>
+                        <div class=" relative general-select " style="float: none">
+                            <label class="general-input relative general-select" style="float: none">
+                                <input type="text" readonly="" data-error="请选择出生年月" name="birthday" value="">
+                                <svg class="icon inputicon" aria-hidden="true">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                                </svg>
+                            </label>
+                            <div class="options scend" style="width: 242px;top:48px">
+                                <div class="cwftimeoptions">
+
+                                </div>
+                                <div class="cwfmonths">
+                                    <span>1月</span>
+                                    <span>2月</span>
+                                    <span>3月</span>
+                                    <span>4月</span>
+                                    <span>5月</span>
+                                    <span>6月</span>
+                                    <span>7月</span>
+                                    <span>8月</span>
+                                    <span>9月</span>
+                                    <span>10月</span>
+                                    <span>11月</span>
+                                    <span>12月</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="width300 person_changes_right">
+                        <span class="font999 resume_msg_name">名族</span>
+                        <div class=" relative general-select " style="float: none">
+                            <label class="general-input relative general-select" style="float: none">
+                                <input type="text" readonly="" data-error="请选择名族" name="family_name" value="汉族">
+                                <svg class="icon inputicon" aria-hidden="true">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                                </svg>
+                            </label>
+                            <div class="options noscend" style="width: 220px;top:48px">
+                                <div class="cwfnationaloptions" style="width: 214px">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="person_changes">
+                    <div class="width300 person_changes_left">
+                        <span class="font999 resume_msg_name">籍贯</span>
+                        <div class=" relative general-select " style="float: none">
+                            <label class="general-input relative general-select" style="float: none">
+                                <input type="text" readonly="" data-error="请选择籍贯" name="city" value="">
+                                <svg class="icon inputicon" aria-hidden="true">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                                </svg>
+                            </label>
+                            <div class="options scend" style="width: 242px;top:48px">
+                                <div class="cwfcityoptions">
+
+                                </div>
+                                <div class="cwfarea">
+                                    <span>请先选择城市</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="width300 person_changes_right">
+                        <span class="font999 resume_msg_name">政治面貌</span>
+                        <div class=" relative general-select " style="float: none">
+                            <label class="general-input relative general-select" style="float: none">
+                                <input type="text" readonly  data-error="请选择政治面貌" name="identity" value="团员">
+                                <svg class="icon inputicon" aria-hidden="true">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                                </svg>
+                            </label>
+                            <div class="options noscend" style="width: 220px;top:48px">
+                                <div class='select-option' ><span>团员</span></div>
+                                <div class='select-option' ><span>党员</span></div>
+                                <div class='select-option'><span>群众</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="person_changes">
+                    <div class="width300 person_changes_left">
+                        <span class="font999 resume_msg_name">联系电话</span>
+                        <label class="general-input">
+                            <input type="text" data-warn="请输入11位手机号码" data-error="请输入联系电话" data-rg="^1[3|5|7|8][0-9]\d{8}$" name="moblie" placeholder="联系电话">
+                        </label>
+                    </div>
+                    <div class="width300 person_changes_right">
+                        <span class="font999 resume_msg_name">电子邮箱</span>
+                        <label class="general-input">
+                            <input type="text" name="email" data-warn="请输入邮箱" data-error="输入邮箱有误" data-rg="^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$" value="333356864@qq.com" placeholder="请输入电子邮箱">
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="person_changes">
+                    <div class=" person_changes_left">
+                        <span class="font999 resume_msg_name">现居地址</span>
+                        <div class=" relative general-select " style="float: none">
+                            <label class="general-input relative general-select" style="width: 140px;float: none">
+                                <input type="text" readonly="" data-error="请选择现居住地址" name="city" value="" placeholder="省/市" style="width: 120px">
+                                <svg class="icon inputicon" aria-hidden="true">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                                </svg>
+                            </label>
+                            <div class="options scend" style="width: 242px;top:48px">
+                                <div class="cwfcityoptions1 cityoptions">
+
+                                </div>
+                            </div>
+                        </div>
+                        <label class="general-input relative" style="width: 256px;margin-left: 20px;float:right">
+                            <input type="text" name="user_name"   placeholder="详细地址（选填）">
+                        </label>
+                        <div class=" relative general-select " style="float: right">
+                            <label class="general-input relative general-select" style="width: 140px;float: none">
+                                <input type="text" readonly="" id="area" name="area" value="" placeholder="区/县" style="width: 120px">
+                                <svg class="icon inputicon" aria-hidden="true">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                                </svg>
+                            </label>
+                            <div class="options scend" style="width: 242px;top:48px">
+                                <div class="cwfcityoptions1 areaoptions" >
+                                    <div class="select-option" style="width:140px;"><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="person_changes">
+                    <div class=" person_changes_left">
+                        <span class="font999 resume_msg_name" style="float: left">自我介绍</span>
+
+
+                        <div class="cwfreg4content" style="display: inline-block;margin-left: 20px;height: 64px;border: 1px solid #f5f5f5;width: 589px;background-color: #f5f5f5">
+                            <textarea style="width: 546px"  class="cwftextarea" name="introduce" placeholder="一句话介绍自己，告诉我为什么选择您而不是别人"></textarea>
+                        </div>
+
+                        <div  class="cwftextareatip" style="height: auto;margin-top: 10px;padding-bottom: 13px">
+                            <label class="general-input relative" style="width: 260px;;margin-left: 80px;height: 0;border: none">
+                                <input type="hidden" name="introduce" id="introduce" data-error="请输入自我介绍">
+                            </label>
+                            <span class="cwftextareamsg">还可输入<span id="textareanum" style="color: #1aa9d2">60</span>字</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="person_changes">
+                    <div class=" person_changes_left">
+                        <span class="font999 resume_msg_name" style="float: left;height: 1px"></span>
+                        <div style="display: inline-block;margin-left: 20px">
+                            <span class="savebtn public_bigbtn bg1aa" id="save_person_msg" style="padding: 0 30px 0 30px">保存</span>
+                            <span class="cancelbtn">取消</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!--求职意向-->
+
+            <div class="basic_msg width670" id="wanted_job" style="margin-top: 50px">
                 <div class="basic_msg_content">
                     <div class="resume_title">
                         <span>求职意向</span>
                     </div>
 
-                    <div class="font999" style="margin-top: 58px;line-height: 2">
+                    <div class="font999" style="display: none;margin-top: 58px;line-height: 2">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-zhiwei"></use>
                         </svg>
@@ -164,13 +425,169 @@
 
 
                 </div>
-                <span class="addandeditbtn">
+                <span class="addandeditbtn" id="edit_wanted_job">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-tianjia"></use>
                     </svg>
                     添加
                 </span>
             </div>
+
+
+            <div  id="wanted_jobbox" class="width670 basic_msg" style="margin-top: 58px">
+
+                <div class="person_changes" style="margin-top: 30px">
+
+                    <div class=" person_changes_left">
+                        <span class="font999 resume_msg_name">期望职位</span>
+
+                        <div class=" relative general-select " style="float: none;width: 480px">
+                            <label class="general-input relative general-select" style="float: none;width: 460px">
+                                <div class="want_jobbtns">
+                                    <span>Java<svg class="icon" aria-hidden="true">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-shan" class="colorbbb"></use>
+                                    </svg></span>
+                                    <span>Java
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-shan" class="colorbbb"></use>
+                                    </svg>
+                                    </span>
+                                    <span>Java
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-shan" class="colorbbb"></use>
+                                    </svg>
+                                    </span>
+                                </div>
+                                <input type="text" readonly="" data-error="请选择期望职位"  name="want_job" value="" style="width: 440px;opacity: 0;top: 0">
+                                <svg class="icon inputicon" aria-hidden="true">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                                </svg>
+                            </label>
+                            <div class="options scend" style="width: 242px;top:48px">
+                                <div class="cwfcityoptions">
+
+                                </div>
+                                <div class="cwfarea">
+                                    <span>请先选择城市</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="wanted_tip">最多选3项</span>
+                    </div>
+
+                    <div class=" person_changes_left" style="margin-top: 20px">
+                        <span class="font999 resume_msg_name">期望行业</span>
+
+                        <div class=" relative general-select " style="float: none;width: 480px">
+                            <label class="general-input relative general-select" style="float: none;width: 460px">
+                                <div class="want_jobbtns">
+                                    <span>Java<svg class="icon" aria-hidden="true">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-shan" class="colorbbb"></use>
+                                    </svg></span>
+                                    <span>Java
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-shan" class="colorbbb"></use>
+                                    </svg>
+                                    </span>
+                                    <span>Java
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-shan" class="colorbbb"></use>
+                                    </svg>
+                                    </span>
+                                </div>
+                                <input type="text" readonly="" data-error="请选择期望行业"  name="want_job" value="" style="width: 440px;opacity: 0;top: 0">
+                                <svg class="icon inputicon" aria-hidden="true">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                                </svg>
+                            </label>
+                            <div class="options scend" style="width: 242px;top:48px">
+                                <div class="cwfcityoptions">
+
+                                </div>
+                                <div class="cwfarea">
+                                    <span>请先选择城市</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="wanted_tip">最多选3项</span>
+                    </div>
+
+
+                    <div class=" person_changes_left" style="margin-top: 20px">
+                        <span class="font999 resume_msg_name">期望薪资</span>
+                        <div class=" relative general-select " style="float: none">
+                            <label class="general-input relative general-select" style="float: none">
+                                <input type="text" readonly  data-error="请选择期望薪资" style="width: 200px" name="identity" value="6k-8k">
+                                <svg class="icon inputicon" aria-hidden="true">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                                </svg>
+                            </label>
+                            <div class="options noscend" style="width: 220px;top:48px">
+                                <div class='select-option'><span>2k-4k</span></div>
+                                <div class='select-option'><span>4k-6k</span></div>
+                                <div class='select-option'><span>6k-8k</span></div>
+                                <div class='select-option'><span>8k-15k</span></div>
+                                <div class='select-option'><span>15k以上</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class=" person_changes_left" style="margin-top: 20px">
+                        <span class="font999 resume_msg_name">期望地点</span>
+                        <div class=" relative general-select " style="float: none">
+                            <label class="general-input relative general-select" style="float: none">
+                                <input type="text" readonly="" data-error="请选择籍贯" name="city" value="">
+                                <svg class="icon inputicon" aria-hidden="true">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                                </svg>
+                            </label>
+                            <div class="options scend" style="width: 242px;top:48px">
+                                <div class="cwfcityoptions">
+
+                                </div>
+                                <div class="cwfarea">
+                                    <span>请先选择城市</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                <div class=" person_changes_left" style="margin-top: 20px">
+                    <span class="font999 resume_msg_name">工作性质</span>
+                    <div class=" relative general-select " style="float: none">
+                        <label class="general-input  general-select" style="float: none">
+                            <input type="text" readonly  data-error="请选择工作性质" name="identity" value="全职">
+                            <svg class="icon inputicon" aria-hidden="true">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                            </svg>
+                        </label>
+                        <div class="options noscend" style="width: 220px;top:48px">
+                            <div class='select-option'><span>全职</span></div>
+                            <div class='select-option'><span>兼职</span></div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                </div>
+
+                <div class="person_changes">
+                    <div class=" person_changes_left">
+                        <span class="font999 resume_msg_name" style="float: left;height: 1px"></span>
+                        <div style="display: inline-block;margin-left: 20px">
+                            <span class="savebtn public_bigbtn bg1aa" id="save_wanted_job_msg" style="padding: 0 30px 0 30px">保存</span>
+                            <span class="cancelbtn">取消</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+<!--工作经历-->
 
             <div class="basic_msg width670" style="margin-top: 50px">
                 <div class="basic_msg_content">
@@ -245,6 +662,182 @@
                 </span>
             </div>
 
+<!--教育经历-->
+            <div class="basic_msg width670" style="margin-top: 50px">
+                <div class="basic_msg_content">
+                    <div class="resume_title">
+                        <span>教育经历</span>
+                    </div>
+
+                    <div class="resume_exp">
+                        <div class="left_line">
+                        </div>
+
+                        <div class="resume_exp_content">
+
+                            <div class="relative">
+                                <span class="exp_title">重庆大学</span>
+                                <span class="addandeditbtn">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-xiugai"></use>
+                                    </svg>
+                                    修改
+                                </span>
+                            </div>
+
+                            <div class="exp_job">
+                                <span class="exp_jobleft">计算机软件</span>
+                                <span class="exp_jobleft" style="margin-left: 8px">本科</span>
+                                <span class="exp_jobright">2017届</span>
+                            </div>
+
+                            <div class="exp_content">
+                                学习多方面服装的设计相关的知识以及制作。包括有手绘方面的培训，电脑绘图方面的训练，以及有服装纸样的学习以及相关制作工艺的锻炼
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <span class="addandeditbtn">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-tianjia"></use>
+                    </svg>
+                    添加
+                </span>
+            </div>
+
+<!--个人作品-->
+            <div class="basic_msg width670" style="margin-top: 50px">
+                <div class="basic_msg_content">
+                    <div class="resume_title">
+                        <span>个人作品</span>
+                    </div>
+
+                    <div class="resume_exp">
+
+                        <div class="person_works">
+
+                            <div class="person_work">
+                                <div class="img_box"><img src="../images/person_img.png"></div>
+                                <div class="person_workmsg relative">
+                                    <span>商务合作官网首页商务合作官网首页</span>
+                                    <span class="addandeditbtn" style="top: 0">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-xiugai"></use>
+                                    </svg>
+                                    修改
+                                </span>
+                                </div>
+                            </div>
+
+                            <div class="person_work">
+                                <div class="img_box"><img src="../images/person_img.png"></div>
+                                <div class="person_workmsg relative">
+                                    <span>商务合作官网首页商务合作官网首页</span>
+                                    <span class="addandeditbtn" style="top: 0">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-xiugai"></use>
+                                    </svg>
+                                    修改
+                                </span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <span class="addandeditbtn">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-tianjia"></use>
+                    </svg>
+                    添加
+                </span>
+            </div>
+
+<!--30秒个人视频-->
+            <div class="basic_msg width670" style="margin-top: 50px">
+                <div class="basic_msg_content">
+                    <div class="resume_title">
+                        <span style="width: 150px;margin-left: 260px">30秒个人视频</span>
+                    </div>
+                    <div class="resume_exp">
+                        <div class="person_works relative">
+                            <video src="http://www.zhangxinxu.com/study/media/cat.mp4" width="500" height="300" controls autobuffer style="margin-left: 85px"></video>
+                            <span class="addandeditbtn" style="top: 0">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-xiugai"></use>
+                                    </svg>
+                                    修改
+                                </span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <span class="addandeditbtn">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-tianjia"></use>
+                    </svg>
+                    添加
+                </span>
+            </div>
+
+
+
+            <!--荣誉证书-->
+            <div class="basic_msg width670" style="margin-top: 50px;margin-bottom: 180px">
+                <div class="basic_msg_content">
+                    <div class="resume_title">
+                        <span >荣誉证书</span>
+                    </div>
+                    <div class="resume_exp">
+                        <div class="person_works">
+                            <div class="relative">
+                                <span class="certificate">2013年3月获得全国中小学生数学竞赛一等奖</span>
+                                <span class="addandeditbtn" style="top: 0">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-xiugai"></use>
+                                    </svg>
+                                    修改
+                                </span>
+                            </div>
+
+                            <div class="relative">
+                                <span class="certificate">2013年3月获得全国中小学生数学竞赛一等奖</span>
+                                <span class="addandeditbtn" style="top: 0">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-xiugai"></use>
+                                    </svg>
+                                    修改
+                                </span>
+                            </div>
+
+                            <div class="relative">
+                                <span class="certificate">2013年3月获得全国中小学生数学竞赛一等奖</span>
+                                <span class="addandeditbtn" style="top: 0">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-xiugai"></use>
+                                    </svg>
+                                    修改
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <span class="addandeditbtn">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-tianjia"></use>
+                    </svg>
+                    添加
+                </span>
+            </div>
         </div>
     </div>
     <div class="p1_right">
@@ -312,13 +905,48 @@
     </div>
 </div>
 
-
+<!--弹框-->
+<div class="modalbox loginn_zj" id="modalbox" style="display: none;">
+    <div class="modal">
+        <p class="title_content">标题内容</p>
+            <span class="modalclose">
+                <img src="../images/close.png"/>
+            </span>
+        <div class="modal_con">
+            <div class="one_btn">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-shangchuan"></use>
+                </svg>
+            </div>
+            <div class="erweima">
+                <img src="../images/erweima.png" class="pic"/>
+            </div>
+        </div>
+        <div class="title">
+            <span>电脑上传</span>
+            <span>手机扫码上传</span>
+        </div>
+        <input type='file' name='file' id='file' accept='image/*' style="display: none">
+        <span class="public_bigbtn bg1aa modalbtn">立即上传</span>
+    </div>
+</div>
+<!--弹框end-->
 
 </body>
 <script src="../js/jquery.js" rel="script"></script>
 <script src="../js/iconfont.js" rel="script"></script>
 <script src="../js/control.js" rel="script"></script>
+<script src="../js/area.js" rel="script"></script>
+<script src="../js/resume_manager.js" rel="script"></script>
+<script src="../js/formdata.js" rel="script"></script>
 <script>
-    $(".left_line").css("height",$(".left_line").parent().height()-48+"px")
+    $(".left_line").each(function(){
+        $(this).css("height",$(this).parent().height()-48+"px")
+    })
+    $.fromdata("#person_msgbox","test.php","#save_person_msg",function(data){
+        //do something
+    })
+
+
 </script>
 </html>

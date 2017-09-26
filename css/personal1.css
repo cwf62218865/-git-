@@ -108,7 +108,7 @@
 .resume_manage_header{
     display: inline-block;
     position: absolute;
-    top: 85px;
+    top: 95px;
     width: 130px;
     height: 130px;
     border-radius: 65px;
@@ -130,7 +130,7 @@
     display: none;
     width: 120px;height: 120px;
     z-index: 999;
-    font-size:30px;
+    font-size:38px;
     color: #fff;
     top:5px;
     left: 5px;
@@ -175,6 +175,7 @@
 .font666 .icon{
     margin-right: 3px;
     color: #a0a0a0;
+    font-size: 18px;
 }
 .basic_msg_contents{
     margin-right: 15px;
@@ -218,10 +219,12 @@
     font-size: 14px;
     color: #999;
 }
+.font999 .icon{
+    font-size: 18px;
+}
 .resume_exp{
     margin-top: 18px;
     width: 100%;
-    height: auto;
 }
 .left_line{
     display: inline-block;
@@ -264,9 +267,177 @@
     content: "";
     position: absolute;
     left: -26px;
-    top:8px;
+    top:6px;
     width: 11px;
     height: 11px;
     border-radius: 10px;
     background-color:#09c ;
+}
+.person_works{
+    margin-top: 58px;
+}
+.person_work{
+    display: inline-block;
+    width: 320px;
+
+}
+.person_work .img_box{
+    display: inline-block;
+    width: 100%;
+    height: 260px;
+}
+.person_workmsg{
+    display: inline-block;
+    width: 100%;
+    margin-top: 12px;
+}
+.person_work:nth-child(2),.person_work:nth-child(3){
+    float: right;
+    margin-left: 20px;
+}
+.certificate{
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+    margin-left: 26px;
+    position: relative;
+}
+.certificate:after{
+    content: "";
+    position: absolute;
+    left: -26px;
+    top:6px;
+    width: 11px;
+    height: 11px;
+    border-radius: 10px;
+    background-color:#09c ;
+}
+.person_works .relative{
+    margin-top: 16px;
+}
+.resume_left_menu{
+    position: fixed;
+    display: inline-block;
+    width: 68px;
+    top: 50%;
+    left: 50%;
+    margin-top: -210px;
+    margin-left: -700px;
+}
+.resume_left_menu .menus{
+    display: inline-block;
+    width: 100%;
+    height: 68px;
+    margin-bottom: 2px;
+    font-size: 12px;
+    background-color: #555566;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+.resume_left_menu .menus svg{
+    margin-top: 6px;
+}
+.resume_left_menu .menus:hover{
+    background-color: #ff6060;
+}
+.sexbox{
+    width: 100%;
+    text-align: center;
+}
+.sexbox_span{
+    display: inline-block;
+    width: 80px;
+    height: 46px;
+    line-height: 46px;
+    border: 1px solid #ddd;
+    color: #666;
+    margin: 0 6px 0 6px;
+    cursor: pointer;
+}
+.sexbox .radio_sec{
+    border: 1px solid #1aa9d2;
+    color: #1aa9d2;
+}
+.width300{
+    display: inline-block;
+    width: 300px;
+}
+.resume_msg_name{
+    display: inline-block;
+    width: 58px;
+    text-align: right;
+    height: 48px;
+    line-height: 48px;
+    float: left;
+}
+.person_changes{
+    margin-top: 20px;
+    display: inline-block;
+    width: 100%;
+}
+.person_changes_right{
+    float: right;
+}
+.person_changes label{
+    width: 218px;
+}
+.person_changes label input{
+    width: 200px;
+    height: 48px;
+    line-height: 48px;
+    position: absolute;
+    z-index: 99;
+}
+.person_changes .select-option{
+    width: 218px;
+}
+.person_changes .select-option:hover{
+    background-color: rgb(26, 169, 210);
+    color: rgb(255, 255, 255);
+}
+.cancelbtn{
+    display: inline-block;
+    padding: 10px;
+    margin-left: 20px;
+    color: #09c;
+    cursor: pointer;
+}
+
+.want_jobbtns{
+    margin-left: 20px;
+    position: absolute;
+    top: 0;
+    z-index: 10
+}
+.want_jobbtns span{
+    display: inline-block;
+    height: 18px;
+    line-height: 18px;
+    margin-right: 10px;
+    padding: 5px 8px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.wanted_tip{
+    display: inline-block;
+    float: right;
+    color: #E23D46;
+    font-size: 14px;
+    height: 48px;
+    margin-right: 40px;
+    line-height: 48px;
+}
+.cwfcityoptions1{
+    max-height: 147px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 140px;
+    display: inline-block;
+    float: left;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.cwftextareatip .formtip{
+    margin-top: 0px;
 }
