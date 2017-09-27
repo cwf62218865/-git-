@@ -24,7 +24,13 @@ $(".modalclose").on("click",function(){
     },300)
 });
 
-
+$("#person_worksaddbtn").click(function () {
+    $(".title_content").html("个人作品");
+    $("#modalbox").animate({"opacity":1},300);
+    setTimeout(function(){
+        $("#modalbox").css("display","block");
+    },0)
+});
 
 //基本信息
 $(".sexbox_span").on("click",function(){
@@ -113,15 +119,13 @@ $('.cwfcityoptions').append(city);
 
 $("body").on("mousedown",".cwfcityoptions .select-option",function(){
     var _this=$(this);
-    $(".cwfcityoptions .select-option").each(function(){
-        var _that=$(this);
-        //_that.css({'background-color':'#fff','color':'#333'})
-    });
-    //_this.css({'background-color':'#1aa9d2','color':'#fff'});
-
     var areas="";
     var data_id=_this.attr("data-id");
-    var listnum="0_"+data_id+"_0";
+    if(data_id<=3){
+        var listnum="0_"+data_id+"_0";
+    }else{
+        var listnum="0_"+data_id;
+    }
     var areamsg=dsy.Items[listnum];
     for(var i=0;i<areamsg.length;i++){
         areas+="<span>"+areamsg[i]+"</span>"
@@ -152,7 +156,11 @@ $("body").on("mousedown",".cityoptions .select-option",function(){
 
     var areas="";
     var data_id=_this.attr("data-id");
-    var listnum="0_"+data_id+"_0";
+    if(data_id<=3){
+        var listnum="0_"+data_id+"_0";
+    }else{
+        var listnum="0_"+data_id;
+    }
     var areamsg=dsy.Items[listnum];
     $("#area").val(areamsg[0]);
     for(var i=0;i<areamsg.length;i++){
@@ -173,7 +181,7 @@ $("body").on("mousedown",".areaoptions .select-option",function(){
 
 
 //文本域输入数字显示
-$(".cwftextarea").on("input",function(){
+$(".cwftextarea").eq(0).on("input",function(){
     var content=$(this).val();
     var contentlength=content.length;
     var length=60;
@@ -195,15 +203,60 @@ $(".cwftextarea").on("focus",function(){
 
 //修改
 $("#edit_person_msg").on("click",function(){
-    if($("#person_msgbox").css("display")=="none"){
-        $("#person_msgbox").show();
-        $("#person_msg").hide();
-    }else{
-        $("#person_msg").show();
-        $("#person_msgbox").hide();
-    }
+
+    $("#person_msgbox").show();
+    $("#person_msg").hide();
+    $("#person_msgbox label").css("border-color","#f5f5f5");
+    $(".formtip").remove();
 });
 
+
+//工作经历
+//添加工作经历
+$("#addjobexp").on("click",function(){
+    $("#job_expbox .delbtn").hide();
+    $("#job_expbox input").val("");
+
+    $("#job_expbox label").css("border-color","#f5f5f5");
+    $(".formtip").remove();
+
+    $("#job_content").val("");
+    $("#exp_id").val("");
+    $("#job_exp").hide();
+    $("#addjobexp").hide();
+    $("#job_expbox").show();
+
+})
+
+
+//教育经历
+
+var endstarttime_options="";
+for(var i=0;i<15;i++){
+    endstarttime_options+="<div class='select-option' style='width:138px;'><span>"+(year_date-i)+"</span></div>"
+};
+$("#identity").val(year_date)
+$('#endstarttime_options').append(endstarttime_options);
+
+//添加教育经历
+$("#addedutionexp").on("click",function(){
+    $("#edutionbox .delbtn").hide();
+    $("#edutionbox input").val("");
+
+    $("#edutionbox label").css("border-color","#f5f5f5");
+    $(".formtip").remove();
+
+    $("#edu_id").val("");
+    $("#edutionexp").hide();
+    $("#addedutionexp").hide();
+    $("#edutionbox").show();
+
+})
+
+
+
+
+//修改求职意向
 $("#edit_wanted_job").on("click",function(){
     if($("#wanted_jobbox").css("display")=="none"){
         $("#wanted_jobbox").show();
@@ -214,6 +267,45 @@ $("#edit_wanted_job").on("click",function(){
     }
 })
 
+
+$("#job_content").on("input",function(){
+    var content=$(this).val();
+    $("#job_contentinput").val(content);
+})
+
+
+
+//个人作品
+//添加个人作品
+$("#addpersonworks").on("click",function(){
+    $("#person_worksbox .delbtn").hide();
+    $(".person_worksbox .person_worksbtn").remove();
+
+    $("#person_worksbox label").css("border-color","#f5f5f5");
+    $(".formtip").remove();
+
+    $("#person_worksinput").val("");
+    $("#works_id").val("");
+    $("#person_works").hide();
+    $("#addpersonworks").hide();
+    $("#person_worksbox").show();
+
+})
+
+
+//    删除个人作品
+$(".person_worksdelbtn").on("click",function(){
+    var _this=$(this);
+    var images="";
+    _this.closest(".person_worksbtn").remove();
+    $(".person_worksbox img").each(function(){
+        images+=$(this).attr("src")+",";
+    });
+    $("#person_worksinput").val(images.substring(0,images.length-1));
+})
+
+
+
 //取消
 $(".cancelbtn").eq(0).on("click",function(){
     $(this).closest(".basic_msg").hide();
@@ -222,4 +314,19 @@ $(".cancelbtn").eq(0).on("click",function(){
 $(".cancelbtn").eq(1).on("click",function(){
     $("#wanted_job").show();
     $("#wanted_jobbox").hide();
+})
+$(".cancelbtn").eq(2).on("click",function(){
+    $("#job_exp").show();
+    $("#addjobexp").show();
+    $("#job_expbox").hide();
+})
+$(".cancelbtn").eq(3).on("click",function(){
+    $("#edutionexp").show();
+    $("#addedutionexp").show();
+    $("#edutionbox").hide();
+})
+$(".cancelbtn").eq(4).on("click",function(){
+    $("#person_works").show();
+    $("#addpersonworks").show();
+    $("#person_worksbox").hide();
 })

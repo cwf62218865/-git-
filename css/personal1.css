@@ -275,11 +275,12 @@
 }
 .person_works{
     margin-top: 58px;
+    text-align: center;
 }
 .person_work{
     display: inline-block;
     width: 320px;
-
+    text-align: left;
 }
 .person_work .img_box{
     display: inline-block;
@@ -401,6 +402,15 @@
     padding: 10px;
     margin-left: 20px;
     color: #09c;
+    font-size: 16px;
+    cursor: pointer;
+}
+.delbtn{
+    display: inline-block;
+    padding: 10px;
+    font-size: 16px;
+    margin-left: 260px;
+    color: #f39698;
     cursor: pointer;
 }
 
@@ -440,4 +450,71 @@
 }
 .cwftextareatip .formtip{
     margin-top: 0px;
+}
+/*.person_changes_left{*/
+    /*display: inline-block;*/
+    /*width: 100%;*/
+/*}*/
+.autooptions {
+    height: 185px;
+    top: 48px;
+    overflow-y: auto;
+}
+.wrap{
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.person_worksbox{
+
+    margin-left: 78px;
+}
+.person_worksbtn{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    overflow:hidden ;
+    margin: 0 30px 30px 0;
+}
+.person_worksbtn1{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    overflow:hidden ;
+    margin: 0 30px 30px 0;
+}
+.person_worksbtn img{
+    width: 100%;
+}
+.person_worksdelbtn{
+    display: inline-block;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    line-height:150px;
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.4);
+}
+#person_worksaddbtn{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    line-height:150px;
+    font-size: 200px;
+    cursor: pointer;
+}
+#person_worksaddbtn .icon{
+    position: absolute;
+    left: -25px;
+    top: -25px;
 }
