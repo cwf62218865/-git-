@@ -60,7 +60,11 @@ $(document).ready(function(){
 
         var areas="";
         var data_id=_this.attr("data-id");
-        var listnum="0_"+data_id+"_0";
+        if(data_id<=3){
+            var listnum="0_"+data_id+"_0";
+        }else{
+            var listnum="0_"+data_id;
+        }
         var areamsg=dsy.Items[listnum];
         for(var i=0;i<areamsg.length;i++){
             areas+="<span>"+areamsg[i]+"</span>"
