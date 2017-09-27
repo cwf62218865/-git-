@@ -126,10 +126,19 @@
 .tongjis{
     width: 100%;background: #ffffff;height: 186px;border-bottom: 1px solid #f4f4f4;
 }
-.items1{
-    width: 103px;height: 50px;float: left;text-align: center;margin-top: 30px;
+.tongjis1{ width: 240px;
+    margin: 0 auto;padding-left: 35px;padding-right: 35px;
 }
-.items1 .number{
+.items1,.items2{
+    height: 50px;float: left;text-align: center;margin-top: 30px;
+}
+.items1{
+    width: 103px;
+}
+.items2{
+    width: 120px;
+}
+.items1 .number,.items2 .number{
     display: block;
     font-size: 24px;color: #0099cc;
 }
@@ -342,7 +351,7 @@
     width: 100%;
     float: left;
     font-size: 16px;}
-.tongyi_statas,.tongyi{
+.tongyi_statas,.tongyi,.tongyi1{
     color: #0099cc;
 }
 .jujue_statas{
@@ -351,7 +360,10 @@
 .tongyi,.jujue{
     float: left;height: 50px;border-top: 1px solid #eeeeee;width: 199.5px;cursor: pointer;
 }
-.jujue{
+.tongyi1,.jujue1{
+    float: left;height: 50px;border-top: 1px solid #eeeeee;width: 132.6px;cursor: pointer;
+}
+.jujue,.jujue1{
     border-left: 1px solid #eeeeee;color: #666666;
 }
 .refusebox{
@@ -386,15 +398,21 @@
     width: 100%;
     display: block;
 }
-.tijiao{
+.tijiao,.tijiao1{
     border: none;
-    outline: none;
-    width: 100px;height: 36px;background: #0099cc;color: #ffffff;display: inline-block;text-align: center;line-height: 36px;margin-left: 180px;cursor: pointer;
+    outline: none;border-radius: 3px;
+    width: 100px;height: 36px;background: #0099cc;color: #ffffff;display: inline-block;text-align: center;line-height: 36px;cursor: pointer;
 }
-.tijiao:hover{
+.tijiao{
+    margin-left: 180px;
+}
+.tijiao1{
+    margin-left: 136px;
+}
+.tijiao:hover,.tijiao1:hover{
     background: #1aa9d2;
 }
-.quxiao{
+.quxiao,.quxiao1{
     margin-left: 30px;cursor: pointer;
 }
 .dingyue_tishi{
@@ -550,4 +568,232 @@
 }
 .click_item .icon{
     fill: #ffffff;
+}
+
+.preview .addandeditbtn{
+    display: none;
+}
+.preview .p1_left{
+    float: none;
+    margin: 0 auto;
+}
+.preview .con_list{
+    margin-top: 0px;
+    margin-bottom: 100px;
+}
+.resume_btns{
+    width: 120px;
+    height: 40px;
+    color: #0099cc;
+    border-radius: 3px;
+    border: 1px solid #0099cc;
+    background: #ffffff;line-height: 40px;text-align: center;
+    cursor: pointer;
+    margin-right: 40px;
+}
+.icon_resume{
+    width: 24px;height: 24px;vertical-align: middle;
+}
+.resume_btns:hover{
+    color: #ffffff;
+    background: #0099cc;
+}
+.genghuanbeijing{
+    height: 40px;
+    width: 280px;
+    line-height: 40px;
+   color: #999999;font-size: 14px;
+}
+.genghuanbeijing .wenzi{vertical-align: text-bottom;display: inline-block;float: left}
+.genghuanbeijing .color{
+    width: 28px;height: 28px;border: 1px solid #eeeeee;display: inline-block;margin-top: 5px;margin-left: 20px;float: left;position: relative;
+    cursor: pointer;
+}
+.color1{
+    background: #000000;
+}
+.color2{
+    background: #f5f5f5;
+}
+.color3{
+    background: #ffffff;
+}
+.color4{
+    background: #777777;
+}
+.color .select{
+    position: absolute;
+    width: 38px;
+    height: 38px;border: 1px solid #0099cc;border-radius: 3px;display: block;left: -6px;
+    top: -6px;
+}
+.job_send{
+    float: right;
+    margin-right: 112px;cursor: pointer;position: relative;
+}
+.job_send .wenzi{
+    float: left;
+}
+.my_joblist{
+    display: none;
+    position: absolute;
+    width: 132px;height: 130px;padding-top: 30px;padding-bottom: 30px;text-align: center;overflow-y: auto;
+    box-shadow: 6px 5px 24px rgba(0,0,0,0.12);background: #ffffff;top: 45px;left: -20px;line-height: 42px;
+}
+.option_select:hover{
+    color: #0099cc;
+}
+.shoucanginput{
+    float: right;margin-top: 15px;margin-right: 25px;display: none;
+}
+.inputcon{
+    width: 240px;height: 36px;background: #f5f5f5;float: left;line-height: 36px;
+}
+.btn_sou{
+    float: left;width: 54px;height: 36px;background: #0099cc;line-height: 36px;text-align: center;color: #ffffff;
+}
+#job_name_sou{
+    background:  #f5f5f5;outline: none;
+}
+.touxiang_pic{
+    width: 100px;height: 100px;
+    border-radius: 100px;
+    overflow: hidden;float: left;
+}
+.basic_massage{
+    float: left;
+    margin-left: 24px;
+}
+.basic_massage .name{
+    font-size: 20px;color: #333333;
+}
+.basic_massage .view_i{
+    font-size: 12px;color: #999999;margin-left: 8px;
+}
+.hope_job{
+    font-size: 16px;color: #7b8fc9;width: 110px;text-align: right;display: inline-block;
+}
+.bm_hang1{
+    width: 216px;
+}
+.bm_hang2{
+    width: 216px;margin-top: 20px;
+}
+.bm_hang3{
+    width: 216px;margin-top: 12px;
+}
+.bm_hang4{
+    width: 216px;margin-top: 12px;
+}
+.basic_xx{
+    color: #666666;
+}
+.shoucang_beizhu{
+    margin-top: 18px;
+    color: #999999;
+    margin-bottom: 26px;
+}
+.edit_ico{
+    width: 20px;height: 20px;float: right;color: #0099cc;
+}
+.job_hope{
+    margin-right: 16px;
+}
+.scbz_input{
+    width: 258px;height: 42px;padding: 20px;background: #f5f5f5;border: 1px solid #dddddd;max-width: 260px;max-height: 44px;resize:none;
+    outline: none;margin-left: 66px;margin-top: 40px;
+}
+.invite_con{
+    width: 540px;
+    margin-left: 40px;
+    margin-top: 50px;
+}
+.biaoti{
+    width: 60px;
+    text-align: right;
+    float: left;
+    display: inline-block;
+    height: 48px;
+    line-height: 48px;
+    margin-bottom: 20px;
+}
+.in_hang{
+    position: relative;
+}
+.in_hang .general-input{
+    width: 460px;
+    float: right;
+    margin-left: 0;
+    margin-bottom: 20px;
+}
+.in_hang .review_city,.in_hang .review_district{
+    width: 220px;float: left;
+}
+.in_hang .review_district{
+    float: right;
+}
+ .in_hang .review_city{
+    margin-left: 18px;
+ }
+.review_time{
+    display: none;
+    height: 162px;
+}
+.review_date{
+    display: none;
+    height: auto;
+}
+ .review_time,.review_date{
+     right: 0;
+     top: 50px;
+     width: 463px;
+     position: absolute;z-index: 99;
+     background: #ffffff;
+     box-shadow: 2px 4px 6px rgba(0,0,0,0.1);
+ }
+ .time_hour,.select_date{
+     display: inline-block;
+     width: 100px;height: 36px;
+     color: #666666;line-height: 36px;text-align: center;
+     margin-top: 35px;cursor: pointer;
+ }
+.time_hour:nth-child(1){
+    margin-left: 15px;
+}
+.time_hour:hover{
+    background: #a8c9ea;color: #ffffff;
+}
+.date_items{
+    width: 54px;height: 54px;color: #666666;display: inline-block;margin-top: 30px;
+    margin-right: 10px;float: left;cursor: pointer;
+}
+.date_items:hover{
+    background: #a8c9ea;color: #ffffff;
+}
+.review_time .slect, .selcit{
+    background: #a8c9ea;color: #ffffff;
+ }
+.select_date{
+    color: #a8c9ea;border: 1px solid #a8c9ea;margin-top: 20px;margin-left: 15px;
+}
+
+.date_items:nth-child(1){
+    margin-left: 15px;
+}
+
+.date_items .dater{
+    height: 28px;line-height: 28px;width: 54px;
+}
+.date_items .dater,.date_items .week{
+    display: block;text-align: center;font-size: 14px;
+}
+.hours_edit{
+    width: 120px;
+    margin-top: 30px;float: left;margin-left: 170px;margin-bottom: 30px;
+}
+.hour_btn,.hour_num{
+    width: 34px;height: 34px;border: 1px solid #dddddd;display: inline-block;float: left;text-align: center;line-height: 34px;
+}
+.hour_num{
+    width: 46px;
 }

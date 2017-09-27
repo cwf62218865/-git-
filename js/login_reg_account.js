@@ -137,15 +137,19 @@ function send_resume(){
     });
     $("#send_list").click(function(){
         $(".list_content").show();
+        $(".shoucanginput").hide();
         $(".resume_content").hide();
         $(".ico_rightstatas").show();
         $(".biezhu").show();
+        $(".job_send").show();
     });
     $("#review").click(function(){
         $(".resume_content").show();
+        $(".shoucanginput").show();
         $(".list_content").hide();
         $(".ico_rightstatas").hide();
         $(".biezhu").hide();
+        $(".job_send").hide();
     })
 }
 
