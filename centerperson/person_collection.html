@@ -207,20 +207,18 @@
                     <label class="general-input current">
                         <input type="text" id="job_name" style="" placeholder="请输入职位名称">
                     </label>
-                    <div class="relative general-select input_wai">
+                    <div class="relative general-select input_wai city1">
                         <label class="general-input relative general-select current1">
                             <input type="text" readonly="" id="gz_address" placeholder="工作地点"  style="width: 80px;">
                             <svg class="icon inputicon" aria-hidden="true">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
                             </svg>
                         </label>
-                        <div class="options" style="height: 0px;">
-                            <div class="select-option"><span>一线城市</span></div>
-                            <div class="select-option"><span>二线城市</span></div>
-                            <div class="select-option"><span>沿海城市</span> </div>
-                            <div class="select-option"><span>三线城市</span> </div>
-                            <div class="select-option"><span>乡镇、农村</span> </div>
-                            <div class="select-option"><span>其他</span> </div>
+                        <div class="options" style="height: 185px;overflow-y: auto">
+                            <div class="select-option"><span></span></div>
+                        </div>
+                        <div class="options citys"  style="height: 185px;overflow-y: auto">
+                            <div class="select-option"><span></span></div>
                         </div>
                     </div>
                     <div class=" relative general-select input_wai">
@@ -559,6 +557,7 @@
 <script src="../js/iconfont.js" rel="script"></script>
 <script src="../js/control.js" rel="script"></script>
 <script src="../js/login_reg_account.js" rel="script"></script>
+<script src="../js/area.js" rel="script"></script>
 <script>
     $(function (){
         person_collection();
@@ -643,7 +642,6 @@
             }else if(flag==1){
                 $(".success_dingyue").show();
             }
-
         })
         //订阅修改
         $("#alter_dy,#edit_dyq").click(function () {
