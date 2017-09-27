@@ -312,13 +312,33 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     display: block;
 }
 
-.city1 .citys{
-    position: absolute;
-    width: 145px;
-    height: 185px;
-    left: 136px;
+.cwfcityoptions2 {
+    height: 147px;
     overflow-y: auto;
+    overflow-x: hidden;
+    width: 120px;
+    display: inline-block;
+    float: left;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
-.city1 .citys .city_con{
-    width: 145px;
+
+.cwfarea {
+    width: 140px;
+    display: inline-block;
+    height: 147px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.cwfarea span {
+    display: inline-block;
+    height: 36px;
+    width: 120px;
+    padding-left: 20px;
+    line-height: 36px;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 1px solid #ddd;
 }

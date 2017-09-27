@@ -151,27 +151,48 @@ function send_resume(){
 
 function person_collection(){
 
-    //提取省市内容
-    var area=new Array();
-    area=dsy.Items[0];
-    var html="";
-    for(var i=0;i<area.length;i++){
-        html+="<div class='select-option city_con ' id='city"+i+"'><span>"+area[i]+"</span></div>";
-    }
-    $(".city1 .options").html(html);
-    var city_1=dsy.Items['0_0_0'];
-    var city_html="";
-    for(var j=0;j<city_1.length;j++){
-        city_html+="<div class='select-option city_con'><span>"+city_1[j]+"</span></div>";
-    }
-    $(".citys").html(city_html);
-
-    $("#gz_address").on("click",function(){
+    $("body").on("mousedown",".city1 .select-option",function(){
         var _this=$(this);
-        _this.closest(".general-select").next().css("height","185px");
-        _this.closest(".general-select").next().next().css("height","185px");
-    })
-    $(".general-select input").on("mousedown",function(){
+        var optionhtml=_this.find("span").eq(0).html();
+    });
+
+    //籍贯
+    var  area=dsy.Items[0];
+    var city="";
+    for(var i=0;i<area.length;i++){
+        city+="<div class='select-option' style='width:120px;' data-id='"+i+"'><span>"+area[i]+"</span></div>"
+    };
+    $('.cwfcityoptions2').append(city);
+
+    $("body").on("mousedown",".cwfcityoptions2 .select-option",function(){
+        var _this=$(this);
+        $(".cwfcityoptions2 .select-option").each(function(){
+            var _that=$(this);
+            //_that.css({'background-color':'#fff','color':'#333'})
+        });
+        //_this.css({'background-color':'#1aa9d2','color':'#fff'});
+        var areas="";
+        var data_id=_this.attr("data-id");
+        if(data_id<=3){
+            var listnum="0_"+data_id+"_0";
+        }else{
+            var listnum="0_"+data_id;
+        }
+        var areamsg=dsy.Items[listnum];
+        for(var i=0;i<areamsg.length;i++){
+            areas+="<span>"+areamsg[i]+"</span>"
+        }
+        $(".cwfarea").html(areas);
+    });
+    $("body").on("mousedown",".cwfarea span",function(){
+        var _this=$(this);
+        _this.closest(".options").prev().find("input").val(_this.html());
+        _this.closest(".options").css("height","0px");
+    });
+
+
+
+    $(".general-input input").on("mousedown",function(){
         var _this=$(this);
         if(_this.closest(".general-select").next().height()=="0"){
             $(".options").css("height","0px");
@@ -180,7 +201,7 @@ function person_collection(){
             _this.closest(".general-select").next().css("height","0px");
         }
     })
-    $("body").on("mousedown",".select-option",function(){
+    $("body").on("mousedown",".statesinput .select-option",function(){
         var _this=$(this);
         var optionhtml=_this.find("span").eq(0).html();
         _this.closest(".options").prev().find("input").val(optionhtml);
