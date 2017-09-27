@@ -176,7 +176,7 @@
             </div>
 
 
-            <div  id="person_msgbox" class="width670 basic_msg" style="display: block">
+            <div  id="person_msgbox" class="width670 basic_msg" style="display: none">
                 <div class="sexbox">
                     <span class="sexbox_span radio_sec">男生</span>
                     <span class="sexbox_span">女生</span>
@@ -385,13 +385,13 @@
 
 <!--求职意向-->
 
-            <div class="basic_msg width670" id="wanted_job" style="margin-top: 50px">
+            <div class="basic_msg width670"  style="margin-top: 50px">
                 <div class="basic_msg_content">
                     <div class="resume_title">
                         <span>求职意向</span>
                     </div>
 
-                    <div class="font999" style="display: none;margin-top: 58px;line-height: 2">
+                    <div class="font999" id="wanted_job" style=";margin-top: 58px;line-height: 2">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-zhiwei"></use>
                         </svg>
@@ -425,16 +425,22 @@
 
 
                 </div>
+                <!--<span class="addandeditbtn" id="edit_wanted_job">-->
+                    <!--<svg class="icon" aria-hidden="true">-->
+                        <!--<use xlink:href="#icon-tianjia"></use>-->
+                    <!--</svg>-->
+                    <!--添加-->
+                <!--</span>-->
                 <span class="addandeditbtn" id="edit_wanted_job">
                     <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-tianjia"></use>
+                        <use xlink:href="#icon-xiugai"></use>
                     </svg>
-                    添加
+                    修改
                 </span>
             </div>
 
 
-            <div  id="wanted_jobbox" class="width670 basic_msg" style="margin-top: 58px">
+            <div  id="wanted_jobbox" class="width670 basic_msg" style="display: none;margin-top: 58px">
 
                 <div class="person_changes" style="margin-top: 30px">
 
@@ -660,6 +666,7 @@
                     </svg>
                     添加
                 </span>
+
             </div>
 
 <!--教育经历-->

@@ -408,7 +408,7 @@
     margin-left: 20px;
     position: absolute;
     top: 0;
-    z-index: 10
+    z-index: 1000
 }
 .want_jobbtns span{
     display: inline-block;

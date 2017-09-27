@@ -204,8 +204,22 @@ $("#edit_person_msg").on("click",function(){
     }
 });
 
+$("#edit_wanted_job").on("click",function(){
+    if($("#wanted_jobbox").css("display")=="none"){
+        $("#wanted_jobbox").show();
+        $("#wanted_job").hide();
+    }else{
+        $("#wanted_job").show();
+        $("#wanted_jobbox").hide();
+    }
+})
+
 //取消
-$(".cancelbtn").on("click",function(){
+$(".cancelbtn").eq(0).on("click",function(){
     $(this).closest(".basic_msg").hide();
     $(this).closest(".basic_msg").prev().show();
+})
+$(".cancelbtn").eq(1).on("click",function(){
+    $("#wanted_job").show();
+    $("#wanted_jobbox").hide();
 })
