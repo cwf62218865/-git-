@@ -275,7 +275,6 @@
 }
 .person_works{
     margin-top: 58px;
-    text-align: center;
 }
 .person_work{
     display: inline-block;
@@ -517,4 +516,32 @@
     position: absolute;
     left: -25px;
     top: -25px;
+}
+#certificateaddbtn{
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    line-height:120px;
+    font-size: 160px;
+    cursor: pointer;
+}
+#certificateaddbtn .icon{
+    position: absolute;
+    left: -20px;
+    top: -20px;
+}
+.go_studetent{
+    display: inline-block;
+    width: 100px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    border: 1px solid #09c;
+    color: #0099cc;
+    margin-left: 30px;
+}
+.go_studetent:hover{
+    color: #fff;
+    background-color: #0099cc;
 }

@@ -306,6 +306,25 @@ $(".person_worksdelbtn").on("click",function(){
 
 
 
+//荣誉证书
+//添加荣誉证书
+$("#addcertificatebtn").on("click",function(){
+    $("#certificatebox .delbtn").hide();
+    $("#certificatebox input").val("");
+
+    $("#certificatebox label").css("border-color","#f5f5f5");
+    $(".formtip").remove();
+
+    $("#certificate_contentinput").val("");
+    $("#certificate_id").val("");
+    $("#certificate").hide();
+    $("#addcertificatebtn").hide();
+    $("#certificatebox").show();
+
+})
+
+
+
 //取消
 $(".cancelbtn").eq(0).on("click",function(){
     $(this).closest(".basic_msg").hide();
@@ -329,4 +348,15 @@ $(".cancelbtn").eq(4).on("click",function(){
     $("#person_works").show();
     $("#addpersonworks").show();
     $("#person_worksbox").hide();
+})
+$(".cancelbtn").eq(5).on("click",function(){
+    $("#certificate").show();
+    $("#addcertificatebtn").show();
+    $("#certificatebox").hide();
+})
+
+//返回顶部
+
+$(".menus").eq(4).on("click",function(){
+    $('html').animate({scrollTop:0},300);
 })

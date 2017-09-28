@@ -1058,38 +1058,47 @@
                     <div class="resume_exp">
                         <div class="person_works relative">
                             <video src="http://www.zhangxinxu.com/study/media/cat.mp4" width="500" height="300" controls autobuffer style="margin-left: 85px"></video>
-                            <span class="addandeditbtn" style="top: 0" data-id="2">
-                                    <svg class="icon" aria-hidden="true">
-                                        <use xlink:href="#icon-xiugai"></use>
-                                    </svg>
-                                    修改
-                                </span>
+                            <!--<span class="addandeditbtn" style="top: 0" data-id="2">-->
+                                <!--<svg class="icon" aria-hidden="true">-->
+                                    <!--<use xlink:href="#icon-xiugai"></use>-->
+                                <!--</svg>-->
+                                <!--修改-->
+                            <!--</span>-->
                         </div>
                     </div>
 
 
                 </div>
-                <span class="addandeditbtn">
+                <!--<span class="addandeditbtn">-->
+                    <!--<svg class="icon" aria-hidden="true">-->
+                        <!--<use xlink:href="#icon-tianjia"></use>-->
+                    <!--</svg>-->
+                    <!--添加-->
+                <!--</span>-->
+
+
+                <span class="addandeditbtn" >
                     <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-tianjia"></use>
+                        <use xlink:href="#icon-xiugai"></use>
                     </svg>
-                    添加
+                    修改
                 </span>
+
             </div>
 
 
 
             <!--荣誉证书-->
-            <div class="basic_msg width670" style="margin-top: 50px;margin-bottom: 180px">
+            <div class="basic_msg width670" style="margin-top: 50px">
                 <div class="basic_msg_content">
                     <div class="resume_title">
                         <span >荣誉证书</span>
                     </div>
-                    <div class="resume_exp">
+                    <div class="resume_exp" id="certificate" style=";margin-bottom: 180px">
                         <div class="person_works">
                             <div class="relative">
                                 <span class="certificate">2013年3月获得全国中小学生数学竞赛一等奖</span>
-                                <span class="addandeditbtn" style="top: 0">
+                                <span class="addandeditbtn" style="top: 0"  data-id="1">
                                     <svg class="icon" aria-hidden="true">
                                         <use xlink:href="#icon-xiugai"></use>
                                     </svg>
@@ -1099,7 +1108,7 @@
 
                             <div class="relative">
                                 <span class="certificate">2013年3月获得全国中小学生数学竞赛一等奖</span>
-                                <span class="addandeditbtn" style="top: 0">
+                                <span class="addandeditbtn" style="top: 0"  data-id="2">
                                     <svg class="icon" aria-hidden="true">
                                         <use xlink:href="#icon-xiugai"></use>
                                     </svg>
@@ -1109,7 +1118,7 @@
 
                             <div class="relative">
                                 <span class="certificate">2013年3月获得全国中小学生数学竞赛一等奖</span>
-                                <span class="addandeditbtn" style="top: 0">
+                                <span class="addandeditbtn" style="top: 0" data-id="3">
                                     <svg class="icon" aria-hidden="true">
                                         <use xlink:href="#icon-xiugai"></use>
                                     </svg>
@@ -1121,13 +1130,110 @@
 
 
                 </div>
-                <span class="addandeditbtn">
+                <span class="addandeditbtn" id="addcertificatebtn">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-tianjia"></use>
                     </svg>
                     添加
                 </span>
             </div>
+
+
+            <div  id="certificatebox" class="width670 basic_msg" style="display: none;margin-top: 58px;margin-bottom: 180px">
+
+                <div class="person_changes" style="margin-top: 0px">
+
+                    <input type="hidden" name="certificate_id" id="certificate_id">
+                    <input type="hidden" name="certificate_img" id="certificate_img">
+
+
+
+
+
+                    <div class=" person_changes_left" style="display: inline-block;width: 100%;margin-top: 20px;height: 52px">
+                        <span class="font999 resume_msg_name">时间</span>
+                        <div class=" relative general-select " >
+                            <label class="general-input relative general-select" style="float: none;width: 220px;">
+                                <input type="text" readonly="" data-error="请选择时间" placeholder="请选择时间" style="width: 200px" name="certificate_time" value="">
+                                <svg class="icon inputicon" aria-hidden="true">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                                </svg>
+                            </label>
+                            <div class="options scend" style="width: 242px;top:48px">
+                                <div class="cwftimeoptions">
+
+                                </div>
+                                <div class="cwfmonths">
+                                    <span>1月</span>
+                                    <span>2月</span>
+                                    <span>3月</span>
+                                    <span>4月</span>
+                                    <span>5月</span>
+                                    <span>6月</span>
+                                    <span>7月</span>
+                                    <span>8月</span>
+                                    <span>9月</span>
+                                    <span>10月</span>
+                                    <span>11月</span>
+                                    <span>12月</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="person_worksbtn1" style="float: right;width: 120px;height: auto">
+                            <span id="certificateaddbtn">
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-shangchuan"></use>
+                                </svg>
+                            </span>
+                            <div style="color: #999;text-align: center;line-height: 24px">上传荣誉照片（可不传）</div>
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class=" person_changes_left" style="margin-top: 20px">
+                        <span class="font999 resume_msg_name" style="float: left">获奖内容</span>
+                        <div class="cwfreg4content" style="display: inline-block;margin-left: 20px;height: 64px;border: 1px solid #f5f5f5;width: 359px;background-color: #f5f5f5">
+                            <textarea style="width: 316px"  class="cwftextarea" id="certificate_content"  placeholder="你在这个岗位的职责"></textarea>
+                        </div>
+
+                        <div  class="cwftextareatip" style="height: auto;margin-top: 10px">
+                            <label class="general-input relative" style="width: 260px;;margin-left: 80px;height: 0;border: none">
+                                <input type="hidden" name="certificate_content" id="certificate_contentinput" data-error="请输入你的获奖内容">
+                            </label>
+                        </div>
+
+                    </div>
+
+
+                    <!--<div class=" person_changes_left" style="display: inline-block;width: 100%">-->
+                        <!--<span class="font999 resume_msg_name"></span>-->
+                        <!--<div class=" relative general-select font999" style="margin-left: 20px">-->
+                            <!--80%的Java工程师都获得了SCAJ资格证书-->
+                            <!--<a href="#" class="go_studetent">前往学习</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+
+
+                </div>
+
+                <div class="person_changes">
+                    <div class=" person_changes_left">
+                        <span class="font999 resume_msg_name" style="float: left;height: 1px"></span>
+                        <div style="display: inline-block;margin-left: 20px">
+                            <span class="savebtn public_bigbtn bg1aa" id="save_certificate_msg" style="padding: 0 30px 0 30px">保存</span>
+                            <span class="cancelbtn">取消</span>
+                            <span class="delbtn">删除本条</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
     <div class="p1_right">
@@ -1420,6 +1526,71 @@
         })
     })
 
+
+    //荣誉证书
+    $.fromdata("#certificatebox","test.php","#save_certificate_msg",function(data){
+        //do something
+    })
+
+    //修改荣誉证书
+    $("#certificate .addandeditbtn").on("click",function(){
+        $("#certificate").hide();
+        $("#addcertificatebtn").show();
+        $("#certificatebox").show();
+
+        $("#certificatebox label").css("border-color","#f5f5f5");
+        $(".formtip").remove();
+
+        $("#certificatebox .delbtn").show();
+        var data_id=$(this).attr("data-id");
+        $("#certificatebox .delbtn").attr("data-id",data_id);
+        $("#certificate_id").val(data_id);
+        $.ajax({
+            url:"",
+            type:"post",
+            data:{
+                data_id:data_id
+            },
+            success:function(data){
+                var data=JSON.parse(data);
+                $("#certificatebox input[name=certificate_time]").val(data.certificate_time);
+                $("#certificatebox input[name=certificate_content]").val(data.certificate_content);
+                var imagebox="";
+                imagebox+="<div id='certificateaddbtn'>"+
+                        "<img src='"+data.src+"'>"+
+                        "<span class='person_worksdelbtn' style='width: 120px;height: 120px;'>"+
+                        "<svg class='icon' aria-hidden='true'>"+
+                        "<use xlink:href='#icon-shanchu'></use>"+
+                        "</svg>"+
+                        "</span>"+
+                        "</div>";
+
+                $("#certificatebox .person_worksbtn1").html(imagebox);
+            }
+        })
+    });
+
+    //删除荣誉证书
+    $("#certificatebox .delbtn").on("click",function(){
+
+        var _this=$(this);
+        var data_id=_this.attr("data-id");
+        $.ajax({
+            url:"",
+            type:"post",
+            data:{
+                data_id:data_id
+            },
+            success: function (data) {
+                var data=JSON.parse(data);
+                if(data.status==1){
+                    window.location.href="";
+//                    $("#job_expbox").hide();
+//                    $(".resume_exps[data-id="+data_id+"]").remove();
+                }
+            }
+        })
+    })
 
 </script>
 </html>
