@@ -42,7 +42,7 @@
 
 </style>
 <body>
-    <div class="controlbox">
+    <div class="controlbox" style="margin-bottom: 100px">
         <p class="title">秒猎控件列表</p>
         <div>
             <p class="listtitle">1、输入框</p>
@@ -151,7 +151,7 @@
             <span class="public_btn bg1aa">提交</span>
             <span class="public_nobtn bgbbb">提交</span>
             <span class="public_bigbtn bg1aa">立即投递</span>
-            <span class="public_nobigbtn bgbbb">立即投递</span>
+            <span class="public_nobigbtn bgbbb" id="stoptest">立即投递</span>
 
 
             <p class="listtitle">5、评分</p>
@@ -177,6 +177,19 @@
             <p class="listtitle">6、模态输入框</p>
             <span class="public_nobigbtn modalbtn bg1aa">模态输入框</span>
 
+            <p class="listtitle">7、薪资范围选择器</p>
+            <div class=" relative general-select " style="float: none">
+                <label class="general-input relative general-select" style="float: none">
+                    <input type="text" readonly="" data-error="请选择工作性质" name="job_nature" value="全职">
+                    <svg class="icon inputicon" aria-hidden="true">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                    </svg>
+                </label>
+                <div class="options noscend" style="width: 220px;top:48px">
+                    <div class="select-option" style="width: 217px"><span>全职</span></div>
+                    <div class="select-option" style="width: 217px"><span>兼职</span></div>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -184,4 +197,13 @@
 <script src="js/jquery.js" rel="script"></script>
 <script src="js/iconfont.js" rel="script"></script>
 <script src="js/control.js" rel="script"></script>
+<script>
+    $("#stoptest").on("click",function(){
+        var stop=stop_action("停止招聘","停止招聘将无法收到该职位的简历，确定要删除吗？","再考虑下","确定终止",function(data){
+            if(data){
+                alert(23232);
+            }
+        });
+    })
+</script>
 </html>

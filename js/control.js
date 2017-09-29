@@ -7,6 +7,49 @@ function tipmsg(pic,tip){
     return html;
 }
 
+function stop_action(title,content,cancel,confirm,callback){
+    var html="<div class='modalbox' id='stop_action'>";
+    html+="<div class='stopbox'>"
+    html+="<span class='close_modalbox' id='close_modalbox'><svg class='icon' aria-hidden='true'><use  xlink:href='#icon-shan'></use></svg></span>"
+    if(title){
+        html+="<div class='stopbox_title'>"+title+"</div>"
+    }else{
+        html+="<div class='stopbox_title'>确认操作</div>"
+    };
+    if(content){
+        html+="<div class='stopbox_content'>"+content+"</div>"
+    }else{
+        html+="<div class='stopbox_content'>请确认此次操作</div>"
+    }
+    html+="<div class='stopbox_btn'>"
+
+    if(cancel){
+        html+="<span id='cancel_btns'>"+cancel+"</span>"
+    }else{
+        html+="<span id='cancel_btns'>取消</span>"
+    }
+    if(confirm){
+        html+="<span id='confirm_btns'>"+confirm+"</span>"
+    }else{
+        html+="<span id='confirm_btns'>确认</span>"
+    }
+    html+="</div></div></div>"
+    $('body').append(html);
+    $("#confirm_btns").on("click",function(){
+        callback(true);
+    });
+    $("#close_modalbox,#cancel_btns").on("click",function(){
+        $("#stop_action").remove();
+    })
+}
+
+
+
+//薪资范围选择器
+function salarychoice(){
+
+}
+
 //手机正则
 var telphonetest=/^1[3|5|7|8][0-9]\d{8}$/;
 var inttest=/^[1-9]\d*$/;

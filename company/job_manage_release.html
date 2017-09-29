@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/header.css" rel="stylesheet">
+    <link href="../css/control.css" rel="stylesheet">
+    <link href="../css/personal.css" rel="stylesheet">
+    <link href="../css/personal1.css" rel="stylesheet">
+    <link href="../css/job_manage.css" rel="stylesheet">
+    <!--<script src="http://api.map.baidu.com/api?v=2.0&ak=YrLaqu3cNGX66NynxPIWR9sS7n5ASDd1"></script>-->
+    <title>收到简历</title>
+</head>
+<body bgcolor="#f4f4f4">
+<div class="header" style="background: #ffffff">
+    <div class="width1200 align_center" style="padding-top: 14px;justify-content: space-between">
+        <img src="../images/logo.png"/>
+        <div style="height: 52px;line-height: 52px"><span class="city">全国</span><span class="changecity">[切换]</span></div>
+        <div class="menu">
+            <a href="#" class="menuactive">首页</a>
+            <a  href="#">找工作</a>
+            <a  href="#">实习/兼职</a>
+            <a  href="#">求职保镖</a>
+            <a  href="#">职场信用</a>
+            <a  href="#">就业大数据</a>
+        </div>
+        <div class="login">
+            <a href="#">登陆</a>
+            <a href="#">注册</a>
+            <a href="#">企业入口</a>
+        </div>
+    </div>
+</div>
+<div class="width1200 p1content">
+    <div class="p1_left">
+        <div class="con_top">
+            <div class="items ">
+                <svg class="icon icon_item" aria-hidden="true">
+                    <use xlink:href="#icon-jianliguanli"></use>
+                </svg>
+                <span class="span">简历管理</span>
+            </div>
+            <div class="items select">
+                <svg class="icon icon_item" aria-hidden="true">
+                    <use xlink:href="#icon-zhiweiguanli"></use>
+                </svg>
+                <span class="span">职位管理</span>
+            </div>
+            <div class="items">
+                <svg class="icon icon_item" aria-hidden="true">
+                    <use xlink:href="#icon-HRgongzuo"></use>
+                </svg>
+                <span class="span">HR工作</span>
+            </div>
+            <div class="items">
+                <svg class="icon icon_item" aria-hidden="true">
+                    <use xlink:href="#icon-gongsixinxi"></use>
+                </svg>
+                <span class="span">公司信息</span>
+            </div>
+        </div>
+        <div class="con_list">
+            <div class="list_top">
+                <div class="job_send job_manage_send">
+                    <span class="wenzi">发布的职位</span>
+                    <svg class="icon ico_xiala" style="margin-top: 22px;color: #bbbbbb;margin-left: 10px">
+                        <use xlink:href="#icon-xiala"></use>
+                    </svg>
+                    <div class="my_joblist">
+                        <p class="option_select">新媒体编辑</p>
+                        <p class="option_select">Java工程师</p>
+                        <p class="option_select">销售总监</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center">
+                    <span class="release_new_jobbtn">取消发布</span>
+                </div>
+            </div>
+            <!--收到的简历start------------------------------------------------------------------------------->
+            <div class="list_content">
+
+                <div class="release_job_content" id="release_jobbox">
+
+                    <div class="release_list">
+                        <span class="font999 resume_msg_name">职位名称</span>
+                        <label class="general-input relative lable590">
+                            <input type="text"  data-error="请输入职位名称"  name="job_name" placeholder="请输入职位名称">
+                        </label>
+                    </div>
+
+                    <div class="release_list">
+                        <span class="release_choice">选择模板</span>
+                    </div>
+
+                    <div class="release_list">
+                        <span class="font999 resume_msg_name">岗位职责</span>
+
+                        <div class="lable590 job_duty">
+                            <textarea     placeholder=""></textarea>
+                        </div>
+                        <label class="general-input lable590 hiddenlable" style="height: 0;border: none;margin-left: 78px">
+                            <input type="hidden"  data-error="请输入岗位职责"  name="job_duty">
+                        </label>
+
+                    </div>
+
+                    <div class="release_list">
+                        <span class="font999 resume_msg_name">任职要求</span>
+
+                        <div class="lable590 job_duty">
+                            <textarea    placeholder=""></textarea>
+                        </div>
+                        <label class="general-input lable590 hiddenlable" style="height: 0;border: none;margin-left: 78px">
+                            <input type="hidden"  data-error="请输入岗位职责"  name="job_requirement">
+                        </label>
+
+                    </div>
+
+                    <div class="release_list">
+                        <span class="font999 resume_msg_name">招聘人数</span>
+                        <label class="general-input relative lable590" style="width: 218px;">
+                            <input type="text" maxlength="4" style="width: 180px" data-rg="^\+?[1-9][0-9]*$" data-warn="请输入大于0的整数"  data-error="请输入招聘人数"  name="job_persons" placeholder="请输入招聘人数">
+                        </label>
+                    </div>
+
+                    <div class="person_changes">
+                        <div class="width300 person_changes_left">
+                            <span class="font999 resume_msg_name">工作性质</span>
+                            <div class=" relative general-select " style="float: none">
+                                <label class="general-input relative general-select" style="float: none">
+                                    <input type="text" readonly="" data-error="请选择工作性质" name="job_nature" value="全职">
+                                    <svg class="icon inputicon" aria-hidden="true">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                                    </svg>
+                                </label>
+                                <div class="options noscend" style="width: 220px;top:48px">
+                                    <div class="select-option" style="width: 217px"><span>全职</span></div>
+                                    <div class="select-option" style="width: 217px"><span>兼职</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="width300 person_changes_right">
+                            <span class="font999 resume_msg_name">薪资待遇</span>
+                            <div class=" relative general-select " style="float: none">
+                                <label class="general-input relative general-select" style="float: none">
+                                    <input type="text" readonly=""  name="salary" value="面谈">
+                                    <svg class="icon inputicon" aria-hidden="true">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                                    </svg>
+                                </label>
+                                <div class="options noscend" style="width: 220px;top:48px">
+                                    <div class="cwfnationaloptions" style="width: 220px">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="release_list" style="text-align: center;margin-bottom: 80px">
+                        <span class="savebtn public_bigbtn bg1aa" id="save_release" style="padding: 0 22px">确认发布</span>
+                        <span class="cancelbtn">取消</span>
+                    </div>
+
+                </div>
+
+            </div>
+            <!--收到的简历end-------------------------------------------------------------------------->
+        </div>
+    </div>
+    <div class="p1_right">
+        <div class="tongjis tongjis1">
+            <div class="items2">
+                <a class="number" href="">5</a>
+                <p class="font1_zj chengxian">收到申请</p>
+            </div>
+            <div class="items2">
+                <a class="number" href="">8</a>
+                <p class="font1_zj chengxian">等待面试</p>
+            </div>
+            <div class="items2">
+                <a class="number" href="">9</a>
+                <p class="font1_zj chengxian">收到评价</p>
+            </div>
+            <div class="items2">
+                <a class="number" href="">6</a>
+                <p class="font1_zj chengxian">在招职位</p>
+            </div>
+        </div>
+        <div class="resume_district">
+            <div class="wanzhengdu">
+                <div class="jianli"><span>资料完整度：</span><span class="color_main">80%</span>
+                     <a class="color_main resume_view" href="">预览</a>
+                    <a class="color_main resume_edit" href="">修改</a></div>
+                <div class="jindutiao">
+                    <div class="jindu_con"></div>
+                </div>
+                <div class="sousuo">
+                    <svg class="icon icon_sousuo" aria-hidden="true">
+                        <use xlink:href="#icon-sousuo"></use>
+                    </svg>
+                    <input type="text" class="sousuo_content font1_zj" placeholder="输入职位" style="font-size: 12px;">
+                </div>
+                <input type="button" class="sousuo_btn" value="找人才">
+            </div>
+        </div>
+        <div class="ads">
+            <div class="ads_con">
+                <a class="ads1" href="">
+                    <span class="topnum">Top1</span>
+                    <div class="title">
+                        <p class="title_con">IOS11更新了，给你100+个IOS11实用技巧</p>
+                    </div>
+                    <img src="../images/ads1.png" class="ads_pic">
+                </a>
+                <a class="ads2" href="">
+                    <span class="topnum1">Top2</span>
+                    <div class="title">
+                        <p class="title_con">IOS11更新了，给你100+个IOS11实用技巧</p>
+                    </div>
+                    <img src="../images/ads2.png" class="ads_pic">
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+</body>
+<script src="../js/jquery.js" rel="script"></script>
+<script src="../js/iconfont.js" rel="script"></script>
+<script src="../js/control.js" rel="script"></script>
+<script src="../js/formdata.js" rel="script"></script>
+<script src="../js/area.js" rel="script"></script>
+<script src="../js/resume_manager.js" rel="script"></script>
+<script src="../js/job_manage_release.js" rel="script"></script>
+<script>
+    $(function () {
+        $(".wenzi,.ico_xiala").click(function () {
+            $(".my_joblist").show();
+            $(".option_select").click(function () {
+                $(".wenzi").html($(this).html());
+                $(".my_joblist").hide();
+            })
+        });
+
+
+        $.fromdata("#release_jobbox","test.php","#save_release",function(data){
+            //do something
+        })
+
+    })
+</script>
+</html>
