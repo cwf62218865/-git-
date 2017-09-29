@@ -9,7 +9,7 @@ jQuery.extend({
         var inputs=_this.find("input");//获取所有的input
         $(post_btn).on("click",function(){
             $(".formtip").remove();
-            var data=[];//定义最后的data对象，用于ajax发送
+            var data={};//定义最后的data对象，用于ajax发送
             for(var i=0 ; i<inputs.length;i++){
                 var inputi=$(inputs[i]);
                 var name=inputi.attr("name");//input字段名称
@@ -70,7 +70,7 @@ jQuery.extend({
         var _this=$(obj);
         var repeatboxs=_this.find(repeatbox);//获取所有的input
         $(post_btn).on("click",function(){
-            var data=[];//定义最后的data对象，用于ajax发送
+            var data={};//定义最后的data对象，用于ajax发送
             for(var i=0 ;i<repeatboxs.length; i++){
                 var inputs=repeatboxs[i].find("input");//获去一个重复容器的所有的input
                 for(var j=0;j<inputs.length; j++){
@@ -83,13 +83,7 @@ jQuery.extend({
 
                     if(error){//需要验证通道
                         if(inputval==""){
-                            if(warn){
-                                var no_data="<div class='formtip'><img class='tip_ico' src='../images/ico_error.png'> <span class='tip_msg'>"+warn+"</span></div>"
-                            }else if(error){
-                                var no_data="<div class='formtip'><img class='tip_ico' src='../images/ico_error.png'> <span class='tip_msg'>"+error+"</span></div>"
-                            }else{
-                                var no_data=""
-                            }
+                            var no_data="<div class='formtip'><img class='tip_ico' src='../images/ico_error.png'> <span class='tip_msg'>"+error+"</span></div>"
                             inputi.closest(".general-input").css("border-color","#e23d46").append(no_data);
                             return false;
                         }else if(rg){

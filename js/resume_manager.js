@@ -75,7 +75,7 @@ $('body').on("mousedown",".cwfmonths span",function(){
     var timebox=_this.closest(".general-select").find("input").eq(0);
     var month=parseInt(_this.html());
     if(year.toString().length==4){
-        timebox.val(year+"."+month);
+        timebox.val(year+"年"+month+"月");
         _this.closest(".options").css("height","0px");
     }else{
 
@@ -322,6 +322,17 @@ $("#addcertificatebtn").on("click",function(){
     $("#certificatebox").show();
 
 })
+$("#certificate_content").on("input",function(){
+    var content=$(this).val();
+    $("#certificate_contentinput").val(content);
+})
+
+//发邮件
+$("#envelope_content_msg").on("input",function(){
+    var content=$(this).val();
+    $("#envelope_content").val(content);
+})
+
 
 
 

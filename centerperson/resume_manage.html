@@ -73,32 +73,32 @@
             <!--左侧菜单-->
 
             <div class="resume_left_menu">
-                <div class="menus">
+                <a href="#" class="menus">
                     <svg class="icon icon_item" aria-hidden="true">
                         <use xlink:href="#icon-genghuanmoban"></use>
                     </svg>
                     <div>
                         更换模板
                     </div>
-                </div>
-                <div class="menus">
+                </a>
+                <a href="#" class="menus">
                     <svg class="icon icon_item" aria-hidden="true">
                         <use xlink:href="#icon-xiazaijianli"></use>
                     </svg>
                     <div>
                         下载简历
                     </div>
-                </div>
-                <div class="menus">
+                </a>
+                <a href="#" class="menus">
                     <svg class="icon icon_item" aria-hidden="true">
                         <use xlink:href="#icon-dayinjianli"></use>
                     </svg>
                     <div>
                         打印简历
                     </div>
-                </div>
+                </a>
 
-                <div class="menus">
+                <div class="menus" id="post_envelope">
                     <svg class="icon icon_item" aria-hidden="true">
                         <use xlink:href="#icon-fasongyouxiang"></use>
                     </svg>
@@ -1328,6 +1328,67 @@
 </div>
 <!--弹框end-->
 
+<!--发送邮箱-->
+<div class="modalbox" id="envelope_modal" style="display: none">
+    <div class="envelope_modal">
+
+        <div class="envelope">
+            <div class="envelope_content">
+                <span class="font666" style="font-size: 14px">发送到邮箱:</span>
+                <label class="general-input relative" style="width: 274px">
+                    <input type="text" name="email" style="width: 240px"  placeholder="请输入对方的邮箱" data-error="请输入邮箱">
+                </label>
+                <span class="public_bigbtn bg1aa post_envelopebtn">
+                    点击发送
+                </span>
+
+                <div class="envelope_content_msg">
+                    <textarea  class="envelope_content_textarea" id="envelope_content_msg"  placeholder="你想对hr说什么"> 尊敬的HR：
+　　您好！
+　　我是一个对理想有着执着追求的人，坚信是金子总会发光。（调用一句话介绍）
+　　我是一名重庆师范大学2017届的本科毕业生。所学专业：幼师。
+　　大学期间实习经历：（没有即写暂无）
+　　2015.3-2015.6在重庆三色幼儿园实习，实习期间我圣诞快乐就是了贷款阿萨德浪费空间啊熟练度付款记录私搭乱建阿里斯顿姐夫爱上了都快放假啦达康书记拉到了附近拉速度（调用工作实习经验）
+　　怀着崇敬的心情给您发了这封邮件，希望您能在百忙之中抽空查看我的个人简历，谢谢。
+恭祝商祺。</textarea>
+                </div>
+
+                <input type="hidden" name="envelope_content" id="envelope_content">
+
+            </div>
+        </div>
+
+        <div class="envelope_enclosure">
+            <div style="display: inline-block">
+                <span class="font20666">附件:</span>
+
+                <svg class="icon pdficon" aria-hidden="true">
+                    <use xlink:href="#icon-file-pdf"></use>
+                </svg>
+                <a href="#" class="envelope_resume" target="_blank">李四的个人简历</a>
+            </div>
+
+            <div style="float: right;text-align: center;line-height: 24px;color: #666">
+                <span>李四</span>
+                <div>2017年9月23日</div>
+            </div>
+
+        </div>
+
+        <span class="close_envelopebtn">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-shan"></use>
+            </svg>
+        </span>
+
+
+    </div>
+</div>
+
+<!--发送邮箱-->
+
+
+
 </body>
 <script src="../js/jquery.js" rel="script"></script>
 <script src="../js/iconfont.js" rel="script"></script>
@@ -1335,6 +1396,24 @@
 <script src="../js/area.js" rel="script"></script>
 <script src="../js/resume_manager.js" rel="script"></script>
 <script src="../js/formdata.js" rel="script"></script>
+
+<script>
+    //打开邮箱
+    $("#post_envelope").on("click",function(){
+        $("#envelope_modal").show();
+    })
+    //关闭邮箱
+    $("#envelope_modal .close_envelopebtn").on("click",function(){
+        $("#envelope_modal").hide();
+    })
+
+    //发送邮件
+    $.fromdata("#envelope_modal","test.php",".post_envelopebtn",function(data){
+        //do something
+    })
+</script>
+
+
 <script>
 
     $(".left_line").each(function(){
