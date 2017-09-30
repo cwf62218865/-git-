@@ -416,3 +416,97 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     cursor: pointer;
     font-size: 20px;
 }
+.salarysoptions{
+    height: 36px;
+    line-height: 36px;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    font-size: 16px;
+}
+.left_salarys{
+    display: inline-block;
+    width: 40%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #eee;
+    padding: 72px 0;
+}
+.right_salarys{
+    display: inline-block;
+    width: 40%;
+    float: right;
+    position: relative;
+    color: #eee;
+    padding: 72px 0;
+}
+.right_salarys_box:after{
+    content: "";
+    display: inline-block;
+    width: 25%;
+    height: 2px;
+    background-color: #333;
+    position: absolute;
+    left: -38%;
+    top: 48%;
+    z-index: 99;
+}
+#left_salarys{
+    position: absolute;
+    left: 0;
+    top: -72px;
+    color: #09c;
+    width: 100%;
+
+}
+#right_salarys{
+    position: absolute;
+    right: 0;
+    top: -72px;
+    color: #09c;
+    width: 100%;
+}
+.left_salarys_box{
+    position: absolute;
+    height: 36px;
+    width: 40%;
+    overflow: hidden;
+    left: 0;
+    top:72px;
+    font-size: 16px;
+}
+.left_salarys_box .salarysoptions{
+    width: 100%;
+}
+.right_salarys_box{
+    position: absolute;
+    height: 36px;
+    width: 40%;
+    overflow: hidden;
+    right: 0;
+    top:72px;
+}
+.right_salarys_box .salarysoptions{
+    width: 100%;
+}
+.left_salarys_box:after{
+    content: "";
+    display: inline-block;
+    width: 30%;
+    height: 2px;
+    background-color: #09c;
+    position: absolute;
+    left: 35%;
+    bottom: 0;
+}
+.right_salarys_box:before{
+    content: "";
+    display: inline-block;
+    width: 30%;
+    height: 2px;
+    background-color: #09c;
+    position: absolute;
+    left: 35%;
+    bottom: 0;
+}
