@@ -165,6 +165,9 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .checkbox label input[type=checkbox]{
     opacity: 0;
 }
+.checkbox label input[type=radio]{
+    opacity: 0;
+}
 .checkboxbox{
     display: inline-block;
     position: absolute;

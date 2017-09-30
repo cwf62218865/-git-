@@ -317,7 +317,7 @@
     background-image: url("../images/fanye.png");margin-bottom: 24px;
 }
 .status1{
-    color: #666666;
+    color: #666666;float: left;
 }
 .status2{
     color: #0099cc;
@@ -351,7 +351,7 @@
     width: 100%;
     float: left;
     font-size: 16px;}
-.tongyi_statas,.tongyi,.tongyi1{
+.tongyi_statas,.tongyi,.tongyi1,.tongyi2{
     color: #0099cc;
 }
 .jujue_statas{
@@ -362,6 +362,9 @@
 }
 .tongyi1,.jujue1{
     float: left;height: 50px;border-top: 1px solid #eeeeee;width: 132.6px;cursor: pointer;
+}
+.tongyi2{
+    float: left;height: 50px;border-top: 1px solid #eeeeee;width: 400px;cursor: pointer;
 }
 .jujue,.jujue1{
     border-left: 1px solid #eeeeee;color: #666666;
@@ -659,6 +662,7 @@
     width: 100px;height: 100px;
     border-radius: 100px;
     overflow: hidden;float: left;
+    cursor: pointer;
 }
 .basic_massage{
     float: left;
@@ -668,7 +672,7 @@
     font-size: 20px;color: #333333;
 }
 .basic_massage .view_i{
-    font-size: 12px;color: #999999;margin-left: 8px;
+    font-size: 12px;color: #999999;margin-left: 8px;cursor: pointer;
 }
 .hope_job{
     font-size: 16px;color: #7b8fc9;width: 110px;text-align: right;display: inline-block;
@@ -797,3 +801,175 @@
 .hour_num{
     width: 46px;
 }
+.status_con{
+    width: 300px;height: 60px;
+    margin: 0 auto;margin-top: 12px;line-height: 30px;text-align: left;font-size: 16px;color: #333333;
+}
+.resume_tel{
+    margin-left: 26px;
+}
+.time_selecter,.job_selecter{
+    height: 80px;margin: 0 auto;margin-top: 20px;background: #f5f5f5;
+    line-height: 80px;float: left;
+}
+.time_selecter{
+    width: 790px;margin-left: 40px;
+}
+.job_selecter{
+    width: 820px;margin-left: 25px;
+}
+.selecter_list{
+    height: 40px;margin-top: 20px;float: left;
+}
+.job_secon{
+    margin-top: 20px;margin-left: 20px;float: left;
+}
+.job_secon .inputcon{
+    width: 180px;height: 40px;
+    background: #ffffff;
+}
+.job_secon .btn_sou{
+    height: 40px;
+}
+.select_option{
+    float: left;
+}
+.option_date{
+    line-height: 30px;
+}
+.select_option{
+    position: relative;
+}
+.job_secon .input_job{
+  width: 120px;outline: none;
+}
+.pj_hang1{
+    margin-bottom: 20px;
+}
+.pj_hang1 .job_name{
+    font-size: 20px;color: #333333;
+}
+.pj_hang1 .name_resume{
+    float: right;color: #666666;
+}
+.pj_content{
+    height: auto;position: relative;line-height: 22px;
+}
+.pj_content .content{
+    /*display: -webkit-box;*/
+    /*-webkit-box-orient: vertical;*/
+    /*-webkit-line-clamp: 3;*/
+    /*overflow: hidden;*/
+}
+.icon_all,.icon_shouqi{
+    position: absolute;bottom: 0px;right: 0;color: #959fb2;z-index: 9999;font-size: 14px;
+}
+.ico_biaozhu{
+    float: left;
+}
+.right_ico{
+    margin-left: 30px;
+}
+.right_ico1{
+    margin-left: 40px;
+}
+.select_date_option{
+    width: 132px;
+    height: 40px;
+    margin-left: 40px;background: #ffffff;float: right;margin-right: 420px;margin-top: 20px;
+    position: relative;line-height: 40px;
+    text-align: center;color: #666666;cursor: pointer;
+}
+.selectinput{
+    width: 132px;
+    height: 40px;
+}
+.select_option .selectinput{
+    width: 120px;height: 40px;background: #ffffff;line-height: 40px;text-align: center;
+}
+.huifupinglun{
+    width: 340px;
+    height: 160px;
+    background: #f5f5f5;margin-top: 30px;
+    line-height: 160px;
+    text-align: center;
+    color: #e0e0e0;
+    position: relative;
+    float: left;
+}
+.pjmargin{
+    margin-top: 20px;margin-bottom: 20px;
+}
+.title_bx{
+    margin-top: 30px;
+    float: left;
+}
+.ico66{
+    color: #bbbbbb;
+}
+.shurupl{
+    width: 300px;height: 120px;
+    position: absolute;left: 20px;
+    top: 20px;outline: none;resize: none;border: none;background: none;
+}
+.datalist{
+    display: none;
+    position: absolute;
+    width: 132px;height: 90px;
+    overflow-y: auto;background: #ffffff;
+    z-index: 99999;
+    box-shadow:6px 5px 24px rgba(0,0,0,0.12);
+    top:50px;
+    left: 0px;
+    padding-top: 30px;padding-bottom: 30px;line-height: 30px;text-align: center;
+}
+.select_date_option .date_list{
+    height: 240px;
+}
+.datalist .option_date{
+    cursor: pointer;
+}
+.weekend{
+    color: #f3969b;
+}
+.one_pj{
+    float: left;margin-bottom: 20px;margin-left: 40px;
+}
+.one_pj:nth-child(1){
+    margin-left: 0px;
+}
+.pjxingxing{
+    margin-top: 20px;float: left;
+}
+.flover_ico{
+    width: 20px;height: 20px;margin-left: 10px;float: left;
+}
+.red_i{
+    color: #f4146f;
+}
+.gree_i{
+   color: #79cf69;
+}
+ .grey_i{
+     color: #cccccc;
+ }
+ .pjbtn{
+     width: 340px;height: 36px;border-radius: 3px;background: #0099cc;float: left;margin-bottom: 20px;color: #ffffff;text-align: center;line-height: 36px;
+ }
+.pjbtn:hover{
+    background: #019bce;
+}
+.tit_gzpj{
+    float: left;
+    width: 80px;height: 46px;line-height: 46px;
+}
+.gzpj .basic_massage{
+    margin-bottom: 30px;
+}
+.pj_hang{
+    margin-bottom: 20px;
+}
+.item_con .general-input{
+    width: 258px;margin-left: 0;
+}
+
