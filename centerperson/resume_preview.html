@@ -14,33 +14,36 @@
     <title>简历预览</title>
     <style>
         .swiper-container {
-            width: 920px;
-            height: 600px;
+            width: 940px;
+            height: 400px;margin-top: 50px;
+        }
+        .swiper-slide{
+            margin-left: 2px;
         }
     </style>
 </head>
 <body bgcolor="#f4f4f4">
 <div class="header" style="background: #ffffff">
     <div class="width1200 align_center" style="padding-top: 14px;justify-content: space-between">
-        <div class="resume_btns" style="margin-left: 156px;">
+        <div class="resume_btns" style="margin-left: 156px;" id="download_resume">
             <svg class="icon icon_resume" aria-hidden="true">
                 <use xlink:href="#icon-xiazaijianli"></use>
             </svg>
             下载简历
         </div>
-        <div class="resume_btns">
+        <div class="resume_btns" id="print_resume">
             <svg class="icon icon_resume" aria-hidden="true">
                 <use xlink:href="#icon-dayinjianli"></use>
             </svg>
             打印简历
         </div>
-        <div class="resume_btns">
+        <div class="resume_btns" id="change_modal">
             <svg class="icon icon_resume" aria-hidden="true">
                 <use xlink:href="#icon-genghuanmoban"></use>
             </svg>
             更换模板
         </div>
-        <div class="resume_btns">
+        <div class="resume_btns" id="exit_view">
             <svg class="icon icon_resume" aria-hidden="true">
                 <use xlink:href="#icon-tuichuyulan"></use>
             </svg>
@@ -300,60 +303,12 @@
 
 </div>
 <!--更换模板弹框-->
-<div class="modalbox" id="modal_box" style="display: block">
+<div class="modalbox" id="modal_box" style="display: none;">
     <div class="modal" style="width: 980px;margin-left: -490px;top:10%;">
         <p class="title_content">选择简历模板</p>
         <span class="modalclose">
                 <img src="../images/close.png"/>
             </span>
-        <!--<div class="modal_con">-->
-            <!--<div id="previous" class="cur">-->
-                <!--<svg class="icon jiantou" aria-hidden="true">-->
-                    <!--<use xlink:href="#icon-zuojiantouxi"></use>-->
-                <!--</svg>-->
-            <!--</div>-->
-            <!--<div id="next" class="cur">-->
-                <!--<svg class="icon jiantou" aria-hidden="true">-->
-                    <!--<use xlink:href="#icon-youjiantouxi"></use>-->
-                <!--</svg>-->
-            <!--</div>-->
-            <!--<div class="modal_list_items">-->
-                <!--<div class="modal_item cur">-->
-                    <!--<div class="modal_title">简约风格</div>-->
-                    <!--<div class="modal_style">-->
-                        <!--<img src="../images/modal.png" style="width:200px; "/>-->
-                    <!--</div>-->
-                    <!--<label class="using">使用中</label>-->
-                <!--</div>-->
-                <!--<div class="modal_item cur">-->
-                    <!--<div class="modal_title">游戏风格</div>-->
-                    <!--<div class="modal_style">-->
-                        <!--<img src="../images/modal.png" style="width:200px; "/>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="modal_item cur">-->
-                    <!--<div class="modal_title">水墨风格</div>-->
-                    <!--<div class="modal_style">-->
-                        <!--<img src="../images/modal.png" style="width:200px; "/>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="modal_item cur">-->
-                    <!--<div class="modal_title">扁平化风格</div>-->
-                    <!--<div class="modal_style">-->
-                        <!--<img src="../images/modal.png" style="width:200px; "/>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="modal_item cur">-->
-                    <!--<div class="modal_title">扁平化风格</div>-->
-                    <!--<div class="modal_style">-->
-                        <!--<img src="../images/modal.png" style="width:200px; "/>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-
-        <!--</div>-->
-
-
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -364,19 +319,60 @@
                     </div>
                     </div>
                 </div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">
+                    <div class="modal_item cur">
+                        <div class="modal_title">简约风格</div>
+                        <div class="modal_style">
+                            <img src="../images/modal.png" style="width:200px; "/>
+                        </div>
+                        <label class="using">使用中</label>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="modal_item cur">
+                        <div class="modal_title">游戏风格</div>
+                        <div class="modal_style">
+                            <img src="../images/modal.png" style="width:200px; "/>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="modal_item cur">
+                        <div class="modal_title">水墨风格</div>
+                        <div class="modal_style">
+                            <img src="../images/modal.png" style="width:200px; "/>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="modal_item cur">
+                        <div class="modal_title">扁平化风格</div>
+                        <div class="modal_style">
+                            <img src="../images/modal.png" style="width:200px; "/>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="modal_item cur">
+                        <div class="modal_title">古典风格</div>
+                        <div class="modal_style">
+                            <img src="../images/modal.png" style="width:200px; "/>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- 如果需要导航按钮 -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
+            <div class="swiper-button-prev" id="previous">
+                <svg class="icon jiantou" aria-hidden="true">
+                <use xlink:href="#icon-zuojiantouxi"></use>
+                </svg>
+            </div>
+            <div class="swiper-button-next" id="next">
+                <svg class="icon jiantou" aria-hidden="true">
+                <use xlink:href="#icon-youjiantouxi"></use>
+                </svg>
+            </div>
         </div>
-
-
         <div class="btns" style="margin-bottom: 50px;margin-top: 60px;">
             <button class="tijiao" style="margin-left: 410px">确定使用</button>
             <span class="quxiao color_main">取消</span>
@@ -406,22 +402,6 @@ $(function () {
         $(this).append("<div class='biankuang'></div>");
     })
 
-    var size=$(".modal_item").size();
-    var widths=230*size;
-    $("#previous").click(function () {
-        var left=parseInt($(".modal_list_items").css("left"));
-        if(left<(size-4)*230){
-            $(".modal_list_items").stop().animate({left:left-230+"px"},1000);
-        }
-
-    })
-    $("#next").on("click",function () {
-        var left=parseInt($(".modal_list_items").css("left"));
-        if(left<0){
-            $(".modal_list_items").animate({left:left+230+"px"},1000);
-        }
-
-    })
 })
 
 
@@ -435,7 +415,19 @@ $(function () {
         // 如果需要前进后退按钮
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
-
     })
+
+    $("#change_modal").click(function () {
+        $("#modal_box").animate({"opacity":1},300);
+        setTimeout(function(){
+            $("#modal_box").css("display","block");
+        },300)
+    })
+    $(".modalclose,.quxiao").on("click",function(){
+        $("#modal_box").animate({"opacity":0},300);
+        setTimeout(function(){
+            $("#modal_box").css("display","none");
+        },300)
+    });
 </script>
 </html>

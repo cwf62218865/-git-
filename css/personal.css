@@ -903,6 +903,7 @@
 .title_bx{
     margin-top: 30px;
     float: left;
+    height: 20px;
 }
 .ico66{
     color: #bbbbbb;
@@ -977,7 +978,6 @@
     margin-left: 40px;
     margin-top: 50px;
     position: relative;
-    overflow: hidden;
     text-align: center;
 }
 .modal_item{
@@ -1002,7 +1002,7 @@
     left: 10px;
 }
 #next{
-    right: 30px;
+    right: 18px;
 }
 .jiantou{
     width: 20px;height: 28px;color: #fff; vertical-align: middle;
@@ -1017,6 +1017,10 @@
     height: 350px;
 }
 .using{
-    margin-top:14px ;display: inline-block;color: #f3969b;
+    margin-top: 14px;
+    display: inline-block;
+    color: #f3969b;
+    text-align: center;
+    width: 100%;
 }
 
