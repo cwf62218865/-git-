@@ -42,7 +42,7 @@
 
 </style>
 <body>
-    <div class="controlbox" style="margin-bottom: 100px">
+    <div class="controlbox" style="margin-bottom: 400px">
         <p class="title">秒猎控件列表</p>
         <div>
             <p class="listtitle">1、输入框</p>
@@ -180,23 +180,22 @@
             <p class="listtitle">7、薪资范围选择器</p>
             <div class=" relative general-select " style="float: none">
                 <label class="general-input relative general-select" style="float: none">
-                    <input type="text" readonly="" data-error="请选择工作性质" name="job_nature" value="全职">
+                    <input type="text" readonly="" id="salarychoice" data-error="请选择工作性质" name="job_nature" value="全职">
                     <svg class="icon inputicon" aria-hidden="true">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
                     </svg>
                 </label>
-                <div class="options noscend" style="width: 220px;top:48px">
-                    <div class="select-option" style="width: 217px"><span>全职</span></div>
-                    <div class="select-option" style="width: 217px"><span>兼职</span></div>
-                </div>
+
             </div>
 
         </div>
     </div>
 </body>
 <script src="js/jquery.js" rel="script"></script>
+<script src="js/jquery.mousewheel.js" rel="script"></script>
 <script src="js/iconfont.js" rel="script"></script>
 <script src="js/control.js" rel="script"></script>
+<script src="js/formdata.js" rel="script"></script>
 <script>
     $("#stoptest").on("click",function(){
         var stop=stop_action("停止招聘","停止招聘将无法收到该职位的简历，确定要删除吗？","再考虑下","确定终止",function(data){
@@ -204,6 +203,12 @@
                 alert(23232);
             }
         });
+    })
+
+    var salarychoice= $.salarychoice({
+        data:["面议","1k","2k","3k","4k","5k","6k","7k","8k"],
+        input:"#salarychoice",
+        width:"200px"
     })
 </script>
 </html>

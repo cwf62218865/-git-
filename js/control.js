@@ -45,10 +45,6 @@ function stop_action(title,content,cancel,confirm,callback){
 
 
 
-//薪资范围选择器
-function salarychoice(){
-
-}
 
 //手机正则
 var telphonetest=/^1[3|5|7|8][0-9]\d{8}$/;
@@ -423,6 +419,12 @@ $(".modalbtn1").on("click",function(){
             }
         })
     });
+
+    //$("body").on("click",function(){
+    //    alert(222);
+    //    $(".salarys").css("height","0px")
+    //})
+
     $(".general-select").click(function(event){
         event.stopPropagation();
     });

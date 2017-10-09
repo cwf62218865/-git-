@@ -144,19 +144,94 @@
                         <div class="width300 person_changes_right">
                             <span class="font999 resume_msg_name">薪资待遇</span>
                             <div class=" relative general-select " style="float: none">
+                                <label class="general-input relative " style="float: none">
+                                    <input type="text" readonly="" id="salarychoice"  name="salary" value="面谈">
+                                    <svg class="icon inputicon" aria-hidden="true">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                                    </svg>
+                                </label>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="person_changes">
+                        <div class="width300 person_changes_left">
+                            <span class="font999 resume_msg_name">工作经验</span>
+                            <div class=" relative general-select " style="float: none">
                                 <label class="general-input relative general-select" style="float: none">
-                                    <input type="text" readonly=""  name="salary" value="面谈">
+                                    <input type="text" readonly="" data-error="请选择工作经验" name="job_exp" value="无">
                                     <svg class="icon inputicon" aria-hidden="true">
                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
                                     </svg>
                                 </label>
                                 <div class="options noscend" style="width: 220px;top:48px">
-                                    <div class="cwfnationaloptions" style="width: 220px">
-
-                                    </div>
+                                    <div class="select-option" style="width: 217px"><span>无</span></div>
+                                    <div class="select-option" style="width: 217px"><span>1到3年</span></div>
+                                    <div class="select-option" style="width: 217px"><span>3到5年</span></div>
+                                    <div class="select-option" style="width: 217px"><span>5到10年</span></div>
+                                    <div class="select-option" style="width: 217px"><span>10年以上</span></div>
                                 </div>
                             </div>
                         </div>
+                        <div class="width300 person_changes_right">
+                            <span class="font999 resume_msg_name">学历要求</span>
+                            <div class=" relative general-select " style="float: none">
+                                <label class="general-input relative  general-select" style="float: none">
+                                    <input type="text" readonly=""  name="education" value="本科">
+                                    <svg class="icon inputicon" aria-hidden="true">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                                    </svg>
+                                </label>
+                                <div class="options noscend" style="width: 220px;top:48px">
+                                    <div class="select-option" style="width: 217px"><span>博士以上</span></div>
+                                    <div class="select-option" style="width: 217px"><span>博士</span></div>
+                                    <div class="select-option" style="width: 217px"><span>硕士</span> </div>
+                                    <div class="select-option" style="width: 217px"><span>本科</span> </div>
+                                    <div class="select-option" style="width: 217px"><span>专科</span> </div>
+                                    <div class="select-option" style="width: 217px"><span>专科以下</span> </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class=" person_changes_left person_changes">
+                        <span class="font999 resume_msg_name">现居地址</span>
+                        <div class=" relative general-select " style="float: none">
+                            <label class="general-input relative general-select" style="width: 140px;float: none">
+                                <input type="text" readonly="" data-error="请选择现居住地址" name="city" value="" placeholder="省/市" style="width: 120px">
+                                <svg class="icon inputicon" aria-hidden="true">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                                </svg>
+                            </label>
+                            <div class="options scend" style="width: 242px;top:48px">
+                                <div class="cwfcityoptions1 cityoptions">
+
+                                </div>
+                            </div>
+                        </div>
+                        <label class="general-input relative" style="width: 266px;margin-left: 20px;float:right">
+                            <input type="text" name="user_name"   placeholder="详细地址（选填）">
+                        </label>
+                        <div class=" relative general-select " style="float: right">
+                            <label class="general-input relative general-select" style="width: 140px;float: none">
+                                <input type="text" readonly="" id="area" name="area" value="" placeholder="区/县" style="width: 120px">
+                                <svg class="icon inputicon" aria-hidden="true">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                                </svg>
+                            </label>
+                            <div class="options scend" style="width: 242px;top:48px">
+                                <div class="cwfcityoptions1 areaoptions" >
+                                    <div class="select-option" style="width:140px;"><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
                     </div>
 
 
@@ -233,10 +308,13 @@
 
 </body>
 <script src="../js/jquery.js" rel="script"></script>
+<script src="../js/jquery.mousewheel.js" rel="script"></script>
 <script src="../js/iconfont.js" rel="script"></script>
 <script src="../js/control.js" rel="script"></script>
+
 <script src="../js/formdata.js" rel="script"></script>
 <script src="../js/area.js" rel="script"></script>
+
 <script src="../js/resume_manager.js" rel="script"></script>
 <script src="../js/job_manage_release.js" rel="script"></script>
 <script>
