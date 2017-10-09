@@ -103,7 +103,7 @@
                                         <svg class="icon" style="color: #bbbbbb;margin-left: 10px">
                                             <use xlink:href="#icon-sousuo"></use>
                                         </svg>
-                                        <input class="input_job" style="width: 130px;outline: none" type="text" placeholder="输入关键字">
+                                        <input class="input_job" id="job_key" style="width: 130px;outline: none" type="text" placeholder="输入关键字">
                                     </div>
                                     <span class="btn_sou" style="float: right;height: 40px;line-height: 40px">搜索</span>
                                 </div>
@@ -193,10 +193,10 @@
                         <span class="font999 resume_msg_name">任职要求</span>
 
                         <div class="lable590 job_duty">
-                            <textarea    placeholder=""></textarea>
+                            <textarea  id="do_job_duty_textarea"   placeholder=""></textarea>
                         </div>
                         <label class="general-input lable590 hiddenlable" style="height: 0;border: none;margin-left: 78px">
-                            <input type="hidden"  data-error="请输入岗位职责"  name="job_requirement">
+                            <input type="hidden"  id="do_job_duty_input" data-error="请输入岗位职责"  name="job_requirement">
                         </label>
 
                     </div>
