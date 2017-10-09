@@ -64,7 +64,7 @@
             <div class="list_top">
                 <div class="job_send job_manage_send">
                     <span class="wenzi">发布的职位</span>
-                    <svg class="icon ico_xiala" style="margin-top: 22px;color: #bbbbbb;margin-left: 10px">
+                    <svg class="icon ico_xiala" style="padding-top: 22px;color: #bbbbbb;padding-left: 10px">
                         <use xlink:href="#icon-xiala"></use>
                     </svg>
                     <div class="my_joblist">
@@ -92,16 +92,99 @@
 
                     <div class="release_list">
                         <span class="release_choice">选择模板</span>
+                        <div class="chioce_template">
+
+                            <div class="chioce_template_search">
+                                <span class="chioce_template_job job_chioced">网络编辑</span>
+                                <span class="chioce_template_job">新媒体编辑</span>
+                                <span class="chioce_template_job">文案编辑</span>
+                                <div class="chioce_template_job_search">
+                                    <div class="job_search_key">
+                                        <svg class="icon" style="color: #bbbbbb;margin-left: 10px">
+                                            <use xlink:href="#icon-sousuo"></use>
+                                        </svg>
+                                        <input class="input_job" style="width: 130px;outline: none" type="text" placeholder="输入关键字">
+                                    </div>
+                                    <span class="btn_sou" style="float: right;height: 40px;line-height: 40px">搜索</span>
+                                </div>
+
+                                <span class="close_template">
+                                    收起模板
+                                     <svg class="icon">
+                                         <use xlink:href="#icon-shangjiantou"></use>
+                                     </svg>
+                                </span>
+                            </div>
+
+                            <div class="template_name">
+                                <span class="template_names template_name_choiced">岗位职责</span>
+                                <span class="template_names">任职要求</span>
+
+                                <span class="new_template">
+                                    <svg class="icon">
+                                        <use xlink:href="#icon-huanyipi"></use>
+                                    </svg>
+                                    下一批
+                                </span>
+                            </div>
+
+
+                            <div class="job_template_msg">
+                                <div class="job_template_msgs">
+                                    <span class="job_template_msgscontent">负责网站各文章编辑、网站日常文章添加</span>
+                                    <span class="job_template_msgbtn">
+                                        <svg class="icon">
+                                            <use xlink:href="#icon-kongxingou"></use>
+                                        </svg>
+                                    </span>
+                                    <div style="clear:both"></div>
+                                </div>
+                                <div class="job_template_msgs">
+                                    <span class="job_template_msgscontent">负责网站各文章编辑、网站日常文章添加、内容更新、网站专题建设。</span>
+                                    <span class="job_template_msgbtn">
+                                        <svg class="icon">
+                                            <use xlink:href="#icon-kongxingou"></use>
+                                        </svg>
+                                    </span>
+                                    <div style="clear:both"></div>
+                                </div>
+                            </div>
+
+
+                            <div class="do_job_template_msg">
+                                <div class="job_template_msgs">
+                                    <span class="job_template_msgscontent">负责网站各文章编辑、网站日常文章添加负责网站各文章编辑、网站日常文章添加负责网站各文章编辑、网站日常文章添加负责网站各文章编辑、网站日常文章添加负责网站各文章编辑、网站日常文章添加</span>
+                                    <span class="job_template_msgbtn">
+                                        <svg class="icon">
+                                            <use xlink:href="#icon-kongxingou"></use>
+                                        </svg>
+                                    </span>
+                                    <div style="clear:both"></div>
+                                </div>
+                                <div class="job_template_msgs">
+                                    <span class="job_template_msgscontent">负责网站各文章编辑、网站日常文章添加、内容更新、网站专题建设。</span>
+                                    <span class="job_template_msgbtn">
+                                        <svg class="icon">
+                                            <use xlink:href="#icon-kongxingou"></use>
+                                        </svg>
+                                    </span>
+                                    <div style="clear:both"></div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
                     </div>
 
                     <div class="release_list">
                         <span class="font999 resume_msg_name">岗位职责</span>
 
                         <div class="lable590 job_duty">
-                            <textarea     placeholder=""></textarea>
+                            <textarea  id="job_duty_textarea"   placeholder=""></textarea>
                         </div>
                         <label class="general-input lable590 hiddenlable" style="height: 0;border: none;margin-left: 78px">
-                            <input type="hidden"  data-error="请输入岗位职责"  name="job_duty">
+                            <input type="hidden"  id="job_duty_input"   data-error="请输入岗位职责"  name="job_duty">
                         </label>
 
                     </div>
@@ -320,12 +403,18 @@
 <script>
     $(function () {
         $(".wenzi,.ico_xiala").click(function () {
-            $(".my_joblist").show();
-            $(".option_select").click(function () {
-                $(".wenzi").html($(this).html());
+            if( $(".my_joblist").css("display")=="none"){
+                $(".my_joblist").show();
+            }else{
                 $(".my_joblist").hide();
-            })
+            }
+
+
         });
+        $(".option_select").click(function () {
+            $(".wenzi").html($(this).html());
+            $(".my_joblist").hide();
+        })
 
 
         $.fromdata("#release_jobbox","test.php","#save_release",function(data){
