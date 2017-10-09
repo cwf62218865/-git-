@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../css/header.css" rel="stylesheet">
+    <link href="../css/swiper-3.4.2.min.css" rel="stylesheet">
     <link href="../css/control.css" rel="stylesheet">
     <link href="../css/reguser1.css" rel="stylesheet">
     <link href="../css/resume.css" rel="stylesheet">
@@ -12,25 +13,38 @@
     <link href="../css/personal1.css" rel="stylesheet">
     <title>简历预览</title>
     <style>
+        .swiper-container {
+            width: 910px;
+            height: 400px;margin-top: 50px;
+        }
 
+        .swiper-wrapper{
+            padding-left: 10px;
+        }
     </style>
 </head>
 <body bgcolor="#f4f4f4">
 <div class="header" style="background: #ffffff">
     <div class="width1200 align_center" style="padding-top: 14px;justify-content: space-between">
-        <div class="resume_btns" style="margin-left: 256px;">
+        <div class="resume_btns" style="margin-left: 156px;" id="download_resume">
             <svg class="icon icon_resume" aria-hidden="true">
                 <use xlink:href="#icon-xiazaijianli"></use>
             </svg>
             下载简历
         </div>
-        <div class="resume_btns">
+        <div class="resume_btns" id="print_resume">
             <svg class="icon icon_resume" aria-hidden="true">
                 <use xlink:href="#icon-dayinjianli"></use>
             </svg>
             打印简历
         </div>
-        <div class="resume_btns">
+        <div class="resume_btns" id="change_modal">
+            <svg class="icon icon_resume" aria-hidden="true">
+                <use xlink:href="#icon-genghuanmoban"></use>
+            </svg>
+            更换模板
+        </div>
+        <div class="resume_btns" id="exit_view">
             <svg class="icon icon_resume" aria-hidden="true">
                 <use xlink:href="#icon-tuichuyulan"></use>
             </svg>
@@ -289,13 +303,103 @@
     </div>
 
 </div>
+<!--更换模板弹框-->
+<div class="modalbox" id="modal_box" style="display: none;">
+    <div class="modal" style="width: 980px;margin-left: -490px;top:10%;">
+        <p class="title_content">选择简历模板</p>
+        <span class="modalclose">
+                <img src="../images/close.png"/>
+            </span>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="modal_item cur">
+                    <div class="modal_title">扁平化风格</div>
+                    <div class="modal_style">
+                    <img src="../images/modal.png" style="width:200px; "/>
+                    </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="modal_item cur">
+                        <div class="modal_title">简约风格</div>
+                        <div class="modal_style">
+                            <img src="../images/modal.png" style="width:200px; "/>
+                        </div>
+                        <label class="using">使用中</label>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="modal_item cur">
+                        <div class="modal_title">游戏风格</div>
+                        <div class="modal_style">
+                            <img src="../images/modal.png" style="width:200px; "/>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="modal_item cur">
+                        <div class="modal_title">水墨风格</div>
+                        <div class="modal_style">
+                            <img src="../images/modal.png" style="width:200px; "/>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="modal_item cur">
+                        <div class="modal_title">扁平化风格</div>
+                        <div class="modal_style">
+                            <img src="../images/modal.png" style="width:200px; "/>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="modal_item cur">
+                        <div class="modal_title">古典风格</div>
+                        <div class="modal_style">
+                            <img src="../images/modal.png" style="width:200px; "/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev" id="previous">
+                <svg class="icon jiantou" aria-hidden="true">
+                <use xlink:href="#icon-zuojiantouxi"></use>
+                </svg>
+            </div>
+            <div class="swiper-button-next" id="next">
+                <svg class="icon jiantou" aria-hidden="true">
+                <use xlink:href="#icon-youjiantouxi"></use>
+                </svg>
+            </div>
+        </div>
+        <div class="btns" style="margin-bottom: 50px;margin-top: 60px;">
+            <button class="tijiao" style="margin-left: 410px">确定使用</button>
+            <span class="quxiao color_main">取消</span>
+        </div>
+    </div>
+</div>
+<!--弹框end-->
 
 
 </body>
+<script src="../js/swiper.js" rel="script"></script>
 <script src="../js/jquery.js" rel="script"></script>
 <script src="../js/iconfont.js" rel="script"></script>
+
 <script src="../js/formdata.js" rel="script"></script>
 <script>
+    $(document).ready(function () {
+        var mySwiper = new Swiper ('.swiper-container', {
+            direction: 'horizontal',
+            slidesPerView: 4,
+            roundLengths : true,
+            // 如果需要前进后退按钮
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+        })
+    })
 $(function () {
     $(".color").click(function () {
         var html="<i class='select'></i>";
@@ -304,8 +408,28 @@ $(function () {
         $(".color").html("");
         $(this).append(html);
     })
+
+    $(".modal_item").click(function () {
+        $(".biankuang").remove();
+        $(this).append("<div class='biankuang'></div>");
+    })
+
 })
 
 
+
+
+    $("#change_modal").click(function () {
+        $("#modal_box").animate({"opacity":1},300);
+        setTimeout(function(){
+            $("#modal_box").css("display","block");
+        },300)
+    })
+    $(".modalclose,.quxiao").on("click",function(){
+        $("#modal_box").animate({"opacity":0},300);
+        setTimeout(function(){
+            $("#modal_box").css("display","none");
+        },300)
+    });
 </script>
 </html>
