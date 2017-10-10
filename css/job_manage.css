@@ -123,3 +123,119 @@
 .hiddenlable .formtip{
     margin-top: 16px;
 }
+.chioce_template{
+    width: 790px;
+    margin-left: -65px;
+    margin-top: 40px;
+}
+.chioce_template_search{
+    width: 100%;
+    height: 80px;
+    background-color:#f5f5f5 ;
+}
+.chioce_template_job{
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    height: 36px;
+    line-height: 36px;
+    color: #999;
+    margin-top: 22px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+.chioce_template_job:first-child{
+    margin-left: 30px;
+}
+.job_chioced{
+    background-color:#a8c9ea ;
+    color: #fff;
+}
+.chioce_template_job_search{
+    display: inline-block;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.chioce_template_job_search .job_search_key{
+    display: inline-block;
+    width: 160px;
+    padding: 10px;
+    background-color: #fff;
+}
+.close_template{
+    float: right;
+    color: #8590a6;
+    margin-right: 30px;
+    margin-top: 30.5px;
+    cursor: pointer;
+}
+.template_name{
+    padding-top: 30px;
+    border: 1px solid #eee;
+    border-top: none;
+
+}
+.template_names{
+    display: inline-block;
+    width: 180px;
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    padding-bottom: 20px;
+    cursor: pointer;
+    margin-bottom: -1px;
+}
+.template_names:first-child{
+    margin-left: 50px;
+}
+.template_name_choiced{
+    color: #0099cc;
+    background:url("../images/selcet_psw.png") no-repeat;
+    background-position: bottom;
+}
+.new_template{
+    float: right;
+    margin-right: 30px;
+    color: #8590a6;
+    cursor: pointer;
+}
+.job_template_msg{
+    border: 1px solid #eee;
+    border-top: none;
+    padding-bottom: 30px;
+}
+.do_job_template_msg{
+    border: 1px solid #eee;
+    border-top: none;
+    padding-bottom: 30px;
+    display: none;
+}
+.job_template_msgs{
+    margin: 20px 0 0 30px;
+
+}
+.job_template_msgs:first-child{
+    padding-top: 30px;
+    margin-top: 0;
+}
+.job_template_msgscontent{
+    display: inline-block;
+    color: #666;
+    float: left;
+    line-height: 24px;
+    max-width:508px ;
+    padding: 5px 20px;
+    border: 1px solid #eee;
+    border-radius: 18px;
+}
+.job_template_msgbtn{
+    font-size: 24px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    color: #a8c9ea;
+    cursor: pointer;
+    margin-left: 30px;
+}
