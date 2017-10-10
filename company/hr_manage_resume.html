@@ -323,17 +323,13 @@
                             </div>
                         </div>
                         <div class="select_option" style="margin-left: 10px;">
-                            <div class="selectinput cur">
-                                <input class="date_num" id="salery_select" value="工资面谈"  />
-                                <svg class="icon ico66">
-                                    <use xlink:href="#icon-xiala"></use>
-                                </svg>
-                            </div>
-                            <div class="datalist" style="width: 120px;">
-                                <div class="option_date">1K以下</div>
-                                <div class="option_date">1-3K</div>
-                                <div class="option_date">3-5K</div>
-                                <div class="option_date">5K以上</div>
+                            <div class=" relative general-select selectinput" style="">
+                                <label class="general-input relative " style="float: none">
+                                    <input type="text" class="date_num" readonly="" id="salarychoice"  name="salary" value="工资面谈">
+                                    <svg class="icon inputicon" aria-hidden="true">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                                    </svg>
+                                </label>
                             </div>
                         </div>
                         <div class="select_option" style="margin-left: 10px;">
@@ -1104,6 +1100,7 @@
 
 </body>
 <script src="../js/jquery.js" rel="script"></script>
+<script src="../js/jquery.mousewheel.js" rel="script"></script>
 <script src="../js/iconfont.js" rel="script"></script>
 <script src="../js/control.js" rel="script"></script>
 <script src="../js/login_reg_account.js"></script>
@@ -1111,4 +1108,6 @@
 <script src="../js/area.js"></script>
 <script src="../js/zimu.js"></script>
 <script src="../js/hr_manage_resume.js"></script>
+<script src="../js/formdata.js" rel="script"></script>
+<script src="../js/job_manage_release.js" rel="script"></script>
 </html>

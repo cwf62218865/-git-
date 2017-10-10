@@ -738,6 +738,11 @@
     color: #999999;
     margin-bottom: 26px;
 }
+.beizhu_content{
+    margin-left: 18px;
+    width: 210px;
+    outline: none;
+}
 .edit_ico{
     width: 20px;height: 20px;float: right;color: #0099cc;
 }
@@ -1125,5 +1130,20 @@
 .date_num{
     width: 60px;
     outline: none;
+}
+.relative #salarychoice{
+    width: 60px;
+    margin-left: 0px;
+}
+.select_option .selectinput .general-input{
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    background: none;
+    margin-left: 0;
+}
+.resume_content .salarys{
+    left: 0 !important;
 }
 
