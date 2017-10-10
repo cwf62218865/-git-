@@ -77,13 +77,13 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     position: absolute;
 }
 .options{
-
     width: 190px;
     left: 20px;
     position: absolute;
     height: 0px;
     top:38px;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     z-index: 1000;
 
 }

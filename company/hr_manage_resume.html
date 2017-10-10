@@ -31,33 +31,53 @@
     </div>
 </div>
 <div class="width1200 p1content">
-    <div class="p1_left">
-        <div class="con_top">
-            <div class="items">
+    <div class="con_top">
+        <div class="items">
+            <div class="items_yuan itemm1">
                 <svg class="icon icon_item" aria-hidden="true">
                     <use xlink:href="#icon-jianliguanli"></use>
                 </svg>
-                <span class="span">简历管理</span>
             </div>
-            <div class="items">
+            <div class="title_items">
+                <p class="span">简历管理</p>
+                <p class="item_beizhu">管理收到、收藏的简历</p>
+            </div>
+        </div>
+        <div class="items">
+            <div class="items_yuan itemm2">
                 <svg class="icon icon_item" aria-hidden="true">
                     <use xlink:href="#icon-zhiweiguanli"></use>
                 </svg>
-                <span class="span">职位管理</span>
             </div>
-            <div class="items select">
+            <div class="title_items">
+                <p class="span">职位管理</p>
+                <p class="item_beizhu">编辑职位、新增职位</p>
+            </div>
+        </div>
+        <div class="items">
+            <div class="items_yuan itemm3">
                 <svg class="icon icon_item" aria-hidden="true">
                     <use xlink:href="#icon-HRgongzuo"></use>
                 </svg>
-                <span class="span">HR工作</span>
             </div>
-            <div class="items">
+            <div class="title_items">
+                <p class="span">HR工作</p>
+                <p class="item_beizhu">面试日程、职位搜索</p>
+            </div>
+        </div>
+        <div class="items">
+            <div class="items_yuan itemm4">
                 <svg class="icon icon_item" aria-hidden="true">
                     <use xlink:href="#icon-gongsixinxi"></use>
                 </svg>
-                <span class="span">公司信息</span>
+            </div>
+            <div class="title_items">
+                <p class="span">公司信息</p>
+                <p class="item_beizhu">编辑、修改公司信息</p>
             </div>
         </div>
+    </div>
+    <div class="p1_left">
         <div class="con_list">
             <div class="list_top">
                 <div class="list_item_btn select" >等待面试</div>
@@ -92,7 +112,7 @@
                     <div class="biezhu"> 明天</div>
                     <div class="select_date_option">
                         <div class="selectinput">
-                            <span class="date_num">选择日期</span>
+                            <input class="date_num" value="选择日期"  />
                         <svg class="icon ico66">
                             <use xlink:href="#icon-xiala"></use>
                         </svg>
@@ -276,47 +296,59 @@
                     </div>
                     <div class="selecter_list">
                         <div class="select_option" style="margin-left: 30px;">
-                            <div class="selectinput">
-                                <span class="date_num">专业不限</span>
+                            <div class="selectinput cur">
+                                <input class="date_num" id="major_select" value="专业不限" readonly="readonly"/>
+                                <svg class="icon ico66">
+                                    <use xlink:href="#icon-xiala"></use>
+                                </svg>
+                            </div>
+                            <div class="datalist  professional_list">
+                                <div class="zimu_top">
+                                    <div class="zimu_list">
+                                        <label class="letters"></label>
+                                        <label class="cur allmajor">不限</label>
+                                    </div>
+                                    <div class="job_secon">
+                                        <div class="inputcon">
+                                            <svg class="icon" style="color: #bbbbbb;margin-left: 20px">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sousuo"></use>
+                                            </svg>
+                                            <input class="input_job" type="text" placeholder="输入专业">
+                                        </div>
+                                        <div class="btn_sou cur">查找</div>
+                                    </div>
+                                </div>
+                                <div class="major_con">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="select_option" style="margin-left: 10px;">
+                            <div class="selectinput cur">
+                                <input class="date_num" id="salery_select" value="工资面谈"  />
                                 <svg class="icon ico66">
                                     <use xlink:href="#icon-xiala"></use>
                                 </svg>
                             </div>
                             <div class="datalist" style="width: 120px;">
-                                <div class="option_date">互联网/IT</div>
-                                <div class="option_date">金融</div>
-                                <div class="option_date">国际贸易</div>
+                                <div class="option_date">1K以下</div>
+                                <div class="option_date">1-3K</div>
+                                <div class="option_date">3-5K</div>
+                                <div class="option_date">5K以上</div>
                             </div>
                         </div>
                         <div class="select_option" style="margin-left: 10px;">
-                            <div class="selectinput">
-                                <span class="date_num">工资面谈</span>
+                            <div class="selectinput cur">
+                                <input class="date_num" id="apperience_select" value="经验不限"/>
                                 <svg class="icon ico66">
                                     <use xlink:href="#icon-xiala"></use>
                                 </svg>
                             </div>
-                            <div class="datalist" style="width: 120px;">
-                                <div class="option_date">互联网/IT</div>
-                                <div class="option_date">金融</div>
-                                <div class="option_date">国际贸易</div>
+                            <div class="datalist expirence" style="width: 120px;">
                             </div>
                         </div>
                         <div class="select_option" style="margin-left: 10px;">
-                            <div class="selectinput">
-                                <span class="date_num">经验不限</span>
-                                <svg class="icon ico66">
-                                    <use xlink:href="#icon-xiala"></use>
-                                </svg>
-                            </div>
-                            <div class="datalist" style="width: 120px;">
-                                <div class="option_date">互联网/IT</div>
-                                <div class="option_date">金融</div>
-                                <div class="option_date">国际贸易</div>
-                            </div>
-                        </div>
-                        <div class="select_option" style="margin-left: 10px;">
-                            <div class="selectinput">
-                                <span class="date_num">地点不限</span>
+                            <div class="selectinput cur">
+                                <input class="date_num" id="didian_select" value="地点不限"/>
                                 <svg class="icon ico66">
                                     <use xlink:href="#icon-xiala"></use>
                                 </svg>
@@ -518,7 +550,7 @@
                             <div class="one_pj">
                                 <div class="checkbox" style="display: inline-block;float: left">
                                     <label class="">
-                                        <input type="checkbox" name="like" value="">
+                                        <input type="checkbox" name="like" value="1">
                                         <div class="checkboxbox">
                                             <svg class="icon iconfont color1aa ico_right">
                                                 <use xlink:href="#icon-zhengque1"></use>
@@ -534,7 +566,7 @@
                             <div class="one_pj">
                                 <div class="checkbox" style="display: inline-block;float: left">
                                     <label class="">
-                                        <input type="checkbox" name="like" value="">
+                                        <input type="checkbox" name="like" value="2">
                                         <div class="checkboxbox">
                                             <svg class="icon iconfont color1aa ico_right">
                                                 <use xlink:href=""></use>
@@ -550,7 +582,7 @@
                             <div class="one_pj">
                                 <div class="checkbox" style="display: inline-block;float: left">
                                     <label class="">
-                                        <input type="checkbox" name="like" value="">
+                                        <input type="checkbox" name="like" value="3">
                                         <div class="checkboxbox">
                                             <svg class="icon iconfont color1aa ico_right">
                                                 <use xlink:href=""></use>
@@ -564,7 +596,7 @@
                                 <label>差评</label>
                             </div>
                         </div>
-                        <div class="pjbtn cur">回复评价</div>
+                        <div class="pjbtn cur mspjbtn">回复评价</div>
                     </div>
                 </div>
                 <div class="list_item">
@@ -593,7 +625,7 @@
                             <div class="one_pj">
                                 <div class="checkbox" style="display: inline-block;float: left">
                                     <label class="">
-                                        <input type="checkbox" name="like" value="">
+                                        <input type="checkbox" name="like" value="1">
                                         <div class="checkboxbox">
                                             <svg class="icon iconfont color1aa ico_right">
                                                 <use xlink:href="#icon-zhengque1"></use>
@@ -609,7 +641,7 @@
                             <div class="one_pj">
                                 <div class="checkbox" style="display: inline-block;float: left">
                                     <label class="">
-                                        <input type="checkbox" name="like" value="">
+                                        <input type="checkbox" name="like" value="2">
                                         <div class="checkboxbox">
                                             <svg class="icon iconfont color1aa ico_right">
                                                 <use xlink:href=""></use>
@@ -625,7 +657,7 @@
                             <div class="one_pj">
                                 <div class="checkbox" style="display: inline-block;float: left">
                                     <label class="">
-                                        <input type="checkbox" name="like" value="">
+                                        <input type="checkbox" name="like" value="3">
                                         <div class="checkboxbox">
                                             <svg class="icon iconfont color1aa ico_right">
                                                 <use xlink:href=""></use>
@@ -639,7 +671,7 @@
                                 <label>差评</label>
                             </div>
                         </div>
-                        <div class="pjbtn cur">回复评价</div>
+                        <div class="pjbtn cur mspjbtn">回复评价</div>
                     </div>
                 </div>
                 <div class="list_item">
@@ -668,7 +700,7 @@
                             <div class="one_pj">
                                 <div class="checkbox" style="display: inline-block;float: left">
                                     <label class="">
-                                        <input type="checkbox" name="like" value="">
+                                        <input type="checkbox" name="like" value="1">
                                         <div class="checkboxbox">
                                             <svg class="icon iconfont color1aa ico_right">
                                                 <use xlink:href="#icon-zhengque1"></use>
@@ -684,7 +716,7 @@
                             <div class="one_pj">
                                 <div class="checkbox" style="display: inline-block;float: left">
                                     <label class="">
-                                        <input type="checkbox" name="like" value="">
+                                        <input type="checkbox" name="like" value="2">
                                         <div class="checkboxbox">
                                             <svg class="icon iconfont color1aa ico_right">
                                                 <use xlink:href=""></use>
@@ -700,7 +732,7 @@
                             <div class="one_pj">
                                 <div class="checkbox" style="display: inline-block;float: left">
                                     <label class="">
-                                        <input type="checkbox" name="like" value="">
+                                        <input type="checkbox" name="like" value="3">
                                         <div class="checkboxbox">
                                             <svg class="icon iconfont color1aa ico_right">
                                                 <use xlink:href=""></use>
@@ -714,7 +746,7 @@
                                 <label>差评</label>
                             </div>
                         </div>
-                        <div class="pjbtn cur">回复评价</div>
+                        <div class="pjbtn cur mspjbtn">回复评价</div>
                     </div>
                 </div>
                 <div class="list_item">
@@ -743,7 +775,7 @@
                             <div class="one_pj">
                                 <div class="checkbox" style="display: inline-block;float: left">
                                     <label class="">
-                                        <input type="checkbox" name="like" value="">
+                                        <input type="checkbox" name="like" value="1">
                                         <div class="checkboxbox">
                                             <svg class="icon iconfont color1aa ico_right">
                                                 <use xlink:href="#icon-zhengque1"></use>
@@ -759,7 +791,7 @@
                             <div class="one_pj">
                                 <div class="checkbox" style="display: inline-block;float: left">
                                     <label class="">
-                                        <input type="checkbox" name="like" value="">
+                                        <input type="checkbox" name="like" value="2">
                                         <div class="checkboxbox">
                                             <svg class="icon iconfont color1aa ico_right">
                                                 <use xlink:href=""></use>
@@ -775,7 +807,7 @@
                             <div class="one_pj">
                                 <div class="checkbox" style="display: inline-block;float: left">
                                     <label class="">
-                                        <input type="checkbox" name="like" value="">
+                                        <input type="checkbox" name="like" value="3">
                                         <div class="checkboxbox">
                                             <svg class="icon iconfont color1aa ico_right">
                                                 <use xlink:href=""></use>
@@ -789,7 +821,7 @@
                                 <label>差评</label>
                             </div>
                         </div>
-                        <div class="pjbtn cur">回复评价</div>
+                        <div class="pjbtn cur mspjbtn">回复评价</div>
                     </div>
                 </div>
                 <div class="morejob">更多简历信息>></div>
@@ -819,7 +851,7 @@
                         <div class="relative general-select pj_hang">
                             <div class="tit_gzpj">离职时间</div>
                             <label class="general-input relative general-select">
-                                <input type="text" readonly=""  value="2017.06">
+                                <input type="text" readonly=""  value="2017.06" class="time_zaizhi">
                                 <svg class="icon inputicon" aria-hidden="true">
                                     <use  xlink:href="#icon-xiala" class="colorbbb"></use>
                                 </svg>
@@ -842,18 +874,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="relative">
+                        <div class="">
                             <div class="tit_gzpj">任职岗位</div>
                             <label class="general-input">
-                                <input type="text" style="width: 224px" placeholder="请输入任职岗位">
+                                <input type="text" style="width: 224px" placeholder="请输入任职岗位"  class="gangwei">
                             </label>
                         </div>
                         <div class="title_bx">任职期间工作表现</div>
                         <div class="huifupinglun" style="margin-top: 16px;">
                             请输入职员工作表现
-                            <textarea class="shurupl"></textarea>
+                            <textarea class="shurupl biaoxian"></textarea>
                         </div>
-                        <div class="pjbtn cur pjmargin">回复评价</div>
+                        <div class="pjbtn cur pjmargin send_value">发布评价</div>
                     </div>
                 </div>
                 <div class="list_item gzpj">
@@ -878,7 +910,7 @@
                         <div class="relative general-select pj_hang">
                             <div class="tit_gzpj">离职时间</div>
                             <label class="general-input relative general-select">
-                                <input type="text" readonly=""  value="2017.06">
+                                <input type="text" readonly=""  value="2017.06" class="time_zaizhi">
                                 <svg class="icon inputicon" aria-hidden="true">
                                     <use  xlink:href="#icon-xiala" class="colorbbb"></use>
                                 </svg>
@@ -901,19 +933,19 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="relative">
+                        <div class="">
                             <div class="tit_gzpj">任职岗位</div>
                             <label class="general-input">
-                                <input type="text" style="width: 224px" placeholder="请输入任职岗位">
+                                <input type="text" style="width: 224px" placeholder="请输入任职岗位"   class="gangwei">
                             </label>
                             <div class="options" style="height: 0px;"></div>
                         </div>
                         <p class="title_bx">任职期间工作表现</p>
                         <div class="huifupinglun" style="margin-top: 16px;">
                             请输入职员工作表现
-                            <textarea class="shurupl"></textarea>
+                            <textarea class="shurupl biaoxian"></textarea>
                         </div>
-                        <div class="pjbtn cur pjmargin">回复评价</div>
+                        <div class="pjbtn cur pjmargin send_value">发布评价</div>
                     </div>
                 </div>
             </div>
@@ -1070,7 +1102,6 @@
 </div>
 
 
-
 </body>
 <script src="../js/jquery.js" rel="script"></script>
 <script src="../js/iconfont.js" rel="script"></script>
@@ -1078,116 +1109,6 @@
 <script src="../js/login_reg_account.js"></script>
 <script src="../js/resume_reg3.js"></script>
 <script src="../js/area.js"></script>
-
-<script>
-    $(function () {
-        var area=new Array();
-        area=dsy.Items[0];
-        var html="";
-        for(var i=0;i<area.length;i++){
-            html+="<div class='option_date' id='city"+i+"'>"+area[i]+"</div>";
-        }
-        $(".select_option .cityitem").html(html);
-        $(".list_item_btn ").click(function () {
-            $(".list_item_btn ").removeClass("select");
-            $(this).addClass("select");
-        })
-        $(".list_item_btn ").eq(0).click(function () {
-            $(".list_content").show();
-            $(".resume_content").hide();
-            $(".pingjia_content").hide();
-            $(".gzpj_content").hide();
-        })
-        $(".list_item_btn ").eq(1).click(function () {
-            $(".list_content").hide();
-            $(".resume_content").show();
-            $(".pingjia_content").hide();
-            $(".gzpj_content").hide();
-        })
-        $(".list_item_btn ").eq(2).click(function () {
-            $(".list_content").hide();
-            $(".resume_content").hide();
-            $(".pingjia_content").show();
-            $(".gzpj_content").hide();
-        })
-        $(".list_item_btn ").eq(3).click(function () {
-            $(".list_content").hide();
-            $(".resume_content").hide();
-            $(".pingjia_content").hide();
-            $(".gzpj_content").show();
-        })
-        //省略号显示
-        var pj=$(".pj_content .content").html();
-        if(pj.length>90){
-            $(".pj_content .content").html(pj.substring(0,90)+"......");
-        }
-        var htmls="<span class='ico_biaozhu'>收起</span><svg class='icon' aria-hidden='true'><use xlink:href='#icon-shangjiantou'></use></svg>";
-        var htmls1="<span class='ico_biaozhu'>显示全部</span><svg class='icon' aria-hidden='true'><use xlink:href='#icon-xiajiantou'></use></svg>";
-        $(".icon_all").on("click",function () {
-            var pj1=$(this).prev().html();
-            if(pj1.length<97){
-                $(this).prev().html(pj);
-                $(this).html(htmls);
-            }else{
-                $(this).prev().html(pj.substring(0,90)+"......");
-                $(this).html(htmls1);
-            }
-        })
-        $(".shoucang_resume").click(function () {
-            $("#beizhubox").animate({"opacity":1},300);
-            setTimeout(function(){
-                $("#beizhubox").css("display","block");
-            },300)
-        })
-        $(".modalclose,.quxiao").on("click",function(){
-            $("#beizhubox").animate({"opacity":0},300);
-            setTimeout(function(){
-                $("#beizhubox").css("display","none");
-            },300)
-        });
-        $(".yaoqing_interview").click(function () {
-            $("#invite_box").animate({"opacity":1},300);
-            setTimeout(function(){
-                $("#invite_box").css("display","block");
-            },300)
-        })
-        $(".modalclose,.quxiao").on("click",function(){
-            $("#invite_box").animate({"opacity":0},300);
-            setTimeout(function(){
-                $("#invite_box").css("display","none");
-            },300)
-        });
-        $(".selectinput").click(function () {
-            $(".datalist").hide();
-            $(this).next().show();
-            $(".option_date").click(function () {
-                $(this).parent().prev().find(".date_num").html($(this).html());
-                $(".datalist").hide();
-            })
-        })
-        $(".shurupl").focus(function () {
-            $(this).css("background","#f5f5f5");
-        })
-        $(".shurupl").blur(function () {
-            if($(this).val()==""){
-            $(this).css("background","none");
-            }
-        })
-
-        var datatime=new Date();
-        var days=datatime.getDay();
-        var weekarr=["周日","周一","周二","周三","周四","周五","周六"];
-        var day3=new Array();
-        for(var i=0;i<7;i++){
-            var dayis=new Date();
-            dayis.setTime(datatime.getTime()+24*i*60*60*1000);
-            day3[i]=(dayis.getMonth()+1)+"."+dayis.getDate()+"."+dayis.getDay();
-            if(dayis.getDay()==0 || dayis.getDay()==6){
-                $(".date_list").append("<div class='option_date weekend'>"+dayis.getDate()+"号"+weekarr[dayis.getDay()]+"</div>");
-            }else{
-            $(".date_list").append("<div class='option_date'>"+dayis.getDate()+"号"+weekarr[dayis.getDay()]+"</div>");
-            }
-        }
-    });
-</script>
+<script src="../js/zimu.js"></script>
+<script src="../js/hr_manage_resume.js"></script>
 </html>
