@@ -35,7 +35,7 @@ $(document).ready(function(){
         year="";
         if(_this.closest(".general-select").next().height()=="0"){
             $(".options").css("height","0px");
-            _this.closest(".general-select").next().css("height","auto");
+            _this.closest(".general-select").next().css("height","180px");
         }else {
             _this.closest(".general-select").next().css("height","0px");
         }
