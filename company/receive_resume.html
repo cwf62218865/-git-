@@ -31,33 +31,53 @@
     </div>
 </div>
 <div class="width1200 p1content">
-    <div class="p1_left">
-        <div class="con_top">
-            <div class="items select">
+    <div class="con_top">
+        <div class="items">
+            <div class="items_yuan itemm1">
                 <svg class="icon icon_item" aria-hidden="true">
                     <use xlink:href="#icon-jianliguanli"></use>
                 </svg>
-                <span class="span">简历管理</span>
             </div>
-            <div class="items">
+            <div class="title_items">
+                <p class="span">简历管理</p>
+                <p class="item_beizhu">管理收到、收藏的简历</p>
+            </div>
+        </div>
+        <div class="items">
+            <div class="items_yuan itemm2">
                 <svg class="icon icon_item" aria-hidden="true">
                     <use xlink:href="#icon-zhiweiguanli"></use>
                 </svg>
-                <span class="span">职位管理</span>
             </div>
-            <div class="items">
+            <div class="title_items">
+                <p class="span">职位管理</p>
+                <p class="item_beizhu">编辑职位、新增职位</p>
+            </div>
+        </div>
+        <div class="items">
+            <div class="items_yuan itemm3">
                 <svg class="icon icon_item" aria-hidden="true">
                     <use xlink:href="#icon-HRgongzuo"></use>
                 </svg>
-                <span class="span">HR工作</span>
             </div>
-            <div class="items">
+            <div class="title_items">
+                <p class="span">HR工作</p>
+                <p class="item_beizhu">面试日程、职位搜索</p>
+            </div>
+        </div>
+        <div class="items">
+            <div class="items_yuan itemm4">
                 <svg class="icon icon_item" aria-hidden="true">
                     <use xlink:href="#icon-gongsixinxi"></use>
                 </svg>
-                <span class="span">公司信息</span>
+            </div>
+            <div class="title_items">
+                <p class="span">公司信息</p>
+                <p class="item_beizhu">编辑、修改公司信息</p>
             </div>
         </div>
+    </div>
+    <div class="p1_left">
         <div class="con_list">
             <div class="list_top">
                 <div class="list_item_btn select" id="send_list">收到的简历</div>
@@ -96,7 +116,7 @@
             </div>
             <!--收到的简历start------------------------------------------------------------------------------->
             <div class="list_content">
-                <div class="list_item">
+                <div class="list_item"  data-id="1">
                     <div class="item_con">
                         <div class="touxiang_pic">
                             <img src="../images/resume_tx.png" style="width: 100px;"/>
@@ -134,13 +154,14 @@
                             </p>
                         </div>
                     </div>
+                    <input class="beizhu_content" placeholder="自定义收藏理由在这里显示自定义" hidden="hidden"/>
                     <div class="review_statas">
                         <div class="tongyi1 agree_review" data-id="1">同意面试</div>
                         <div class="jujue1 refuse_review" data-id="1">拒绝面试</div>
                         <div class="jujue1 shoucang_resume" data-id="1">收藏简历</div>
                     </div>
                 </div>
-                <div class="list_item">
+                <div class="list_item" data-id="2">
                     <div class="item_con">
                         <div class="touxiang_pic">
                             <img src="../images/resume_tx.png" style="width: 100px;"/>
@@ -178,13 +199,14 @@
                             </p>
                         </div>
                     </div>
+                    <input class="beizhu_content" placeholder="自定义收藏理由在这里显示自定义" hidden="hidden"/>
                     <div class="review_statas">
-                        <div class="tongyi1" data-id="1">同意面试</div>
-                        <div class="jujue1" data-id="1">拒绝面试</div>
-                        <div class="jujue1" data-id="1">收藏简历</div>
+                        <div class="tongyi1 agree_review" data-id="2">同意面试</div>
+                        <div class="jujue1 refuse_review" data-id="2">拒绝面试</div>
+                        <div class="jujue1 shoucang_resume" data-id="2">收藏简历</div>
                     </div>
                 </div>
-                <div class="list_item">
+                <div class="list_item" data-id="3">
                     <div class="item_con">
                         <div class="touxiang_pic">
                             <img src="../images/resume_tx.png" style="width: 100px;"/>
@@ -222,13 +244,14 @@
                             </p>
                         </div>
                     </div>
+                    <input class="beizhu_content" placeholder="自定义收藏理由在这里显示自定义" hidden="hidden"/>
                     <div class="review_statas">
-                        <div class="tongyi1" data-id="1">同意面试</div>
-                        <div class="jujue1" data-id="1">拒绝面试</div>
-                        <div class="jujue1" data-id="1">收藏简历</div>
+                        <div class="tongyi1 agree_review" data-id="3">同意面试</div>
+                        <div class="jujue1 refuse_review" data-id="3">拒绝面试</div>
+                        <div class="jujue1 shoucang_resume" data-id="3">收藏简历</div>
                     </div>
                 </div>
-                <div class="list_item">
+                <div class="list_item"  data-id="4">
                     <div class="item_con">
                         <div class="touxiang_pic">
                             <img src="../images/resume_tx.png" style="width: 100px;"/>
@@ -266,10 +289,11 @@
                             </p>
                         </div>
                     </div>
+                    <input class="beizhu_content" placeholder="自定义收藏理由在这里显示自定义" hidden="hidden"/>
                     <div class="review_statas">
-                        <div class="tongyi1" data-id="1">同意面试</div>
-                        <div class="jujue1" data-id="1">拒绝面试</div>
-                        <div class="jujue1" data-id="1">收藏简历</div>
+                        <div class="tongyi1 agree_review" data-id="4">同意面试</div>
+                        <div class="jujue1 refuse_review" data-id="4">拒绝面试</div>
+                        <div class="jujue1 shoucang_resume" data-id="4">收藏简历</div>
                     </div>
                 </div>
 
@@ -278,7 +302,7 @@
             <!--收到的简历end-------------------------------------------------------------------------->
             <!--收藏简历start---------------------------------------------------------------------------->
             <div class="resume_content">
-                <div class="list_item">
+                <div class="list_item"  data-id="5">
                     <div class="item_con">
                         <div class="touxiang_pic">
                             <img src="../images/resume_tx.png" style="width: 100px;"/>
@@ -316,8 +340,8 @@
                             </p>
                             <p class="shoucang_beizhu">
                                 <span>备注：</span>
-                                <span style="margin-left: 18px">自定义收藏理由在这里显示自定义</span>
-                                <svg class="icon edit_ico cur">
+                                <input class="beizhu_content" placeholder="自定义收藏理由在这里显示自定义" readonly/>
+                                <svg class="icon edit_ico cur" data-id="1">
                                     <use xlink:href="#icon-xiugai"></use>
                                 </svg>
                             </p>
@@ -328,7 +352,7 @@
                         <div class="jujue" data-id="1">取消收藏</div>
                     </div>
                 </div>
-                <div class="list_item">
+                <div class="list_item"  data-id="6">
                     <div class="item_con">
                         <div class="touxiang_pic">
                             <img src="../images/resume_tx.png" style="width: 100px;"/>
@@ -366,19 +390,19 @@
                             </p>
                             <p class="shoucang_beizhu">
                                 <span>备注：</span>
-                                <span style="margin-left: 18px">自定义收藏理由在这里显示自定义</span>
-                                <svg class="icon edit_ico cur">
+                                <input class="beizhu_content" placeholder="自定义收藏理由在这里显示自定义" readonly/>
+                                <svg class="icon edit_ico cur"  data-id="2">
                                     <use xlink:href="#icon-xiugai"></use>
                                 </svg>
                             </p>
                         </div>
                     </div>
                     <div class="review_statas">
-                        <div class="tongyi" data-id="1">邀请面试</div>
-                        <div class="jujue" data-id="1">取消收藏</div>
+                        <div class="tongyi" data-id="2">邀请面试</div>
+                        <div class="jujue" data-id="2">取消收藏</div>
                     </div>
                 </div>
-                <div class="list_item">
+                <div class="list_item"  data-id="7">
                     <div class="item_con">
                         <div class="touxiang_pic">
                             <img src="../images/resume_tx.png" style="width: 100px;"/>
@@ -416,19 +440,19 @@
                             </p>
                             <p class="shoucang_beizhu">
                                 <span>备注：</span>
-                                <span style="margin-left: 18px">自定义收藏理由在这里显示自定义</span>
-                                <svg class="icon edit_ico cur">
+                                <input class="beizhu_content" placeholder="自定义收藏理由在这里显示自定义" readonly/>
+                                <svg class="icon edit_ico cur"  data-id="3">
                                     <use xlink:href="#icon-xiugai"></use>
                                 </svg>
                             </p>
                         </div>
                     </div>
                     <div class="review_statas">
-                        <div class="tongyi" data-id="1">邀请面试</div>
-                        <div class="jujue" data-id="1">取消收藏</div>
+                        <div class="tongyi" data-id="3">邀请面试</div>
+                        <div class="jujue" data-id="3">取消收藏</div>
                     </div>
                 </div>
-                <div class="list_item">
+                <div class="list_item"  data-id="8">
                     <div class="item_con">
                         <div class="touxiang_pic">
                             <img src="../images/resume_tx.png" style="width: 100px;"/>
@@ -466,20 +490,18 @@
                             </p>
                             <p class="shoucang_beizhu">
                                 <span>备注：</span>
-                                <span style="margin-left: 18px">自定义收藏理由在这里显示自定义</span>
-                                <svg class="icon edit_ico cur">
+                                <input class="beizhu_content" placeholder="自定义收藏理由在这里显示自定义" readonly/>
+                                <svg class="icon edit_ico cur"  data-id="4">
                                     <use xlink:href="#icon-xiugai"></use>
                                 </svg>
                             </p>
                         </div>
                     </div>
                     <div class="review_statas">
-                        <div class="tongyi" data-id="1">邀请面试</div>
-                        <div class="jujue" data-id="1">取消收藏</div>
+                        <div class="tongyi" data-id="4">邀请面试</div>
+                        <div class="jujue" data-id="4">取消收藏</div>
                     </div>
                 </div>
-
-
                 <div class="morejob">更多简历信息>></div>
             </div>
             <!--收藏简历end---------------------------------------------------->
@@ -551,7 +573,7 @@
             </span>
             <textarea class="scbz_input" placeholder="自定义备注，15字以内。"></textarea>
             <div class="btns" style="margin-bottom: 22px">
-                <button class="tijiao1">确定</button>
+                <button class="tijiao1" id="shoucang">确定</button>
                 <span class="quxiao">取消</span>
             </div>
         </div>
@@ -567,7 +589,7 @@
             <div class="invite_con">
                 <div class="in_hang">
                     <span class="biaoti">面试时间</span>
-                    <label class="general-input relative general-select review_input">
+                    <label class="general-input relative review_input">
                         <input type="text" readonly="" id="review_time" placeholder="选择时间">
                         <svg class="icon inputicon" aria-hidden="true">
                             <use xlink:href="#icon-xiala" class="colorbbb"></use>
@@ -584,12 +606,12 @@
                         <span class="items_dateweek">
                         </span>
                         <div class="hours_edit">
-                            <label class="hour_btn cur">-</label>
+                            <label class="hour_btn cur" id="minus">-</label>
                             <label class="hour_num"><span class="number_hour">10</span>点</label>
-                            <label class="hour_btn cur">+</label>
+                            <label class="hour_btn cur" id="plus">+</label>
                         </div>
                         <div class="btns" style="margin-bottom: 22px;margin-top: 10px;">
-                            <button class="tijiao" style="margin-left: 160px">确认</button>
+                            <button class="tijiao" style="margin-left: 160px" id="reviewtime">确认</button>
                             <span class="quxiao1">取消</span>
                         </div>
                     </div>
@@ -597,138 +619,60 @@
                 <div class="in_hang">
                     <span class="biaoti">联系人</span>
                     <label class="general-input" >
-                        <input type="text"  value="默认注册联系人">
+                        <input type="text" id="contacts_name"  value="默认注册联系人">
                     </label>
                 </div>
                 <div class="in_hang">
                     <span class="biaoti">联系电话</span>
                     <label class="general-input" >
-                        <input type="text"  value="默认注册电话">
+                        <input type="text" id="contacts_tel" value="默认注册电话">
                     </label>
                 </div>
                 <div class="in_hang">
                     <span class="biaoti">面试地点</span>
-                    <label class="general-input relative general-select review_city">
-                        <input type="text" readonly="" placeholder="选择城市">
-                        <svg class="icon inputicon" aria-hidden="true">
-                            <use  xlink:href="#icon-xiala" class="colorbbb"></use>
-                        </svg>
-                    </label>
-                    <label class="general-input relative general-select review_district">
-                        <input type="text" readonly="" placeholder="选择区县">
-                        <svg class="icon inputicon" aria-hidden="true">
-                            <use  xlink:href="#icon-xiala" class="colorbbb"></use>
-                        </svg>
-                    </label>
+                    <div class=" relative general-select left_align city1 ">
+                        <label class="general-input relative general-select review_city" style="border-color: rgb(245, 245, 245);">
+                            <input type="text" readonly="" id="city" placeholder="选择城市">
+                            <svg class="icon inputicon" aria-hidden="true">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                            </svg>
+                        </label>
+                        <div class="options cityoption" style="height: 185px;"></div>
+                    </div>
+                    <div class=" relative general-select district1" style="float: right;">
+                        <label class="general-input relative general-select review_district">
+                            <input type="text" readonly="" id="city_area" placeholder="区县">
+                            <svg class="icon inputicon" aria-hidden="true">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
+                            </svg>
+                        </label>
+                        <div class="options districtoption" style="height: 185px;"></div>
+                    </div>
                     <label class="general-input" >
-                        <input type="text"  placeholder="详细地址">
+                        <input type="text" id="detail_address" placeholder="详细地址">
                     </label>
                 </div>
             </div>
             <div class="btns" style="margin-bottom: 22px;margin-top: 10px;">
-                <button class="tijiao" style="margin-left: 210px">发送邀请</button>
+                <button class="tijiao" id="send_review" style="margin-left: 210px">发送邀请</button>
                 <span class="quxiao">取消</span>
             </div>
         </div>
     </div>
     <!--面试邀请弹框end-->
 </div>
-
-
-
 </body>
 <script src="../js/jquery.js" rel="script"></script>
 <script src="../js/iconfont.js" rel="script"></script>
 <script src="../js/control.js" rel="script"></script>
 <script src="../js/login_reg_account.js"></script>
+<script src="../js/area.js" rel="script"></script>
+<script src="../js/resume_reg1.js" rel="script"></script>
+<script src="../js/receive_resume.js" rel="script"></script>
 
 <script>
     $(function () {
         send_resume();
-        $(".wenzi,.ico_xiala").click(function () {
-            $(".my_joblist").show();
-            $(".option_select").click(function () {
-                $(".wenzi").html($(this).html());
-                $(".my_joblist").hide();
-            })
-        });
-        $(".shoucang_resume").click(function () {
-            $("#beizhubox").animate({"opacity":1},300);
-            setTimeout(function(){
-                $("#beizhubox").css("display","block");
-            },300)
-        })
-        $(".modalclose,.quxiao").on("click",function(){
-            $("#beizhubox").animate({"opacity":0},300);
-            setTimeout(function(){
-                $("#beizhubox").css("display","none");
-            },300)
-        });
-        $(".yaoqing_interview").click(function () {
-            $("#invite_box").animate({"opacity":1},300);
-            setTimeout(function(){
-                $("#invite_box").css("display","block");
-            },300)
-        })
-        $(".modalclose,.quxiao").on("click",function(){
-            $("#invite_box").animate({"opacity":0},300);
-            setTimeout(function(){
-                $("#invite_box").css("display","none");
-            },300)
-        });
-        // 面试时间选择
-        var date=new Date();
-        var month=date.getMonth()+1;
-        var today=date.getDate();
-        var week=date.getDay();
-        var hour="";
-        var arr=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
-        $(".review_input").on("mousedown",function () {
-            $(".review_time").show();
-            $(".time_hour").click(function () {
-                var data_id=$(this).attr("data-id");
-                $(".time_hour").removeClass("slect");
-                $(this).addClass("slect");
-                if(data_id==1){
-                    today+=1;
-                    hour="10:00";
-                    week+=1;
-                }else if(data_id==2){
-                    today+=1;
-                    hour="14:00";
-                    week+=1;
-                }
-                else if(data_id==3){
-                    today+=2;
-                    hour="10:00";
-                    week+=2;
-                }
-                else if(data_id==4){
-                    today+=2;
-                    hour="14:00";
-                    week+=2;
-                }
-                $("#review_time").val(month+"月"+today+"日 "+arr[week]+" "+hour);
-                $(".review_time").hide();
-            });
-            $(".select_date").click(function () {
-                $(".review_time").hide();
-                $(".review_date").show();
-                var html="";
-                for(var i=1;i<=7;i++){
-                    var date=today;
-                    date+=i;
-                    var week1=week;
-                    week1+=i;
-                    if(week1>=7){
-                        week1=0;
-                    }
-                    html +="<label class='date_items'><span class='dater'>"+date+"</span><span class='week' id='"+week1+"..."+i+"'>"+arr[week1]+"</span></label>";
-                }
-                $(".items_dateweek").html(html);
-            })
-        })
-
     })
 </script>
 </html>

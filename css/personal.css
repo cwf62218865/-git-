@@ -27,52 +27,80 @@
 .p1_right{
     width: 310px;
     float: right;
+    margin-top: 10px;
 }
 .con_top{
     width: 100%;
+    height: 140px;
+    background-color: #ffffff;
 }
 .con_top .items{
     cursor: pointer;
-    width: 210px;height: 120px;font-size: 16px;float: left; margin-left: 10px;line-height: 120px;color: #ffffff;text-align: center;position: relative;
+    width: 299px;height: 60px;font-size: 16px;float: left;text-align: center;position: relative;
+    border-right:1px solid #eeeeee ;margin-top: 40px;
 }
-.con_top .select:after{
-    content: "";
-    position: absolute;
-    top: 120px;
-    left: 50%;
-    margin-left: -11px;
-    border-right: 11px solid transparent;
-    border-left: 11px solid transparent;
-    border-top: 10px solid ;
 
-}
-.con_top .items:nth-child(1){
-    background: #0099cc;margin-left: 0;color: #0099cc;
-}
-.con_top .items:nth-child(2){
-    background: #1ac078;color: #1ac078;
-
-}
-.con_top .items:nth-child(3){
-    background: #e1cf0c;color: #e1cf0c;
-}
 .con_top .items:nth-child(4){
-    background: #fc7900;color: #fc7900;
+    border-right:1px solid #ffffff ;
 }
 
 .icon_item {
     width: 40px; height: 40px;
-    vertical-align:middle;
+    vertical-align:top;
+    margin-top: 10px;
     fill: currentColor;
     color: #fff;
     overflow: hidden;
 }
+.title_items{
+    float: left;
+    margin-left: 20px;
+    text-align: left;
+}
 .items .span{
-   margin-left: 26px;color: #fff;
+   color: #333;
+    font-size: 20px;
+}
+.item_beizhu{
+    color: #999999;
+    font-size: 14px;
+    margin-top: 15px;
+}
+.items_yuan{
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    float: left;
+    margin-left: 42px;
+}
+.con_top .itemm1{
+    background: #0099cc;
+}
+.con_top .itemm2{
+    background: #1ac078;
+}
+.con_top .itemm3{
+    background: #e1cf0c;
+}
+.con_top .itemm4{
+    background: #fc7900;
+}
+.items:hover .itemm1{
+    background: #2baadf;
+}
+.items:hover .itemm2{
+    background: #18d080;
+}
+.items:hover .itemm3{
+    background: #eedb0c;
+}
+.items:hover .itemm4{
+    background: #fc9a00;
 }
 .con_list{
     float: left;
-    width: 100%;background: #ffffff;margin-top: 20px;
+    width: 100%;background: #ffffff;margin-top: 10px;
+    padding-bottom: 20px;
 }
 .list_top{
     width: 100%;height: 60px;border-bottom: 1px solid #eeeeee;line-height: 60px;
@@ -482,6 +510,19 @@
 .options{
     width: 120px;
 }
+.city1 .cityoption,.district1 .districtoption{
+    width: 220px;
+    left: 19px;
+}
+.district1 .districtoption{
+    left: 0px;
+}
+.jujuestatus{
+    width: 100%;text-align: center;color: #bbbbbb;border-top:1px solid #eeeeee ;
+}
+.city1 .cityoption .select-option ,.district1 .districtoption  .select-option {
+    width: 220px;
+}
 .options1{
     top: 48px;
     padding-left: 16px;
@@ -697,6 +738,11 @@
     color: #999999;
     margin-bottom: 26px;
 }
+.beizhu_content{
+    margin-left: 18px;
+    width: 210px;
+    outline: none;
+}
 .edit_ico{
     width: 20px;height: 20px;float: right;color: #0099cc;
 }
@@ -772,6 +818,9 @@
     margin-right: 10px;float: left;cursor: pointer;
 }
 .date_items:hover{
+    background: #a8c9ea;color: #ffffff;
+}
+.date_select{
     background: #a8c9ea;color: #ffffff;
 }
 .review_time .slect, .selcit{
@@ -1022,5 +1071,79 @@
     color: #f3969b;
     text-align: center;
     width: 100%;
+}
+.professional_list{
+    width: 820px;height: 280px;background: #f5f5f5;
+    left: -284px;
+    padding-top: 0px;
+}
+.zimu_top{
+    width: 100%;
+    height: 62px;
+    background: #ffffff;
+    float: left;
+}
+.zimu_list{
+    width: 570px;
+    margin-left: 20px;
+    margin-top: 20px;
+    float: left;
+}
+.professional_list .job_secon{
+    float: right;
+    margin-top: -39px;
+    margin-right: 20px;
+}
+.professional_list .inputcon{
+    width: 140px;
+    background: #f5f5f5;
+}
+
+.professional_list .job_secon .input_job{
+    width: 100px;background: #f5f5f5;
+}
+.one_letter{
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+}
+.slectletter{
+    background: #0099cc;color: #ffffff;
+}
+.major_con{
+    width: 780px;
+    height: auto;
+    margin: 24px 20px;
+    float: left;
+    text-align: left;
+}
+.major_list{
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #666666;
+    cursor: pointer;
+}
+.date_num{
+    width: 60px;
+    outline: none;
+}
+.relative #salarychoice{
+    width: 60px;
+    margin-left: 0px;
+}
+.select_option .selectinput .general-input{
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    background: none;
+    margin-left: 0;
+}
+.resume_content .salarys{
+    left: 0 !important;
 }
 
