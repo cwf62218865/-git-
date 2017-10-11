@@ -304,7 +304,7 @@
 
 </div>
 <!--更换模板弹框-->
-<div class="modalbox" id="modal_box" style="display: none;">
+<div class="modalbox" id="modal_box" style="display: block;opacity: 0">
     <div class="modal" style="width: 980px;margin-left: -490px;top:10%;">
         <p class="title_content">选择简历模板</p>
         <span class="modalclose">
@@ -368,12 +368,15 @@
                 <use xlink:href="#icon-zuojiantouxi"></use>
                 </svg>
             </div>
+
             <div class="swiper-button-next" id="next">
                 <svg class="icon jiantou" aria-hidden="true">
                 <use xlink:href="#icon-youjiantouxi"></use>
                 </svg>
             </div>
         </div>
+
+
         <div class="btns" style="margin-bottom: 50px;margin-top: 60px;">
             <button class="tijiao" style="margin-left: 410px">确定使用</button>
             <span class="quxiao color_main">取消</span>
@@ -391,6 +394,7 @@
 <script src="../js/formdata.js" rel="script"></script>
 <script>
     $(document).ready(function () {
+
         var mySwiper = new Swiper ('.swiper-container', {
             direction: 'horizontal',
             slidesPerView: 4,
@@ -399,6 +403,7 @@
             nextButton: '.swiper-button-next',
             prevButton: '.swiper-button-prev',
         })
+        $("#modal_box").hide().css("opacity",1);
     })
 $(function () {
     $(".color").click(function () {
@@ -420,16 +425,10 @@ $(function () {
 
 
     $("#change_modal").click(function () {
-        $("#modal_box").animate({"opacity":1},300);
-        setTimeout(function(){
-            $("#modal_box").css("display","block");
-        },300)
+        $("#modal_box").show();
     })
     $(".modalclose,.quxiao").on("click",function(){
-        $("#modal_box").animate({"opacity":0},300);
-        setTimeout(function(){
-            $("#modal_box").css("display","none");
-        },300)
+        $("#modal_box").hide();
     });
 </script>
 </html>
