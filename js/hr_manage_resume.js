@@ -51,30 +51,8 @@ $(function () {
             $(this).html(htmls1);
         }
     })
-    $(".shoucang_resume").click(function () {
-        $("#beizhubox").animate({"opacity":1},300);
-        setTimeout(function(){
-            $("#beizhubox").css("display","block");
-        },300)
-    })
-    $(".modalclose,.quxiao").on("click",function(){
-        $("#beizhubox").animate({"opacity":0},300);
-        setTimeout(function(){
-            $("#beizhubox").css("display","none");
-        },300)
-    });
-    $(".yaoqing_interview").click(function () {
-        $("#invite_box").animate({"opacity":1},300);
-        setTimeout(function(){
-            $("#invite_box").css("display","block");
-        },300)
-    })
-    $(".modalclose,.quxiao").on("click",function(){
-        $("#invite_box").animate({"opacity":0},300);
-        setTimeout(function(){
-            $("#invite_box").css("display","none");
-        },300)
-    });
+
+
     $(".selectinput").click(function () {
         $(".datalist").hide();
         $(this).next().show();
@@ -231,5 +209,9 @@ $(".send_value").click(function () {
             }
         }
     })
+
+
+
+
 
 })

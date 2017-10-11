@@ -398,7 +398,7 @@
                         </div>
                     </div>
                     <div class="review_statas">
-                        <div class="tongyi" data-id="2">邀请面试</div>
+                        <div class="tongyi yaoqing_interview" data-id="2">邀请面试</div>
                         <div class="jujue" data-id="2">取消收藏</div>
                     </div>
                 </div>
@@ -448,7 +448,7 @@
                         </div>
                     </div>
                     <div class="review_statas">
-                        <div class="tongyi" data-id="3">邀请面试</div>
+                        <div class="tongyi yaoqing_interview" data-id="3">邀请面试</div>
                         <div class="jujue" data-id="3">取消收藏</div>
                     </div>
                 </div>
@@ -498,7 +498,7 @@
                         </div>
                     </div>
                     <div class="review_statas">
-                        <div class="tongyi" data-id="4">邀请面试</div>
+                        <div class="tongyi yaoqing_interview" data-id="4">邀请面试</div>
                         <div class="jujue" data-id="4">取消收藏</div>
                     </div>
                 </div>
@@ -637,7 +637,7 @@
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
                             </svg>
                         </label>
-                        <div class="options cityoption" style="height: 185px;"></div>
+                        <div class="options cityoption" style="height: 185px;overflow-y: auto;"></div>
                     </div>
                     <div class=" relative general-select district1" style="float: right;">
                         <label class="general-input relative general-select review_district">
@@ -646,7 +646,7 @@
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-xiala" class="colorbbb"></use>
                             </svg>
                         </label>
-                        <div class="options districtoption" style="height: 185px;"></div>
+                        <div class="options districtoption" style="height: 185px;overflow-y: auto;"></div>
                     </div>
                     <label class="general-input" >
                         <input type="text" id="detail_address" placeholder="详细地址">
@@ -668,11 +668,110 @@
 <script src="../js/login_reg_account.js"></script>
 <script src="../js/area.js" rel="script"></script>
 <script src="../js/resume_reg1.js" rel="script"></script>
-<script src="../js/receive_resume.js" rel="script"></script>
+<script src="../js/resume_picker.js" rel="script"></script>
+<script src="../js/date_list.js" rel="script"></script>
 
 <script>
     $(function () {
         send_resume();
+    })
+
+    //面试邀请
+    $("#send_review").click(function () {
+        var reviewtime=$("#review_time").val();
+        var contacts_name=$("#contacts_name").val();
+        var contacts_tel=$("#contacts_tel").val();
+        var city=$("#city").val();
+        var city_area=$("#city_area").val();
+        var detail_address=$("#detail_address").val();
+
+        var telphone_reg=/^1[3|5|7|8][0-9]\d{8}$/;
+        if(reviewtime==""){
+            alert("请输入面试日期")
+            return;
+        }
+        if(contacts_name==""){
+            alert("请输入联系人")
+            return;
+        }
+        if(contacts_tel==""){
+            alert("请输入联系电话")
+            return;
+        }
+        if(!telphone_reg.test(contacts_tel)){
+            alert("请输入可联系的电话")
+            return;
+        }
+        if(city==""){
+            alert("请输入城市")
+            return;
+        }
+        if(city_area==""){
+            alert("请输入区县")
+            return;
+        }
+        if(detail_address==""){
+            alert("请输入详细地址")
+            return;
+        }
+
+        $("#invite_box").hide();
+
+        $.ajax({
+            url:"",
+            type:"post",
+            data:{
+                reviewtime:reviewtime,
+                contacts_name:contacts_name,
+                contacts_tel:contacts_tel,
+                city:city,
+                city_area:city_area,
+                detail_address:detail_address
+            },
+            success:function(data){
+                if(data.status==1){
+                    window.location.href="";
+                }else{
+                    console.log(data.content);
+                }
+            }
+        })
+    })
+
+
+    //收藏备注
+    $("#shoucang").click(function () {
+        var item=$(this).closest("#beizhubox");
+        var beizhu=item.find(".scbz_input").val();
+        var data_flag=item.attr("data-id");
+
+        var item=$(this).closest("")
+        if(beizhu==""){
+            alert("请填写备注！")
+            return;
+        }
+        $("#beizhubox").hide();
+        var lists=$(".resume_content .list_item");
+        lists.each(function () {
+            if($(this).attr("data-id")==data_flag){
+                $(this).find(".beizhu_content").val(beizhu);
+            }
+        })
+
+        $.ajax({
+            url:"",
+            type:"post",
+            data:{
+                beizhu:beizhu
+            },
+            success:function (data) {
+                if(data.status==1){
+                    window.location.href="";
+                }else{
+                    console.log(data.content);
+                }
+            }
+        })
     })
 </script>
 </html>
