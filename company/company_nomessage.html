@@ -7,11 +7,22 @@
     <link href="../css/header.css" rel="stylesheet">
     <link href="../css/swiper-3.4.2.min.css" rel="stylesheet">
     <link href="../css/control.css" rel="stylesheet">
+    <link href="../css/reguser1.css" rel="stylesheet">
     <link href="../css/personal.css" rel="stylesheet">
     <link href="../css/personal1.css" rel="stylesheet">
     <link href="../css/company_msg.css" rel="stylesheet">
 
     <title>公司信息</title>
+    <style>
+        .abnormal .formtip{
+            position: absolute;
+            margin-top: 0;
+        }
+        .relative input{
+            position: absolute;
+        }
+
+    </style>
 
 </head>
 <body bgcolor="#f4f4f4">
@@ -63,7 +74,7 @@
             </div>
         </div>
         <div class="con_list" style="padding-bottom: 80px">
-           <div class="width670">
+           <div class="width670" id="company_nomsgbox">
 
                <!--上传logo-->
                <div style="margin-top: 80px;width: 100%;text-align: center">
@@ -76,7 +87,8 @@
                        </span>
                    </span>
                    <div class="fontbbb" style="margin-top: 16px">*Logo尺寸要求 200*200，图片大小在2M以内</div>
-                   <input type="file" style="display: none">
+                   <input type="file" id="company_logo"  accept="image/*"  style="display: none">
+                   <input type="text" name="company_logo" style="display: none">
                </div>
 
                <!--基本信息-->
@@ -84,7 +96,14 @@
                    <div>
                        <span class="color666 companymsg_name">公司全称</span>
                        <span style="line-height: 48px;margin-left: 20px">重庆大粪车科技公司</span>
-                       <span class="edit_company_name">修改公司名称</span>
+                       <span class="relative change_company_name">
+                           <span class="edit_company_name">修改公司名称</span>
+                           <span class="edit_name_tips">
+                               修改公司名称，需要重新上传营业执照和法人身份证，并提供法人签字、公司盖章的修改协议照片。
+                               <a href="#" style="color: #09c">前往修改</a>
+                           </span>
+                       </span>
+
                    </div>
                </div>
                <div>
@@ -132,7 +151,7 @@
                            <span class="color666 redxing companymsg_name">所处行业</span>
                            <div class=" relative general-select  " style="float: none">
                                <label class="general-input relative general-select" style="float: none">
-                                   <input type="text" readonly=""  name="company_nature" value="互联网">
+                                   <input type="text" readonly=""  name="company_industry" value="互联网">
                                    <svg class="icon inputicon" aria-hidden="true">
                                        <use  xlink:href="#icon-xiala" class="colorbbb"></use>
                                    </svg>
@@ -162,7 +181,7 @@
                            <span class="color666 redxing companymsg_name">所在地区</span>
                            <div class=" relative general-select " style="float: none">
                                <label class="general-input relative general-select" style="float: none">
-                                   <input type="text" readonly=""  name="company_scale" value="重庆">
+                                   <input type="text" readonly=""  name="company_area" value="重庆">
                                    <svg class="icon inputicon" aria-hidden="true">
                                        <use  xlink:href="#icon-xiala" class="colorbbb"></use>
                                    </svg>
@@ -193,7 +212,7 @@
                        </div>
 
                        <div  class="cwftextareatip" style="height: auto;margin-top: 10px;padding-bottom: 13px">
-                           <label class="general-input relative" style="width: 260px;;margin-left: 80px;height: 0;border: none">
+                           <label class="general-input relative" style="width: 260px;;margin-left: 88px;height: 0;border: none">
                                <input type="hidden" name="companymsg_introduce" id="companymsg_introduceinput" data-error="请输入公司详细介绍">
                            </label>
                        </div>
@@ -205,8 +224,17 @@
                        <div class="person_changes" style="margin-top: 0px">
 
                            <input type="hidden" name="works_url" id="works_id">
-
+                           <span class="color666  redxing companymsg_name">公司图集</span>
                            <div class="person_worksbox" style="margin-left: 88px">
+                               <div class="person_worksbtn">
+                                   <img src="../images/person_img.png">
+                                    <span class="person_worksdelbtn">
+                                        <svg class="icon" aria-hidden="true">
+                                            <use xlink:href="#icon-shanchu"></use>
+                                        </svg>
+                                    </span>
+                               </div>
+
                                <div class="person_worksbtn">
                                    <img src="../images/person_img.png">
                                     <span class="person_worksdelbtn">
@@ -226,8 +254,8 @@
 
                            </div>
 
-                           <label class="general-input relative abnormal" style="width: 460px;height: 0;border: none;margin-left: 78px">
-                               <input type="hidden"  data-error="请上传作品" style="width: 420px;" value="" id="person_worksinput" name="person_works">
+                           <label class="general-input relative abnormal" style="width: 460px;height: 20px;border: none;margin-left: 88px;background:none">
+                               <input type="hidden"  data-error="请上传公司图片" style="width: 420px;" value="" id="person_worksinput" name="person_works">
                            </label>
 
 
@@ -253,7 +281,7 @@
                                </div>
                            </div>
                            <label class="general-input relative" style="width: 256px;margin-left: 20px;float:right">
-                               <input type="text" name="user_name"   placeholder="详细地址（选填）">
+                               <input type="text" name="address"   placeholder="详细地址（选填）">
                            </label>
                            <div class=" relative general-select " style="float: right">
                                <label class="general-input relative general-select" style="width: 140px;float: none">
@@ -301,11 +329,16 @@
                                <span class="btn_sou" style="float: right;height: 37px">添加</span>
                            </div>
                        </div>
+
+                       <label class="general-input relative abnormal" style="width: 460px;height: 20px;border: none;margin-left: 88px;background:none;margin-top: 10px">
+                           <input type="hidden"  data-error="请选择福利标签" style="width: 420px;" value="" id="company_welfare" name="company_welfare">
+                       </label>
+
                    </div>
 
 
 
-                   <div class=" person_changes_left" style="margin-top: 20px">
+                   <div class=" person_changes_left" style="margin-top: 10px">
                        <span class="color666  companymsg_name" style="width: 78px;margin-left: -10px">公司网站</span>
                        <label class="general-input relative" style="width: 580px;">
                            <input type="text" placeholder="请输入公司网址"  style="width: 540px;" name="company_url">
@@ -316,7 +349,7 @@
                        <div class=" person_changes_left" >
                            <span class="color666  companymsg_name" style="float: left;height: 1px"></span>
                            <div style="display: inline-block;margin-left: 20px">
-                               <span class="savebtn public_bigbtn bg1aa" id="save_person_msg" style="padding: 0 30px 0 30px">保存</span>
+                               <span class="savebtn public_bigbtn bg1aa" id="save_company_nomsg" style="padding: 0 30px 0 30px">保存</span>
                                <span class="cancelbtn">取消</span>
                            </div>
                        </div>
@@ -384,6 +417,38 @@
         </div>
     </div>
 
+
+
+
+    <!--弹框-->
+    <div class="modalbox loginn_zj" id="modalbox" style="display: none;">
+        <div class="modal">
+            <p class="title_content">公司图集</p>
+            <span class="modalclose">
+                <img src="../images/close.png"/>
+            </span>
+            <div class="modal_con">
+                <div class="one_btn">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-shangchuan"></use>
+                    </svg>
+                </div>
+                <div class="erweima">
+                    <img src="../images/erweima.png" class="pic"/>
+                </div>
+            </div>
+            <div class="title">
+                <span>电脑上传</span>
+                <span>手机扫码上传</span>
+            </div>
+            <input type='file' name='file' id='file' accept='image/*' style="display: none">
+            <span class="public_bigbtn bg1aa modalbtn">立即上传</span>
+        </div>
+    </div>
+    <!--弹框end-->
+
+
+
 </div>
 
 
@@ -394,10 +459,40 @@
 <script src="../js/area.js" rel="script"></script>
 <script src="../js/iconfont.js" rel="script"></script>
 <script src="../js/control.js" rel="script"></script>
+<script src="../js/formdata.js" rel="script"></script>
 <script src="../js/company_nomsg.js" rel="script"></script>
-
 <script>
+//    上传logo
+    $(".company_logo_upload span").on("click",function(){
+        $("#company_logo").click();
+    })
+
+$("#company_logo").on("change",function(){
+    var f=$(this).prop('files')[0];
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        var data = e.target.result;
+        //加载图片获取图片真实宽度和高度
+        var image = new Image();
+        image.onload=function(){
+            var width = image.width;
+            var height = image.height;
+            var size = f.size;
+            if(width>200||height>200||size>2097152){
+                hint("error","Logo尺寸要求 200*200，图片大小在2M以内。");
+               setTimeout(function(){$(".promptbox").remove()},2000);
+            }
+        };
+        image.src= data;
+    };
+
+    reader.readAsDataURL(f);
+})
+
+
+$.fromdata("#company_nomsgbox","test.php","#save_company_nomsg",function(data){
+    //do something
+})
 
 </script>
-
 </html>

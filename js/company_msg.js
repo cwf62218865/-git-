@@ -31,4 +31,74 @@ if(introducecontentlength>300){
      }
 
 
- })
+ });
+
+
+//基础信息
+$("#basic_msg .addandeditbtn").on("click",function(){
+    $("#basic_msg").hide();
+    $("#basic_msgbox").show();
+});
+
+$("#basic_msgbox .cancelbtn").on("click",function(){
+    $("#basic_msg").show();
+    $("#basic_msgbox").hide();
+});
+
+//公司介绍
+$(".addandeditbtn").eq(1).on("click",function(){
+    $("#introduces_msg").hide();
+    $("#introduces_msgbox").show();
+});
+
+$("#introduces_msgbox .cancelbtn").on("click",function(){
+    $("#introduces_msg").show();
+    $("#introduces_msgbox").hide();
+});
+
+
+//公司图集
+$(".addandeditbtn").eq(2).on("click",function(){
+    $("#company_img").hide();
+    $("#company_imgbox").show();
+});
+
+$("#company_imgbox .cancelbtn").on("click",function(){
+    $("#company_img").show();
+    $("#company_imgbox").hide();
+});
+
+
+//公司地址
+$(".addandeditbtn").eq(3).on("click",function(){
+    $("#company_address").hide();
+    $("#company_addressbox").show();
+});
+
+$("#company_addressbox .cancelbtn").on("click",function(){
+    $("#company_address").show();
+    $("#company_addressbox").hide();
+});
+
+
+//福利标签
+$(".addandeditbtn").eq(4).on("click",function(){
+    $("#welfare_msg").hide();
+    $("#welfare_msgbox").show();
+});
+
+$("#welfare_msgbox .cancelbtn").on("click",function(){
+    $("#welfare_msg").show();
+    $("#welfare_msgbox").hide();
+});
+
+//公司网址
+$(".addandeditbtn").eq(5).on("click",function(){
+    $("#website_msg").hide();
+    $("#website_msgbox").show();
+});
+
+$("#website_msgbox .cancelbtn").on("click",function(){
+    $("#website_msg").show();
+    $("#website_msgbox").hide();
+});

@@ -26,12 +26,14 @@ for(var i=0;i<area.length;i++){
 };
 $('.areacity').append(city);
 
-
+//公司介绍
 $("#companymsg_introduce").on("input",function(){
     var content=$(this).val();
     $("#companymsg_introduceinput").val(content);
 })
-
+$("#companymsg_introduce").on("focus",function(){
+    $(this).parent().next().find(".formtip").remove();
+})
 
 
 //现居地址
@@ -83,6 +85,8 @@ $(".company_welfare span").on("click",function(){
         _this.addClass("welfare_choice");
         _this.append('<svg class="icon" aria-hidden="true"><use  xlink:href="#icon-shan"></use></svg>')
     }
+
+    addwelfare();
 });
 $("body").on("click",".company_welfare .new_welfare",function(){
     var _this=$(this);
@@ -92,14 +96,17 @@ $("body").on("click",".company_welfare .new_welfare",function(){
         _this.addClass("welfare_choice");
         _this.append('<svg class="icon" aria-hidden="true"><use  xlink:href="#icon-shan"></use></svg>')
     }
+    addwelfare();
 });
 
 $("body").on("click",".company_welfare .welfare_choice .icon",function(){
     var _this=$(this);
     _this.closest("span").removeClass("welfare_choice");
     _this.remove();
+    addwelfare();
 });
 
+//阻止冒泡
 $("body").on("click",".company_welfare .welfare_choice .icon",function(event){
     event.stopPropagation();
 });
@@ -108,10 +115,57 @@ $("body").on("click",".company_welfare .new_welfare .icon",function(){
     var _this=$(this);
     _this.closest("span").removeClass("welfare_choice");
     _this.remove();
+    addwelfare();
 });
 
 //添加福利
 $(".btn_sou").on("click",function(){
     var welfare=$("#welfare_key").val();
     $(".company_welfare").append("<span class='new_welfare welfare_choice'>"+welfare+"<svg class='icon' aria-hidden='true'><use  xlink:href='#icon-shan'></use></svg></span>");
+    addwelfare();
 })
+
+var addwelfare=function(){
+    var  welfares=$(".company_welfare span");
+    var  welfarescontent="";
+    welfares.each(function(){
+        if($(this).hasClass("welfare_choice")){
+            var content=$(this).html();
+
+            welfarescontent+=content.substring(0,content.indexOf("<"))+",";
+        }
+    });
+    $("#company_welfare").val(welfarescontent.substring(0,welfarescontent.length-1));
+    $("#welfare_msgbox").find(".formtip").remove();
+}
+
+
+//修改公司名称
+$(".change_company_name").on("mouseover",function(){
+    $(".edit_name_tips").show();
+})
+$(".change_company_name").on("mouseleave",function(){
+    $(".edit_name_tips").hide();
+})
+
+
+//公司图集
+$(".person_worksdelbtn").on("click",function(){
+    var _this=$(this);
+    var images="";
+    _this.closest(".person_worksbtn").remove();
+    $(".person_worksbox img").each(function(){
+        images+=$(this).attr("src")+",";
+    });
+    $("#person_worksinput").val(images.substring(0,images.length-1));
+})
+
+
+$("#person_worksaddbtn").on("click",function(){
+    $("#modalbox").show();
+    $(this).closest(".person_worksbox").next().find(".formtip").remove();
+})
+
+$(".modalclose").on("click",function(){
+    $("#modalbox").hide();
+});
