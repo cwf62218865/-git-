@@ -44,6 +44,28 @@ function stop_action(title,content,cancel,confirm,callback){
 }
 
 
+//提示信息弹窗
+function hint(state,msg){
+    var promptbox="<div class='promptbox'><div class='padding25'>";
+    if(state==""||state=="success"){
+        promptbox+="<svg class='icon font24 ' style='float:left;color: #36cfb3' aria-hidden='true'><use xlink:href='#icon-zhengque2'></use></svg>"
+        promptbox+="<span class='prompttitle'>提交成功！</span>"
+    }else if(state=="error"){
+        promptbox+="<svg class='icon font24 ' style='float:left;color: #ea5941' aria-hidden='true'><use xlink:href='#icon-cuowu'></use></svg>"
+        promptbox+="<span class='prompttitle'>错误！</span>"
+    }else if(state=="warning"){
+        promptbox+="<svg class='icon font24 ' style='float:left;color: #f7ba2a' aria-hidden='true'><use xlink:href='#icon-jinggao'></use></svg>"
+        promptbox+="<span class='prompttitle'>警告！</span>"
+    }else if(state=="ordinary"){
+        promptbox+="<svg class='icon font24 ' style='float:left;color: #289fd1' aria-hidden='true'><use xlink:href='#icon-tishi'></use></svg>"
+        promptbox+="<span class='prompttitle'>一般提醒！</span>"
+    };
+    promptbox+="<div class='promptmsg'>"+msg+"</div>";
+    promptbox+="</div></div>";
+    $("body").append(promptbox);
+
+}
+
 
 
 //手机正则
@@ -162,27 +184,7 @@ $(document).ready(function(){
 
 
 
-    //提示信息弹窗
-    var hint=function(state,msg){
-        var promptbox="<div class='promptbox'><div class='padding25'>";
-        if(state==""||state=="success"){
-            promptbox+="<svg class='icon font24 ' style='float:left;color: #36cfb3' aria-hidden='true'><use xlink:href='#icon-zhengque'></use></svg>"
-            promptbox+="<span class='prompttitle'>提交成功！</span>"
-        }else if(state=="error"){
-            promptbox+="<svg class='icon font24 ' style='float:left;color: #ea5941' aria-hidden='true'><use xlink:href='#icon-cuowu'></use></svg>"
-            promptbox+="<span class='prompttitle'>错误！</span>"
-        }else if(state=="warning"){
-            promptbox+="<svg class='icon font24 ' style='float:left;color: #f7ba2a' aria-hidden='true'><use xlink:href='#icon-jinggao'></use></svg>"
-            promptbox+="<span class='prompttitle'>警告！</span>"
-        }else if(state=="ordinary"){
-            promptbox+="<svg class='icon font24 ' style='float:left;color: #289fd1' aria-hidden='true'><use xlink:href='#icon-tishi'></use></svg>"
-            promptbox+="<span class='prompttitle'>一般提醒！</span>"
-        };
-        promptbox+="<div class='promptmsg'>"+msg+"</div>";
-        promptbox+="</div></div>";
-        $("body").append(promptbox);
 
-    }
 
     $(".success").on("click",function(){
         hint("success","您的信息已提交成功。");
@@ -206,7 +208,7 @@ $(document).ready(function(){
 
     //评分星星
     var xing=function(num,xings){
-        var xingnum=num;//应该有多少半颗星，2颗半星算益客实星
+        var xingnum=num;//应该有多少半颗星，2颗半星算1颗实星
         if(xingnum%2==0){
             for(var i=0;i<xingnum/2;i++){
                 $(xings[i]).find("use").attr("xlink:href","#icon-huisepinglun");

@@ -29,8 +29,8 @@ $(function () {
     //邀请面试
     $(".yaoqing_interview,.agree_review").click(function () {
         $("#review_time").val("");
-        $("#contacts_name").val("默认注册联系人");
-        $("#contacts_tel").val("默认注册电话");
+        $("#contacts_name").val("张先生");
+        $("#contacts_tel").val("18752525252");
         $("#city").val("");
         $("#city_area").val("");
         $("#detail_address").val("");

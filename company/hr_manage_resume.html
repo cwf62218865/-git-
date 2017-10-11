@@ -587,7 +587,7 @@
                                     </label>
                                 </div>
                                 <svg class="icon flover_ico grey_i">
-                                    <use xlink:href="#icon-zhongping"></use>
+                                    <use xlink:href="#icon-chaping"></use>
                                 </svg>
                                 <label>差评</label>
                             </div>
@@ -662,7 +662,7 @@
                                     </label>
                                 </div>
                                 <svg class="icon flover_ico grey_i">
-                                    <use xlink:href="#icon-zhongping"></use>
+                                    <use xlink:href="#icon-chaping"></use>
                                 </svg>
                                 <label>差评</label>
                             </div>
@@ -737,7 +737,7 @@
                                     </label>
                                 </div>
                                 <svg class="icon flover_ico grey_i">
-                                    <use xlink:href="#icon-zhongping"></use>
+                                    <use xlink:href="#icon-chaping"></use>
                                 </svg>
                                 <label>差评</label>
                             </div>
@@ -812,7 +812,7 @@
                                     </label>
                                 </div>
                                 <svg class="icon flover_ico grey_i">
-                                    <use xlink:href="#icon-zhongping"></use>
+                                    <use xlink:href="#icon-chaping"></use>
                                 </svg>
                                 <label>差评</label>
                             </div>
@@ -1060,13 +1060,13 @@
                 <div class="in_hang">
                     <span class="biaoti">联系人</span>
                     <label class="general-input" >
-                        <input type="text" id="contacts_name"  value="默认注册联系人">
+                        <input type="text" id="contacts_name"  value="张先生">
                     </label>
                 </div>
                 <div class="in_hang">
                     <span class="biaoti">联系电话</span>
                     <label class="general-input" >
-                        <input type="text" id="contacts_tel" value="默认注册电话">
+                        <input type="text" id="contacts_tel" value="18752525252">
                     </label>
                 </div>
                 <div class="in_hang">
@@ -1109,11 +1109,11 @@
 <script src="../js/jquery.mousewheel.js" rel="script"></script>
 <script src="../js/iconfont.js" rel="script"></script>
 <script src="../js/control.js" rel="script"></script>
-<script src="../js/login_reg_account.js"></script>
+<script src="../js/login_reg_account.js" rel="script"></script>
 <script src="../js/resume_reg3.js"  rel="script"></script>
-<script src="../js/area.js"></script>
-<script src="../js/zimu.js"></script>
-<script src="../js/hr_manage_resume.js"></script>
+<script src="../js/area.js" rel="script"></script>
+<script src="../js/zimu.js" rel="script"></script>
+<script src="../js/hr_manage_resume.js" rel="script"></script>
 <script src="../js/formdata.js" rel="script"></script>
 <script src="../js/resume_reg1.js" rel="script"></script>
 <script src="../js/job_manage_release.js" rel="script"></script>
@@ -1177,6 +1177,8 @@
         }
 
         $("#invite_box").hide();
+        hint("success","已成功邀请面试！");
+        setTimeout(function(){$(".promptbox").remove()},2000);
 
         $.ajax({
             url:"",
@@ -1212,6 +1214,8 @@
             return;
         }
         $("#beizhubox").hide();
+        hint("success","收藏成功！");
+        setTimeout(function(){$(".promptbox").remove()},2000);
         var lists=$(".resume_content .list_item");
         lists.each(function () {
             if($(this).attr("data-id")==data_flag){
