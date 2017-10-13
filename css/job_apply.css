@@ -1,0 +1,403 @@
+.search_nav{
+    width: 870px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+.input_search{
+    width: 688px;
+    height: 48px;
+    padding-left: 20px;padding-right: 20px;
+    border: 1px solid #eeeeee;
+    float: left;
+    outline: none;
+}
+.btn_search{
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    width: 140px;
+    text-align: center;
+    background: #0099cc;
+    color: #eeffff;
+    font-size: 16px;
+    outline: none;border: none;
+}
+.search_items{
+    margin-top: 16px;
+    margin-bottom: 50px;
+    width: 100%;
+    float: left;
+}
+.search_items .title{
+    margin-right: 30px;
+}
+.search_items .job_item{
+    margin-right: 20px;
+    color: #0099cc;
+    cursor: pointer;
+}
+.condition_select{
+    width: 100%;
+    float: left;
+    background: #ffffff;
+}
+.condition_con{
+    width:1080px;
+    margin-top:30px;
+    margin-left: 50px;
+}
+.condition_item{
+    margin-bottom: 24px;
+}
+.condition_item .title,.xingzheng_item .title{
+    width: 70px;
+    display: block;
+    float: left;
+    text-align: right;
+    margin-right: 20px;
+    color: #333333;
+}
+.condition_item .one_st{
+    color: #333333;
+}
+.city_item,.all_item{
+    display: inline-block;
+    margin-right: 6px;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: #666666;
+    cursor: pointer;
+}
+.city_select{
+    background: #a8c9ea;color: #ffffff;
+}
+.more_city{
+    position: relative;
+    float: right;
+    color: #8590a6;
+    width: 75px;
+    margin-top: -8px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #ffffff;
+}
+.more_city:hover{
+    background: #f5f5f5;
+    border: 1px solid #eeeeee;
+    border-bottom: none;
+}
+.more_city:hover .city_option{
+    display: block;
+}
+.city_option{
+    display: none;
+    position: absolute;
+    width: 450px;
+    border: 1px solid #eeeeee;
+    right: 0;
+    top: 40px;
+}
+.seleest{
+    color: #0099cc;
+}
+.city_list{
+    width: 450px;
+    height: auto;
+    background: #ffffff;
+    float: left;
+    padding-bottom: 20px;
+}
+.city_o:hover{
+    color: #0099cc;
+}
+.xingzheng_item{
+    float: left;
+    width: 1070px;
+    margin-bottom: 20px;
+    background: #f5f5f5;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #eeeeee;
+}
+.district_list{
+    width: 885px;
+    float: left;
+}
+.zimu_one{
+    width: 410px;
+    margin: 0 auto;
+    text-align: left;
+    line-height: 22px;
+    margin-top: 20px;
+    float: left;
+}
+.city_team{
+    width: 340px;
+    float: left;
+    margin-left: 20px;
+    color: #666666;
+    line-height: 22px;
+}
+.letter{
+    margin-right: 20px;
+    color: #e23d46;
+    float: left;
+    display: block;
+    margin-left: 20px;
+}
+.city_o{
+    margin-right: 20px;
+}
+.city_top{
+    width: 100%;
+    height: 40px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #eeeeee;
+}
+.zimu_zu{
+    width: 60px;
+    display: inline-block;
+    float: left;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    color: #333333;
+    cursor: pointer;
+}
+.selest{
+    border-bottom: 2px solid #0099cc;
+}
+.marl52{
+    margin-left: 52px;
+}
+.magr30{
+    margin-right: 30px;
+}
+.con_or{
+    margin-bottom: 30px;
+}
+.con_top1{
+    width: 770px;
+    margin-top: 20px;
+    margin: 0 auto;
+}
+.xiala{
+    margin-left: 15px;
+    color:#bbbbbb ;
+}
+.xinzi_color{
+    color: #666666;
+    margin-right: 80px;
+}
+.pailie{
+    color: #999999;
+    margin-right: 20px;
+}
+.magl20{
+    margin-left: 20px;
+}
+.yemabtn{
+    float: right;
+}
+.magr50{
+    margin-right: 50px;
+}
+.yema{
+    width: 10px;
+    height: 10px;
+    padding: 5px;
+    color: #8892a4;
+    vertical-align: middle;
+    border: 1px solid #eeeeee;
+    cursor: pointer;
+}
+.hangver{
+    height: 22px;
+    line-height: 22px;
+    display: inline-block;
+}
+.current_page{
+    color: #0099cc;
+}
+.slected{
+background: #0099cc;
+    color: #ffffff;
+}
+.toudijianli{
+    float: left;
+    height: 50px;
+    border-top: 1px solid #eeeeee;
+    width: 400px;
+    cursor: pointer;
+    color: #0099cc;
+}
+.major{
+    width: 100px;
+}
+.xingzhi{
+    text-align: right;
+    width: 100px;
+    float: right;
+}
+.experience {
+    width: 120px;
+}
+.job_point{
+    margin-top: 12px;
+}
+.list_item{
+    color: #666666;
+}
+.companylogo{
+    float: left;
+    width: 340px;
+    height: auto;
+    margin: 20px auto;
+}
+.companylogo .logo{
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-right: 20px;
+}
+.companyname{
+    float: left;
+}
+.companyname .name{
+    margin-top: 10px;
+    color: #666666;
+}
+.companyname .shuxin{
+    color: #bbbbbb;
+    margin-top: 15px;
+}
+.pages_btn{
+    float: left;
+    margin-left: 200px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+.pre_page,.next_page,.pages_btn .page{
+    border: 1px solid #eeeeee;
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    margin-right: 6px;
+    color: #666666;
+    cursor: pointer;
+}
+.pre_page:hover,
+.next_page:hover,
+.page:hover{
+    background: #0099cc;
+    color: #ffffff;
+}
+.pre_page,.next_page{
+    width: 62px;
+    height: 34px;
+}
+.pages_btn .page{
+    width: 34px;
+}
+.pages_btn .select{
+    background: #0099cc;
+    color: #ffffff;
+}
+.part_one{
+    height: auto;
+    width: 100%;
+    background: #ffffff;
+    margin-bottom:10px ;
+    float: left;
+}
+.title-top{
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #eeeeee;
+    line-height: 60px;
+    color: #333333;
+    font-size: 20px;
+}
+.top_con{
+    margin-left: 22px;
+}
+.items_list{
+    float: left;
+    width: 270px;
+    height: auto;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #eeeeee;
+}
+.daoshi_list{
+    float: left;
+    width: 270px;
+    height: auto;
+    padding-top:30px ;
+    padding-bottom: 30px;
+    text-align: center;
+    border-bottom: 1px dashed #eeeeee;
+}
+.items_list:last-child,.daoshi_list:last-child{
+    border-bottom: none;
+}
+.logo1{
+    width: 66px;
+    height: 66px;
+    float: left;
+    margin-right: 20px ;
+}
+.logopic{
+    width: 66px;
+    height: 66px;
+}
+.company_name{
+    float: left;
+}
+.companyn{
+    width: 180px ;
+    color: #999999;
+}
+.job_n{
+    color: #333333;
+    font-size: 16px;
+}
+.job_s{
+    color: #e23d46;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.daoshi_list{
+
+}
+.img_pic{
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    border-radius: 100px;
+    overflow: hidden;
+}
+.touxiang{
+    width: 70px;
+}
+.dsname{
+    color: #333333;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.zhiwei{
+    font-size: 12px;
+    color: #999999;
+    margin-left: 10px;
+}
+.miaoshu{
+    line-height: 24px;
+    color: #666666;
+}
