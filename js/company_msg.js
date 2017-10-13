@@ -70,10 +70,7 @@ $("#company_imgbox .cancelbtn").on("click",function(){
 
 
 //公司地址
-$(".addandeditbtn").eq(3).on("click",function(){
-    $("#company_address").hide();
-    $("#company_addressbox").show();
-});
+
 
 $("#company_addressbox .cancelbtn").on("click",function(){
     $("#company_address").show();
