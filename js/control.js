@@ -48,7 +48,7 @@ function stop_action(title,content,cancel,confirm,callback){
 function hint(state,msg){
     var promptbox="<div class='promptbox'><div class='padding25'>";
     if(state==""||state=="success"){
-        promptbox+="<svg class='icon font24 ' style='float:left;color: #36cfb3' aria-hidden='true'><use xlink:href='#icon-zhengque2'></use></svg>"
+        promptbox+="<svg class='icon font24 ' style='float:left;color: #36cfb3' aria-hidden='true'><use xlink:href='#icon-zhengque'></use></svg>"
         promptbox+="<span class='prompttitle'>提交成功！</span>"
     }else if(state=="error"){
         promptbox+="<svg class='icon font24 ' style='float:left;color: #ea5941' aria-hidden='true'><use xlink:href='#icon-cuowu'></use></svg>"
@@ -184,8 +184,6 @@ $(document).ready(function(){
 
 
 
-
-
     $(".success").on("click",function(){
         hint("success","您的信息已提交成功。");
         setTimeout(function(){$(".promptbox").remove()},2000);
@@ -208,7 +206,7 @@ $(document).ready(function(){
 
     //评分星星
     var xing=function(num,xings){
-        var xingnum=num;//应该有多少半颗星，2颗半星算1颗实星
+        var xingnum=num;//应该有多少半颗星，2颗半星算益客实星
         if(xingnum%2==0){
             for(var i=0;i<xingnum/2;i++){
                 $(xings[i]).find("use").attr("xlink:href","#icon-huisepinglun");

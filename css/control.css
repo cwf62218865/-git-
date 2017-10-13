@@ -187,7 +187,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     display: inline-block;
     background-color: #fff;
     width: 338px;
-    height: 98px;
     border: 1px solid #ddd;
     position: fixed;
     left: 50%;
