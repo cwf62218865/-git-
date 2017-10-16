@@ -51,35 +51,7 @@
         <div class="condition_con">
             <div class="condition_item con_or">
                 <label class="title">已选择：</label>
-                <label class="select_item">
-                <span class="cont_item">重庆
-                    <svg class="icon deleteyx">
-                        <use xlink:href="#icon-shan"></use>
-                    </svg>
-                </span>
-                </label>
-                <label class="select_item">
-                <span class="cont_item">江北区
-                    <svg class="icon deleteyx">
-                        <use xlink:href="#icon-shan"></use>
-                    </svg>
-                </span>
-                </label>
-                <label class="select_item">
-                <span class="cont_item sllect">大专
-                    <svg class="icon deleteyx">
-                        <use xlink:href="#icon-shan"></use>
-                    </svg>
-                </span>
-                </label>
-                <label class="select_item">
-                <span class="cont_item">全职
-                    <svg class="icon deleteyx">
-                        <use xlink:href="#icon-shan"></use>
-                    </svg>
-                </span>
-                </label>
-                <span class="">Java</span>
+                <span class="search_in"></span>
             </div>
             <div class="condition_item gzdd">
                 <label class="title one_st">工作地点：</label>
@@ -178,24 +150,6 @@
                 <label class="title one_st">行政区：</label>
                 <div class="district_list">
                 <span class="city_item all_item city_select">不限</span>
-                <span class="city_item">江北区</span>
-                <span class="city_item">渝北区</span>
-                <span class="city_item">沙坪坝区</span>
-                <span class="city_item">江津区</span>
-                <span class="city_item">江北区</span>
-                <span class="city_item">渝北区</span>
-                <span class="city_item">沙坪坝区</span>
-                <span class="city_item">江津区</span>
-                <span class="city_item">江北区</span>
-                <span class="city_item">渝北区</span>
-                <span class="city_item">沙坪坝区</span>
-                <span class="city_item">江津区</span>
-                <span class="city_item">沙坪坝区</span>
-                <span class="city_item">江津区</span>
-                <span class="city_item">江北区</span>
-                <span class="city_item">渝北区</span>
-                <span class="city_item">沙坪坝区</span>
-                <span class="city_item">江津区</span>
                 </div>
             </div>
             <div class="condition_item xueli">
@@ -644,15 +598,102 @@
 <script src="../js/iconfont.js" rel="script"></script>
 <script src="../js/control.js" rel="script"></script>
 <script src="../js/style_zj.js" rel="script"></script>
+<script src="../js/area.js" rel="script"></script>
 
 <script>
     $(function () {
 
-        //搜索框
+        //点击搜索发送请求
     $(".btn_search").click(function () {
         var serch=$(".input_search").val();
-
+        $(".search_in").html(serch);
+        $.ajax({
+            url:"",
+            post:"post",
+            data:{
+                serch:serch,
+                page:1
+            },
+            success:function () {
+                
+            }
+        })
     })
+        //点击选择项发送请求
+        $(".city_item").click(function () {
+            var item=$(this).html();
+            if(item!="全国" && item!="不限"){
+                $(".con_or").find(".title").after("<label class='select_item'><span class='cont_item'>"+item+"<svg class='icon deleteyx'><use  xlink:href='#icon-shan'></use></svg></span></label>")
+            }
+            $.ajax({
+                url:"",
+                post:"post",
+                data:{
+                    item:item,
+                    page:1
+                },
+                success:function () {
+                    
+                }
+            })
+        })
+        
+        $("body").on("click",".district_list .city_item",function () {
+            var area=$(this).html();
+            if(area!="不限"){
+                $(".con_or").find(".title").after("<label class='select_item'><span class='cont_item'>"+area+"<svg class='icon deleteyx'><use  xlink:href='#icon-shan'></use></svg></span></label>")
+            }
+            $(".xingzheng_item").hide();
+        })
+        
+        //点击热门搜索发送请求
+        $("body").on("click",".job_item",function () {
+            var hot=$(this).html();
+            $(".input_search").val(hot);
+            $(".search_in").html(hot);
+            $.ajax({
+                url:"",
+                post:"post",
+                data:{
+                    hot:hot,
+                    page:1
+                },
+                success:function () {
+
+                }
+            })
+        })
+
+        //城市选择和行政区弹出
+        var area=new Array();
+        area=dsy.Items[0];
+        var city=[];
+//        console.log(area);
+        for(var i=0;i<area.length;i++){
+            city.push(dsy.Items['0_'+i]);
+        }
+
+        $(".gzdd .city_item").click(function () {
+            var ccity=$(this).html();
+            if(ccity!="全国"){
+            $(".xingzheng_item").show();
+                ccity=ccity+"市";
+                $(".district_list").html("");
+                $(".district_list").append("<span class='city_item'>不限</span>")
+                for(var i=0;i<city.length;i++){
+                    for(var j=0;j<city[i].length;j++){
+                        if(ccity==city[i][j]){
+                            for(var list=0;list<dsy.Items['0_'+i+'_'+j].length;list++){
+                                $(".district_list").append("<span class='city_item'>"+dsy.Items['0_'+i+'_'+j][list]+"</span>");
+                            }
+                        }
+                    }
+                }
+
+            }else{
+                $(".xingzheng_item").hide();
+            }
+        })
 
 
     })
