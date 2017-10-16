@@ -49,6 +49,8 @@
 }
 .condition_item{
     margin-bottom: 24px;
+    width: 100%;
+    float: left;
 }
 .condition_item .title,.xingzheng_item .title{
     width: 70px;
@@ -70,6 +72,10 @@
     padding-right: 8px;
     color: #666666;
     cursor: pointer;
+}
+.city_item:hover{
+    background: #a8c9ea;
+    color: #ffffff;
 }
 .city_select{
     background: #a8c9ea;color: #ffffff;
@@ -421,4 +427,54 @@ background: #0099cc;
 .miaoshu{
     line-height: 24px;
     color: #666666;
+}
+#basic_msg{
+    background: #ffffff;
+    float: left;
+}
+.company_logo{
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    float: left;
+}
+#basic_msg .company_basacmsg{
+    float: left;
+    margin-left: 30px;
+}
+.basic_msg_bq{
+    margin-right: 14px;
+    border-radius: 13px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 12px;
+    display: inline-block;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #eeeeee;
+}
+.zpzhuangtai{
+    width: 100%;
+    float: left;
+    margin-left: -30px;
+    margin-top: 20px;
+}
+.tjitem{
+    width: 115px;
+    height: 44px;
+    border-right: 1px dashed #eeeeee;
+    text-align: center;
+    float: left;
+}
+.tjitem:last-child{
+    border-right: none;
+}
+.tongjinum{
+    font-size: 18px;
+    color: #666666;
+    margin-bottom: 2px;
+}
+.tongjititle{
+    color: #bbbbbb;
 }
