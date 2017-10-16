@@ -1,0 +1,16 @@
+.company_logo{
+    display: inline-block;
+    width: 180px;
+    height: 180px;
+    text-align: center;
+    line-height: 180px;
+    overflow: hidden;
+    margin-left: 65px;
+}
+.company_logo img{
+    max-width: 180px;
+}
+.company_recruit_msg{
+    width: 100%;
+    text-align: center;
+}
