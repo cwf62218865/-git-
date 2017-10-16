@@ -32,5 +32,13 @@ $(function () {
         $(".xingzheng_item .city_item").removeClass("city_select");
         $(this).addClass("city_select");
     })
+    $("body").on("click",".cont_item",function () {
+        $(".cont_item").removeClass("sllect");
+        $(this).addClass("sllect");
+    })
+    //已选择的删除
+    $("body").on("click",".deleteyx",function () {
+        $(this).closest(".select_item").remove();
+    })
 
 })

@@ -51,11 +51,35 @@
         <div class="condition_con">
             <div class="condition_item con_or">
                 <label class="title">已选择：</label>
-                <span class="city_item city_select">全国</span>
-                <span class="city_item">重庆</span>
-                <span class="city_item">北京</span>
-                <span class="city_item">上海</span>
-                <span class="city_item">广州</span>
+                <label class="select_item">
+                <span class="cont_item">重庆
+                    <svg class="icon deleteyx">
+                        <use xlink:href="#icon-shan"></use>
+                    </svg>
+                </span>
+                </label>
+                <label class="select_item">
+                <span class="cont_item">江北区
+                    <svg class="icon deleteyx">
+                        <use xlink:href="#icon-shan"></use>
+                    </svg>
+                </span>
+                </label>
+                <label class="select_item">
+                <span class="cont_item sllect">大专
+                    <svg class="icon deleteyx">
+                        <use xlink:href="#icon-shan"></use>
+                    </svg>
+                </span>
+                </label>
+                <label class="select_item">
+                <span class="cont_item">全职
+                    <svg class="icon deleteyx">
+                        <use xlink:href="#icon-shan"></use>
+                    </svg>
+                </span>
+                </label>
+                <span class="">Java</span>
             </div>
             <div class="condition_item gzdd">
                 <label class="title one_st">工作地点：</label>
@@ -75,10 +99,12 @@
                 <span class="city_item">天津</span>
                 <span class="city_item">大连</span>
                 <span class="city_item">长春</span>
-                <label class="more_city cur">更多
-                    <svg class="icon">
-                        <use xlink:href="#icon-xiajiantou"></use>
-                    </svg>
+                <label class="more_city cur">
+                    <div class="gengduo">更多
+                        <svg class="icon">
+                            <use xlink:href="#icon-xiajiantou"></use>
+                        </svg>
+                    </div>
                     <div class="city_option">
                         <div class="city_top">
                             <label class="zimu_zu selest marl52">ABCDE</label>
@@ -151,7 +177,7 @@
             <div class="xingzheng_item" style="display: none">
                 <label class="title one_st">行政区：</label>
                 <div class="district_list">
-                <span class="all_item city_select">不限</span>
+                <span class="city_item all_item city_select">不限</span>
                 <span class="city_item">江北区</span>
                 <span class="city_item">渝北区</span>
                 <span class="city_item">沙坪坝区</span>
@@ -174,7 +200,7 @@
             </div>
             <div class="condition_item xueli">
                 <label class="title one_st">学历要求：</label>
-                <span class="all_item city_select">不限</span>
+                <span class="city_item all_item city_select">不限</span>
                 <span class="city_item">大专</span>
                 <span class="city_item">本科</span>
                 <span class="city_item">硕士</span>
@@ -182,7 +208,7 @@
             </div>
             <div class="condition_item gzxz">
                 <label class="title one_st">工作性质：</label>
-                <span class="all_item city_select">不限</span>
+                <span class="city_item all_item city_select">不限</span>
                 <span class="city_item">全职</span>
                 <span class="city_item">兼职</span>
             </div>
@@ -622,6 +648,11 @@
 <script>
     $(function () {
 
+        //搜索框
+    $(".btn_search").click(function () {
+        var serch=$(".input_search").val();
+
+    })
 
 
     })
