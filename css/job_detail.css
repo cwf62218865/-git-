@@ -199,3 +199,78 @@
     display: inline-block;
     margin-right: 20px;
 }
+.jobs_detail{
+    padding-bottom: 30px;
+    border-bottom: 1px dashed #eee;
+}
+.good{
+    cursor: pointer;
+}
+.cwftextarea{
+    width: 296px;
+    height: 80px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    resize: none;
+    background-color: #f5f5f5;
+}
+.cwftextarea::-webkit-input-placeholder{
+    color: #E0E0E0;
+    line-height:80px ;
+    text-align: center;
+}
+.share{
+    display: inline-block;
+    position: absolute;
+    width: 250px;
+    height: 54px;
+    right: 0px;
+    top: 13px;
+    z-index: 100;
+    border: 1px solid #eee;
+    background-color: #fff;
+    color: #fff;
+}
+#sharebox{
+    display: none;
+}
+#sharebox em{display:block; border-width:12px; position:absolute; top:-25px; left:130px;border-style:solid dashed dashed; border-color: transparent transparent #eee;font-size:0; line-height:0;}
+#sharebox i{display:block; border-width:12px; position:absolute; top:-24px; left:130px;border-style:solid dashed dashed; border-color: transparent transparent #FFF;font-size:0; line-height:0;}
+.sharebtn{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 30px;
+    margin-right: 16.7px;
+    float: left;
+    margin-top: 12px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+}
+.sharebtn:nth-child(1){
+    background-color: #22a4ff;
+}
+.sharebtn:nth-child(2){
+    background-color: #04b00f;
+    cursor:  not-allowed;
+}
+.sharebtn:nth-child(3){
+    background-color: #ff424f;
+}
+.sharebtn:nth-child(4){
+    background-color: #22a4ff;
+    cursor:  not-allowed;
+}
+.sharebtn:nth-child(5){
+    background-color: #f5c22b;
+}
+.sharebtn .icon{
+    margin-bottom:1px;
+}
+.sharebtn:first-child{
+    margin-left: 16.5px;
+}
