@@ -93,7 +93,7 @@ function pages(page,totalpage){
                 pagehtml+='<span class="page select">'+page+'</span>';
                 pagehtml+='<span class="page">'+(page+1)+'</span>';
                 pagehtml+='<span class="page1">...</span>';
-                pagehtml+='<span class="page1">'+totalpage+'</span>';
+                pagehtml+='<span class="page">'+totalpage+'</span>';
             }
             if(page>totalpage-3){
                 if(page==totalpage-2){
@@ -106,9 +106,9 @@ function pages(page,totalpage){
                     pagehtml+='<span class="page select">'+page+'</span>';
                     pagehtml+='<span class="page">'+totalpage+'</span>';
                 }else{
+                    pagehtml+='<span class="page">'+(page-2)+'</span>';
                     pagehtml+='<span class="page">'+(page-1)+'</span>';
-                    pagehtml+='<span class="page">'+page+'</span>';
-                    pagehtml+='<span class="page select">'+totalpage+'</span>';
+                    pagehtml+='<span class="page select">'+page+'</span>';
                 }
             }
         }else{
@@ -125,7 +125,7 @@ function pages(page,totalpage){
             if(page<=totalpage-3){
                 pagehtml+='<span class="page">4</span>';
                 pagehtml+='<span class="page1">...</span>';
-                pagehtml+='<span class="page1">'+totalpage+'</span>';
+                pagehtml+='<span class="page">'+totalpage+'</span>';
             }
         }
 
@@ -139,7 +139,6 @@ function pages(page,totalpage){
             }
         }
     }
-
     if(page==totalpage){//判断当前显示的页数是否为最后一页
         pagehtml+='<span class="next_page no_page">下一页</span>';
     }else{
