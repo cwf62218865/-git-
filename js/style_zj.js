@@ -12,6 +12,10 @@ $(function () {
         $(".gzxz .city_item").removeClass("city_select");
         $(this).addClass("city_select");
     })
+    $(".select_item1").click(function () {
+        $(".select_item1").removeClass("city_select");
+        $(this).addClass("city_select");
+    })
     $(".con_top1 .city_item").click(function () {
         $(".con_top1 .city_item").removeClass("city_select");
         $(this).addClass("city_select");
@@ -35,6 +39,12 @@ $(function () {
     $("body").on("click",".cont_item",function () {
         $(".cont_item").removeClass("sllect");
         $(this).addClass("sllect");
+    })
+    $("body").on("click",".city_lister .city_item",function () {
+        $(".city_lister .city_item").removeClass("city_select");
+        $(".gzdd .city_item").removeClass("city_select");
+        $(".district_list .city_item").removeClass("city_select");
+        $(this).addClass("city_select");
     })
     //已选择的删除
     $("body").on("click",".deleteyx",function () {

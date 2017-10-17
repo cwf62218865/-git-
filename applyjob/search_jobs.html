@@ -51,11 +51,12 @@
         <div class="condition_con">
             <div class="condition_item con_or">
                 <label class="title">已选择：</label>
+                <span class="select_con"></span>
                 <span class="search_in"></span>
             </div>
             <div class="condition_item gzdd">
                 <label class="title one_st">工作地点：</label>
-                <span class="city_item city_select">全国</span>
+                <span class="city_item city_select all_item">全国</span>
                 <span class="city_item">重庆</span>
                 <span class="city_item">北京</span>
                 <span class="city_item">上海</span>
@@ -86,62 +87,7 @@
                             <label class="zimu_zu">STUV</label>
                             <label class="zimu_zu magr30">WXYZ</label>
                         </div>
-                        <div class="city_list">
-                            <div class="zimu_one">
-                                <label class="letter">A</label>
-                                <div class="city_team">
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                </div>
-                            </div>
-                            <div class="zimu_one">
-                                <label class="letter">B</label>
-                                <div class="city_team">
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                </div>
-                            </div>
-                            <div class="zimu_one">
-                                <label class="letter">C</label>
-                                <div class="city_team">
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                </div>
-                            </div>
-                            <div class="zimu_one">
-                                <label class="letter">F</label>
-                                <div class="city_team">
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                </div>
-                            </div>
-                            <div class="zimu_one">
-                                <label class="letter">E</label>
-                                <div class="city_team">
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                    <span class="city_o">安康市</span>
-                                </div>
-                            </div>
+                        <div class="city_lister">
                         </div>
                     </div>
                 </label>
@@ -179,8 +125,8 @@
                         </svg>
                     </label>
                     <label class="pailie">排列方式：</label>
-                    <span class="city_item city_select">默认</span>
-                    <span class="city_item magl20">最新</span>
+                    <span class="select_item1 city_select">默认</span>
+                    <span class="select_item1 magl20">最新</span>
                     <label class="yemabtn">
                         <span class="magr50 hangver">
                             <label class="current_page">1</label>
@@ -599,56 +545,99 @@
 <script src="../js/control.js" rel="script"></script>
 <script src="../js/style_zj.js" rel="script"></script>
 <script src="../js/area.js" rel="script"></script>
+<script src="../js/zimu.js" rel="script"></script>
 
 <script>
     $(function () {
 
-        //点击搜索发送请求
-    $(".btn_search").click(function () {
-        var serch=$(".input_search").val();
-        $(".search_in").html(serch);
-        $.ajax({
-            url:"",
-            post:"post",
-            data:{
-                serch:serch,
-                page:1
-            },
-            success:function () {
-                
-            }
+
+        //行政区选择
+        $("body").on("click",".district_list .city_item",function () {
+            $(".district_list .city_item").removeClass("city_select");
+            $(this).addClass("city_select");
+            $(".xingzheng_item").hide();
         })
-    })
-        //点击选择项发送请求
-        $(".city_item").click(function () {
-            var item=$(this).html();
-            if(item!="全国" && item!="不限"){
-                $(".con_or").find(".title").after("<label class='select_item'><span class='cont_item'>"+item+"<svg class='icon deleteyx'><use  xlink:href='#icon-shan'></use></svg></span></label>")
+
+        //多选项样式添加和发送请求
+        $("body").on("click",".city_item",function () {
+            $(".select_con").html("");
+            var list=$(".city_item");
+            var arr_select=[];//把搜索的内容放在一个数组
+            if($(".search_in").html()!=""){
+                arr_select.push($(".search_in").html());
             }
+            for(var i=0;i<list.length;i++){
+                if(list.eq(i).hasClass("city_select") && !list.eq(i).hasClass("all_item")){
+                    $(".select_con").append("<label class='select_item'><span class='cont_item'><lable class='cont_list'>"+list.eq(i).html()+"</lable><svg class='icon deleteyx'><use  xlink:href='#icon-shan'></use></svg></span></label>");
+                }
+            }
+
+            //将已选择的项目用数组存起来
+            $(".select_item").each(function () {
+                arr_select.push($(this).find(".cont_list").html());
+            })
+
+            //已选择的删除同时发送请求
+            $("body").on("click",".deleteyx",function () {
+                var list=$(".city_item");
+                var _this=$(this).closest(".select_item");
+                _this.remove();
+                var value=$(this).closest(".cont_item").find(".cont_list").html();
+                for(var i=0;i<arr_select.length;i++){
+                    if(arr_select[i]==value){
+                        arr_select.splice(i,1);
+                    }
+                }
+                for(var j=0;j<list.length;j++){
+                    if(list.eq(j).html() == value ){
+                        list.eq(j).removeClass("city_select");
+                    }
+
+                }
+                console.log("shan...."+arr_select);
+                //删除需要请求
+                $.ajax({
+                    url:"",
+                    post:"post",
+                    data:{
+                        arr_select:arr_select,
+                        page:1
+                    },
+                    success:function () {
+
+                    }
+                })
+
+            })
+
+
+            console.log("jia...."+arr_select);
+            //添加搜索项的内容请求
             $.ajax({
                 url:"",
                 post:"post",
                 data:{
-                    item:item,
+                    arr_select:arr_select,
                     page:1
                 },
                 success:function () {
-                    
+
                 }
             })
         })
         
-        $("body").on("click",".district_list .city_item",function () {
-            var area=$(this).html();
-            if(area!="不限"){
-                $(".con_or").find(".title").after("<label class='select_item'><span class='cont_item'>"+area+"<svg class='icon deleteyx'><use  xlink:href='#icon-shan'></use></svg></span></label>")
-            }
-            $(".xingzheng_item").hide();
-        })
-        
-        //点击热门搜索发送请求
+        //点击热门搜索列表发送请求
         $("body").on("click",".job_item",function () {
             var hot=$(this).html();
+            var list=$(".select_item");
+            var arr_select=[];
+            list.each(function () {
+                arr_select.push($(this).find(".cont_list").html());
+            });
+            arr_select.push(hot);
+
+            console.log("sou....."+arr_select);
+
             $(".input_search").val(hot);
             $(".search_in").html(hot);
             $.ajax({
@@ -656,6 +645,31 @@
                 post:"post",
                 data:{
                     hot:hot,
+                    page:1
+                },
+                success:function () {
+
+                }
+            })
+        })
+
+        //点击搜索按钮发送请求
+        $(".btn_search").click(function () {
+            var serch=$(".input_search").val();
+            $(".search_in").html(serch);
+            var list=$(".select_item");
+            var arr_select=[];
+            list.each(function () {
+                arr_select.push($(this).find(".cont_list").html());
+            });
+            arr_select.push(serch);
+
+            console.log("sou1....."+arr_select);
+            $.ajax({
+                url:"",
+                post:"post",
+                data:{
+                    arr_select:arr_select,
                     page:1
                 },
                 success:function () {
@@ -673,13 +687,17 @@
             city.push(dsy.Items['0_'+i]);
         }
 
+        console.log(city)
+
         $(".gzdd .city_item").click(function () {
             var ccity=$(this).html();
             if(ccity!="全国"){
             $(".xingzheng_item").show();
-                ccity=ccity+"市";
+                if(ccity.charAt(ccity.length-1)!="市"){
+                    ccity=ccity+"市";
+                }
                 $(".district_list").html("");
-                $(".district_list").append("<span class='city_item'>不限</span>")
+                $(".district_list").append("<span class='city_item all_item'>不限</span>")
                 for(var i=0;i<city.length;i++){
                     for(var j=0;j<city[i].length;j++){
                         if(ccity==city[i][j]){
@@ -692,7 +710,53 @@
 
             }else{
                 $(".xingzheng_item").hide();
+                $(".xingzheng_item .city_item").removeClass("city_select");
             }
+        })
+
+
+        //初始首字母城市
+        var first=["A","B","C","D","E"];
+        var con="";
+        con+="<div class='city_list'>";
+        for(var i=0;i<first.length;i++){
+            con+="<div class='zimu_one'>";
+            con+="<label class='letter'>"+first[i]+"</label><div class='city_team'>";
+            for(var a=0;a<city.length;a++){
+                for(var b=0;b<city[a].length;b++){
+                    var fir=checkCh(city[a][b]).substring(0,1);
+                    if(fir==first[i]){
+                        con+="<span class='city_item'>"+city[a][b]+"</span>";
+                    }
+                }
+            }
+            con+="</div></div>";
+        }
+        con+="</div>";
+        $(".city_lister").html(con);
+
+        //按照字母显示城市
+        $(".zimu_zu").click(function () {
+            var html=$(this).html();
+            var zimu_arr=html.split("");
+            var content="";
+            content+="<div class='city_list'>";
+            for(var i=0;i<zimu_arr.length;i++){
+                content+="<div class='zimu_one'>";
+                content+="<label class='letter'>"+zimu_arr[i]+"</label><div class='city_team'>";
+                for(var a=0;a<city.length;a++){
+                    for(var b=0;b<city[a].length;b++){
+                        var fir=checkCh(city[a][b]).substring(0,1);
+                        if(fir==zimu_arr[i]){
+                            content+="<span class='city_item'>"+city[a][b]+"</span>";
+                        }
+                    }
+                }
+                content+="</div></div>";
+            }
+            content+="</div>";
+            $(".city_lister").html(content);
+
         })
 
 

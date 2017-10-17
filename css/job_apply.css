@@ -63,7 +63,7 @@
 .condition_item .one_st{
     color: #333333;
 }
-.city_item,.all_item{
+.city_item,.all_item,.select_item1{
     display: inline-block;
     margin-right: 6px;
     height: 28px;
@@ -73,7 +73,7 @@
     color: #666666;
     cursor: pointer;
 }
-.city_item:hover{
+.city_item:hover,.select_item1:hover{
     background: #a8c9ea;
     color: #ffffff;
 }
@@ -127,6 +127,7 @@
     border: 1px solid #eeeeee;
     right: 0;
     top: 30px;
+    box-shadow: 6px 5px 24px rgba(0,0,0,0.12);
 }
 .seleest{
     color: #0099cc;
@@ -164,7 +165,7 @@
 }
 .city_team{
     width: 340px;
-    float: left;
+    float: right;
     margin-left: 20px;
     color: #666666;
     line-height: 22px;
@@ -431,6 +432,7 @@ background: #0099cc;
 #basic_msg{
     background: #ffffff;
     float: left;
+    width: 1200px;
 }
 .company_logo{
     margin-top: 30px;
@@ -439,6 +441,7 @@ background: #0099cc;
     float: left;
 }
 #basic_msg .company_basacmsg{
+    width: 890px;
     float: left;
     margin-left: 30px;
 }
@@ -455,10 +458,39 @@ background: #0099cc;
     border: 1px solid #eeeeee;
 }
 .zpzhuangtai{
-    width: 100%;
+    width: 920px;
     float: left;
     margin-left: -30px;
     margin-top: 20px;
+}
+.company_icos{
+    width: 148px;
+    position: absolute;
+    right: 0;
+    color: #bbbbbb;
+}
+.com_ico{
+    width:70px ;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background:#f5f5f5 ;
+    display: inline-block;
+    float: left;
+    margin-right: 4px;
+    cursor: pointer;
+}
+.com_ico:hover{
+    background: #0099cc;
+    color: #ffffff;
+}
+.com_ico:hover .fexico{
+    color: #ffffff;
+}
+.fexico{
+    width: 17px;
+    height: 17px;
+    color: #b9c4cf;
 }
 .tjitem{
     width: 115px;
@@ -477,4 +509,380 @@ background: #0099cc;
 }
 .tongjititle{
     color: #bbbbbb;
+}
+.biaoqian_ico1,.biaoqian_ico2{
+    padding-left: 35px;
+    padding-right: 10px;
+    margin-left: 16px;
+    border-radius: 11px;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 12px;
+    vertical-align: -webkit-baseline-middle;
+    position: relative;
+}
+.biaoqian_ico1{
+    height: 26px;
+    background: #0199cc;
+    color: #ffffff;
+}
+.biaoqian_ico2{
+    height: 24px;
+    border: 1px solid #eaa92e;
+    color: #eabc2d;
+}
+.renzheng{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 8px;
+}
+#introduces_msg .introduces{
+    line-height: 30px;
+}
+.company_width730{
+    width: 730px;
+    margin-left: 70px;
+    margin-top: 36px;
+}
+.evaluate .company_title:after{
+    width: 590px;
+}
+.select_title,.select_title1{
+    border-bottom: 1px solid #eeeeee;
+    color: #999999;
+    width: 100%;
+    float: left;
+    margin-top: 40px;
+}
+.select_title{
+    font-size: 20px;
+    height: 38px;
+ }
+.select_title1{
+    height: 30px;
+}
+.title_se{
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 38px;
+    display: inline-block;
+}
+.sleft{
+    color: #0099cc;
+    border-bottom: 2px solid #0099cc;
+}
+.select_title1 .title_sr{
+    height: 30px;
+    text-align: left;
+    margin-right: 50px;
+    cursor: pointer;
+}
+.selsrt{
+    color: #0099cc;
+}
+.num_jobing{
+    color: #0099cc;
+    margin-left: 15px;
+}
+.zongtipingfen{
+    width: 314px;
+    height: 120px;
+    text-align: center;
+    margin-top: 40px;
+    border-right: 1px solid #eeeeee;
+    margin-left: -70px;
+    float: left;
+}
+.point{
+    color: #e23d46;
+    font-size: 34px;
+}
+.miaoshus{
+    font-size: 16px;
+    color: #666666;
+    margin-top: 10px;
+}
+.xingxing_list{
+    width: 480px;
+    margin-top: 40px;
+    float: left;
+}
+.xing1{
+    margin-left: 80px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #999999;
+}
+.xing_title{
+    display: inline-block;
+    width: 70px;
+    text-align: right;
+}
+.stars_n{
+margin-left: 30px;
+}
+.star,.starhui{
+    width:22px;
+    height: 22px;
+}
+.star{
+    color: #ffc549;
+}
+.starhui{
+    color: #dfdfdf;
+}
+.point_num{
+    margin-left: 40px;
+    color: #e23d46;
+}
+.biaoqian{
+    width: 100%;
+    float: left;
+    margin-top: 20px;
+}
+.fulibiaoq{
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #eeeeee;
+    border-radius: 13px;
+    display: inline-block;
+    color: #88add1;
+    float: left;
+    margin-right: 16px;
+}
+.num_totla{
+    color: #e23d46;
+}
+.evaluate_list{
+    width: 100%;
+    float: left;
+}
+.evaluate_item{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    float: left;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px dashed #eeeeee ;
+}
+.eva_name{
+    width: 60px;
+    text-align: center;
+    margin-top: 6px;
+    color: #666666;
+}
+.left_tx .nowrap{
+    display: block;
+}
+.touxiangpic{
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-right: 30px;
+}
+.xiangqing{
+    float: left;
+    width: 640px;
+}
+.xqhang{
+    color: #999999;
+    width: 100%;
+    position: relative;
+    float: left;
+}
+.xqhang .stars_n{
+    margin-left: 14px;
+    vertical-align: baseline;
+}
+.xqhang .star,.xqhang .starhui{
+    width:18px;
+    height: 18px;
+}
+.xqhang  .point_num{
+    margin-left: 30px;
+}
+.jobname_eva{
+    margin-left: 80px;
+}
+.namedd{
+    color: #333333;
+}
+.date_eva{
+    position: absolute;
+    width: 100px;
+    display: inline-block;
+    text-align: right;
+    right: 0;
+}
+.pingjiabq{
+    display: inline-block;
+    float: left;
+    padding-left:10px ;
+    padding-right: 10px;
+    border-radius: 13px;
+    height: 24px;
+    line-height: 24px;
+    margin-right: 14px;
+    border: 1px solid #eeeeee;
+}
+.evaluate_con{
+    color: #666666;
+    line-height: 24px;
+}
+.hangxq{
+    float: left;
+    margin-top: 16px;
+    color: #bbbbbb;
+    cursor: pointer;
+}
+.zan1{
+    width: 16px;
+    height: 16px;
+    color: #d6d6d7;
+}
+.zannum{
+    margin-left:2px;
+}
+.evaluate_huifu{
+    width: 100%;
+    float: left;
+    background: #f5f5f5;
+    border: 1px solid #eeeeee;
+    padding-bottom: 14px;
+    margin-top: 20px;
+}
+.hrtx{
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 14px;
+    float: left;
+}
+.hrhf{
+    width: 518px;
+    margin-top: 14px;
+    float: left;
+    color: #666666;
+    position: relative;
+}
+.hftitle{
+    color: #999999;
+    margin-bottom: 6px;
+}
+.hfcon{
+    line-height: 24px;
+}
+.date_num{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    color: #999999;
+}
+.left_tx{
+    float: left;
+}
+.btn_xiny{
+    position: absolute;
+    right: 0;
+}
+.compagefy{
+    margin-left: 130px;
+    margin-bottom: 0;
+}
+.company_list1{
+    float: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+}
+.list_itema{
+    line-height: 40px;
+}
+.comicoa{
+    width: 20px;
+    height: 20px;
+}
+.titlsc{
+    margin-left: 30px;
+}
+.qiyeditu{
+    width: 290px;
+    height: 180px;
+    float: left;
+    margin-left: 10px;
+}
+.btnditu{
+    float: left;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    width: 70px;
+    height: 24px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 24px;
+    color: #9e9e9e;
+    background: #f9f9f9;
+    margin-left: 122px;
+    cursor: pointer;
+}
+.job_list{
+    float: left;
+    width: 100%;
+    background: #ffffff;
+}
+.job_iteme_con{
+    margin-top: 20px;
+}
+.job_iteme{
+    width: 100%;
+    margin-top: 20px;
+    height: auto;
+    border-bottom: 1px dashed #eeeeee;
+    float: left;
+}
+.job_names{
+    color: #0099cc;
+    font-size: 18px;
+}
+.refume_statas{
+    position: absolute;
+    right: 0;
+    color: #999999;
+}
+.salery_num{
+    color: #e23d46;
+    font-size: 18px;
+    display: block;
+    float: left;
+    margin-right: 12px;
+}
+.miaosu{
+    line-height: 55px;
+    float: left;
+    color: #999999;
+}
+.miaoshuitem{
+    display: block;
+    float: left;
+    padding-right: 12px;
+    padding-left: 12px;
+}
+.itemsli{
+    display: inline-block;
+    float: left;
+}
+.miaoshuitem:before{
+    content: "| ";
+}
+.itaemm{
+    margin-left: 12px;
 }
